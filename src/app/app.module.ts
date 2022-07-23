@@ -21,8 +21,9 @@ import { CrudEventComponent } from './Components/Events/crud-event/crud-event.co
 import { ClassesComponent } from './Components/classes/classes.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { ShopComponent } from './Components/shop/shop.component';
 import { ProductComponent } from './Components/product/product.component';
+import { ShopComponent } from './Components/shop/shop.component';
+
 
 
 @NgModule({

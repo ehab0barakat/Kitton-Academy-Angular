@@ -17,11 +17,10 @@ import { CartComponent } from './Components/cart/cart.component';
 
 const routes: Routes = [
   {path: '',component:MainLayoutComponent,children:[
-  {path: '', redirectTo: '/home', pathMatch: 'full'},
+  {path: '', redirectTo: '/home', pathMatch:'full'},
   {path : "home" , component: HomeComponent},
   {path : "games-archive" , component: GamesComponent},
   {path : "single-game" , component: SingleGameComponent},
-  //
   {path:'posts',component:PostsComponent},
   {path:'contact_us',component:ContactUsComponent},
   {path:'about_us',component:AboutUsComponent},
@@ -31,7 +30,6 @@ const routes: Routes = [
   {path:'shop',component:ShopComponent},
   {path:'product',component:ProductComponent},
 ]},
-
 {path:'**',component:NotFoundComponent},
 ]
 
