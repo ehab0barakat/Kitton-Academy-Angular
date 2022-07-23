@@ -58,7 +58,7 @@
                           </ul>
                       </li>
                       <li>
-                          <a href="about.html"><i class="fas fa-user"></i>About</a>
+                          <a  routerLinkActive="active" routerLink="/about_us"><i class="fas fa-user"></i>About</a>
                       </li>
                       <li class="menu-item-has-children">
                           <a href="#0"><i class="fas fa-book"></i>Classes</a>
@@ -75,18 +75,8 @@
                           </ul>
                       </li>
                       <li class="menu-item-has-children">
-                          <a href="#0"><i class="fas fa-pencil-alt"></i>Blog</a>
-                          <ul class="submenu">
-                              <li>
-                                  <a href="blog-grid.html">Blog Grid</a>
-                              </li>
-                              <li>
-                                  <a href="blog-classic.html">Blog Classic</a>
-                              </li>
-                              <li>
-                                  <a href="blog-single.html">Blog Single</a>
-                              </li>
-                          </ul>
+                          <a routerLinkActive="active" routerLink="/posts" ><i class="fas fa-pencil-alt"></i>Posts</a>
+
                       </li>
                       <li class="menu-item-has-children">
                           <a href="#0"><i class="fas fa-layer-group"></i>Pages</a>
@@ -164,9 +154,16 @@
                           </ul>
                       </li>
                       <li>
-                          <a href="contact.html"><i class="fas fa-map-marker-alt"></i>Contact</a>
+                          <a routerLinkActive="active" routerLink="/contact_us"><i class="fas fa-map-marker-alt"></i>Contact</a>
                       </li>
                   </ul>
+                  
+                  <div>
+                    
+                    <a routerLinkActive="active" routerLink="profile" style="font-weight:bold; text-transform: uppercase; color: black;"><i class="fa-solid fa-gear"></i> setting</a>
+
+                   
+                  </div>
                   <div class="search-button">
                       <a href="#">
                           <i class="fas fa-search"></i>
@@ -296,6 +293,7 @@
       <input type="text" placeholder="Input Your Search" name="name">
       <button type="submit">Search</button>
   </form>
+  
 </div>
 
 
