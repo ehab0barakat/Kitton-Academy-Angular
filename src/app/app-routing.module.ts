@@ -5,11 +5,11 @@ import { MainLayoutComponent } from './Components/main-layout/main-layout.compon
 import { NotFoundComponent } from './Components/not-found/not-found.component';
 
 const routes: Routes = [
-  // {path: '',component:MainLayoutComponent,children:[
-    // {path: '', redirectTo: '/classes', pathMatch: 'full'},
+  {path: '',component:MainLayoutComponent,children:[
+    
     {path:'classes',component:ClassesComponent},
-  // ]},
-  // {path:'**',component:NotFoundComponent},
+  ]},
+  {path:'**',component:NotFoundComponent},
 ];
 
 @NgModule({

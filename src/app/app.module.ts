@@ -7,6 +7,8 @@ import { FooterComponent } from './Components/footer/footer.component';
 import { NotFoundComponent } from './Components/not-found/not-found.component';
 import { MainLayoutComponent } from './Components/main-layout/main-layout.component';
 import { ClassesComponent } from './Components/classes/classes.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ClassDetailsComponent } from './Components/class-details/class-details.component';
 
 @NgModule({
   declarations: [
@@ -15,11 +17,13 @@ import { ClassesComponent } from './Components/classes/classes.component';
     FooterComponent,
     NotFoundComponent,
     MainLayoutComponent,
-    ClassesComponent
+    ClassesComponent,
+    ClassDetailsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
