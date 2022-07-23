@@ -23,8 +23,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductComponent } from './Components/product/product.component';
 import { ShopComponent } from './Components/shop/shop.component';
-
-
+import { ClassDetailsComponent } from './Components/class-details/class-details.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +46,8 @@ import { ShopComponent } from './Components/shop/shop.component';
     MainLayoutComponent,
     ClassesComponent,
     ShopComponent,
-    ProductComponent
+    ProductComponent,
+    ClassDetailsComponent
   ],
   imports: [
     BrowserModule,

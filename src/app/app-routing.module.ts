@@ -29,11 +29,10 @@ const routes: Routes = [
   {path:'cart',component:CartComponent},
   {path:'shop',component:ShopComponent},
   {path:'product',component:ProductComponent},
+  {path:'classes',component:ClassesComponent},
 ]},
 {path:'**',component:NotFoundComponent},
 ]
-
-
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
