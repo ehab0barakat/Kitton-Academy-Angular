@@ -1,302 +1,134 @@
 
+<!-- ==========Shop Section Starts Here========== -->
+<div class="shop-cart padding-top padding-bottom">
+  <div class="container">
+    <div class="cart-top mb-widget">
+      <table>
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+            <th>Edit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="product-item-2">
+              <div class="p-thumb">
+                <a href="#"><img src="assets/images/cart/01.png" alt="product"></a>
+              </div>
+              <div class="p-content">
+                <a href="#">Baby Bag</a>
+              </div>
+            </td>
+            <td>$250.00</td>
+            <td>
+              <div class="cart-plus-minus">
+                <div class="dec qtybutton">-</div>
+                <div class="dec qtybutton">-</div>
+                <input class="cart-plus-minus-box" type="text" name="qtybutton" value="2">
+                <div class="inc qtybutton">+</div>
+                <div class="inc qtybutton">+</div>
+              </div>
+            </td>
+            <td>$500.00</td>
+            <td>
+              <a href="#"><img src="assets/images/cart/del.png" alt="product"></a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
-    <!-- ===========Header Search=========== -->
-    <div class="header-form">
-        <div class="bg-lay">
-            <div class="cross">
-                <i class="fas fa-times"></i>
-            </div>
-        </div>
-        <form class="form-container">
-            <input type="text" placeholder="Input Your Search" name="name">
-            <button type="submit">Search</button>
+    <!--  -->
+    <div class="cart-checkout-box mb-widget">
+      <div class="coupon-area">
+        <form class="coupon">
+          <input type="text" name="coupon" placeholder="Coupon Code..." class="cart-page-input-text">
+          <input type="submit" value="Apply Coupon">
         </form>
+        <form class="cart-checkout">
+          <input type="submit" value="Update Cart">
+          <input type="submit" value="Proceed to Checkout">
+        </form>
+      </div>
     </div>
-    <!-- ===========Header Search=========== -->
 
-    <!-- ===========Header Cart=========== -->
-    <div class="cart-sidebar-area">
-        <div class="top-content">
-            <a href="index.html" class="logo">
-                <img src="./assets/images/logo/logo.png" alt="logo">
-            </a>
-            <span class="side-sidebar-close-btn"><i class="fas fa-times"></i></span>
+    <!--  -->
+    <div class="shiping-box mb-widget">
+      <div class="row">
+        <div class="col-md-6 col-12">
+          <div class="calculate-shiping">
+            <h5 class="title">Calculate Shipping</h5>
+            <form class="calculate-form">
+              <div class="outline-select w-100">
+                <select class="select-bar" style="display: none;">
+                  <option value="volvo">United Kingdom (UK)</option>
+                  <option value="saab">Bangladesh</option>
+                  <option value="saab">Pakisthan</option>
+                  <option value="saab">India</option>
+                  <option value="saab">Nepal</option>
+                </select>
+                <div class="nice-select select-bar" tabindex="0"><span class="current">United Kingdom (UK)</span>
+                  <ul class="list">
+                    <li data-value="volvo" class="option selected">United Kingdom (UK)</li>
+                    <li data-value="saab" class="option">Bangladesh</li>
+                    <li data-value="saab" class="option">Pakisthan</li>
+                    <li data-value="saab" class="option">India</li>
+                    <li data-value="saab" class="option">Nepal</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="outline-select shipping-select">
+                <select class="select-bar" style="display: none;">
+                  <option value="volvo">State/Country</option>
+                  <option value="saab">Dhaka</option>
+                  <option value="saab">Benkok</option>
+                  <option value="saab">Kolkata</option>
+                  <option value="saab">Kapasia</option>
+                </select>
+                <div class="nice-select select-bar" tabindex="0"><span class="current">State/Country</span>
+                  <ul class="list">
+                    <li data-value="volvo" class="option selected">State/Country</li>
+                    <li data-value="saab" class="option">Dhaka</li>
+                    <li data-value="saab" class="option">Benkok</li>
+                    <li data-value="saab" class="option">Kolkata</li>
+                    <li data-value="saab" class="option">Kapasia</li>
+                  </ul>
+                </div>
+              </div>
+              <input type="text" name="coupon" placeholder="Postcode/ZIP">
+              <button type="submit" class="custom-button"><span>Update Total</span></button>
+            </form>
+          </div>
         </div>
-        <div class="bottom-content">
-            <div class="cart-products">
-                <h4 class="title">Shopping cart</h4>
-                <div class="single-product-item">
-                    <div class="thumb">
-                        <img src="assets/images/shop/shop01.png" alt="shop">
-                    </div>
-                    <div class="content">
-                        <h4 class="title">Color Pencil</h4>
-                        <div class="price"><span class="pprice">$80.00</span> <del class="dprice">$120.00</del></div>
-                        <a href="#" class="remove-cart">Remove</a>
-                    </div>
-                </div>
-                <div class="single-product-item">
-                    <div class="thumb">
-                        <img src="assets/images/shop/shop02.png" alt="shop">
-                    </div>
-                    <div class="content">
-                        <h4 class="title">Water Pot</h4>
-                        <div class="price"><span class="pprice">$80.00</span> <del class="dprice">$120.00</del></div>
-                        <a href="#" class="remove-cart">Remove</a>
-                    </div>
-                </div>
-                <div class="single-product-item">
-                    <div class="thumb">
-                        <img src="assets/images/shop/shop03.png" alt="shop">
-                    </div>
-                    <div class="content">
-                        <h4 class="title">Art Paper</h4>
-                        <div class="price"><span class="pprice">$80.00</span> <del class="dprice">$120.00</del></div>
-                        <a href="#" class="remove-cart">Remove</a>
-                    </div>
-                </div>
-                <div class="single-product-item">
-                    <div class="thumb">
-                        <img src="assets/images/shop/shop04.png" alt="shop">
-                    </div>
-                    <div class="content">
-                        <h4 class="title">Stop Watch</h4>
-                        <div class="price"><span class="pprice">$80.00</span> <del class="dprice">$120.00</del></div>
-                        <a href="#" class="remove-cart">Remove</a>
-                    </div>
-                </div>
-                <div class="single-product-item">
-                    <div class="thumb">
-                        <img src="assets/images/shop/shop05.png" alt="shop">
-                    </div>
-                    <div class="content">
-                        <h4 class="title">Comics Book</h4>
-                        <div class="price"><span class="pprice">$80.00</span> <del class="dprice">$120.00</del></div>
-                        <a href="#" class="remove-cart">Remove</a>
-                    </div>
-                </div>
-                <div class="btn-wrapper text-center">
-                    <a href="#" class="custom-button"><span>Checkout</span></a>
-                </div>
-            </div>
+
+        <!--  -->
+        <div class="col-md-6 col-12">
+          <div class="cart-overview">
+            <h5 class="title">Cart Totals</h5>
+            <ul>
+              <li>
+                <span class="pull-left">Cart Subtotal</span>
+                <p class="pull-right">$ 0.00</p>
+              </li>
+              <li>
+                <span class="pull-left">Shipping and Handling</span>
+                <p class="pull-right">Free Shipping</p>
+              </li>
+              <li>
+                <span class="pull-left">Order Total</span>
+                <p class="pull-right">$ 2940.00</p>
+              </li>
+            </ul>
+          </div>
         </div>
+
+
+      </div>
     </div>
-    <!-- ===========Header Cart=========== -->
-
-    <!-- ==========Banner Section Starts Here========== -->
-    <section class="page-header bg_img" data-background="./assets/images/banner/page-header.jpg" style="background-image: url(&quot;./assets/images/banner/page-header.jpg&quot;);">
-        <div class="container">
-            <div class="page-header-content">
-                <h1 class="title">Our Product Page</h1>
-                <ul class="breadcrumb">
-                    <li>
-                        <a href="index.html">Home</a>
-                    </li>
-                    <li>
-                        <a href="#">Pages</a>
-                    </li>
-                    <li>
-                        Shop
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </section>
-    <!-- ==========Banner Section Ends Here========== -->
-
-
-    <!-- ==========Shop Section Starts Here========== -->
-    <div class="shop-cart padding-top padding-bottom">
-        <div class="container">
-            <div class="cart-top mb-widget">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Product</th>
-                            <th>Price</th>
-                            <th>Quantity</th>
-                            <th>Total</th>
-                            <th>Edit</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="product-item-2">
-                                <div class="p-thumb">
-                                    <a href="#"><img src="assets/images/cart/01.png" alt="product"></a>
-                                </div>
-                                <div class="p-content">
-                                    <a href="#">Baby Bag</a>
-                                </div>
-                            </td>
-                            <td>$250.00</td>
-                            <td>
-                                <div class="cart-plus-minus"><div class="dec qtybutton">-</div>
-                                    <div class="dec qtybutton">-</div>
-                                    <input class="cart-plus-minus-box" type="text" name="qtybutton" value="2">
-                                    <div class="inc qtybutton">+</div>
-                                <div class="inc qtybutton">+</div></div>
-                            </td>
-                            <td>$500.00</td>
-                            <td>
-                                <a href="#"><img src="assets/images/cart/del.png" alt="product"></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="product-item-2">
-                                <div class="p-thumb">
-                                    <a href="#"><img src="assets/images/cart/02.png" alt="product"></a>
-                                </div>
-                                <div class="p-content">
-                                    <a href="#">Baby Bag</a>
-                                </div>
-                            </td>
-                            <td>$250</td>
-                            <td>
-                                <div class="cart-plus-minus"><div class="dec qtybutton">-</div>
-                                    <div class="dec qtybutton">-</div>
-                                    <input class="cart-plus-minus-box" type="text" name="qtybutton" value="2">
-                                    <div class="inc qtybutton">+</div>
-                                <div class="inc qtybutton">+</div></div>
-                            </td>
-                            <td>$500</td>
-                            <td>
-                                <a href="#"><img src="assets/images/cart/del.png" alt="product"></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="product-item-2">
-                                <div class="p-thumb">
-                                    <a href="#"><img src="assets/images/cart/03.png" alt="product"></a>
-                                </div>
-                                <div class="p-content">
-                                    <a href="#">Baby Bag</a>
-                                </div>
-                            </td>
-                            <td>$50</td>
-                            <td>
-                                <div class="cart-plus-minus"><div class="dec qtybutton">-</div>
-                                    <div class="dec qtybutton">-</div>
-                                    <input class="cart-plus-minus-box" type="text" name="qtybutton" value="2">
-                                    <div class="inc qtybutton">+</div>
-                                <div class="inc qtybutton">+</div></div>
-                            </td>
-                            <td>$500</td>
-                            <td>
-                                <a href="#"><img src="assets/images/cart/del.png" alt="product"></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="product-item-2">
-                                <div class="p-thumb">
-                                    <a href="#"><img src="assets/images/cart/04.png" alt="product"></a>
-                                </div>
-                                <div class="p-content">
-                                    <a href="#">Baby Bag</a>
-                                </div>
-                            </td>
-                            <td>$100</td>
-                            <td>
-                                <div class="cart-plus-minus"><div class="dec qtybutton">-</div>
-                                    <div class="dec qtybutton">-</div>
-                                    <input class="cart-plus-minus-box" type="text" name="qtybutton" value="2">
-                                    <div class="inc qtybutton">+</div>
-                                <div class="inc qtybutton">+</div></div>
-                            </td>
-                            <td>$500</td>
-                            <td>
-                                <a href="#"><img src="assets/images/cart/del.png" alt="product"></a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="product-item-2">
-                                <div class="p-thumb">
-                                    <a href="#"><img src="assets/images/cart/05.png" alt="product"></a>
-                                </div>
-                                <div class="p-content">
-                                    <a href="#">Baby Bag</a>
-                                </div>
-                            </td>
-                            <td>$100</td>
-                            <td>
-                                <div class="cart-plus-minus"><div class="dec qtybutton">-</div>
-                                    <div class="dec qtybutton">-</div>
-                                    <input class="cart-plus-minus-box" type="text" name="qtybutton" value="2">
-                                    <div class="inc qtybutton">+</div>
-                                <div class="inc qtybutton">+</div></div>
-                            </td>
-                            <td>$400</td>
-                            <td>
-                                <a href="#"><img src="assets/images/cart/del.png" alt="product"></a>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="cart-checkout-box mb-widget">
-                <div class="coupon-area">
-                    <form class="coupon">
-                        <input type="text" name="coupon" placeholder="Coupon Code..." class="cart-page-input-text">
-                        <input type="submit" value="Apply Coupon">
-                    </form>
-                    <form class="cart-checkout">
-                        <input type="submit" value="Update Cart">
-                        <input type="submit" value="Proceed to Checkout">
-                    </form>
-                </div>
-            </div>
-            <div class="shiping-box mb-widget">
-                <div class="row">
-                    <div class="col-md-6 col-12">
-                        <div class="calculate-shiping">
-                            <h5 class="title">Calculate Shipping</h5>
-                            <form class="calculate-form">
-                                <div class="outline-select w-100">
-                                    <select class="select-bar" style="display: none;">
-                                        <option value="volvo">United Kingdom (UK)</option>
-                                        <option value="saab">Bangladesh</option>
-                                        <option value="saab">Pakisthan</option>
-                                        <option value="saab">India</option>
-                                        <option value="saab">Nepal</option>
-                                    </select><div class="nice-select select-bar" tabindex="0"><span class="current">United Kingdom (UK)</span><ul class="list"><li data-value="volvo" class="option selected">United Kingdom (UK)</li><li data-value="saab" class="option">Bangladesh</li><li data-value="saab" class="option">Pakisthan</li><li data-value="saab" class="option">India</li><li data-value="saab" class="option">Nepal</li></ul></div>
-                                </div>
-                                <div class="outline-select shipping-select">
-                                    <select class="select-bar" style="display: none;">
-                                        <option value="volvo">State/Country</option>
-                                        <option value="saab">Dhaka</option>
-                                        <option value="saab">Benkok</option>
-                                        <option value="saab">Kolkata</option>
-                                        <option value="saab">Kapasia</option>
-                                    </select><div class="nice-select select-bar" tabindex="0"><span class="current">State/Country</span><ul class="list"><li data-value="volvo" class="option selected">State/Country</li><li data-value="saab" class="option">Dhaka</li><li data-value="saab" class="option">Benkok</li><li data-value="saab" class="option">Kolkata</li><li data-value="saab" class="option">Kapasia</li></ul></div>
-                                </div>
-                                <input type="text" name="coupon" placeholder="Postcode/ZIP">
-                                <button type="submit" class="custom-button"><span>Update Total</span></button>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-12">
-                        <div class="cart-overview">
-                            <h5 class="title">Cart Totals</h5>
-                            <ul>
-                                <li>
-                                    <span class="pull-left">Cart Subtotal</span>
-                                    <p class="pull-right">$ 0.00</p>
-                                </li>
-                                <li>
-                                    <span class="pull-left">Shipping and Handling</span>
-                                    <p class="pull-right">Free Shipping</p>
-                                </li>
-                                <li>
-                                    <span class="pull-left">Order Total</span>
-                                    <p class="pull-right">$ 2940.00</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- ==========Shop Section Ends Here========== -->
-
-
+  </div>
+</div>
+<!-- ==========Shop Section Ends Here========== -->

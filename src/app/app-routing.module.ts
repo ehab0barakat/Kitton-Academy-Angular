@@ -8,15 +8,23 @@ import { AppComponent } from './app.component';
 import { GamesComponent } from './Components/Games/games/games.component';
 import { SingleGameComponent } from './Components/Games/single-game/single-game.component';
 import { HomeComponent } from './Components/home/home.component';
+import { ShopComponent } from './Components/shop/shop.component';
+import { ProductComponent } from './Components/product/product.component';
+import { CartComponent } from './Components/cart/cart.component';
 
 const routes: Routes = [
   {path : "home" , component: HomeComponent},
   {path : "games-archive" , component: GamesComponent},
-  {path : "single-game" , component: SingleGameComponent},  // gonna be changed >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+  {path : "single-game" , component: SingleGameComponent},
+  // 
   {path:'posts',component:PostsComponent},
   {path:'contact_us',component:ContactUsComponent},
   {path:'about_us',component:AboutUsComponent},
-  {path:'profile',component:ProfileComponent}
+  {path:'profile',component:ProfileComponent},
+  // 
+  {path:'cart',component:CartComponent},
+  {path:'shop',component:ShopComponent},
+  {path:'product',component:ProductComponent},
 ];
 
 @NgModule({
