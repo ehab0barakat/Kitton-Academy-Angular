@@ -6,6 +6,7 @@ import { HeaderComponent } from './Components/header/header.component';
 import { FooterComponent } from './Components/footer/footer.component';
 import { NotFoundComponent } from './Components/not-found/not-found.component';
 import { MainLayoutComponent } from './Components/main-layout/main-layout.component';
+import { ClassesComponent } from './Components/classes/classes.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { MainLayoutComponent } from './Components/main-layout/main-layout.compon
     HeaderComponent,
     FooterComponent,
     NotFoundComponent,
-    MainLayoutComponent
+    MainLayoutComponent,
+    ClassesComponent
   ],
   imports: [
     BrowserModule,
