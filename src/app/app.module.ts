@@ -19,6 +19,10 @@ import { HomeComponent } from './Components/home/home.component';
 import { CrudGameComponent } from './Components/Games/crud-game/crud-game.component';
 import { CrudEventComponent } from './Components/Events/crud-event/crud-event.component';
 import { ClassesComponent } from './Components/classes/classes.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
+
 
 @NgModule({
   declarations: [
@@ -43,7 +47,9 @@ import { ClassesComponent } from './Components/classes/classes.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
