@@ -8,20 +8,23 @@ import { classes } from '../Models/classes';
 })
 export class ClassesService {
   private httpOptions={};
-  constructor(private httpClass: HttpClient) {
+  constructor(private httpclient: HttpClient) {
     this.httpOptions={
       headers:new HttpHeaders({
         'Content-Type': 'application/json'
 
       })
     };
+
    }
+
+
    getAllclass():Observable<classes[]>{
-    return this.httpClass.get<classes[]>(`${environment.APIBaseURL}/classes`);
+    return this.httpclient.get<classes[]>(`${environment.APIBaseURL}/classes`);
 
   }
   getClassByID(claID:number):Observable<classes>{
-    return this.httpClass.get<classes>(`${environment.APIBaseURL}/classes/${claID}`);
+    return this.httpclient.get<classes>(`${environment.APIBaseURL}/classes/${claID}`);
   }
   // getclassesByCatID(catID:number):Observable<classes[]>{
   //   return this.httpClass.get<classes[]>(`${environment.APIBaseURL}/classes?catID=${catID}`);

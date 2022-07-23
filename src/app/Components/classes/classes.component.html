@@ -1,85 +1,106 @@
+<section class="page-header bg_img" data-background="./assets/images/banner/page-header.jpg" style="background-image: url(&quot;./assets/images/banner/page-header.jpg&quot;);">
+  <div class="container">
+      <div class="page-header-content">
+          <h1 class="title">Our Popular Classes</h1>
+          <ul class="breadcrumb">
+              <li>
+                  <a href="index.html">Home</a>
+              </li>
+              <li>
+                  Classes
+              </li>
+          </ul>
+      </div>
+  </div>
+</section>
+<!--  -->
 
-    <!-- ==========Class Section Starts Here========== -->
-    <div class="class-section padding-top padding-bottom pos-rel">
-        <div class="top-shape-center">
-            <img src="./assets/css/img/gallery1.png" alt="css">
-        </div>
-        <div class="bottom-shape-left">
-            <img src="./assets/css/img/bottom-shape.png" alt="css">
-        </div>
-        <div class="container">
-            <ul class="filter">
-                <li data-filter="*">Show All</li>
-                <li data-filter=".toddler">Toddler</li>
-                <li data-filter=".preschool">Preschool</li>
-                <li data-filter=".kinder">kindergarten</li>
-                <li data-filter=".programe">pre-k Program</li>
-                <li data-filter=".school">before/after school</li>
-            </ul>
-            <div class="class-wrapper" style="position: relative; height: 1502.13px;">
-                <div class="class-inner programe" style="position: absolute; left: 0px; top: 0px;" >
-                    <div class="class-item">
-                        <div class="class-thumb">
-                            <a href="class-single.html"><img src="./assets/images/class/class04.jpg" alt="class"></a>
-                        </div>
-                        <div class="class-content">
-                            <h5 class="title">
-                                <a href="class-single.html">Art And Color Management</a>
-                            </h5>
-                            <div class="class-meta">
-                                <div class="class-author">
-                                    <div class="thumb">
-                                        <a href="teacher-single.html"><img src="./assets/images/class/teacher02.jpg" alt="class"></a>
-                                    </div>
-                                    <div class="content">
-                                        <h6 class="subtitle"><a href="teacher-single.html">Joly Smith</a></h6>
-                                        <a href="teacher-single.html" class="info">View Profile</a>
-                                    </div>
-                                </div>
-                                <div class="cost-area">
-                                    <h6 class="subtitle">$12.96</h6>
-                                    <span class="info">Per Month</span>
-                                </div>
-                            </div>
-                            <div class="schedule-area">
-                                <div class="schedule-item">
-                                    <h6 class="sub-title">24 - 30</h6>
-                                    <span class="info">Class Size</span>
-                                </div>
-                                <div class="schedule-item">
-                                    <h6 class="sub-title">09:30 -12:00</h6>
-                                    <span class="info">Class Time</span>
-                                </div>
-                                <div class="schedule-item">
-                                    <h6 class="sub-title">06 - 08</h6>
-                                    <span class="info">Years Old</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+<!-- ==========Class Section Starts Here========== -->
+<div class="class-section padding-top padding-bottom pos-rel">
+  <div class="top-shape-center">
+    <img src="./assets/css/img/gallery1.png" alt="css" />
+  </div>
+  <div class="bottom-shape-left">
+    <img src="./assets/css/img/bottom-shape.png" alt="css" />
+  </div>
+  <div class="container">
+    <ul class="filter">
+      <li data-filter="*">Show All</li>
+      <li data-filter=".toddler">Toddler</li>
+      <li data-filter=".preschool">Preschool</li>
+      <li data-filter=".kinder">kindergarten</li>
+      <li data-filter=".programe">pre-k Program</li>
+      <li data-filter=".school">before/after school</li>
+    </ul>
+    <div class="class-wrapper" style="position: relative; height: 1502.13px">
+      <div
+        class="class-inner programe"
+        style="position: absolute; left: 0px; top: 0px"
+      >
+      <div class="row row-cols-4  " style="width: 1400px;">
+        <div class="class-item m-3 " *ngFor="let cla of classListOfCat">
+          <div class="class-thumb">
+            <a href="class-single.html"
+              ><img src="{{ cla.imgURL }}" alt="class"
+            /></a>
+          </div>
+          <div class="class-content">
+            <h5 class="title">
+              <a href="class-single.html">{{ cla.name }}</a>
+            </h5>
+            <div class="class-meta">
+              <div class="class-author">
+                <div class="thumb">
+                  <a href="teacher-single.html"
+                    ><img src="./assets/images/class/teacher02.jpg" alt="class"
+                  /></a>
                 </div>
+                <div class="content">
+                  <h6 class="subtitle">
+                    <a href="teacher-single.html">Joly Smith</a>
+                  </h6>
+                  <a href="teacher-single.html" class="info">View Profile</a>
+                </div>
+              </div>
+              <div class="cost-area">
+                <h6 class="subtitle">{{ cla.price }}</h6>
+                <span class="info">Per Month</span>
+              </div>
             </div>
-            <ul class="default-pagination">
-                <li>
-                    <a href="#"><i class="fas fa-angle-left"></i></a>
-                </li>
-                <li>
-                    <a href="#">01</a>
-                </li>
-                <li>
-                    <a href="#" class="active">02</a>
-                </li>
-                <li>
-                    <a href="#">03</a>
-                </li>
-                <li>
-                    <a href="#"><i class="fas fa-angle-right"></i></a>
-                </li>
-            </ul>
+            <div class="schedule-area">
+              <div class="schedule-item">
+                <h6 class="sub-title">24 - 30</h6>
+                <span class="info">Class Size</span>
+              </div>
+              <div class="schedule-item">
+                <h6 class="sub-title">09:30 -12:00</h6>
+                <span class="info">Class Time</span>
+              </div>
+              <div class="schedule-item">
+                <h6 class="sub-title">06 - 08</h6>
+                <span class="info">Years Old</span>
+              </div>
+            </div>
+          </div>
         </div>
-
-    <!-- ==========Class Section Ends Here========== -->
-
-
-
-
+      </div>
+    <ul class="default-pagination">
+      <li>
+        <a href="#"><i class="fas fa-angle-left"></i></a>
+      </li>
+      <li>
+        <a href="#">01</a>
+      </li>
+      <li>
+        <a href="#" class="active">02</a>
+      </li>
+      <li>
+        <a href="#">03</a>
+      </li>
+      <li>
+        <a href="#"><i class="fas fa-angle-right"></i></a>
+      </li>
+    </ul>
+  </div>
+    </div>
+<!-- ==========Class Section Ends Here========== -->
