@@ -18,7 +18,7 @@ import { EventsSingleComponent } from './Components/Events/events-single/events-
 import { HomeComponent } from './Components/home/home.component';
 import { CrudGameComponent } from './Components/Games/crud-game/crud-game.component';
 import { CrudEventComponent } from './Components/Events/crud-event/crud-event.component';
-
+import { ClassesComponent } from './Components/classes/classes.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +38,8 @@ import { CrudEventComponent } from './Components/Events/crud-event/crud-event.co
     CrudGameComponent,
     CrudEventComponent,
     NotFoundComponent,
-    MainLayoutComponent
+    MainLayoutComponent,
+    ClassesComponent
   ],
   imports: [
     BrowserModule,

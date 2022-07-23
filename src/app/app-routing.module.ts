@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { GamesComponent } from './Components/Games/games/games.component';
 import { SingleGameComponent } from './Components/Games/single-game/single-game.component';
 import { HomeComponent } from './Components/home/home.component';
+import { ClassesComponent } from './Components/classes/classes.component';
 import { MainLayoutComponent } from './Components/main-layout/main-layout.component';
 import { NotFoundComponent } from './Components/not-found/not-found.component';
 
@@ -21,10 +22,12 @@ const routes: Routes = [
   {path:'contact_us',component:ContactUsComponent},
   {path:'about_us',component:AboutUsComponent},
   {path:'profile',component:ProfileComponent},
+  {path:'classes',component:ClassesComponent},
 ]},
 
 {path:'**',component:NotFoundComponent},
 ]
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
