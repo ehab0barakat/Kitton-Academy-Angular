@@ -11,6 +11,8 @@ import { EventsSingleComponent } from './Components/Events/events-single/events-
 import { HomeComponent } from './Components/home/home.component';
 import { CrudGameComponent } from './Components/Games/crud-game/crud-game.component';
 import { CrudEventComponent } from './Components/Events/crud-event/crud-event.component';
+import { ShopComponent } from './Components/shop/shop.component';
+import { ProductComponent } from './Components/product/product.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { CrudEventComponent } from './Components/Events/crud-event/crud-event.co
     EventsSingleComponent,
     HomeComponent,
     CrudGameComponent,
-    CrudEventComponent
+    CrudEventComponent,
+    ShopComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
