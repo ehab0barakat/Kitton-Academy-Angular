@@ -8,7 +8,7 @@ import { HomeComponent } from './Components/home/home.component';
 const routes: Routes = [
   {path : "home" , component: HomeComponent},
   {path : "games-archive" , component: GamesComponent},
-  {path : "single-game" , component: SingleGameComponent},  // gonna be changed >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+  {path : "single-game" , component: SingleGameComponent}, // gonna be changed >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 ];
 
 @NgModule({
