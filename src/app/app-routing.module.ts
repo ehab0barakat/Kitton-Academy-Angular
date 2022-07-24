@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { GamesComponent } from './Components/Games/games/games.component';
 import { SingleGameComponent } from './Components/Games/single-game/single-game.component';
 import { HomeComponent } from './Components/home/home.component';
+import { ClassDetailsComponent } from './Components/class-details/class-details.component';
 import { ClassesComponent } from './Components/classes/classes.component';
 import { MainLayoutComponent } from './Components/main-layout/main-layout.component';
 import { NotFoundComponent } from './Components/not-found/not-found.component';
@@ -30,9 +31,14 @@ const routes: Routes = [
   {path:'shop',component:ShopComponent},
   {path:'product',component:ProductComponent},
   {path:'classes',component:ClassesComponent},
+
+  {path:'classes',component:ClassesComponent},
+  {path: 'classes/:id',component:ClassDetailsComponent}
 ]},
 {path:'**',component:NotFoundComponent},
 ]
+
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

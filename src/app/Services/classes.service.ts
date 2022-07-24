@@ -19,9 +19,19 @@ export class ClassesService {
   getAllclass(): Observable<classes[]> {
     return this.httpclient.get<classes[]>(`${environment.APIBaseURL}/classes`);
   }
-  getClassByID(claID: number): Observable<classes> {
-    return this.httpclient.get<classes>(
-      `${environment.APIBaseURL}/classes/${claID}`
-    );
+ 
+  getClassByID(cal:number):Observable<classes>{
+    return this.httpclient.get<classes>(`${environment.APIBaseURL}/classes/${cal}`);
   }
+
+  // getclassesByCatID(catID:number):Observable<classes[]>{
+  //   return this.httpClass.get<classes[]>(`${environment.APIBaseURL}/classes?catID=${catID}`);
+  // }
+
+  // addProduct(newPrd:classes):Observable<classes>{
+  //   return this.httpClass.post<classes>(`${environment.APIBaseURL}/classes`,
+  //                                             JSON.stringify(newPrd),
+  //                                             this.httpOptions)
+
+  // }
 }

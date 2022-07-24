@@ -13,7 +13,7 @@ export class ClassesComponent implements OnInit {
   // classList:classes[];
   classListOfCat:classes[]=[];
 //  @Input() receivedCatID:number = 0;
-
+currentPrdID:number =0;
   constructor( private router:Router,
     private classService:ClassesService) {
       // this.classList=[
@@ -36,6 +36,10 @@ export class ClassesComponent implements OnInit {
   // this.classService.getclassByCatID(this.receivedCatID).subscribe(classList=>{
   //   this.classListOfCat=classList;
   // })
+  this.classService.getClassByID(this.currentPrdID).subscribe(response=>{
+    // this.classListOfCat=response;
+    console.log(response);
+  });
 
   }
 
@@ -46,7 +50,6 @@ export class ClassesComponent implements OnInit {
     });
 
 
-  }
   // openClassDetails(calID:number){
 
   //   this.router.navigate(['classes',calID]);
@@ -55,5 +58,5 @@ export class ClassesComponent implements OnInit {
 
 }
 
-
+}
 
