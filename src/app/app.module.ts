@@ -4,6 +4,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './Components/header/header.component';
 import { FooterComponent } from './Components/footer/footer.component';
+import { NotFoundComponent } from './Components/not-found/not-found.component';
+import { MainLayoutComponent } from './Components/main-layout/main-layout.component';
+import { ClassesComponent } from './Components/classes/classes.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ClassDetailsComponent } from './Components/class-details/class-details.component';
 
 import { ContactUsComponent } from './Components/contact-us/contact-us.component';
 import { AboutUsComponent } from './Components/about-us/about-us.component';
@@ -19,7 +24,7 @@ import { HomeComponent } from './Components/home/home.component';
 import { CrudGameComponent } from './Components/Games/crud-game/crud-game.component';
 import { CrudEventComponent } from './Components/Events/crud-event/crud-event.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+
 
 
 
@@ -39,7 +44,11 @@ import { HttpClientModule } from '@angular/common/http';
     EventsSingleComponent,
     HomeComponent,
     CrudGameComponent,
-    CrudEventComponent
+    CrudEventComponent,
+    NotFoundComponent,
+    MainLayoutComponent,
+    ClassesComponent,
+    ClassDetailsComponent
   ],
   imports: [
     BrowserModule,
