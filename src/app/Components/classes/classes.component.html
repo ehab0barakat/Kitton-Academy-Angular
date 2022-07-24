@@ -23,7 +23,8 @@
       <div class="row row-cols-4  " style="width: 1400px;">
         <div class="class-item m-3 " *ngFor="let cla of classListOfCat">
           <div class="class-thumb">
-            <a href="class-single.html"
+<!-- <li> -->
+            <a  routerLink="/classes/{{ cla.id }}"
               ><img src="{{ cla.imgURL }}" alt="class"
             /></a>
           </div>

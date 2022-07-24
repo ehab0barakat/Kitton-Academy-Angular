@@ -23,9 +23,11 @@ export class ClassesService {
     return this.httpclient.get<classes[]>(`${environment.APIBaseURL}/classes`);
 
   }
-  getClassByID(claID:number):Observable<classes>{
-    return this.httpclient.get<classes>(`${environment.APIBaseURL}/classes/${claID}`);
+ 
+  getClassByID(cal:number):Observable<classes>{
+    return this.httpclient.get<classes>(`${environment.APIBaseURL}/classes/${cal}`);
   }
+
   // getclassesByCatID(catID:number):Observable<classes[]>{
   //   return this.httpClass.get<classes[]>(`${environment.APIBaseURL}/classes?catID=${catID}`);
   // }
