@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { observable, Observable } from 'rxjs';
 import { Posts } from 'src/app/Models/posts';
+import { environment } from 'src/environments/environment';
 
 
 
@@ -12,6 +13,14 @@ export class PostsApiService {
 //  teacherPosts:Posts[]=[];
 
   constructor(private httpclient: HttpClient) { }
-}
 
 // to get all posts
+  getAllPosts():Observable<Posts[]>{
+    return  this.httpclient.get<Posts[]>(`${environment.APIBaseURL}/posts`)
+ 
+  }
+}
+
+
+
+
