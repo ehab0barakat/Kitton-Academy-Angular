@@ -14,6 +14,12 @@ import { NotFoundComponent } from './Components/not-found/not-found.component';
 import { ShopComponent } from './Components/shop/shop.component';
 import { ProductComponent } from './Components/product/product.component';
 import { CartComponent } from './Components/cart/cart.component';
+import { SignInComponent } from './Components/sign-in/sign-in.component';
+import { SignUpComponent } from './Components/sign-up/sign-up.component';
+import { SingleTeacherComponent } from './Components/single-teacher/single-teacher.component';
+import { TeachersComponent } from './Components/teachers/teachers.component';
+import { FormTeacherComponent } from './Components/form-teacher/form-teacher.component';
+
 
 const routes: Routes = [
   {path: '',component:MainLayoutComponent,children:[
@@ -30,6 +36,11 @@ const routes: Routes = [
   {path:'shop',component:ShopComponent},
   {path:'product',component:ProductComponent},
   {path:'classes',component:ClassesComponent},
+  {path : "teachers" , component:TeachersComponent},
+  {path : "single-teacher" , component:SingleTeacherComponent},
+  {path : "sign-in" , component:SignInComponent},
+  {path : "sign-up" , component:SignUpComponent},
+  {path : "form-teacher" , component:FormTeacherComponent},
 ]},
 {path:'**',component:NotFoundComponent},
 ]

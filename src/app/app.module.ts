@@ -24,6 +24,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProductComponent } from './Components/product/product.component';
 import { ShopComponent } from './Components/shop/shop.component';
 import { ClassDetailsComponent } from './Components/class-details/class-details.component';
+import { TeachersComponent } from './Components/teachers/teachers.component';
+import { SingleTeacherComponent } from './Components/single-teacher/single-teacher.component';
+import { SignInComponent } from './Components/sign-in/sign-in.component';
+import { SignUpComponent } from './Components/sign-up/sign-up.component';
+import { FormTeacherComponent } from './Components/form-teacher/form-teacher.component';
+import { PaymentComponent } from './Components/payment/payment.component';
+
 
 @NgModule({
   declarations: [
@@ -47,7 +54,13 @@ import { ClassDetailsComponent } from './Components/class-details/class-details.
     ClassesComponent,
     ShopComponent,
     ProductComponent,
-    ClassDetailsComponent
+    ClassDetailsComponent,
+    TeachersComponent,
+    SingleTeacherComponent,
+    SignInComponent,
+    SignUpComponent,
+    FormTeacherComponent,
+    PaymentComponent
   ],
   imports: [
     BrowserModule,
