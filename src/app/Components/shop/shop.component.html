@@ -1,5 +1,3 @@
-
-
 <!-- ==========Banner Section Starts Here========== -->
 <section class="page-header bg_img" data-background="./assets/images/banner/page-header.jpg"
   style="background-image: url(&quot;./assets/images/banner/page-header.jpg&quot;);">
@@ -24,7 +22,7 @@
 
 
 <!-- ==========Shop Section Starts Here========== -->
-<div class="shop-page padding-top padding-bottom">
+<div class="shop-page padding-top padding-bottom" >
   <div class="container">
     <div class="row mb--50">
       <div class="col-lg-8 col-xl-9 mb-50">
@@ -38,47 +36,48 @@
 
         <div class="shop-product-wrap grid row mb-30-none">
           <div class="col-xl-4 col-md-6">
-            <div class="shop-item">
-              <div class="product-thumb">
-                <img src="assets/images/shop/01.png" alt="shop">
-                <div class="product-action-link">
-                  <a class="view-modal" data-target="#quick_view"><i class="far fa-eye"></i></a>
-                  <a href="#"><i class="far fa-heart"></i></a>
-                  <a href="#"><i class="fas fa-cart-plus"></i></a>
-                  <a href="#"><i class="fas fa-sync-alt"></i></a>
+            <div class="row row-cols-2 m-5" style="width: 800px;">
+              <div class="shop-item" *ngFor="let Prod of prodListOfCat">
+                <div class="product-thumb">
+                  <img src="{{ Prod.ImgURL }}" alt="shop">
+                  <div class="product-action-link">
+                    <a class="view-modal" data-target="#quick_view"><i class="far fa-eye"></i></a>
+                    <a href="#"><i class="far fa-heart"></i></a>
+                    <a href="#"><i class="fas fa-cart-plus"></i></a>
+                    <a href="#"><i class="fas fa-sync-alt"></i></a>
+                  </div>
+                </div>
+                <div class="product-content">
+                  <h5 class="title"><a href="shop-single.html">{{ Prod.Name }}</a></h5>
+                  <p>
+                    <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i
+                      class="far fa-star"></i><i class="far fa-star"></i> <span>{{ Prod.Rate }}</span>
+                  </p>
+                  <h6 class="subtitle">{{ Prod.Price }}</h6>
                 </div>
               </div>
-              <div class="product-content">
-                <h5 class="title"><a href="shop-single.html">Baby Bags</a></h5>
-                <p>
-                  <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i
-                    class="far fa-star"></i><i class="far fa-star"></i> <span>(3 review)</span>
-                </p>
-                <h6 class="subtitle">$200</h6>
-              </div>
-            </div>
-            <div class="product-list-item">
-              <div class="product-thumb">
-                <img src="assets/images/shop/01.png" alt="shop">
-                <div class="product-action-link">
-                  <a class="view-modal" data-target="#quick_view"><i class="far fa-eye"></i></a>
-                  <a href="#"><i class="far fa-heart"></i></a>
-                  <a href="#"><i class="fas fa-cart-plus"></i></a>
-                  <a href="#"><i class="fas fa-sync-alt"></i></a>
+              <!--  -->
+              <div class="product-list-item" *ngFor="let Prod of prodListOfCat">
+                <div class="product-thumb">
+                  <img src="{{ Prod.ImgURL }}" alt="shop">
+                  <div class="product-action-link">
+                    <a class="view-modal" data-target="#quick_view"><i class="far fa-eye"></i></a>
+                    <a href="#"><i class="far fa-heart"></i></a>
+                    <a href="#"><i class="fas fa-cart-plus"></i></a>
+                    <a href="#"><i class="fas fa-sync-alt"></i></a>
+                  </div>
                 </div>
-              </div>
-              <div class="product-content">
-                <h5 class="title"><a href="shop-single.html">Baby Bags</a></h5>
-                <p>
-                  <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i
-                    class="far fa-star"></i><i class="far fa-star"></i> <span>(3 review)</span>
-                </p>
-                <h6 class="subtitle">$200</h6>
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                </p>
+                <div class="product-content">
+                  <h5 class="title"><a href="shop-single.html">{{ Prod.Name }}</a></h5>
+                  <p>
+                    <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i
+                      class="far fa-star"></i><i class="far fa-star"></i> <span>(3 review)</span>
+                  </p>
+                  <h6 class="subtitle">{{ Prod.Price }}</h6>
+                  <p>
+                    {{ Prod.Description }}
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -102,7 +101,7 @@
           </li>
         </ul>
       </div>
-<!--  -->
+      <!--  -->
 
       <div class="col-lg-4 col-xl-3 mb-50">
         <div class="single-sidebar">
@@ -115,7 +114,7 @@
             </div>
           </div>
 
-<!--  -->
+          <!--  -->
           <div class="widget widget-category">
             <div class="widget-header">
               <h5 class="title">Post Category</h5>
@@ -129,24 +128,24 @@
               </ul>
             </div>
           </div>
-<!--  -->
+          <!--  -->
           <div class="widget widget-product">
             <div class="widget-header">
               <h5 class="title">latest products</h5>
             </div>
-            <div class="widget-body">
+            <div class="widget-body" *ngFor="let Prod of prodListOfCat">
               <ul>
                 <li>
                   <div class="product-thumb">
-                    <a href="#"><img src="assets/images/shop/01.jpg" alt="shop"></a>
+                    <a href="#"><img src="{{ Prod.ImgURL }}" alt="shop"></a>
                   </div>
                   <div class="product-content">
-                    <h6><a href="shop-single.html">Baby Bags</a></h6>
+                    <h6><a href="shop-single.html">{{ Prod.Name }}</a></h6>
                     <p>
                       <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i
-                        class="far fa-star"></i><i class="far fa-star"></i> <span>(3 review)</span>
+                        class="far fa-star"></i><i class="far fa-star"></i> <span>{{ Prod.Rate }}</span>
                     </p>
-                    <h6 class="subtitle">$200</h6>
+                    <h6 class="subtitle">{{ Prod.Price }}</h6>
                   </div>
                 </li>
               </ul>
@@ -156,7 +155,7 @@
       </div>
     </div>
 
-<!--  -->
+    <!--  -->
     <div class="modal" id="quick_view">
       <div class="modal-dialog modal-lg modal-dialog-centered">
         <div class="modal-content">
@@ -167,7 +166,7 @@
                 <div class="col-lg-5 col-12">
                   <div class="popup-slide">
                     <div class="slider-for slick-initialized slick-slider"><button class="slick-prev slick-arrow"
-                        aria-label="Previous" type="button" style="">Previous</button>
+                        aria-label="Previous" type="button" >Previous</button>
                       <div class="slick-list draggable" style="height: 289px;">
                         <div class="slick-track"
                           style="opacity: 1; width: 5491px; transform: translate3d(-867px, 0px, 0px);">
@@ -175,13 +174,13 @@
                             style="width: 289px;" tabindex="-1">
                             <img src="assets/images/shop/09.jpg" alt="shop">
                           </div>
-                          </div>
+                        </div>
                       </div>
 
-                      <button class="slick-next slick-arrow" aria-label="Next" type="button" style="">Next</button>
+                      <button class="slick-next slick-arrow" aria-label="Next" type="button" >Next</button>
                     </div>
                     <div class="slider-nav slick-initialized slick-slider"><button class="slick-prev slick-arrow"
-                        aria-label="Previous" type="button" style="">Previous</button>
+                        aria-label="Previous" type="button" >Previous</button>
                       <div class="slick-list draggable">
                         <div class="slick-track"
                           style="opacity: 1; width: 1334px; transform: translate3d(-406px, 0px, 0px);">
@@ -192,21 +191,21 @@
                         </div>
                       </div>
 
-                      <button class="slick-next slick-arrow" aria-label="Next" type="button" style="">Next</button>
+                      <button class="slick-next slick-arrow" aria-label="Next" type="button">Next</button>
                     </div>
                   </div>
                 </div>
 
-<!--  -->
+                <!--  -->
                 <div class="col-lg-7">
-                  <div class="product-content">
-                    <h5 class="title"><a href="shop-single.html">Baby Bags</a></h5>
+                  <div class="product-content" *ngFor="let Prod of prodListOfCat">
+                    <h5 class="title"><a href="shop-single.html">{{ Prod.Name }}</a></h5>
                     <p>
                       <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i
-                        class="far fa-star"></i><i class="far fa-star"></i> <span>(3 review)</span>
+                        class="far fa-star"></i><i class="far fa-star"></i> <span>{{ Prod.Rate }}</span>
                     </p>
                     <h6>
-                      $200
+                      {{ Prod.Price }}
                     </h6>
                     <p>
                       Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
