@@ -31,101 +31,58 @@
             <div class="col-md-6 col-12">
               <div class="product-single-thumb o">
                 <div class="slider-for slick-initialized slick-slider"><button class="slick-prev slick-arrow"
-                    aria-label="Previous" type="button" style="">Previous</button>
-                  <div class="slick-list draggable" style="height: 390px;">
+                    aria-label="Previous" type="button">Previous</button>
+                  <div class="slick-list draggable" *ngFor="let Prod of prodListOfCat" style="height: 390px;">
                     <div class="slick-track"
                       style="opacity: 1; width: 7714px; transform: translate3d(-2842px, 0px, 0px);">
                       <div class="thumb slick-slide slick-cloned" data-slick-index="-1" id="" aria-hidden="true"
                         style="width: 406px;" tabindex="-1">
-                        <img id="" src="assets/images/shop/11.png" alt="shop">
+                        <img id="" src="{{ Prod.ImgURL }}" alt="shop">
                       </div>
-                     
+
                     </div>
                   </div>
-
-
-                  <button class="slick-next slick-arrow" aria-label="Next" type="button" style="">Next</button>
+                  <button class="slick-next slick-arrow" aria-label="Next" type="button">Next</button>
                 </div>
                 <div class="slider-nav slick-initialized slick-slider"><button class="slick-prev slick-arrow"
-                    aria-label="Previous" type="button" style="">Previous</button>
-                  <div class="slick-list draggable">
+                    aria-label="Previous" type="button">Previous</button>
+                  <div class="slick-list draggable" *ngFor="let Prod of prodListOfCat">
                     <div class="slick-track"
                       style="opacity: 1; width: 1886px; transform: translate3d(-902px, 0px, 0px); transition: transform 500ms ease 0s;">
                       <div class="thumb slick-slide slick-cloned" data-slick-index="-5" id="" aria-hidden="true"
                         style="width: 80px;" tabindex="-1">
-                        <img src="assets/images/shop/10.png" alt="shop">
+                        <img src="{{ Prod.ImgURL }}" alt="shop">
                       </div>
                     </div>
                   </div>
 
-                  <button class="slick-next slick-arrow" aria-label="Next" type="button" style="">Next</button>
+                  <button class="slick-next slick-arrow" aria-label="Next" type="button">Next</button>
                 </div>
               </div>
             </div>
 
             <!-- card -->
-            <div class="col-md-6 col-12">
-              <div class="product-single-content">
-                <h5 class="title">Baby Bags</h5>
+            <!-- <div class="col-md-6 col-12" >
+              <div class="product-single-content" >
+                <h5 class="title">{{ Prod.Name }}</h5>
                 <p class="rating">
                   <i class="far fa-star"></i>
                   <i class="far fa-star"></i>
                   <i class="far fa-star"></i>
                   <i class="far fa-star"></i>
                   <i class="far fa-star"></i>
-                  (3 review)
+                  {{ Prod.Rate }}
                 </p>
                 <h5 class="amount">
-                  $ 340.00
+                  {{ Prod.Price }}
                 </h5>
                 <h5 class="subtitle">
                   Product Description
                 </h5>
                 <p class="info">
-                  Energistia an deliver atactica metrcs after avsionary Apropria trnsition
-                  enterpris an sources applications emerging psd template communities.
+                  {{ Prod.Description }}
                 </p>
-                <form class="size-form">
-                  <div class="select-product">
-                    <select class="select-bar" style="display: none;">
-                      <option>Select Size</option>
-                      <option>SM</option>
-                      <option>MD</option>
-                      <option>LG</option>
-                      <option>XL</option>
-                      <option>XXL</option>
-                    </select>
-                    <div class="nice-select select-bar" tabindex="0"><span class="current">Select Size</span>
-                      <ul class="list">
-                        <li data-value="Select Size" class="option selected">Select Size</li>
-                        <li data-value="SM" class="option">SM</li>
-                        <li data-value="MD" class="option">MD</li>
-                        <li data-value="LG" class="option">LG</li>
-                        <li data-value="XL" class="option">XL</li>
-                        <li data-value="XXL" class="option">XXL</li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="select-product">
-                    <select class="select-bar" style="display: none;">
-                      <option>Select Color</option>
-                      <option>Pink</option>
-                      <option>Ash</option>
-                      <option>Red</option>
-                      <option>White</option>
-                      <option>Blue</option>
-                    </select>
-                    <div class="nice-select select-bar" tabindex="0"><span class="current">Select Color</span>
-                      <ul class="list">
-                        <li data-value="Select Color" class="option selected">Select Color</li>
-                        <li data-value="Pink" class="option">Pink</li>
-                        <li data-value="Ash" class="option">Ash</li>
-                        <li data-value="Red" class="option">Red</li>
-                        <li data-value="White" class="option">White</li>
-                        <li data-value="Blue" class="option">Blue</li>
-                      </ul>
-                    </div>
-                  </div>
+                <form class="size-form">                              
                   <div class="cart-plus-minus">
                     <div class="dec qtybutton">-</div>
                     <div class="dec qtybutton">-</div>
@@ -140,6 +97,7 @@
                 </form>
               </div>
             </div>
+             -->
           </div>
         </div>
 
@@ -225,16 +183,12 @@
                 </div>
               </div>
             </div>
-            <div class="description">
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                deserunt mollit anim id est laborum.</p>
+
+            <!--  -->
+            <div class="description" *ngFor="let Prod of prodListOfCat">
               <div class="rev-item">
                 <div class="rev-thumb">
-                  <img src="assets/images/shop/rev.jpg" alt="shop">
+                  <img src="" alt="shop">
                 </div>
                 <div class="rev-content">
                   <ul>
@@ -247,18 +201,7 @@
                     <li>
                       Pellentesque aliquet, sem eget laoreet ultrices.
                     </li>
-                    <li>
-                      Nulla tellus mi, vulputate adipiscing cursus eu, suscipit id nulla.
-                    </li>
-                    <li>
-                      Donec a neque libero.
-                    </li>
-                    <li>
-                      Pellentesque aliquet, sem eget laoreet ultrices.
-                    </li>
-                    <li>
-                      Morbi ornare lectus quis justo gravida semper..
-                    </li>
+
                   </ul>
                 </div>
               </div>
@@ -295,32 +238,34 @@
               <ul>
                 <li>
                   <a href="#"><span><i class="fas fa-angle-double-right"></i>Themeforest</span><span>05</span></a>
-                </li>              
+                </li>
               </ul>
             </div>
           </div>
 
           <!--  latest -->
-          <div class="widget widget-product">
-            <div class="widget-header">
-              <h5 class="title">latest products</h5>
-            </div>
-            <div class="widget-body">
-              <ul>
-                <li>
-                  <div class="product-thumb">
-                    <a href="shop-single.html"><img src="assets/images/shop/01.jpg" alt="shop"></a>
-                  </div>
-                  <div class="product-content">
-                    <h6><a href="shop-single.html">Baby Bags</a></h6>
-                    <p>
-                      <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i
-                        class="far fa-star"></i><i class="far fa-star"></i> <span>(3 review)</span>
-                    </p>
-                    <h6 class="subtitle">$200</h6>
-                  </div>
-                </li>                
-              </ul>
+          <div class="widget-body">
+            <div class="widget widget-product">
+              <div class="widget-header">
+                <h5 class="title">latest products</h5>
+              </div>
+              <div class="row" *ngFor="let Prod of prodListOfCat">
+                <ul>
+                  <li>
+                    <div class="product-thumb">
+                      <a href="shop-single.html"><img src="{{ Prod.ImgURL }}" alt="shop" style="width: 80px;"></a>
+                    </div>
+                    <div class="product-content">
+                      <h6><a href="shop-single.html">{{ Prod.Name }}</a></h6>
+                      <p>
+                        <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i
+                          class="far fa-star"></i><i class="far fa-star"></i> <span>{{ Prod.Rate }}</span>
+                      </p>
+                      <h6 class="subtitle">{{ Prod.Price }}</h6>
+                    </div>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
 
@@ -343,7 +288,7 @@
                   <div class="popup-slide">
 
                     <div class="slider-for slick-initialized slick-slider"><button class="slick-prev slick-arrow"
-                        aria-label="Previous" type="button" style="">Previous</button>
+                        aria-label="Previous" type="button">Previous</button>
                       <div class="slick-list draggable" style="height: 289px; overflow: hidden;">
                         <div class="slick-track"
                           style="opacity: 1; width: 5491px; transform: translate3d(-2023px, 0px, 0px); transition: transform 500ms ease 0s;">
@@ -351,10 +296,10 @@
                             style="width: 289px;" tabindex="-1">
                             <img src="assets/images/shop/09.jpg" alt="shop">
                           </div>
-                     
+
                         </div>
                       </div>
-                      <button class="slick-next slick-arrow" aria-label="Next" type="button" style="">Next</button>
+                      <button class="slick-next slick-arrow" aria-label="Next" type="button">Next</button>
                     </div>
 
                   </div>
@@ -400,6 +345,6 @@
       </div>
     </div>
 
-    
+
   </div>
 </div>

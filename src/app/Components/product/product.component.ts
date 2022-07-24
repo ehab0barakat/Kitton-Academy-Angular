@@ -17,12 +17,19 @@ export class ProductComponent implements OnInit {
   currentPrdID:number =0;
   currentIndex:number = 0;
 
+  prodListOfCat:IProduct[]=[];
   constructor(private prodService: ProductsService,
               private router: Router,
               private activatedRoute: ActivatedRoute,
               private location:Location) {}
 
   ngOnInit(): void {
+
+    this.prodService.getAllProducts().subscribe(response=>{
+      this.prodListOfCat=response;
+      console.log(this.prodListOfCat);
+    });
+    
     // this.activatedRoute.paramMap.subscribe(paramMap =>{
     //   this.currentPrdID=(paramMap.get('pid'))?Number(paramMap.get('pid')):0;
     //   let foundedPrd= this.prodService.getProductByID(this.currentPrdID);

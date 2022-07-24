@@ -9,10 +9,14 @@ import { ProductsService } from 'src/app/Services/products.service';
   styleUrls: ['./shop.component.css']
 })
 export class ShopComponent implements OnInit {
+  [x: string]: any;
 
   prodListOfCat:IProduct[]=[];
+  prod:IProduct | undefined=undefined;
 
-  constructor(private prodService:ProductsService) { }
+
+  constructor(private prodService:ProductsService,
+               private router:Router,) { }
 
   ngOnInit(): void {
     this.prodService.getAllProducts().subscribe(response=>{
@@ -22,4 +26,8 @@ export class ShopComponent implements OnInit {
 
   }
 
+  openProductDetails(prodID:number){
+    this.router.navigate(['Products',prodID]);
+
+  }
 }

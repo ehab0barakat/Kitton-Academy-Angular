@@ -39,7 +39,8 @@
             <div class="row row-cols-2 m-5" style="width: 800px;">
               <div class="shop-item" *ngFor="let Prod of prodListOfCat">
                 <div class="product-thumb">
-                  <img src="{{ Prod.ImgURL }}" alt="shop">
+                  <img src="{{ Prod.ImgURL }}" alt="shop" >
+                  <!-- (click)="openProductDetails(prod.id)" -->
                   <div class="product-action-link">
                     <a class="view-modal" data-target="#quick_view"><i class="far fa-eye"></i></a>
                     <a href="#"><i class="far fa-heart"></i></a>
