@@ -32,42 +32,44 @@
                     </div>
                 </div>
             </div>
-            <div class="row justify-content-center mb-30-none">
-                <div class="col-lg-3 col-sm-6">
+            <div *ngIf="teachers" class="row justify-content-center mb-30-none">
+                <div  *ngFor="let teacher of teachers" class="col-lg-3 col-sm-6">
                     <div class="teacher-item-2">
                         <div class="teacher-thumb">
                             <div class="thumb">
-                                <a href="teacher-single.html">
-                                    <img src="./assets/images/teacher/teacher05.jpg" alt="teacher">
+                                <a [routerLink]="['/single-teacher', teacher.id]">
+                                    <img [src]="teacher.imgurl" alt="teacher">
                                 </a>
                             </div>
                             <div class="content">
-                                <h5 class="title"><a href="teacher-single.html">Jason Kovalsky</a></h5>
-                                <span>Spanish Teacher</span>
+                                <h5 class="title">
+                                  <a [routerLink]="['/single-teacher', teacher.id]">{{teacher.title}}</a></h5>
+                                <span>{{teacher.specialization}}</span>
                             </div>
                         </div>
                         <div class="teacher-content">
                             <ul class="teacher-social justify-content-center">
                                 <li>
-                                    <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                                    <a [href]="teacher.faceurl" class="facebook"><i class="fab fa-facebook-f"></i></a>
                                 </li>
                                 <li>
-                                    <a href="#" class="google"><i class="fab fa-google-plus-g"></i></a>
+                                    <a [href]="teacher.googleurl" class="google"><i class="fab fa-google-plus-g"></i></a>
                                 </li>
                                 <li>
-                                    <a href="#" class="dribble"><i class="fab fa-dribbble"></i></a>
+                                    <a [href]="teacher.dribbleurl" class="dribble"><i class="fab fa-dribbble"></i></a>
                                 </li>
                                 <li>
-                                    <a href="#" class="vimeo"><i class="fab fa-vimeo-v"></i></a>
+                                    <a [href]="teacher.vimeourl" class="vimeo"><i class="fab fa-vimeo-v"></i></a>
                                 </li>
                                 <li>
-                                    <a href="#" class="pinterest"><i class="fab fa-pinterest-p"></i></a>
+                                    <a [href]="teacher.pinteresturl" class="pinterest"><i class="fab fa-pinterest-p"></i></a>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-sm-6">
+
+                <!-- <div class="col-lg-3 col-sm-6">
                     <div class="teacher-item-2">
                         <div class="teacher-thumb">
                             <div class="thumb">
@@ -168,7 +170,7 @@
                             </ul>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
@@ -205,41 +207,55 @@
                 </div>
             </div>
             <div class="row mb-30-none justify-content-center">
-                <div class="col-lg-6">
+                <div class="col-lg-6" *ngFor="let teacher of teachers" >
                     <div class="teacher-item">
                         <div class="teacher-inner">
                             <div class="teacher-thumb">
                                 <div class="thumb-inner">
-                                    <a href="teacher-single.html"><img src="./assets/images/teacher/teacher01.jpg" alt="teacher"></a>
+                                    <a [routerLink]="['/single-teacher', teacher.id]"><img [src]="teacher.imgurl" alt="teacher"></a>
                                 </div>
                             </div>
                             <div class="teacher-content">
-                                <h6 class="title"><a href="teacher-single.html">Alison Tylor</a></h6>
-                                <span class="info">Spanish Teacher</span>
-                                <p>Samet consectetuer apiscing elitsed diam nonumy nibh euismod nciduns awesome team
-                                    mumber</p>
+                                <h6 class="title"><a [routerLink]="['/single-teacher', teacher.id]">Alison Tylor</a></h6>
+                                <span class="info">{{teacher.specialization}}</span>
+                                <p>{{teacher.description}}</p>
                                 <ul class="teacher-social">
-                                    <li>
-                                        <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                                    <!-- <li>
+                                        <a [href]="teacher.faceurl" class="facebook"><i class="fab fa-facebook-f"></i></a>
                                     </li>
                                     <li>
-                                        <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
+                                        <a [href]="teacher.googleurl" class="twitter"><i class="fab fa-twitter"></i></a>
                                     </li>
                                     <li>
-                                        <a href="#" class="pinterest"><i class="fab fa-pinterest-p"></i></a>
+                                        <a [href]="teacher.dribbleurl" class="pinterest"><i class="fab fa-pinterest-p"></i></a>
                                     </li>
                                     <li>
-                                        <a href="#" class="vimeo"><i class="fab fa-vimeo-v"></i></a>
+                                        <a [href]="teacher.vimeourl" class="vimeo"><i class="fab fa-vimeo-v"></i></a>
                                     </li>
                                     <li>
-                                        <a href="#" class="behance"><i class="fab fa-behance"></i></a>
+                                        <a [href]="teacher.pinteresturl" class="behance"><i class="fab fa-behance"></i></a>
+                                    </li> -->
+                                    <li>
+                                        <a [href]="teacher.faceurl" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                                    </li>
+                                    <li>
+                                        <a [href]="teacher.googleurl" class="google"><i class="fab fa-google-plus-g"></i></a>
+                                    </li>
+                                    <li>
+                                        <a [href]="teacher.dribbleurl" class="dribble"><i class="fab fa-dribbble"></i></a>
+                                    </li>
+                                    <li>
+                                        <a [href]="teacher.vimeourl" class="vimeo"><i class="fab fa-vimeo-v"></i></a>
+                                    </li>
+                                    <li>
+                                        <a [href]="teacher.pinteresturl" class="pinterest"><i class="fab fa-pinterest-p"></i></a>
                                     </li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6">
+                <!-- <div class="col-lg-6">
                     <div class="teacher-item">
                         <div class="teacher-inner">
                             <div class="teacher-thumb">
@@ -340,7 +356,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>

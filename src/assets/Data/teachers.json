@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "title": "Jason Kovalsky",
+    "specialization": "Spanish Teacher",
+    "description":"Samet consectetuer apiscing elitsed diam nonumy nibh euismod nciduns awesome team mumber",
+    "imgurl": "./assets/images/teacher/teacher05.jpg",
+    "faceurl": "faceurl 1",
+    "googleurl":"google 1",
+    "dribbleurl": "dribble 1",
+    "vimeourl":"vimeo1",
+    "pinteresturl":"pinterest1"
+  },
+  {
+    "id": 2,
+    "title": "Bangile Yusha",
+    "specialization": "Spanish Teacher",
+    "description":"Samet consectetuer apiscing elitsed diam nonumy nibh euismod nciduns awesome team mumber",
+    "imgurl": "./assets/images/teacher/teacher06.jpg",
+    "faceurl": "faceurl 2",
+    "googleurl":"google 2",
+    "dribbleurl": "dribble 2",
+    "pinteresturl":"pinterest2"
+  },
+  {
+    "id": 3,
+    "title": "Willium Kovalsky",
+    "specialization": "Spanish Teacher",
+    "description":"Samet consectetuer apiscing elitsed diam nonumy nibh euismod nciduns awesome team mumber",
+    "imgurl": "./assets/images/teacher/teacher07.jpg",
+    "faceurl": "faceurl 3",
+    "googleurl":"google 3",
+    "dribbleurl": "dribble 3",
+    "pinteresturl":"pinterest3"
+  },
+  {
+    "id": 4,
+    "title": "Bini Zaara",
+    "specialization": "Spanish Teacher",
+    "description":"Samet consectetuer apiscing elitsed diam nonumy nibh euismod nciduns awesome team mumber",
+    "imgurl": "./assets/images/teacher/teacher08.jpg",
+    "faceurl": "faceurl 4",
+    "googleurl":"google 4",
+    "dribbleurl": "dribble 4",
+    "pinteresturl":"pinterest4"
+  }
+]

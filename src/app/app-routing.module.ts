@@ -37,7 +37,7 @@ const routes: Routes = [
   {path:'product',component:ProductComponent},
   {path:'classes',component:ClassesComponent},
   {path : "teachers" , component:TeachersComponent},
-  {path : "single-teacher" , component:SingleTeacherComponent},
+  {path : "single-teacher/:id" , component:SingleTeacherComponent},
   {path : "sign-in" , component:SignInComponent},
   {path : "sign-up" , component:SignUpComponent},
   {path : "form-teacher" , component:FormTeacherComponent},
