@@ -15,6 +15,7 @@ import { NotFoundComponent } from './Components/not-found/not-found.component';
 import { ShopComponent } from './Components/shop/shop.component';
 import { ProductComponent } from './Components/product_Details/product.component';
 import { CartComponent } from './Components/cart/cart.component';
+import { AddProductComponent } from './Components/Admin/add-product/add-product.component';
 
 const routes: Routes = [
   {path: '',component:MainLayoutComponent,children:[
@@ -28,9 +29,11 @@ const routes: Routes = [
   {path:'profile',component:ProfileComponent},
   {path:'classes',component:ClassesComponent},
   {path:'cart',component:CartComponent},
+  {path:'cart/:id',component:CartComponent},
   {path:'shop',component:ShopComponent},
   {path:'product',component:ProductComponent},
   {path:'product/:id',component:ProductComponent},
+  {path: 'NewProduct',component:AddProductComponent},
   {path:'classes',component:ClassesComponent},
   {path: 'classes/:id',component:ClassDetailsComponent}
 ]},

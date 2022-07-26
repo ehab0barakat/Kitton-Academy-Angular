@@ -20,6 +20,12 @@ export class ProductsComponent implements OnInit {
   constructor(private prodService: ProductsService, private router: Router) {}
 
   ngOnChanges(): void {
+
+    this.prodService.getProductsByCatID(this.receivedID).subscribe((response) => {
+      this.prodListOfCat = response;
+      console.log(response);
+    });
+     // 
     this.prodService.getProductByID(this.currentPrdID).subscribe((response) => {
       console.log(response);
     });
@@ -29,24 +35,10 @@ export class ProductsComponent implements OnInit {
       this.prodListOfCat = response;
       console.log(this.prodListOfCat);
     });
-
-    // this.prodService.getAllCategories().subscribe((response) => {
-    //   this.CategoryProducts = response;
-    //   console.log(this.CategoryProducts);
-    // });
   }
 
   openProductDetails(prodID: number) {
     this.router.navigate(['Products', prodID]);
   }
 
-  // private getprodCat() {
-  //   if (this.receivedID == 0) {
-  //     this.prodListOfCat = Array.from(this.productList);
-  //     return;
-  //   }
-  //   this.prodCat = this.productList.filter(
-  //     (prod) => prod.CateogryID == this.receivedID
-  //   );
-  // }
 }

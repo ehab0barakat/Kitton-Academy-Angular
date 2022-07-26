@@ -36,7 +36,6 @@ export class ProductsService {
                                               JSON.stringify(newProd),
                                               this.httpOptions)                                       
   }
-
   // searchProductByName(prodName:string):IProduct|undefined{
   //   return this.prdList.find(prod=>prod.name==prodName);
   // }

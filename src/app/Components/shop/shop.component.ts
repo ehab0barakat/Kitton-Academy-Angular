@@ -12,10 +12,18 @@ export class ShopComponent implements OnInit {
 
   selectedID: number = 0;
   CategoryProducts: Icategory[] = [];
-  @ViewChild(ProductsComponent) productsRef!: ProductsComponent;
   
+  @ViewChild(ProductsComponent) productsRef!: ProductsComponent;  
   constructor(private CatService : CategoriesService) {}
 
   ngOnInit(): void {
+    this.CatService.getAllCategories().subscribe((response) => {
+      this.CategoryProducts = response;
+      console.log(this.CategoryProducts);
+    });
+  }
+
+  prodcatid(id:number){
+    this.selectedID=id;
   }
 }

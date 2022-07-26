@@ -6,12 +6,9 @@
           <a routerLink="/product/{{ Prod.ID }}">
             <img src="{{ Prod.ImgURL }}" alt="shop">
           </a>
-          <!-- (click)="openProductDetails(prod.id)" -->
           <div class="product-action-link">
-            <a class="view-modal" data-target="#quick_view"><i class="far fa-eye"></i></a>
             <a href="#"><i class="far fa-heart"></i></a>
-            <a href="#"><i class="fas fa-cart-plus"></i></a>
-            <a href="#"><i class="fas fa-sync-alt"></i></a>
+            <a routerLink="/cart/{{ Prod.ID }}"><i class="fas fa-cart-plus"></i></a>
           </div>
         </div>
         <div class="product-content">
@@ -28,10 +25,8 @@
         <div class="product-thumb">
           <img src="{{ Prod.ImgURL }}" alt="shop">
           <div class="product-action-link">
-            <a class="view-modal" data-target="#quick_view"><i class="far fa-eye"></i></a>
             <a href="#"><i class="far fa-heart"></i></a>
             <a href="#"><i class="fas fa-cart-plus"></i></a>
-            <a href="#"><i class="fas fa-sync-alt"></i></a>
           </div>
         </div>
         <div class="product-content">
@@ -53,22 +48,22 @@
 
 
 <!-- <div class="widget-body" *ngFor="let Prod of prodListOfCat">
-              <ul>
-                <li>
-                  <div class="product-thumb">
-                    <a href="#"><img src="{{ Prod.ImgURL }}" alt="shop"></a>
-                  </div>
-                  <div class="product-content">
-                    <h6><a href="shop-single.html">{{ Prod.Name }}</a></h6>
-                    <p>
-                      <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i
-                        class="far fa-star"></i><i class="far fa-star"></i> <span>{{ Prod.Rate }}</span>
-                    </p>
-                    <h6 class="subtitle">{{ Prod.Price }}</h6>
-                  </div>
-                </li>
-              </ul>
-            </div> -->
+  <ul>
+    <li>
+      <div class="product-thumb">
+        <a href="#"><img src="{{ Prod.ImgURL }}" alt="shop"></a>
+      </div>
+      <div class="product-content">
+        <h6><a href="shop-single.html">{{ Prod.Name }}</a></h6>
+        <p>
+          <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i
+            class="far fa-star"></i> <span>{{ Prod.Rate }}</span>
+        </p>
+        <h6 class="subtitle">{{ Prod.Price }}</h6>
+      </div>
+    </li>
+  </ul>
+</div> -->
 
 
 <!-- <div class="col-lg-7">
@@ -100,4 +95,4 @@
       </button>
     </div>
   </div>
-</div> -->
+</div>  -->

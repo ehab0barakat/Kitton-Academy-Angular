@@ -1,48 +1,44 @@
-<!-- <button (click)="InsertProduct()" class="btn btn-success">Add New Product</button> -->
 
-<form #prdForm="ngForm" (ngSubmit)="InsertProduct()">
-  <div class="mb-3">
-    <label for="prdName" class="form-label">Product Name</label>
 
-    <input #prdNameInput="ngModel" type="text" class="form-control" name="prdName" id="prdName"
-      [(ngModel)]="newPrd.name" required pattern="[A-Za-z]{3,10}" [class.is-valid]="prdNameInput.valid"
-      [class.is-invalid]="prdNameInput.invalid">
-    <div class="alert alert-danger" [hidden]="prdNameInput.valid || prdNameInput.untouched">
-      <small *ngIf="prdNameInput.errors?.['required']">
-        Product Name is required
-      </small>
-      <small *ngIf="prdNameInput.errors?.['pattern']">
-        Product Name must be 3 letters at least
-      </small>
+<!-- 
+<form  (ngSubmit)="InsertProduct()">
+    <div class="mb-3">
+        <label for="prdName" class="form-label">Product Name</label>
+
+        <input  type="text" class="form-control" name="prdName" id="prdName"
+            >
+
+        <div class="alert alert-danger">
+            <small *ngIf="prdNameInput.errors?.['required']">
+                Product Name is required
+            </small>
+            <small *ngIf="prdNameInput.errors?.['pattern']">
+                Product Name must be 3 letters at least
+            </small>
+        </div>
+
     </div>
-  </div>
 
-  <div class="mb-3">
-    <label for="prdQuant" class="form-label">Quantity</label>
-    <input type="number" class="form-control" name="prdQuant" id="prdQuant" required [(ngModel)]="newPrd.quantity">
-  </div>
+    <div class="mb-3">
+        <label for="prdQuant" class="form-label">Quantity</label>
+        <input type="number" class="form-control" name="prdQuant" id="prdQuant" required >
+    </div>
 
-  <div class="mb-3">
-    <label for="prdPrc" class="form-label">Price</label>
-    <input type="number" class="form-control" name="prdPrc" id="prdPrc" required [(ngModel)]="newPrd.price">
-  </div>
+    <div class="mb-3">
+        <label for="prdPrc" class="form-label">Price</label>
+        <input type="number" class="form-control" name="prdPrc" id="prdPrc" required>
+    </div>
 
-  <div class="mb-3">
-    <label for="prdCat" class="form-label">Select Category</label>
-    <select class="form-control" name="prdCat" id="prdCat" required [(ngModel)]="newPrd.catID">
-      <option *ngFor="let cat of catList" [value]="cat.id">
-        {{cat.name}}
-      </option>
-    </select>
-  </div>
-
-
-  <button type="submit" class="btn btn-success" [disabled]="prdForm.invalid">Submit</button>
-</form>
+    <div class="mb-3">
+        <label for="prdCat" class="form-label">Select Category</label>
+        <select class="form-control" name="prdCat" id="prdCat" required [(ngModel)]="newPrd.catID"
+        [ngModelOptions]="{standalone:true}"  >
+            <option *ngFor="let cat of catList" [value]="cat.ID">
+                {{cat.Name}}
+            </option>
+        </select>
+    </div>
 
 
-
-<hr>
-<div class="bg-warning">
-  <h2>{{prdNameInput.errors | json}}</h2>
-</div>
+    <button type="submit" class="btn btn-success" >Submit</button>
+</form> -->

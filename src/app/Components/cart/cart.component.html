@@ -17,13 +17,13 @@
           <tr>
             <td class="product-item-2">
               <div class="p-thumb">
-                <a href="#"><img src="assets/images/cart/01.png" alt="product"></a>
+                <a ><img [src]="product?.ImgURL" alt="product"></a>
               </div>
               <div class="p-content">
-                <a href="#">Baby Bag</a>
+                <a href="#">{{ product?.Name }}</a>
               </div>
             </td>
-            <td>$250.00</td>
+            <td>{{ product?.Price }}</td>
             <td>
               <div class="cart-plus-minus">
                 <div class="dec qtybutton">-</div>
