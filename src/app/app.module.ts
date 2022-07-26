@@ -26,6 +26,10 @@ import { ShopComponent } from './Components/shop/shop.component';
 import { ClassDetailsComponent } from './Components/class-details/class-details.component';
 import { ProductsComponent } from './Components/products/products.component';
 import { CommonModule } from '@angular/common';
+import { SubEventComponent } from './Components/Events/sub-event/sub-event.component';
+import { EventAddComponent } from './Components/Events/crud-event/event-add/event-add.component';
+import { EventUpdateComponent } from './Components/Events/crud-event/event-update/event-update.component';
+import { EventDeleteComponent } from './Components/Events/crud-event/event-delete/event-delete.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +54,11 @@ import { CommonModule } from '@angular/common';
     ShopComponent,
     ProductComponent,
     ClassDetailsComponent,
-    ProductsComponent
+    ProductsComponent,
+    SubEventComponent,
+    EventAddComponent,
+    EventUpdateComponent,
+    EventDeleteComponent
   ],
   imports: [
     BrowserModule,
@@ -59,6 +67,7 @@ import { CommonModule } from '@angular/common';
     HttpClientModule,
     CommonModule,
     FormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -16,12 +16,24 @@ import { ShopComponent } from './Components/shop/shop.component';
 import { ProductComponent } from './Components/product_Details/product.component';
 import { CartComponent } from './Components/cart/cart.component';
 import { AddProductComponent } from './Components/Admin/add-product/add-product.component';
+import { EventsArchiveComponent } from './Components/Events/events-archive/events-archive.component';
+import { EventsSingleComponent } from './Components/Events/events-single/events-single.component';
+import { CrudEventComponent } from './Components/Events/crud-event/crud-event.component';
+import { EventAddComponent } from './Components/Events/crud-event/event-add/event-add.component';
+import { EventUpdateComponent } from './Components/Events/crud-event/event-update/event-update.component';
+import { EventDeleteComponent } from './Components/Events/crud-event/event-delete/event-delete.component';
 
 const routes: Routes = [
   {path: '',component:MainLayoutComponent,children:[
   {path: '', redirectTo: '/home', pathMatch:'full'},
   {path : "home" , component: HomeComponent},
   {path : "games-archive" , component: GamesComponent},
+  {path : "events-archive" , component: EventsArchiveComponent},
+  {path : "event-add" , component: EventAddComponent},
+  {path : "event-update/:id" , component: EventUpdateComponent},
+  {path : "event-delete/:id" , component: EventDeleteComponent},
+  {path : "event-index" , component: CrudEventComponent},
+  {path : "event/:id" , component: EventsSingleComponent},
   {path : "single-game" , component: SingleGameComponent},
   {path:'posts',component:PostsComponent},
   {path:'contact_us',component:ContactUsComponent},

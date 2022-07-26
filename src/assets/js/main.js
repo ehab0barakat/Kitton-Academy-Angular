@@ -23,23 +23,23 @@
       }
     });
     // bind filter button click
-    $('ul.filter').on('click', 'li', function () {
-      var filterValue = $(this).attr('data-filter');
-      // use filterFn if matches value
-      filterValue = filterFns[filterValue] || filterValue;
-      $grid.isotope({
-        filter: filterValue
-      });
-    });
+    // $('ul.filter').on('click', 'li', function () {
+    //   var filterValue = $(this).attr('data-filter');
+    //   // use filterFn if matches value
+    //   filterValue = filterFns[filterValue] || filterValue;
+    //   $grid.isotope({
+    //     filter: filterValue
+    //   });
+    // });
     // change is-checked class on buttons
-    $('ul.filter').each(function (i, buttonGroup) {
-      var $buttonGroup = $(buttonGroup);
-      $buttonGroup.on('click', 'li', function () {
-        $buttonGroup.find('.active').removeClass('active');
-        $(this).addClass('active');
-      });
-    });
-  }
+  //   $('ul.filter').each(function (i, buttonGroup) {
+  //     var $buttonGroup = $(buttonGroup);
+  //     $buttonGroup.on('click', 'li', function () {
+  //       $buttonGroup.find('.active').removeClass('active');
+  //       $(this).addClass('active');
+  //     });
+  //   });
+  // }
   // Gallery Masonary
   function galleryMasonaryTwo() {
     // filter functions
@@ -381,4 +381,4 @@
       reviewContent.removeClass('review-content-show description-show').addClass(viewRev);
     });
   });
-})(jQuery);
+}})(jQuery);
