@@ -3,7 +3,7 @@
         <div class="class-single-item mb-30">
             <div class="class-single-inner">
                 <div class="class-single-thumb">
-                    <img src="./assets/images/blog/blog15.jpg" alt="class">
+                    <img [src]="singlePost?.img" alt="class">
                 </div>
                 <div class="class-single-content">
 
@@ -132,10 +132,8 @@
                         <img src="./assets/images/blog/author.jpg" alt="blog">
                     </div>
                     <div class="content">
-                        <h5 class="title">Jhon Doe</h5>
-                        <p>Data release large ponted to wasing better than expcted pickup the euroz
-                            tolate Thursd and the euro edged upto slghtly towing are after the Grman
-                            recent political uncertainty in Germany has sofar</p>
+                        <h5 class="title">{{singlePost?.title}}</h5>
+                        <p>{{singlePost?.description}}</p>
                         <ul class="teacher-social">
                             <li>
                                 <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>

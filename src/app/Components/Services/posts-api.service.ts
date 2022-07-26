@@ -19,6 +19,12 @@ export class PostsApiService {
     return  this.httpclient.get<Posts[]>(`${environment.APIBaseURL}/posts`)
  
   }
+  // get post by id 
+  getPostById(id:number):Observable<Posts>{
+    return  this.httpclient.get<Posts>(`${environment.APIBaseURL}/posts/${id}`)
+
+
+  }
 }
 
 

@@ -20,7 +20,7 @@ const routes: Routes = [
     {path : "games-archive" , component: GamesComponent},
     {path : "single-game" , component: SingleGameComponent},  // gonna be changed >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
     {path:'posts',component:PostsComponent},
-    {path:'single-post',component:SinglePostComponent},
+    {path:'single-post/:id',component:SinglePostComponent},
     {path:'contact_us',component:ContactUsComponent},
     {path:'about_us',component:AboutUsComponent},
     {path:'profile',component:ProfileComponent},
