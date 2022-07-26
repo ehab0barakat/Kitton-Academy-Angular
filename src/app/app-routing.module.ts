@@ -19,6 +19,9 @@ import { SignUpComponent } from './Components/sign-up/sign-up.component';
 import { SingleTeacherComponent } from './Components/single-teacher/single-teacher.component';
 import { TeachersComponent } from './Components/teachers/teachers.component';
 import { FormTeacherComponent } from './Components/form-teacher/form-teacher.component';
+import { SignupAsteacherComponent } from './Components/signup-asteacher/signup-asteacher.component';
+import { SigninAsadminComponent } from './Components/signin-asadmin/signin-asadmin.component';
+import { WelcomeComponent } from './Components/welcome/welcome.component';
 
 
 const routes: Routes = [
@@ -41,6 +44,11 @@ const routes: Routes = [
   {path : "sign-in" , component:SignInComponent},
   {path : "sign-up" , component:SignUpComponent},
   {path : "form-teacher" , component:FormTeacherComponent},
+  {path : "sign-up as teacher" , component:SignupAsteacherComponent},
+  {path : "submit-admin" , component:SigninAsadminComponent},
+  {path : "Welcome" , component:WelcomeComponent},
+  
+  
 ]},
 {path:'**',component:NotFoundComponent},
 ]

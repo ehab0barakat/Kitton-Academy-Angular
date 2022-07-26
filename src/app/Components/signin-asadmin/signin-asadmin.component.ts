@@ -4,11 +4,11 @@ import {Router} from '@angular/router'; // import router from angular router
 
 
 @Component({
-  selector: 'app-sign-in',
-  templateUrl: './sign-in.component.html',
-  styleUrls: ['./sign-in.component.css']
+  selector: 'app-signin-asadmin',
+  templateUrl: './signin-asadmin.component.html',
+  styleUrls: ['./signin-asadmin.component.css']
 })
-export class SignInComponent implements OnInit {
+export class SigninAsadminComponent implements OnInit {
 
   constructor(private route:Router) { }
 

@@ -30,6 +30,10 @@ import { SignInComponent } from './Components/sign-in/sign-in.component';
 import { SignUpComponent } from './Components/sign-up/sign-up.component';
 import { FormTeacherComponent } from './Components/form-teacher/form-teacher.component';
 import { PaymentComponent } from './Components/payment/payment.component';
+import { SignupAsteacherComponent } from './Components/signup-asteacher/signup-asteacher.component';
+import { SigninAsadminComponent } from './Components/signin-asadmin/signin-asadmin.component';
+import { WelcomeComponent } from './Components/welcome/welcome.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -60,13 +64,17 @@ import { PaymentComponent } from './Components/payment/payment.component';
     SignInComponent,
     SignUpComponent,
     FormTeacherComponent,
-    PaymentComponent
+    PaymentComponent,
+    SignupAsteacherComponent,
+    SigninAsadminComponent,
+    WelcomeComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
