@@ -20,6 +20,15 @@ import { CrudEventComponent } from './Components/Events/crud-event/crud-event.co
 import { EventAddComponent } from './Components/Events/crud-event/event-add/event-add.component';
 import { EventUpdateComponent } from './Components/Events/crud-event/event-update/event-update.component';
 import { EventDeleteComponent } from './Components/Events/crud-event/event-delete/event-delete.component';
+import { SignInComponent } from './Components/sign-in/sign-in.component';
+import { SignUpComponent } from './Components/sign-up/sign-up.component';
+import { SingleTeacherComponent } from './Components/single-teacher/single-teacher.component';
+import { TeachersComponent } from './Components/teachers/teachers.component';
+import { FormTeacherComponent } from './Components/form-teacher/form-teacher.component';
+import { SignupAsteacherComponent } from './Components/signup-asteacher/signup-asteacher.component';
+import { SigninAsadminComponent } from './Components/signin-asadmin/signin-asadmin.component';
+import { WelcomeComponent } from './Components/welcome/welcome.component';
+
 
 const routes: Routes = [
   {path: '',component:MainLayoutComponent,children:[
@@ -42,6 +51,16 @@ const routes: Routes = [
   {path:'shop',component:ShopComponent},
   {path:'product',component:ProductComponent},
   {path:'classes',component:ClassesComponent},
+  {path : "teachers" , component:TeachersComponent},
+  {path : "single-teacher/:id" , component:SingleTeacherComponent},
+  {path : "sign-in" , component:SignInComponent},
+  {path : "sign-up" , component:SignUpComponent},
+  {path : "form-teacher" , component:FormTeacherComponent},
+  {path : "sign-up as teacher" , component:SignupAsteacherComponent},
+  {path : "submit-admin" , component:SigninAsadminComponent},
+  {path : "Welcome" , component:WelcomeComponent},
+
+
 ]},
 {path:'**',component:NotFoundComponent},
 ]

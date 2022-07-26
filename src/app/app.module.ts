@@ -28,6 +28,17 @@ import { SubEventComponent } from './Components/Events/sub-event/sub-event.compo
 import { EventAddComponent } from './Components/Events/crud-event/event-add/event-add.component';
 import { EventUpdateComponent } from './Components/Events/crud-event/event-update/event-update.component';
 import { EventDeleteComponent } from './Components/Events/crud-event/event-delete/event-delete.component';
+import { TeachersComponent } from './Components/teachers/teachers.component';
+import { SingleTeacherComponent } from './Components/single-teacher/single-teacher.component';
+import { SignInComponent } from './Components/sign-in/sign-in.component';
+import { SignUpComponent } from './Components/sign-up/sign-up.component';
+import { FormTeacherComponent } from './Components/form-teacher/form-teacher.component';
+import { PaymentComponent } from './Components/payment/payment.component';
+import { SignupAsteacherComponent } from './Components/signup-asteacher/signup-asteacher.component';
+import { SigninAsadminComponent } from './Components/signin-asadmin/signin-asadmin.component';
+import { WelcomeComponent } from './Components/welcome/welcome.component';
+
+
 
 @NgModule({
   declarations: [
@@ -55,7 +66,16 @@ import { EventDeleteComponent } from './Components/Events/crud-event/event-delet
     SubEventComponent,
     EventAddComponent,
     EventUpdateComponent,
-    EventDeleteComponent
+    EventDeleteComponent,
+    TeachersComponent,
+    SingleTeacherComponent,
+    SignInComponent,
+    SignUpComponent,
+    FormTeacherComponent,
+    PaymentComponent,
+    SignupAsteacherComponent,
+    SigninAsadminComponent,
+    WelcomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,7 +83,6 @@ import { EventDeleteComponent } from './Components/Events/crud-event/event-delet
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
-
   ],
   providers: [],
   bootstrap: [AppComponent]

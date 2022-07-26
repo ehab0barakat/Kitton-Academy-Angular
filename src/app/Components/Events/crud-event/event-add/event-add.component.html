@@ -1,13 +1,10 @@
 <div class="container">
-  <form (ngSubmit)="AddEvent()" #f="ngForm" >
-
+  <form (ngSubmit)="AddEvent()" #prdForm="ngForm" >
 
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Title</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  [ngModelOptions]="{standalone:true}" [(ngModel)]="NewEvent.title">
+      <input type="email" #prdNameInput="ngModel"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  [ngModelOptions]="{standalone:true}" [(ngModel)]="NewEvent.title">
     </div>
-
-
 
     <div class="mb-3">
       <label for="exampleInputPassword1" class="form-label">location</label>
