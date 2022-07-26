@@ -12,7 +12,6 @@ export class ClassesService {
     this.httpOptions={
       headers:new HttpHeaders({
         'Content-Type': 'application/json'
-
       })
     };
 
@@ -26,6 +25,7 @@ export class ClassesService {
   getClassByID(claID:number):Observable<classes>{
     return this.httpclient.get<classes>(`${environment.APIBaseURL}/classes/${claID}`);
   }
+
   // getclassesByCatID(catID:number):Observable<classes[]>{
   //   return this.httpClass.get<classes[]>(`${environment.APIBaseURL}/classes?catID=${catID}`);
   // }

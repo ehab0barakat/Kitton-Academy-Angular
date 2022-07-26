@@ -1,4 +1,5 @@
 export interface Eventcats {
   id:number,
-  TargetAge:number,
+  title:string,
+  targetAge:number,
 }

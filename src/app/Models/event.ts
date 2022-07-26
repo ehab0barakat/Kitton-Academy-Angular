@@ -1,10 +1,12 @@
 export interface Event {
   id:number ,
-  description:string,
-  img:string,
-  date:Date,
+  title:string,
   location:string,
+  isActive:number,
+  date:string,
   time:string,
-  eventCat_id:number,
+  image:string,
+  description:string,
   teacher_id:number,
+  eventCat_id:number,
 }

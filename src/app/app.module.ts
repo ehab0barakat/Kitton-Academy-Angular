@@ -19,11 +19,15 @@ import { HomeComponent } from './Components/home/home.component';
 import { CrudGameComponent } from './Components/Games/crud-game/crud-game.component';
 import { CrudEventComponent } from './Components/Events/crud-event/crud-event.component';
 import { ClassesComponent } from './Components/classes/classes.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductComponent } from './Components/product/product.component';
 import { ShopComponent } from './Components/shop/shop.component';
 import { ClassDetailsComponent } from './Components/class-details/class-details.component';
+import { SubEventComponent } from './Components/Events/sub-event/sub-event.component';
+import { EventAddComponent } from './Components/Events/crud-event/event-add/event-add.component';
+import { EventUpdateComponent } from './Components/Events/crud-event/event-update/event-update.component';
+import { EventDeleteComponent } from './Components/Events/crud-event/event-delete/event-delete.component';
 
 @NgModule({
   declarations: [
@@ -47,13 +51,19 @@ import { ClassDetailsComponent } from './Components/class-details/class-details.
     ClassesComponent,
     ShopComponent,
     ProductComponent,
-    ClassDetailsComponent
+    ClassDetailsComponent,
+    SubEventComponent,
+    EventAddComponent,
+    EventUpdateComponent,
+    EventDeleteComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
