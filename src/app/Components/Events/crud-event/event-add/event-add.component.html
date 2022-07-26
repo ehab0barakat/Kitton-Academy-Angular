@@ -1,0 +1,63 @@
+<div class="container">
+  <form (ngSubmit)="AddEvent()" #f="ngForm" >
+
+
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Title</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  [ngModelOptions]="{standalone:true}" [(ngModel)]="NewEvent.title">
+    </div>
+
+
+
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">location</label>
+      <input type="text" class="form-control" id="exampleInputPassword1" [ngModelOptions]="{standalone:true}" [(ngModel)]="NewEvent.location" >
+    </div>
+
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">teacher id</label>
+      <input type="number"  class="form-control" value="1" id="exampleInputPassword1" [ngModelOptions]="{standalone:true}" [(ngModel)]="NewEvent.teacher_id" >
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">image</label>
+      <input type="file"  class="form-control" value="1" id="exampleInputPassword1" [ngModelOptions]="{standalone:true}" [(ngModel)]="NewEvent.image" >
+    </div>
+
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">date</label>
+      <input type="date" class="form-control" id="exampleInputPassword1" [ngModelOptions]="{standalone:true}" [(ngModel)]="NewEvent.date" >
+    </div>
+
+
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">time</label>
+      <input type="time" class="form-control" id="exampleInputPassword1" [ngModelOptions]="{standalone:true}" [(ngModel)]="NewEvent.time" >
+    </div>
+
+
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">description</label>
+      <input type="text" class="form-control" id="exampleInputPassword1" [ngModelOptions]="{standalone:true}" [(ngModel)]="NewEvent.description" >
+    </div>
+
+
+    <select class="form-select" aria-label="Default select example"  [ngModelOptions]="{standalone:true}" [(ngModel)]="NewEvent.eventCat_id" >
+
+      <option selected>Open this select menu</option>
+      <option *ngFor="let cat of AllEventCats "  value="{{cat.id}}">{{cat.title}}</option>
+
+    </select>
+
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+
+
+  </form>
+
+</div>
+
+
+  <div>
+      {{NewEvent | json }}
+  </div>
