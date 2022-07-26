@@ -20,6 +20,7 @@
 </section>
 <!-- ==========Banner Section Ends Here========== -->
 
+<app-products [receivedID]="selectedID" ></app-products>
 
 <!-- ==========Shop Section Starts Here========== -->
 <div class="shop-page padding-top padding-bottom" >
@@ -33,56 +34,8 @@
             <a data-target="list"><i class="fas fa-list"></i></a>
           </div>
         </div>
-
-        <div class="shop-product-wrap grid row mb-30-none">
-          <div class="col-xl-4 col-md-6">
-            <div class="row row-cols-2 m-5" style="width: 800px;">
-              <div class="shop-item" *ngFor="let Prod of prodListOfCat">
-                <div class="product-thumb">
-                  <img src="{{ Prod.ImgURL }}" alt="shop" >
-                  <!-- (click)="openProductDetails(prod.id)" -->
-                  <div class="product-action-link">
-                    <a class="view-modal" data-target="#quick_view"><i class="far fa-eye"></i></a>
-                    <a href="#"><i class="far fa-heart"></i></a>
-                    <a href="#"><i class="fas fa-cart-plus"></i></a>
-                    <a href="#"><i class="fas fa-sync-alt"></i></a>
-                  </div>
-                </div>
-                <div class="product-content">
-                  <h5 class="title"><a href="shop-single.html">{{ Prod.Name }}</a></h5>
-                  <p>
-                    <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i
-                      class="far fa-star"></i><i class="far fa-star"></i> <span>{{ Prod.Rate }}</span>
-                  </p>
-                  <h6 class="subtitle">{{ Prod.Price }}</h6>
-                </div>
-              </div>
-              <!--  -->
-              <div class="product-list-item" *ngFor="let Prod of prodListOfCat">
-                <div class="product-thumb">
-                  <img src="{{ Prod.ImgURL }}" alt="shop">
-                  <div class="product-action-link">
-                    <a class="view-modal" data-target="#quick_view"><i class="far fa-eye"></i></a>
-                    <a href="#"><i class="far fa-heart"></i></a>
-                    <a href="#"><i class="fas fa-cart-plus"></i></a>
-                    <a href="#"><i class="fas fa-sync-alt"></i></a>
-                  </div>
-                </div>
-                <div class="product-content">
-                  <h5 class="title"><a href="shop-single.html">{{ Prod.Name }}</a></h5>
-                  <p>
-                    <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i
-                      class="far fa-star"></i><i class="far fa-star"></i> <span>(3 review)</span>
-                  </p>
-                  <h6 class="subtitle">{{ Prod.Price }}</h6>
-                  <p>
-                    {{ Prod.Description }}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <!--  -->
+        <app-products [receivedID]="selectedID" ></app-products>
 
         <ul class="default-pagination">
           <li>
@@ -120,10 +73,13 @@
             <div class="widget-header">
               <h5 class="title">Post Category</h5>
             </div>
-            <div class="widget-body">
+            <div class="widget-body" [(ngModel)]="selectedID">
               <ul>
-                <li>
-                  <a href="#"><span><i class="fas fa-angle-double-right"></i>Themeforest</span><span>05</span></a>
+
+                <li *ngFor="let cat of CategoryProducts" [value]="cat.ID">
+                  <a>
+                    <span><i class="fas fa-angle-double-right"></i>{{cat.Name}}</span><span>05</span>
+                  </a>
                 </li>
 
               </ul>
@@ -134,24 +90,9 @@
             <div class="widget-header">
               <h5 class="title">latest products</h5>
             </div>
-            <div class="widget-body" *ngFor="let Prod of prodListOfCat">
-              <ul>
-                <li>
-                  <div class="product-thumb">
-                    <a href="#"><img src="{{ Prod.ImgURL }}" alt="shop"></a>
-                  </div>
-                  <div class="product-content">
-                    <h6><a href="shop-single.html">{{ Prod.Name }}</a></h6>
-                    <p>
-                      <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i
-                        class="far fa-star"></i><i class="far fa-star"></i> <span>{{ Prod.Rate }}</span>
-                    </p>
-                    <h6 class="subtitle">{{ Prod.Price }}</h6>
-                  </div>
-                </li>
-              </ul>
-            </div>
+         
           </div>
+
         </div>
       </div>
     </div>
@@ -198,36 +139,7 @@
                 </div>
 
                 <!--  -->
-                <div class="col-lg-7">
-                  <div class="product-content" *ngFor="let Prod of prodListOfCat">
-                    <h5 class="title"><a href="shop-single.html">{{ Prod.Name }}</a></h5>
-                    <p>
-                      <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i
-                        class="far fa-star"></i><i class="far fa-star"></i> <span>{{ Prod.Rate }}</span>
-                    </p>
-                    <h6>
-                      {{ Prod.Price }}
-                    </h6>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                      veniam,
-                      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    </p>
-                    <div class="cart-button-2">
-                      <div class="cart-plus-minus">
-                        <div class="dec qtybutton">-</div>
-                        <div class="dec qtybutton">-</div>
-                        <input class="cart-plus-minus-box" type="text" name="qtybutton" value="2">
-                        <div class="inc qtybutton">+</div>
-                        <div class="inc qtybutton">+</div>
-                      </div>
-                      <button type="submit">
-                        <i class="fas fa-shopping-cart"></i>
-                      </button>
-                    </div>
-                  </div>
-                </div>
+              
 
               </div>
             </div>

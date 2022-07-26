@@ -13,7 +13,7 @@ import { ClassesComponent } from './Components/classes/classes.component';
 import { MainLayoutComponent } from './Components/main-layout/main-layout.component';
 import { NotFoundComponent } from './Components/not-found/not-found.component';
 import { ShopComponent } from './Components/shop/shop.component';
-import { ProductComponent } from './Components/product/product.component';
+import { ProductComponent } from './Components/product_Details/product.component';
 import { CartComponent } from './Components/cart/cart.component';
 
 const routes: Routes = [
@@ -30,8 +30,7 @@ const routes: Routes = [
   {path:'cart',component:CartComponent},
   {path:'shop',component:ShopComponent},
   {path:'product',component:ProductComponent},
-  {path:'classes',component:ClassesComponent},
-
+  {path:'product/:id',component:ProductComponent},
   {path:'classes',component:ClassesComponent},
   {path: 'classes/:id',component:ClassDetailsComponent}
 ]},

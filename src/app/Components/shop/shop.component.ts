@@ -1,33 +1,21 @@
-import { Component, OnInit } from '@angular/core';
-import { IProduct } from 'src/app/Models/iproduct';
-import { Router } from '@angular/router';
-import { ProductsService } from 'src/app/Services/products.service';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { Icategory } from 'src/app/Models/icategory';
+import { CategoriesService } from 'src/app/Services/categories.service';
+import { ProductsComponent } from '../products/products.component';
 
 @Component({
   selector: 'app-shop',
   templateUrl: './shop.component.html',
-  styleUrls: ['./shop.component.css']
+  styleUrls: ['./shop.component.css'],
 })
 export class ShopComponent implements OnInit {
-  [x: string]: any;
 
-  prodListOfCat:IProduct[]=[];
-  prod:IProduct | undefined=undefined;
-
-
-  constructor(private prodService:ProductsService,
-               private router:Router,) { }
+  selectedID: number = 0;
+  CategoryProducts: Icategory[] = [];
+  @ViewChild(ProductsComponent) productsRef!: ProductsComponent;
+  
+  constructor(private CatService : CategoriesService) {}
 
   ngOnInit(): void {
-    this.prodService.getAllProducts().subscribe(response=>{
-      this.prodListOfCat=response;
-      console.log(this.prodListOfCat);
-    });
-
-  }
-
-  openProductDetails(prodID:number){
-    this.router.navigate(['Products',prodID]);
-
   }
 }

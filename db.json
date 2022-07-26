@@ -1,4 +1,11 @@
-{"products":[
+{"categories":[
+    
+{ "ID" : 1, "Name": "Books" },
+{ "ID" : 2, "Name": "Baby Bags" }
+]
+,
+
+"products":[
 
 { "ID" : 1, "Name": "Baby Bags" ,"Quantity": 4,"Price":250 ,"ImgURL": "http://labartisan.net/demo/kitton/assets/images/shop/04.png","CateogryID":1},
 { "ID": 3, "Name": "Baby Bags" ,"Quantity": 0,"Price":540 ,"ImgURL": "http://labartisan.net/demo/kitton/assets/images/shop/01.png","CateogryID":1 },

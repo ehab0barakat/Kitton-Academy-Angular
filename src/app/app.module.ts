@@ -21,9 +21,10 @@ import { CrudEventComponent } from './Components/Events/crud-event/crud-event.co
 import { ClassesComponent } from './Components/classes/classes.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { ProductComponent } from './Components/product/product.component';
+import { ProductComponent } from './Components/product_Details/product.component';
 import { ShopComponent } from './Components/shop/shop.component';
 import { ClassDetailsComponent } from './Components/class-details/class-details.component';
+import { ProductsComponent } from './Components/products/products.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { ClassDetailsComponent } from './Components/class-details/class-details.
     ClassesComponent,
     ShopComponent,
     ProductComponent,
-    ClassDetailsComponent
+    ClassDetailsComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,
