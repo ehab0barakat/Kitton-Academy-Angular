@@ -21,7 +21,7 @@
         style="position: absolute; left: 0px; top: 0px"
       >
       <div class="row row-cols-4  " style="width: 1400px;">
-        <div class="class-item m-3 " *ngFor="let cla of classListOfCat">
+        <div class="class-item m-3 " *ngFor="let cla of classListOfCat" >
           <div class="class-thumb">
 <!-- <li> -->
             <a  routerLink="/classes/{{ cla.id }}"
@@ -63,6 +63,11 @@
               <div class="schedule-item">
                 <h6 class="sub-title">06 - 08</h6>
                 <span class="info">Years Old</span>
+                <td>
+                  <button type="button" [routerLink]="['/classes/create']">Create new product</button>
+                  <button type="button" [routerLink]="['/classes/update/', cla.id]">Update</button>
+                  <!-- <button type="button" (click)="classService.delete(cla.id)">Remove</button> -->
+              </td>
               </div>
             </div>
           </div>

@@ -1,4 +1,5 @@
 export interface classes {
+  isDeleting: boolean;
   id: number;
   name: string;
   // prof_pic?: string;
