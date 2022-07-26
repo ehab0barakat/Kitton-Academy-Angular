@@ -34,6 +34,9 @@ import { SignupAsteacherComponent } from './Components/signup-asteacher/signup-a
 import { SigninAsadminComponent } from './Components/signin-asadmin/signin-asadmin.component';
 import { WelcomeComponent } from './Components/welcome/welcome.component';
 import { FormsModule } from '@angular/forms';
+import { AddTeacherComponent } from './Components/add-teacher/add-teacher.component';
+import { EditTeacherComponent } from './Components/edit-teacher/edit-teacher.component';
+import { DeleteTeacherComponent } from './Components/delete-teacher/delete-teacher.component';
 
 
 @NgModule({
@@ -68,6 +71,9 @@ import { FormsModule } from '@angular/forms';
     SignupAsteacherComponent,
     SigninAsadminComponent,
     WelcomeComponent,
+    AddTeacherComponent,
+    EditTeacherComponent,
+    DeleteTeacherComponent,
   ],
   imports: [
     BrowserModule,
