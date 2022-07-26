@@ -12,7 +12,6 @@ export class ClassesService {
     this.httpOptions={
       headers:new HttpHeaders({
         'Content-Type': 'application/json'
-
       })
     };
 

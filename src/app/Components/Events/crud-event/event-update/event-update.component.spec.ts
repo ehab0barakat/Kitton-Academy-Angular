@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EventsArchiveComponent } from './events-archive.component';
+import { EventUpdateComponent } from './event-update.component';
 
-describe('EventsArchiveComponent', () => {
-  let component: EventsArchiveComponent;
-  let fixture: ComponentFixture<EventsArchiveComponent>;
+describe('EventUpdateComponent', () => {
+  let component: EventUpdateComponent;
+  let fixture: ComponentFixture<EventUpdateComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ EventsArchiveComponent ]
+      declarations: [ EventUpdateComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(EventsArchiveComponent);
+    fixture = TestBed.createComponent(EventUpdateComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

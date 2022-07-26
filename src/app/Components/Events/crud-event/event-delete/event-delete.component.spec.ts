@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SingleGameComponent } from './single-game.component';
+import { EventDeleteComponent } from './event-delete.component';
 
-describe('SingleGameComponent', () => {
-  let component: SingleGameComponent;
-  let fixture: ComponentFixture<SingleGameComponent>;
+describe('EventDeleteComponent', () => {
+  let component: EventDeleteComponent;
+  let fixture: ComponentFixture<EventDeleteComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SingleGameComponent ]
+      declarations: [ EventDeleteComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SingleGameComponent);
+    fixture = TestBed.createComponent(EventDeleteComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

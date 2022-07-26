@@ -6,16 +6,11 @@ import { HeaderComponent } from './Components/header/header.component';
 import { FooterComponent } from './Components/footer/footer.component';
 import { NotFoundComponent } from './Components/not-found/not-found.component';
 import { MainLayoutComponent } from './Components/main-layout/main-layout.component';
-import { ClassesComponent } from './Components/classes/classes.component';
-import { HttpClientModule } from '@angular/common/http';
-import { ClassDetailsComponent } from './Components/class-details/class-details.component';
-
 import { ContactUsComponent } from './Components/contact-us/contact-us.component';
 import { AboutUsComponent } from './Components/about-us/about-us.component';
 import { PostsComponent } from './Components/posts/posts/posts.component';
 import { SinglePostComponent } from './Components/posts/single-post/single-post.component';
 import { ProfileComponent } from './Components/Profile/profile/profile.component';
-
 import { GamesComponent } from './Components/Games/games/games.component';
 import { SingleGameComponent } from './Components/Games/single-game/single-game.component';
 import { EventsArchiveComponent } from './Components/Events/events-archive/events-archive.component';
@@ -23,10 +18,16 @@ import { EventsSingleComponent } from './Components/Events/events-single/events-
 import { HomeComponent } from './Components/home/home.component';
 import { CrudGameComponent } from './Components/Games/crud-game/crud-game.component';
 import { CrudEventComponent } from './Components/Events/crud-event/crud-event.component';
-import { ReactiveFormsModule } from '@angular/forms';
-
-
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ClassesComponent } from './Components/classes/classes.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ProductComponent } from './Components/product/product.component';
+import { ShopComponent } from './Components/shop/shop.component';
+import { ClassDetailsComponent } from './Components/class-details/class-details.component';
+import { SubEventComponent } from './Components/Events/sub-event/sub-event.component';
+import { EventAddComponent } from './Components/Events/crud-event/event-add/event-add.component';
+import { EventUpdateComponent } from './Components/Events/crud-event/event-update/event-update.component';
+import { EventDeleteComponent } from './Components/Events/crud-event/event-delete/event-delete.component';
 
 @NgModule({
   declarations: [
@@ -48,13 +49,22 @@ import { ReactiveFormsModule } from '@angular/forms';
     NotFoundComponent,
     MainLayoutComponent,
     ClassesComponent,
-    ClassDetailsComponent
+    ClassDetailsComponent,
+    ShopComponent,
+    ProductComponent,
+    ClassDetailsComponent,
+    SubEventComponent,
+    EventAddComponent,
+    EventUpdateComponent,
+    EventDeleteComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
