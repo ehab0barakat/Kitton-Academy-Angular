@@ -1,0 +1,39 @@
+<div class="events-section padding-top padding-bottom pos-rel">
+  <div class="top-shape-center">
+      <img src="./assets/css/img/gallery1.png" alt="css">
+  </div>
+  <div class="bottom-shape-left">
+      <img src="./assets/css/img/bottom-shape.png" alt="css">
+  </div>
+  <div class="container">
+
+
+
+
+      <ul class="filter">
+        <li  (click)="GetCatId(0)">Show All</li>
+          <li *ngFor="let cat of AllClassCats" (click)="GetCatId(cat.id)" >{{cat.name}}</li>
+      </ul>
+
+      <app-filtered-class  [selected]="selected" style="display: block;" ></app-filtered-class>
+
+      <ul class="default-pagination">
+          <li>
+              <a href="#"><i class="fas fa-angle-left"></i></a>
+          </li>
+          <li>
+              <a href="#">01</a>
+          </li>
+          <li>
+              <a href="#" class="active">02</a>
+          </li>
+          <li>
+              <a href="#">03</a>
+          </li>
+          <li>
+              <a href="#"><i class="fas fa-angle-right"></i></a>
+          </li>
+      </ul>
+  </div>
+</div>
+

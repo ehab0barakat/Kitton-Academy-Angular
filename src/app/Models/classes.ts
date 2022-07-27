@@ -1,11 +1,16 @@
 export interface classes {
-  isDeleting: boolean;
   id: number;
   name: string;
-  // prof_pic?: string;
-  // prof_name: string;
   price: number;
-  quantity: number;
-  catID: number;
-  imgURL?:string;
+  isActive?:number;
+  duration?:string;
+  date:string;
+  targetAge:number;
+  size:string;
+  time:string;
+  image:string;
+  description:string;
+  teacher_id:number,
+  classCat_id:number,
+  
 }

@@ -1,0 +1,44 @@
+<div class="gallery-section padding-top padding-bottom pos-rel">
+  <div class="top-shape-center">
+      <img src="./assets/css/img/gallery1.png" alt="css">
+  </div>
+  <div class="bottom-shape-left">
+      <img src="./assets/css/img/bottom-shape.png" alt="css">
+  </div>
+  <div class="container">
+      <ul class="filter-2">
+          <li data-filter="*" class="active"><span class="category">Show All</span><span class="amount">09</span>
+          </li>
+          <li data-filter=".toddler"><span class="category">toddlers</span><span class="amount">05</span></li>
+          <li data-filter=".preschool"><span class="category">preschool</span><span class="amount">06</span></li>
+          <li data-filter=".programe"><span class="category">kindergarten</span><span class="amount">03</span>
+          </li>
+          <li data-filter=".kinder"><span class="category">pre-k program</span><span class="amount">06</span></li>
+      </ul>
+
+      <ng-container *ngFor="let game of AllGames">
+
+      <div class="masonary-wrapper lg-three-items"   style="position: relative; height: 2390px;">
+          <div class="masonary-item preschool programe" style="position: absolute; left: 0px; top: 0px;">
+              <div class="gallery-item-3">
+                  <div class="gallery-thumb">
+                      <a class="img-pp" routerLink="/game/{{game.id}}" ><img src="{{game.img}}" alt="gallery"></a>
+                  </div>
+                  <div class="gallery-content">
+                      <h5 class="title">{{game.title}}}</h5>
+                      <span>Financial | Human</span>
+                  </div>
+              </div>
+          </div>
+
+      </div>
+      <div class="load-more">
+          <a routerLink="/game/{{game.id}}" class="custom-button"><span>Get Started Now</span></a>
+      </div>
+
+
+    </ng-container>
+
+
+  </div>
+</div>

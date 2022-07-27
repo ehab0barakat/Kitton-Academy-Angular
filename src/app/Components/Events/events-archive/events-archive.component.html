@@ -1,0 +1,48 @@
+<div class="events-section padding-top padding-bottom pos-rel">
+  <div class="top-shape-center">
+      <img src="./assets/css/img/gallery1.png" alt="css">
+  </div>
+  <div class="bottom-shape-left">
+      <img src="./assets/css/img/bottom-shape.png" alt="css">
+  </div>
+  <div class="container">
+
+
+      <!-- <ul class="filter">
+          <li data-filter="*">Show All</li>
+          <li data-filter=".1">Toddler</li>
+          <li data-filter=".2">Preschool</li>
+          <li data-filter=".kinder">kindergarten</li>
+          <li data-filter=".programe">pre-k Program</li>
+          <li data-filter=".school">before/after school</li>
+      </ul>
+ -->
+
+
+
+      <ul class="filter">
+        <li  (click)="GetTaretCatId(0)">Show All</li>
+          <li *ngFor="let cat of AllEventCats" (click)="GetTaretCatId(cat.id)" >{{cat.title}}</li>
+      </ul>
+
+      <app-sub-event  [selectedCat]="selectedCat" style="display: block;" ></app-sub-event>
+
+      <ul class="default-pagination">
+          <li>
+              <a href="#"><i class="fas fa-angle-left"></i></a>
+          </li>
+          <li>
+              <a href="#">01</a>
+          </li>
+          <li>
+              <a href="#" class="active">02</a>
+          </li>
+          <li>
+              <a href="#">03</a>
+          </li>
+          <li>
+              <a href="#"><i class="fas fa-angle-right"></i></a>
+          </li>
+      </ul>
+  </div>
+</div>
