@@ -32,6 +32,17 @@ import { UpdatePostComponent } from './Components/posts/Posts_Crud/update-post/u
 import { AddPostComponent } from './Components/posts/Posts_Crud/add-post/add-post.component';
 import { DeletePostComponent } from './Components/posts/Posts_Crud/delete-post/delete-post.component';
 import { ShowPostComponent } from './Components/posts/Posts_Crud/show-post/show-post.component';
+import { TeachersComponent } from './Components/teachers/teachers.component';
+import { SingleTeacherComponent } from './Components/single-teacher/single-teacher.component';
+import { SignInComponent } from './Components/sign-in/sign-in.component';
+import { SignUpComponent } from './Components/sign-up/sign-up.component';
+import { FormTeacherComponent } from './Components/form-teacher/form-teacher.component';
+import { PaymentComponent } from './Components/payment/payment.component';
+import { SignupAsteacherComponent } from './Components/signup-asteacher/signup-asteacher.component';
+import { SigninAsadminComponent } from './Components/signin-asadmin/signin-asadmin.component';
+import { WelcomeComponent } from './Components/welcome/welcome.component';
+
+
 
 @NgModule({
   declarations: [
@@ -64,7 +75,16 @@ import { ShowPostComponent } from './Components/posts/Posts_Crud/show-post/show-
     UpdatePostComponent,
     AddPostComponent,
     DeletePostComponent,
-    ShowPostComponent
+    ShowPostComponent,
+    TeachersComponent,
+    SingleTeacherComponent,
+    SignInComponent,
+    SignUpComponent,
+    FormTeacherComponent,
+    PaymentComponent,
+    SignupAsteacherComponent,
+    SigninAsadminComponent,
+    WelcomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -72,7 +92,6 @@ import { ShowPostComponent } from './Components/posts/Posts_Crud/show-post/show-
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
-
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -2,7 +2,7 @@
 
   { "id" : 1, "name": "Shirt" ,"quantity": 4,"price":250 ,"imgURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ6Wpp6S_fatll3GogsMYuL-qQa5bImRx4O-Q&usqp=CAU","catID":1},
 
-{ "id": 3, "name": "Scurt" ,"quantity": 0,"price":540 ,"imgURL": "https://images.vestiairecollective.com/cdn-cgi/image/w=500,h=500,q=80,f=auto","catID":1 },
+{ "id": 3, "name": "Scurt" ,"quantity": 0,"price":540 ,"imgURL": "https://thumbs.dreamstime.com/b/fake-rubber-stamp-over-white-background-88413430.jpg","catID":1 },
 { "id" : 7, "name": "Woman SHOES" ,"quantity": 2,"price":500 ,"imgURL": "https://scontent.fcai19-4.fna.fbcdn.net/v/t1.6435-9/121980556_115387393679302_5166892952962981396_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=973b4a&_nc_ohc=XXR2XbDWYeoAX-e7udL&_nc_ht=scontent.fcai19-4.fna&oh=00_AT_SRLZmx4Z0R9QFuMkuyl8PJWPiyHZ4EUzctA2lye7zGg&oe=62E8B7AB","catID": 2},
 { "id" : 9, "name": "SHOES" ,"quantity": 1,"price":700 ,"imgURL": "https://scontent.fcai19-4.fna.fbcdn.net/v/t1.6435-9/121980556_115387393679302_5166892952962981396_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=973b4a&_nc_ohc=XXR2XbDWYeoAX-e7udL&_nc_ht=scontent.fcai19-4.fna&oh=00_AT_SRLZmx4Z0R9QFuMkuyl8PJWPiyHZ4EUzctA2lye7zGg&oe=62E8B7AB","catID": 2},
 { "id" : 13, "name": "Sport skecher " ,"quantity":4 ,"price":2000 ,"imgURL":"https://m.media-amazon.com/images/I/71P6H0h9ocL._AC_SX500_.jpg" ,"catID": 2},
@@ -14,5 +14,57 @@
 
 
 
-]
+],
+
+"event": [{
+            "id": 3,
+            "description": "Scurt" ,
+            "title": "lol" ,
+            "date":"Saturday, June 15, 2019",
+            "location":"string",
+            "time":"string",
+            "img": "https://thumbs.dreamstime.com/b/fake-rubber-stamp-over-white-background-88413430.jpg",
+            "eventCat_id":2,
+            "teacher_id":1
+            },{
+              "id": 4,
+              "description": "Scurt" ,
+              "title": "tot" ,
+              "date":"Saturday, June 15, 2019",
+              "location":"string",
+              "time":"string",
+              "img": "https://thumbs.dreamstime.com/b/fake-rubber-stamp-over-white-background-88413430.jpg",
+              "eventCat_id":3,
+              "teacher_id":1
+        },{
+          "id": 5,
+          "description": "Scurt" ,
+          "title": "non" ,
+          "date":"Saturday, June 15, 2019",
+          "location":"string",
+          "time":"string",
+          "img": "https://thumbs.dreamstime.com/b/fake-rubber-stamp-over-white-background-88413430.jpg",
+          "eventCat_id":4,
+          "teacher_id":1
+        },{
+          "id": 6,
+          "description": "Scurt" ,
+          "title": "zoz" ,
+          "date":"Saturday, June 15, 2019",
+          "location":"string",
+          "time":"string",
+          "img": "https://thumbs.dreamstime.com/b/fake-rubber-stamp-over-white-background-88413430.jpg",
+          "eventCat_id":1,
+          "teacher_id":1
+        }
+  ],
+  "eventCats":[
+               {"id" : 1 , "name" : "zoz" , "TargetAge" : 5},
+               {"id" : 2 , "name" : "lol" , "TargetAge" : 5},
+               {"id" : 3 , "name" : "tot" , "TargetAge" : 5},
+               {"id" : 4 , "name" : "non" , "TargetAge" : 5}
+  ]
+
+
+
 }
