@@ -3,41 +3,41 @@
     <div class="row row-cols-2 m-5" style="width: 800px;">
       <div class="shop-item" *ngFor="let Prod of prodListOfCat">
         <div class="product-thumb">
-          <a routerLink="/productDetails/{{ Prod.ID }}">
-            <img src="{{ Prod.ImgURL }}" alt="shop">
+          <a routerLink="/productDetails/{{ Prod.id }}">
+            <img src="{{ Prod.image }}" alt="shop">
           </a>
           <div class="product-action-link">
             <a href="#"><i class="far fa-heart"></i></a>
-            <a routerLink="/cart/{{ Prod.ID }}"><i class="fas fa-cart-plus"></i></a>
+            <a routerLink="/cart/{{ Prod.id }}"><i class="fas fa-cart-plus"></i></a>
           </div>
         </div>
         <div class="product-content">
-          <h5 class="title"><a href="shop-single.html">{{ Prod.Name }}</a></h5>
+          <h5 class="title"><a href="shop-single.html">{{ Prod.name }}</a></h5>
           <p>
             <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i
               class="far fa-star"></i><i class="far fa-star"></i> <span>{{ Prod.Rate }}</span>
           </p>
-          <h6 class="subtitle">{{ Prod.Price }}</h6>
+          <h6 class="subtitle">{{ Prod.price }}</h6>
         </div>
       </div>
       <!--  -->
       <div class="product-list-item" *ngFor="let Prod of prodListOfCat">
         <div class="product-thumb">
-          <img src="{{ Prod.ImgURL }}" alt="shop">
+          <img src="{{ Prod.image }}" alt="shop">
           <div class="product-action-link">
             <a href="#"><i class="far fa-heart"></i></a>
             <a href="#"><i class="fas fa-cart-plus"></i></a>
           </div>
         </div>
         <div class="product-content">
-          <h5 class="title"><a href="shop-single.html">{{ Prod.Name }}</a></h5>
+          <h5 class="title"><a href="shop-single.html">{{ Prod.name }}</a></h5>
           <p>
             <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i
               class="far fa-star"></i><i class="far fa-star"></i> <span>(3 review)</span>
           </p>
-          <h6 class="subtitle">{{ Prod.Price }}</h6>
+          <h6 class="subtitle">{{ Prod.price }}</h6>
           <p>
-            {{ Prod.Description }}
+            {{ Prod.description }}
           </p>
         </div>
       </div>
@@ -51,15 +51,15 @@
   <ul>
     <li>
       <div class="product-thumb">
-        <a href="#"><img src="{{ Prod.ImgURL }}" alt="shop"></a>
+        <a href="#"><img src="{{ Prod.image }}" alt="shop"></a>
       </div>
       <div class="product-content">
-        <h6><a href="shop-single.html">{{ Prod.Name }}</a></h6>
+        <h6><a href="shop-single.html">{{ Prod.name }}</a></h6>
         <p>
           <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i
             class="far fa-star"></i> <span>{{ Prod.Rate }}</span>
         </p>
-        <h6 class="subtitle">{{ Prod.Price }}</h6>
+        <h6 class="subtitle">{{ Prod.price }}</h6>
       </div>
     </li>
   </ul>
@@ -68,13 +68,13 @@
 
 <!-- <div class="col-lg-7">
   <div class="product-content" *ngFor="let Prod of prodListOfCat">
-    <h5 class="title"><a href="shop-single.html">{{ Prod.Name }}</a></h5>
+    <h5 class="title"><a href="shop-single.html">{{ Prod.name }}</a></h5>
     <p>
       <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i
         class="far fa-star"></i> <span>{{ Prod.Rate }}</span>
     </p>
     <h6>
-      {{ Prod.Price }}
+      {{ Prod.price }}
     </h6>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod

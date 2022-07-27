@@ -37,7 +37,7 @@
                       style="opacity: 1; width: 7714px; transform: translate3d(-2842px, 0px, 0px);">
                       <div class="thumb slick-slide slick-cloned" data-slick-index="-1" id="" aria-hidden="true"
                         style="width: 406px;" tabindex="-1">
-                        <img [src]="product?.ImgURL" alt="shop">
+                        <img [src]="product?.image" alt="shop">
                       </div>
 
                     </div>
@@ -51,7 +51,7 @@
                       style="opacity: 1; width: 1886px; transform: translate3d(-902px, 0px, 0px); transition: transform 500ms ease 0s;">
                       <div class="thumb slick-slide slick-cloned" data-slick-index="-5" id="" aria-hidden="true"
                         style="width: 80px;" tabindex="-1">
-                        <img [src]="product?.ImgURL" alt="shop">
+                        <img [src]="product?.image" alt="shop">
                       </div>
                     </div>
                   </div>
@@ -64,7 +64,7 @@
             <!-- card -->
             <div class="col-md-6 col-12">
               <div class="product-single-content">
-                <h5 class="title">{{ product?.Name }}</h5>
+                <h5 class="title">{{ product?.name}}</h5>
                 <p class="rating">
                   <i class="far fa-star"></i>
                   <i class="far fa-star"></i>
@@ -74,13 +74,13 @@
                   {{ product?.Rate }}
                 </p>
                 <h5 class="amount">
-                  {{ product?.Price }}
+                  {{ product?.price }}
                 </h5>
                 <h5 class="subtitle">
                   Product Description
                 </h5>
                 <p class="info">
-                  {{ product?.Description }}
+                  {{ product?.description }}
                 </p>
                 <form class="size-form">
                   <div class="cart-plus-minus">

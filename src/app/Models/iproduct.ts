@@ -1,10 +1,10 @@
 export interface IProduct {
-  ID: number;
-  Name: string;
-  Price: number;
+  id: number;
+  name: string;
+  price: number;
   Rate?: number;
-  ImgURL: string;
-  Quantity: number;
-  Description?: number;
-  CateogryID: number;
+  image: string;
+  quantity: number;
+  description?: number;
+  cat_id: number;
 }

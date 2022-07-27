@@ -15,19 +15,19 @@
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 ">
           <div class="col card-group d-flex "  *ngFor="let Prod of prodListOfCat">
             <div class="card shadow-sm">
-              <img class="img-fluid" src="{{ Prod.ImgURL }}" />
+              <img class="img-fluid" src="{{ Prod.image }}" />
               <h3 class="card-title m-2">
-                {{ Prod.Name }}
+                {{ Prod.name }}
               </h3>
               <div class="card-body">
                 <p class="card-text">
-                  Price: {{ Prod.Price }}
+                  Price: {{ Prod.price }}
                 </p>
                 <div class="d-flex justify-content-center align-items-center">
                   <div class="btn-group ">
-                    <a class="btn btn-success edit" routerLink="/UpdateProduct/{{ Prod.ID }}">Edit</a>
+                    <a class="btn btn-success edit" routerLink="/UpdateProduct/{{ Prod.id }}">Edit</a>
                     <a class="btn btn-danger delete" onclick="return alert('Are You sure?')"
-                      routerLink="/DeleteProduct/{{ Prod.ID }}" >Delete</a>
+                      routerLink="/DeleteProduct/{{ Prod.id }}" >Delete</a>
                   </div>
                 </div>
               </div>
