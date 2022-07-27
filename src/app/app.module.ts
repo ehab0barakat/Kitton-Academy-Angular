@@ -21,7 +21,7 @@ import { CrudEventComponent } from './Components/Events/crud-event/crud-event.co
 import { ClassesComponent } from './Components/classes/classes.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { ProductComponent } from './Components/product_Details/product.component';
+import { ProductDetailsComponent } from './Components/product_Details/product.component';
 import { ShopComponent } from './Components/shop/shop.component';
 import { ClassDetailsComponent } from './Components/class-details/class-details.component';
 import { ProductsComponent } from './Components/products/products.component';
@@ -30,6 +30,10 @@ import { SubEventComponent } from './Components/Events/sub-event/sub-event.compo
 import { EventAddComponent } from './Components/Events/crud-event/event-add/event-add.component';
 import { EventUpdateComponent } from './Components/Events/crud-event/event-update/event-update.component';
 import { EventDeleteComponent } from './Components/Events/crud-event/event-delete/event-delete.component';
+import { UpdateProductComponent } from './Components/Admin/update-product/update-product.component';
+import { DeleteProductComponent } from './Components/Admin/delete-product/delete-product.component';
+import { AddProductComponent } from './Components/Admin/add-product/add-product.component';
+import { ProductListComponent } from './Components/Admin/product-list/product-list.component';
 
 @NgModule({
   declarations: [
@@ -51,14 +55,21 @@ import { EventDeleteComponent } from './Components/Events/crud-event/event-delet
     NotFoundComponent,
     MainLayoutComponent,
     ClassesComponent,
-    ShopComponent,
-    ProductComponent,
     ClassDetailsComponent,
-    ProductsComponent,
     SubEventComponent,
     EventAddComponent,
     EventUpdateComponent,
-    EventDeleteComponent
+    EventDeleteComponent,
+    // 
+    ShopComponent,
+    ProductsComponent,
+    AddProductComponent,
+    ProductListComponent,
+    UpdateProductComponent,
+    DeleteProductComponent,
+    ProductDetailsComponent,
+
+    
   ],
   imports: [
     BrowserModule,

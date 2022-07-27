@@ -1,9 +1,9 @@
+import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { Icategory } from 'src/app/Models/icategory';
 import { IProduct } from 'src/app/Models/iproduct';
-import { CategoriesService } from 'src/app/Services/categories.service';
+import { Icategory } from 'src/app/Models/icategory';
 import { ProductsService } from 'src/app/Services/products.service';
+import { CategoriesService } from 'src/app/Services/categories.service';
 
 @Component({
   selector: 'app-add-product',
@@ -12,12 +12,13 @@ import { ProductsService } from 'src/app/Services/products.service';
 })
 export class AddProductComponent implements OnInit {
   catList: Icategory[] = [];
-  newPrd: IProduct = {} as IProduct;
+  NewProd: IProduct = {} as IProduct;
 
   constructor(
+    private router: Router,
     private prodService: ProductsService,
     private CatService: CategoriesService,
-    private router: Router
+    private activatedRoute : ActivatedRoute
   ) {}
 
   ngOnInit(): void {
@@ -28,9 +29,9 @@ export class AddProductComponent implements OnInit {
   }
 
   InsertProduct() {
-    this.prodService.addProduct(this.newPrd).subscribe({
+    this.prodService.addProduct(this.NewProd).subscribe({
       next: (prd) => {
-        this.router.navigate(['/Products']);
+        this.router.navigate(['/ProductList']);
       },
       error: (err) => {
         alert('Error occured');
@@ -38,3 +39,4 @@ export class AddProductComponent implements OnInit {
     });
   }
 }
+

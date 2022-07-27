@@ -9,7 +9,7 @@ import { Location } from '@angular/common';
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css'],
 })
-export class ProductComponent implements OnInit {
+export class ProductDetailsComponent implements OnInit {
   id: number = 0;
   product: IProduct | undefined;
   prdIDList: number[] = [];

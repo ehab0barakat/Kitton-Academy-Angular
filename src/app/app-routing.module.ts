@@ -13,15 +13,19 @@ import { ClassesComponent } from './Components/classes/classes.component';
 import { MainLayoutComponent } from './Components/main-layout/main-layout.component';
 import { NotFoundComponent } from './Components/not-found/not-found.component';
 import { ShopComponent } from './Components/shop/shop.component';
-import { ProductComponent } from './Components/product_Details/product.component';
+import { ProductDetailsComponent } from './Components/product_Details/product.component';
 import { CartComponent } from './Components/cart/cart.component';
-import { AddProductComponent } from './Components/Admin/add-product/add-product.component';
 import { EventsArchiveComponent } from './Components/Events/events-archive/events-archive.component';
 import { EventsSingleComponent } from './Components/Events/events-single/events-single.component';
 import { CrudEventComponent } from './Components/Events/crud-event/crud-event.component';
 import { EventAddComponent } from './Components/Events/crud-event/event-add/event-add.component';
 import { EventUpdateComponent } from './Components/Events/crud-event/event-update/event-update.component';
 import { EventDeleteComponent } from './Components/Events/crud-event/event-delete/event-delete.component';
+import { ProductsComponent } from './Components/products/products.component';
+import { ProductListComponent } from './Components/Admin/product-list/product-list.component';
+import { AddProductComponent } from './Components/Admin/add-product/add-product.component';
+import { UpdateProductComponent } from './Components/Admin/update-product/update-product.component';
+import { DeleteProductComponent } from './Components/Admin/delete-product/delete-product.component';
 
 const routes: Routes = [
   {path: '',component:MainLayoutComponent,children:[
@@ -42,10 +46,17 @@ const routes: Routes = [
   {path:'classes',component:ClassesComponent},
   {path:'cart',component:CartComponent},
   {path:'cart/:id',component:CartComponent},
+  // -------------------------------------------------//
   {path:'shop',component:ShopComponent},
-  {path:'product',component:ProductComponent},
-  {path:'product/:id',component:ProductComponent},
-  {path: 'NewProduct',component:AddProductComponent},
+  {path:'Products',component:ProductsComponent},
+  {path:'ProductList',component:ProductListComponent},
+  {path:'AddNewProduct',component:AddProductComponent},
+  {path:'UpdateProduct',component:UpdateProductComponent},
+  {path:'DeleteProduct',component:DeleteProductComponent},
+  {path:'product/:id',component:ProductDetailsComponent},
+  {path:'productDetails',component:ProductDetailsComponent},
+  // -------------------------------------------------//
+
   {path:'classes',component:ClassesComponent},
   {path: 'classes/:id',component:ClassDetailsComponent}
 ]},
