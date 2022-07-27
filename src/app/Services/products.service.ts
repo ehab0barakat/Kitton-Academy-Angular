@@ -19,23 +19,23 @@ export class ProductsService {
 
   getAllProducts(): Observable<IProduct[]> {
     return this.httpclient.get<IProduct[]>(
-      `${environment.APIBaseURL}/products`
+      `${environment.APIBaseURL}/api/Product`
     );
   }
   getProductByID(ProdID: number): Observable<IProduct> {
     return this.httpclient.get<IProduct>(
-      `${environment.APIBaseURL}/products/${ProdID}`
+      `${environment.APIBaseURL}/api/Product/${ProdID}`
     );
   }
   getProductsByCatID(catID: number): Observable<IProduct[]> {
     return this.httpclient.get<IProduct[]>(
-      `${environment.APIBaseURL}/products?catID=${catID}`
+      `${environment.APIBaseURL}/api/ProductsCategory${catID}`
     );
   }
 
   addProduct(newProd: IProduct): Observable<IProduct> {
     return this.httpclient.post<IProduct>(
-      `${environment.APIBaseURL}/products`,
+      `${environment.APIBaseURL}/api/Product`,
       JSON.stringify(newProd),
       this.httpOptions
     );
@@ -46,7 +46,7 @@ export class ProductsService {
 
   editProd(newProd: IProduct, ProdID: number): Observable<IProduct> {
     return this.httpclient.put<IProduct>(
-      `${environment.APIBaseURL}/products/${ProdID}`,
+      `${environment.APIBaseURL}/api/Product/${ProdID}`,
       JSON.stringify(newProd),
       this.httpOptions
     );
@@ -54,7 +54,7 @@ export class ProductsService {
 
   deleteProd(ProdID: number): Observable<IProduct> {
     return this.httpclient.delete<IProduct>(
-      `${environment.APIBaseURL}/products/${ProdID}`,
+      `${environment.APIBaseURL}/api/Product/${ProdID}`,
       this.httpOptions
     );
   }

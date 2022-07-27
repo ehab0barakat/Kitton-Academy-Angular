@@ -31,27 +31,10 @@ export class ProductDetailsComponent implements OnInit {
       console.log(this.product);
     });
 
-    // this.prodService.getAllProducts().subscribe((response) => {
-    //   this.prodListOfCat = response;
-    //   console.log(this.prodListOfCat);
-    // });
-
-    // this.activatedRoute.paramMap.subscribe(paramMap =>{
-    //   this.currentPrdID=(paramMap.get('pid'))?Number(paramMap.get('pid')):0;
-    //   let foundedPrd= this.prodService.getProductByID(this.currentPrdID);
-    //   if(foundedPrd){
-    //     this.prod=foundedPrd;
-    //     console.log(this.prod);
-    //   }
-    //   else{
-    //     alert("Product not found");
-    //     this.location.back();
-    //   }
-    // });
   }
-  goBack() {
-    this.location.back();
-  }
+  // goBack() {
+  //   this.location.back();
+  // }
   // searchProduct(prdName:string){
   //  let foundedPrd= this.prodService.searchProductByName(prdName);
   //  if(foundedPrd)
@@ -62,16 +45,16 @@ export class ProductDetailsComponent implements OnInit {
   //   alert("Product not found");
   //  }
   // }
-  goPrevious() {
-    this.currentIndex = this.prdIDList.findIndex(
-      (item) => item == this.currentPrdID
-    );
-    this.router.navigate(['/Products', this.prdIDList[--this.currentIndex]]);
-  }
-  goNext() {
-    this.currentIndex = this.prdIDList.findIndex(
-      (item) => item == this.currentPrdID
-    );
-    this.router.navigate(['/Products', this.prdIDList[++this.currentIndex]]);
-  }
+  // goPrevious() {
+  //   this.currentIndex = this.prdIDList.findIndex(
+  //     (item) => item == this.currentPrdID
+  //   );
+  //   this.router.navigate(['/Products', this.prdIDList[--this.currentIndex]]);
+  // }
+  // goNext() {
+  //   this.currentIndex = this.prdIDList.findIndex(
+  //     (item) => item == this.currentPrdID
+  //   );
+  //   this.router.navigate(['/Products', this.prdIDList[++this.currentIndex]]);
+  // }
 }

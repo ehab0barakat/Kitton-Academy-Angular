@@ -53,7 +53,7 @@ const routes: Routes = [
   {path:'AddNewProduct',component:AddProductComponent},
   {path:'UpdateProduct',component:UpdateProductComponent},
   {path:'DeleteProduct',component:DeleteProductComponent},
-  {path:'product/:id',component:ProductDetailsComponent},
+  {path:'productDetails/:id',component:ProductDetailsComponent},
   {path:'productDetails',component:ProductDetailsComponent},
   // -------------------------------------------------//
 

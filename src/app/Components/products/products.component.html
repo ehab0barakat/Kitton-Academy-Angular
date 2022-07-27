@@ -3,7 +3,7 @@
     <div class="row row-cols-2 m-5" style="width: 800px;">
       <div class="shop-item" *ngFor="let Prod of prodListOfCat">
         <div class="product-thumb">
-          <a routerLink="/product/{{ Prod.ID }}">
+          <a routerLink="/productDetails/{{ Prod.ID }}">
             <img src="{{ Prod.ImgURL }}" alt="shop">
           </a>
           <div class="product-action-link">
