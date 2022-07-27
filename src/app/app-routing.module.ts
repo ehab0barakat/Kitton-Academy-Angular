@@ -22,6 +22,10 @@ import { CrudEventComponent } from './Components/Events/crud-event/crud-event.co
 import { EventAddComponent } from './Components/Events/crud-event/event-add/event-add.component';
 import { EventUpdateComponent } from './Components/Events/crud-event/event-update/event-update.component';
 import { EventDeleteComponent } from './Components/Events/crud-event/event-delete/event-delete.component';
+import { AddPostComponent } from './Components/posts/Posts_Crud/add-post/add-post.component';
+import { UpdatePostComponent } from './Components/posts/Posts_Crud/update-post/update-post.component';
+import { DeletePostComponent } from './Components/posts/Posts_Crud/delete-post/delete-post.component';
+import { ShowPostComponent } from './Components/posts/Posts_Crud/show-post/show-post.component';
 
 const routes: Routes = [
   {path: '',component:MainLayoutComponent,children:[
@@ -36,8 +40,12 @@ const routes: Routes = [
   {path : "event-index" , component: CrudEventComponent},
   {path : "event/:id" , component: EventsSingleComponent},
   {path : "single-game" , component: SingleGameComponent},
-  {path:'posts',component:PostsComponent},
+  {path:'post-index',component:PostsComponent},
+  {path:'show-post',component:ShowPostComponent},
   {path:'single-post/:id',component:SinglePostComponent},
+  {path:'add-post',component:AddPostComponent},
+  {path:'update-post/:id',component:UpdatePostComponent},
+  {path:'delete-post/:id',component:DeletePostComponent},
   {path:'contact_us',component:ContactUsComponent},
   {path:'about_us',component:AboutUsComponent},
   {path:'profile',component:ProfileComponent},
@@ -45,7 +53,7 @@ const routes: Routes = [
   {path:'cart',component:CartComponent},
   {path:'shop',component:ShopComponent},
   {path:'product',component:ProductComponent},
-  {path:'classes',component:ClassesComponent},
+ 
 ]},
 {path:'**',component:NotFoundComponent},
 ]

@@ -1,28 +1,25 @@
+<div class="d-flex" >
 
-<div class="blog-section padding-top padding-bottom">
-    <div class="container">
-        <div class="row mb-30-none justify-content-center">
-            <div class=" row row-cols-4  ">
-                <div class=" post-item" *ngFor="let post of posts " >
-                    <div class="post-thumb">
-                        <a routerLink="/single-post/{{post.id}}"><img src="{{post.img}}" alt="blog"></a>
-                    </div>
-                    <div class="post-content">
-                        <div class="post-top">
-                            <h5 class="title"><a href="blog-single.html">{{post.title}}</a>
-                            </h5>
-                            <div class="post-meta cate">
-                                <a href="#"><i class="far fa-calendar"></i> April 04, 2022</a>
-                                <a href="#"><i class="fas fa-user"></i> Robot Smith</a>
-                            </div>
-                            <p>{{post.description}}</p>
-                        </div>
-                        <div class="post-bottom">
-                            <a href="blog-single.html" class="read">Read More</a>
-                            <a href="#" class="comments"><i class="far fa-comments"></i> <span class="comment-number">2</span></a>
-                        </div>
-                    </div>
-                </div>
-            
-    </div>
-</div>
+    <ng-container *ngFor="let post of posts " >
+      <div class="class-inner col-sm-4"  >
+        <div class="event-item">
+              <div class="event-humb">
+                  <a routerLink="/single-post/{{post.id}}"><img src="./assets/images/blog/blog03.jpg" alt="post"></a>
+                  <div class="date-tag">
+                      <h3 class="title">{{post.title}}</h3>
+    
+                  </div>
+              </div>
+              <div class="event-content">
+                  <h5 class="title">
+                      <a routerLink="/single-post/{{post.id}}">{{post.description}}</a>
+                  </h5>
+                  
+              </div>
+          </div>
+      </div>
+    </ng-container>
+  
+  </div>
+  
+  

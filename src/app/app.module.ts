@@ -28,6 +28,10 @@ import { SubEventComponent } from './Components/Events/sub-event/sub-event.compo
 import { EventAddComponent } from './Components/Events/crud-event/event-add/event-add.component';
 import { EventUpdateComponent } from './Components/Events/crud-event/event-update/event-update.component';
 import { EventDeleteComponent } from './Components/Events/crud-event/event-delete/event-delete.component';
+import { UpdatePostComponent } from './Components/posts/Posts_Crud/update-post/update-post.component';
+import { AddPostComponent } from './Components/posts/Posts_Crud/add-post/add-post.component';
+import { DeletePostComponent } from './Components/posts/Posts_Crud/delete-post/delete-post.component';
+import { ShowPostComponent } from './Components/posts/Posts_Crud/show-post/show-post.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +60,11 @@ import { EventDeleteComponent } from './Components/Events/crud-event/event-delet
     SubEventComponent,
     EventAddComponent,
     EventUpdateComponent,
-    EventDeleteComponent
+    EventDeleteComponent,
+    UpdatePostComponent,
+    AddPostComponent,
+    DeletePostComponent,
+    ShowPostComponent
   ],
   imports: [
     BrowserModule,
