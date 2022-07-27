@@ -21,7 +21,7 @@ export class TeachersComponent implements OnInit {
   draw(data: ITeacher[]): void {
     this.teachers = data;
     console.log(data);
-    
+
   }
   error(err: any): void {
     console.log(err);

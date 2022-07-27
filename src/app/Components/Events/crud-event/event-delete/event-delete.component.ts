@@ -20,11 +20,7 @@ export class EventDeleteComponent implements OnInit {
 
   targetId = Number(this.activatedRoute.snapshot.paramMap.get("id")) ;
 
-
-
   ngOnInit(): void {
-
-
     this.eventService.deleteEvent(this.targetId).subscribe(response =>{
       if(response){
         this.router.navigate(['/event-index']);

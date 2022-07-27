@@ -25,7 +25,7 @@
                 <h3 class="title">Register Now</h3>
                 <form class="account-form" #myform="ngForm" (ngSubmit)="mysubmit(myform)" >
                     <div class="form-group">
-                        <input type="text" placeholder="Name" name="Name" required ngModel #Name="ngModel">
+                        <input type="text" placeholder="Name" name="name" required ngModel #Name="ngModel">
                         <div *ngIf="Name.invalid && (Name.dirty || Name.touched) ">
                             <div style="color:red;" *ngIf="Name.errors?.['required']">
                                 Name is required
@@ -59,7 +59,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <input type="number" placeholder="enter your SSID" name="SSID" (keyup)="onKeymax($event)" required maxlength="14" ngModel
+                        <input type="text" placeholder="enter your SSID" name="ssid" (keyup)="onKeymax($event)" required maxlength="14" ngModel
                         #SSID="ngModel">
                         <div *ngIf="SSID.invalid && (SSID.dirty || SSID.touched) ">
                             <div style="color:red;" *ngIf="SSID.errors?.['required']">
@@ -71,7 +71,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <input type="text" placeholder="Address" name="Address"  required ngModel #Address="ngModel">
+                        <input type="text" placeholder="Address" name="address"  required ngModel #Address="ngModel">
                         <div *ngIf="Address.invalid && (Address.dirty || Address.touched) ">
                             <div style="color:red;" *ngIf="Address.errors?.['required']">
                                 Address is required
@@ -82,8 +82,8 @@
                             <div style="color:red;" *ngIf="Address.errors?.['maxlength']">
                                 Address must be least then 20 characters
                             </div>
-                        </div>      
-                    </div>   
+                        </div>
+                    </div>
                     <div class="form-group">
                         <input type="password" (keyup)="onKeypassword($event)" placeholder="Password" name="password" minlength="6" maxlength="15" required
                             ngModel #password="ngModel">
@@ -100,21 +100,21 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <input type="password" (keyup)="onKey($event)"  placeholder="Confirm Password" name="confirmpassword" required ngModel #confirmpassword="ngModel">
+                        <input type="password" (keyup)="onKey($event)"  placeholder="Confirm Password"  required ngModel #confirmpassword="ngModel">
                         <div *ngIf="confirmpassword.invalid && (confirmpassword.dirty || confirmpassword.touched) ">
                             <div style="color:red;" *ngIf="confirmpassword.errors?.['required']">
                                 confirm password is required
                             </div>
-                            
-                            
+
+
                         </div>
                         <div style="color:red;" *ngIf="conpass!=pass">
                             confirm password is invalid
                         </div>
-                       
+
                     </div>
                     <div class="form-group">
-                        <input type="file" name="image">
+                        <input type="file" name="image" ngModel #image="ngModel">
                     </div>
                 <div class="form-group">
                     <button [disabled]="myform.invalid&&max.length<=14" class="d-block custom-button"><span>Get Started Now</span></button>

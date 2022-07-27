@@ -1,6 +1,8 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import {Router} from '@angular/router'; // import router from angular router
+import { environment } from 'src/environments/environment';
 
 
 @Component({
@@ -12,7 +14,19 @@ export class SignupAsteacherComponent implements OnInit {
   pass:any
   conpass:any
   max:any
-  constructor(private route:Router) { }
+  httpOptions: { headers: HttpHeaders; };
+  constructor( private route:Router,
+    private httpclient: HttpClient) {
+
+      this.httpOptions={
+        headers:new HttpHeaders({
+          'Content-Type': 'application/json' ,
+          // "Authorization":"Bearer {P6z5dUpeoHbUH0z4KjEtdLCHloT4PQpk9wtyiDxl}",
+
+        })
+      };
+  }
+
 
   ngOnInit(): void {
   }
@@ -28,9 +42,26 @@ export class SignupAsteacherComponent implements OnInit {
     this.pass = event.target.value
   }
 
+
+
+
+  message:any = {
+    message : ""
+  } ;
+
+
+
   mysubmit(myform:NgForm){
-    console.log(myform.value)
-    this.route.navigate(['/teachers'])
+    console.log(myform.value);
+    return this.httpclient.post<object>(`${environment.APIBaseURL}/api/auth/signupteacher`,
+                                        JSON.stringify(myform.value),
+                                        this.httpOptions).subscribe( data =>{
+      this.message= data
+      console.log(data)
+    })
   }
+
+    // this.route.navigate(['/teachers'])
+
 
 }

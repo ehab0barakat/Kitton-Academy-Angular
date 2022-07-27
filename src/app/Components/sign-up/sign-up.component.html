@@ -51,7 +51,7 @@
                         <div style="color:red;" *ngIf="Address.errors?.['maxlength']">
                             Address must be least then 20 characters
                         </div>
-                    </div>      
+                    </div>
                 </div>
                 <div class="form-group">
                     <input type="text" placeholder="Email" name="email" required ngModel #email="ngModel">
@@ -89,18 +89,18 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <input type="password" (keyup)="onKey($event)"  placeholder="Confirm Password" name="confirmpassword" required ngModel #confirmpassword="ngModel">
+                    <input type="password" (keyup)="onKey($event)"  placeholder="Confirm Password"  required ngModel #confirmpassword="ngModel">
                     <div *ngIf="confirmpassword.invalid && (confirmpassword.dirty || confirmpassword.touched) ">
                         <div style="color:red;" *ngIf="confirmpassword.errors?.['required']">
                             confirm password is required
                         </div>
-                        
-                        
+
+
                     </div>
                     <div style="color:red;" *ngIf="conpass!=pass">
                         confirm password is invalid
                     </div>
-                   
+
                 </div>
                 <div class="form-group">
                     <input type="text" placeholder="Child Name" name="ChildName" minlength="1" maxlength="20" required ngModel #ChildName="ngModel">
@@ -122,31 +122,37 @@
                         <div style="color:red;" *ngIf="ChildAge.errors?.['required']">
                             ChildName is required
                         </div>
-                        
+
                     </div>
                     <div style="color:red;" *ngIf="(age > 5  || age <1)&& ChildAge.touched">
                         age is invalid.
                     </div>
                 </div>
                 <label for="gender"></label>
-                <select name="gender" required ngModel #gender="ngModel">
-                    <option value="none" selected>Gender</option>
+                <select name="childGender" required ngModel #childGender="ngModel">
+                    <option value="none" selected>childGender</option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
                 </select>
-                <div *ngIf="gender.invalid && (gender.dirty || gender.touched) ">
-                    <div style="color:red;" *ngIf="gender.errors?.['required']">
-                        gender is required
+                <div *ngIf="childGender.invalid && (childGender.dirty || childGender.touched) ">
+                    <div style="color:red;" *ngIf="childGender.errors?.['required']">
+                        childGender is required
                     </div>
-                    
+
                 </div>
                 <div class="form-group mt-5">
-                    <input type="file" name="image">
+                    <input type="file" name="childImage" ngModel #childImage="ngModel">
                 </div>
-                
+
                 <div class="form-group">
                     <button type="submit" [disabled]="myform.invalid" class="d-block custom-button"><span >Get Started
                             Now</span></button>
+
+
+                      <div *ngIf="message"  class="fs-1 bg-warning" >{{message.message}}</div>
+
+
+
                     <!-- <a routerLink="/sign-up" class="btn btn-primary d-block customs-button mt-5 " style="background-color:purple; height:50px; text-decoration:none; color: #fff; font-size: 15px;">Get Started Now As User</a>
                         <a routerLink="/sign-up as teacher" class="btn btn-primary d-block customs-button mt-5 " style="background-color:purple; height:50px; text-decoration:none; color: #fff; font-size: 15px;">Get Started Now As Teacher</a> -->
                 </div>
@@ -176,4 +182,6 @@
         </div>
     </div>
 </div>
+
+
 <!-- ==========Login Section Section Ends Here========== -->
