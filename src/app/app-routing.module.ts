@@ -54,7 +54,7 @@ const routes: Routes = [
   {path : "event-index" , component: CrudEventComponent},
   {path : "event-add" , component: EventAddComponent},
   {path : "event-update/:id" , component: EventUpdateComponent},
-  {path : "event-delete/:id" , component: EventDeleteComponent}
+  {path : "event-delete/:id" , component: EventDeleteComponent},
   {path:'posts',component:PostsComponent},
   {path:'contact_us',component:ContactUsComponent},
   {path:'about_us',component:AboutUsComponent},
@@ -84,7 +84,7 @@ const routes: Routes = [
   {path: 'checkout/:id',component:CheckoutComponent},
 ]},
 {path:'slachpage',component:SlachpageComponent},
-{path:'**',component:NotFoundComponent},
+{path:'**',component:NotFoundComponent}
 
 ]
 
