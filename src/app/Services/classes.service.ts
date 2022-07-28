@@ -9,17 +9,6 @@ import { environment } from 'src/environments/environment';
 export class ClassesService {
   private httpOptions = {};
   constructor(private httpclient: HttpClient) {
-<<<<<<< HEAD
-    this.httpOptions={
-      headers:new HttpHeaders({
-        'Content-Type': 'application/json' ,
-
-
-    })
-
-
-  };
-=======
     this.httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
@@ -30,10 +19,9 @@ export class ClassesService {
   getAllclass(): Observable<classes[]> {
     return this.httpclient.get<classes[]>(`${environment.APIBaseURL}/classes`);
   }
- 
+
   getClassByID(cal:number):Observable<classes>{
     return this.httpclient.get<classes>(`${environment.APIBaseURL}/classes/${cal}`);
->>>>>>> 811e6643eec038697100e7b959f8daddefa33cc7
   }
 
 

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { classCats } from 'src/app/Models/classCats';
+import { classCats } from 'src/app/Models/classcats';
 import { classes } from 'src/app/Models/classes';
 import { ClassCatsService } from 'src/app/Services/class-cats.service';
 import { ClassesService } from 'src/app/Services/classes.service';
