@@ -1,7 +1,8 @@
 export interface Posts {
-    id:number ,
-    tiltle:string,
+    id?:number ,
+    title:string,
+    isActive:number,
+    image:string,
     description:string,
-    img:string,
-    teacherId:number,
+    teacher_id:number,
 }

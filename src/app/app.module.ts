@@ -34,7 +34,10 @@ import { UpdateClassComponent } from './Components/Class/crud-class/update-class
 import { DeleteClassComponent } from './Components/Class/crud-class/delete-class/delete-class.component';
 import { CatClassComponent } from './Components/Class/cat-class/cat-class.component';
 import { FilteredClassComponent } from './Components/Class/filtered-class/filtered-class.component';
-import { DetailsClassComponent } from './Components/Class/details-class/details-class.component';
+import { UpdatePostComponent } from './Components/posts/Posts_Crud/update-post/update-post.component';
+import { AddPostComponent } from './Components/posts/Posts_Crud/add-post/add-post.component';
+import { DeletePostComponent } from './Components/posts/Posts_Crud/delete-post/delete-post.component';
+import { ShowPostComponent } from './Components/posts/Posts_Crud/show-post/show-post.component';
 import { TeachersComponent } from './Components/teachers/teachers.component';
 import { SingleTeacherComponent } from './Components/single-teacher/single-teacher.component';
 import { SignInComponent } from './Components/sign-in/sign-in.component';
@@ -50,6 +53,7 @@ import { CrudCatClassComponent } from './Components/Class/crud-cat-class/crud-ca
 import { AddCatClassComponent } from './Components/Class/crud-cat-class/add-cat-class/add-cat-class.component';
 import { UpdateCatClassComponent } from './Components/Class/crud-cat-class/update-cat-class/update-cat-class.component';
 import { DeleteCatClassComponent } from './Components/Class/crud-cat-class/delete-cat-class/delete-cat-class.component';
+import { DetailsClassComponent } from './Components/Class/details-class/details-class.component';
 
 
 
@@ -75,6 +79,7 @@ import { DeleteCatClassComponent } from './Components/Class/crud-cat-class/delet
     MainLayoutComponent,
     MyclassesComponent,
     CheckoutComponent,
+    DetailsClassComponent,
     ShopComponent,
     ProductComponent,
     SubEventComponent,
@@ -88,6 +93,10 @@ import { DeleteCatClassComponent } from './Components/Class/crud-cat-class/delet
     FilteredClassComponent,
     DetailsClassComponent,
     EventDeleteComponent,
+    UpdatePostComponent,
+    AddPostComponent,
+    DeletePostComponent,
+    ShowPostComponent,
     TeachersComponent,
     SingleTeacherComponent,
     SignInComponent,

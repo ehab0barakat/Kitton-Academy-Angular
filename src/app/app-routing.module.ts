@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import { GamesComponent } from './Components/Games/games/games.component';
 import { SingleGameComponent } from './Components/Games/single-game/single-game.component';
 import { HomeComponent } from './Components/home/home.component';
+import { SinglePostComponent } from './Components/posts/single-post/single-post.component';
 import { MainLayoutComponent } from './Components/main-layout/main-layout.component';
 import { NotFoundComponent } from './Components/not-found/not-found.component';
 import { ShopComponent } from './Components/shop/shop.component';
@@ -31,8 +32,10 @@ import { WelcomeComponent } from './Components/welcome/welcome.component';
 import { SigninAsadminComponent } from './Components/signin-asadmin/signin-asadmin.component';
 import { SignupAsteacherComponent } from './Components/signup-asteacher/signup-asteacher.component';
 import { FormTeacherComponent } from './Components/form-teacher/form-teacher.component';
-import { SignUpComponent } from './Components/sign-up/sign-up.component';
-import { SignInComponent } from './Components/sign-in/sign-in.component';
+import { AddPostComponent } from './Components/posts/Posts_Crud/add-post/add-post.component';
+import { UpdatePostComponent } from './Components/posts/Posts_Crud/update-post/update-post.component';
+import { DeletePostComponent } from './Components/posts/Posts_Crud/delete-post/delete-post.component';
+import { ShowPostComponent } from './Components/posts/Posts_Crud/show-post/show-post.component';
 import { SingleTeacherComponent } from './Components/single-teacher/single-teacher.component';
 import { TeachersComponent } from './Components/teachers/teachers.component';
 import { SignOutComponent } from './Components/sign-out/sign-out.component';
@@ -41,11 +44,18 @@ import { CrudCatClassComponent } from './Components/Class/crud-cat-class/crud-ca
 import { AddCatClassComponent } from './Components/Class/crud-cat-class/add-cat-class/add-cat-class.component';
 import { UpdateCatClassComponent } from './Components/Class/crud-cat-class/update-cat-class/update-cat-class.component';
 import { DeleteCatClassComponent } from './Components/Class/crud-cat-class/delete-cat-class/delete-cat-class.component';
+import { SignInComponent } from './Components/sign-in/sign-in.component';
+import { SignUpComponent } from './Components/sign-up/sign-up.component';
 
 
+
+// const routes: Routes = [
+//   {path: '',component:MainLayoutComponent,children:[
+//   {path: '', redirectTo: '/slachpage', pathMatch:'full'},
 const routes: Routes = [
   {path: '',component:MainLayoutComponent,children:[
-  {path: '', redirectTo: '/slachpage', pathMatch:'full'},
+
+  {path: '', redirectTo: '/home', pathMatch:'full'},
   {path : "home" , component: HomeComponent},
   {path : "games-archive" , component: GamesComponent},
   {path : "single-game" , component: SingleGameComponent},
@@ -56,6 +66,13 @@ const routes: Routes = [
   {path : "event-update/:id" , component: EventUpdateComponent},
   {path : "event-delete/:id" , component: EventDeleteComponent},
   {path:'posts',component:PostsComponent},
+
+  {path:'post-index',component:PostsComponent},
+  {path:'show-post',component:ShowPostComponent},
+  {path:'single-post/:id',component:SinglePostComponent},
+  {path:'add-post',component:AddPostComponent},
+  {path:'update-post/:id',component:UpdatePostComponent},
+  {path:'delete-post/:id',component:DeletePostComponent},
   {path:'contact_us',component:ContactUsComponent},
   {path:'about_us',component:AboutUsComponent},
   {path:'cart',component:CartComponent},
@@ -82,6 +99,7 @@ const routes: Routes = [
   {path : "classescat-update/:id" , component: UpdateCatClassComponent},
   {path : "classescat-delete/:id" , component: DeleteCatClassComponent},
   {path: 'checkout/:id',component:CheckoutComponent},
+
 ]},
 {path:'slachpage',component:SlachpageComponent},
 {path:'**',component:NotFoundComponent}
