@@ -5,8 +5,6 @@ import { Event } from 'src/app/Models/event'
 import { Eventcats } from 'src/app/Models/eventcats'
 import { EventCatsService } from 'src/app/Services/event-cats.service';
 
-
-
 @Component({
   selector: 'app-event-update',
   templateUrl: './event-update.component.html',
@@ -18,16 +16,12 @@ export class EventUpdateComponent implements OnInit {
     private eventService:EventsService,
     private eventcatsService:EventCatsService,
     private activatedRoute : ActivatedRoute) {
-
   }
 
-  editEvent :Event ={} as Event ;
 
-
+  editEvent : Event = {} as Event ;
   targetId = Number(this.activatedRoute.snapshot.paramMap.get("id")) ;
-
-
-  AllEventCats:Eventcats[] = []
+  AllEventCats:Eventcats[] = [] ;
 
 
   ngOnInit(): void {
@@ -39,8 +33,7 @@ export class EventUpdateComponent implements OnInit {
 
     this.eventService.geteventByID(this.targetId).subscribe(response=>{
       this.editEvent = response ;
-      console.log(response);
-      console.log(this.editEvent);
+
       }
     )
 
