@@ -37,6 +37,8 @@ import { PaymentComponent } from './Components/payment/payment.component';
 import { SignupAsteacherComponent } from './Components/signup-asteacher/signup-asteacher.component';
 import { SigninAsadminComponent } from './Components/signin-asadmin/signin-asadmin.component';
 import { WelcomeComponent } from './Components/welcome/welcome.component';
+import { SignOutComponent } from './Components/sign-out/sign-out.component';
+import { SlachpageComponent } from './Components/slachpage/slachpage.component';
 
 
 
@@ -76,6 +78,8 @@ import { WelcomeComponent } from './Components/welcome/welcome.component';
     SignupAsteacherComponent,
     SigninAsadminComponent,
     WelcomeComponent,
+    SignOutComponent,
+    SlachpageComponent,
   ],
   imports: [
     BrowserModule,

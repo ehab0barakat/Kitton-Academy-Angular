@@ -28,11 +28,13 @@ import { FormTeacherComponent } from './Components/form-teacher/form-teacher.com
 import { SignupAsteacherComponent } from './Components/signup-asteacher/signup-asteacher.component';
 import { SigninAsadminComponent } from './Components/signin-asadmin/signin-asadmin.component';
 import { WelcomeComponent } from './Components/welcome/welcome.component';
+import { SignOutComponent } from './Components/sign-out/sign-out.component';
+import { SlachpageComponent } from './Components/slachpage/slachpage.component';
 
 
 const routes: Routes = [
   {path: '',component:MainLayoutComponent,children:[
-  {path: '', redirectTo: '/home', pathMatch:'full'},
+  {path: '', redirectTo: '/slachpage', pathMatch:'full'},
   {path : "home" , component: HomeComponent},
   {path : "games-archive" , component: GamesComponent},
   {path : "events-archive" , component: EventsArchiveComponent},
@@ -59,9 +61,11 @@ const routes: Routes = [
   {path : "sign-up as teacher" , component:SignupAsteacherComponent},
   {path : "submit-admin" , component:SigninAsadminComponent},
   {path : "Welcome" , component:WelcomeComponent},
+  {path : "sign-out" , component:SignOutComponent},
 
 
 ]},
+{path:'slachpage',component:SlachpageComponent},
 {path:'**',component:NotFoundComponent},
 ]
 
