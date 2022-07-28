@@ -18,16 +18,23 @@ import { EventsSingleComponent } from './Components/Events/events-single/events-
 import { HomeComponent } from './Components/home/home.component';
 import { CrudGameComponent } from './Components/Games/crud-game/crud-game.component';
 import { CrudEventComponent } from './Components/Events/crud-event/crud-event.component';
-import { ClassesComponent } from './Components/classes/classes.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
 import { ProductComponent } from './Components/product/product.component';
 import { ShopComponent } from './Components/shop/shop.component';
-import { ClassDetailsComponent } from './Components/class-details/class-details.component';
 import { SubEventComponent } from './Components/Events/sub-event/sub-event.component';
 import { EventAddComponent } from './Components/Events/crud-event/event-add/event-add.component';
 import { EventUpdateComponent } from './Components/Events/crud-event/event-update/event-update.component';
 import { EventDeleteComponent } from './Components/Events/crud-event/event-delete/event-delete.component';
+import { CheckoutComponent } from './Components/checkout/checkout.component';
+import { MyclassesComponent } from './Components/myclasses/myclasses.component';
+import { CrudClassComponent } from './Components/Class/crud-class/crud-class.component';
+import { AddClassComponent } from './Components/Class/crud-class/add-class/add-class.component';
+import { UpdateClassComponent } from './Components/Class/crud-class/update-class/update-class.component';
+import { DeleteClassComponent } from './Components/Class/crud-class/delete-class/delete-class.component';
+import { CatClassComponent } from './Components/Class/cat-class/cat-class.component';
+import { FilteredClassComponent } from './Components/Class/filtered-class/filtered-class.component';
+import { DetailsClassComponent } from './Components/Class/details-class/details-class.component';
 import { TeachersComponent } from './Components/teachers/teachers.component';
 import { SingleTeacherComponent } from './Components/single-teacher/single-teacher.component';
 import { SignInComponent } from './Components/sign-in/sign-in.component';
@@ -39,6 +46,10 @@ import { SigninAsadminComponent } from './Components/signin-asadmin/signin-asadm
 import { WelcomeComponent } from './Components/welcome/welcome.component';
 import { SignOutComponent } from './Components/sign-out/sign-out.component';
 import { SlachpageComponent } from './Components/slachpage/slachpage.component';
+import { CrudCatClassComponent } from './Components/Class/crud-cat-class/crud-cat-class.component';
+import { AddCatClassComponent } from './Components/Class/crud-cat-class/add-cat-class/add-cat-class.component';
+import { UpdateCatClassComponent } from './Components/Class/crud-cat-class/update-cat-class/update-cat-class.component';
+import { DeleteCatClassComponent } from './Components/Class/crud-cat-class/delete-cat-class/delete-cat-class.component';
 
 
 
@@ -56,18 +67,26 @@ import { SlachpageComponent } from './Components/slachpage/slachpage.component';
     SingleGameComponent,
     EventsArchiveComponent,
     EventsSingleComponent,
+    EventDeleteComponent,
     HomeComponent,
     CrudGameComponent,
     CrudEventComponent,
     NotFoundComponent,
     MainLayoutComponent,
-    ClassesComponent,
+    MyclassesComponent,
+    CheckoutComponent,
     ShopComponent,
     ProductComponent,
-    ClassDetailsComponent,
     SubEventComponent,
     EventAddComponent,
     EventUpdateComponent,
+    CrudClassComponent,
+    AddClassComponent,
+    UpdateClassComponent,
+    DeleteClassComponent,
+    CatClassComponent,
+    FilteredClassComponent,
+    DetailsClassComponent,
     EventDeleteComponent,
     TeachersComponent,
     SingleTeacherComponent,
@@ -80,15 +99,20 @@ import { SlachpageComponent } from './Components/slachpage/slachpage.component';
     WelcomeComponent,
     SignOutComponent,
     SlachpageComponent,
+    CrudCatClassComponent,
+    AddCatClassComponent,
+    UpdateCatClassComponent,
+    DeleteCatClassComponent,
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
   ],
-  providers: [],
+  // providers: [ { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

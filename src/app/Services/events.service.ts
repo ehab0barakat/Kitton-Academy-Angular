@@ -15,7 +15,11 @@ export class EventsService {
     this.httpOptions={
       headers:new HttpHeaders({
         'Content-Type': 'application/json' ,
+<<<<<<< HEAD
         "Authorization": `Bearer ${localStorage.getItem('token')}`,
+=======
+
+>>>>>>> 84ed171b019c358504da43fd210fe2f948277e29
       })
     };
    }
