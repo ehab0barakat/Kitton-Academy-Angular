@@ -13,7 +13,7 @@ import { SinglePostComponent } from './Components/posts/single-post/single-post.
 import { MainLayoutComponent } from './Components/main-layout/main-layout.component';
 import { NotFoundComponent } from './Components/not-found/not-found.component';
 import { ShopComponent } from './Components/shop/shop.component';
-import { ProductComponent } from './Components/product/product.component';
+import { ProductDetailsComponent } from './Components/product_Details/product.component';
 import { CartComponent } from './Components/cart/cart.component';
 import { EventsArchiveComponent } from './Components/Events/events-archive/events-archive.component';
 import { EventsSingleComponent } from './Components/Events/events-single/events-single.component';
@@ -46,6 +46,11 @@ import { UpdateCatClassComponent } from './Components/Class/crud-cat-class/updat
 import { DeleteCatClassComponent } from './Components/Class/crud-cat-class/delete-cat-class/delete-cat-class.component';
 import { SignInComponent } from './Components/sign-in/sign-in.component';
 import { SignUpComponent } from './Components/sign-up/sign-up.component';
+import { ProductsComponent } from './Components/products/products.component';
+import { ProductListComponent } from './Components/Admin/product-list/product-list.component';
+import { AddProductComponent } from './Components/Admin/add-product/add-product.component';
+import { UpdateProductComponent } from './Components/Admin/update-product/update-product.component';
+import { DeleteProductComponent } from './Components/Admin/delete-product/delete-product.component';
 
 
 
@@ -76,8 +81,10 @@ const routes: Routes = [
   {path:'contact_us',component:ContactUsComponent},
   {path:'about_us',component:AboutUsComponent},
   {path:'cart',component:CartComponent},
+  {path:'cart/:id',component:CartComponent},
+  // -------------------------------------------------//
   {path:'shop',component:ShopComponent},
-  {path:'product',component:ProductComponent},
+  {path:'product',component:ProductsComponent},
   {path:'profile',component:ProfileComponent},
   {path : "teachers" , component:TeachersComponent},
   {path : "single-teacher/:id" , component:SingleTeacherComponent},
@@ -100,11 +107,22 @@ const routes: Routes = [
   {path : "classescat-delete/:id" , component: DeleteCatClassComponent},
   {path: 'checkout/:id',component:CheckoutComponent},
 
+  {path:'Products',component:ProductsComponent},
+  {path:'ProductList',component:ProductListComponent},
+  {path:'AddNewProduct',component:AddProductComponent},
+  {path:'UpdateProduct',component:UpdateProductComponent},
+  {path:'DeleteProduct',component:DeleteProductComponent},
+  {path:'productDetails/:id',component:ProductDetailsComponent},
+  {path:'productDetails',component:ProductDetailsComponent},
+  // -------------------------------------------------//
+
 ]},
 {path:'slachpage',component:SlachpageComponent},
 {path:'**',component:NotFoundComponent}
 
 ]
+
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

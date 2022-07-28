@@ -20,8 +20,11 @@ import { CrudGameComponent } from './Components/Games/crud-game/crud-game.compon
 import { CrudEventComponent } from './Components/Events/crud-event/crud-event.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ProductComponent } from './Components/product/product.component';
+// import { ProductComponent } from './Components/product/product.component';
+import { ProductDetailsComponent } from './Components/product_Details/product.component';
 import { ShopComponent } from './Components/shop/shop.component';
+import { ProductsComponent } from './Components/products/products.component';
+import { CommonModule } from '@angular/common';
 import { SubEventComponent } from './Components/Events/sub-event/sub-event.component';
 import { EventAddComponent } from './Components/Events/crud-event/event-add/event-add.component';
 import { EventUpdateComponent } from './Components/Events/crud-event/event-update/event-update.component';
@@ -56,6 +59,10 @@ import { DeleteCatClassComponent } from './Components/Class/crud-cat-class/delet
 import { DetailsClassComponent } from './Components/Class/details-class/details-class.component';
 
 
+import { UpdateProductComponent } from './Components/Admin/update-product/update-product.component';
+import { DeleteProductComponent } from './Components/Admin/delete-product/delete-product.component';
+import { AddProductComponent } from './Components/Admin/add-product/add-product.component';
+import { ProductListComponent } from './Components/Admin/product-list/product-list.component';
 
 @NgModule({
   declarations: [
@@ -81,7 +88,7 @@ import { DetailsClassComponent } from './Components/Class/details-class/details-
     CheckoutComponent,
     DetailsClassComponent,
     ShopComponent,
-    ProductComponent,
+    // ProductComponent,
     SubEventComponent,
     EventAddComponent,
     EventUpdateComponent,
@@ -112,6 +119,19 @@ import { DetailsClassComponent } from './Components/Class/details-class/details-
     AddCatClassComponent,
     UpdateCatClassComponent,
     DeleteCatClassComponent,
+    // ClassesComponent,
+    // ClassDetailsComponent,
+    SubEventComponent,
+    EventAddComponent,
+    EventUpdateComponent,
+    EventDeleteComponent,
+    ShopComponent,
+    ProductsComponent,
+    AddProductComponent,
+    ProductListComponent,
+    UpdateProductComponent,
+    DeleteProductComponent,
+    ProductDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -119,7 +139,9 @@ import { DetailsClassComponent } from './Components/Class/details-class/details-
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule,
+    CommonModule,
+    FormsModule
+
   ],
   // providers: [ { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },],
   bootstrap: [AppComponent]

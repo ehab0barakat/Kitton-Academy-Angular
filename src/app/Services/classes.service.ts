@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
-import { HttpClient,HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, Observable, retry, throwError } from 'rxjs';
 import { classes } from '../Models/classes';
 import { environment } from 'src/environments/environment';
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ClassesService {
-  private httpOptions={};
+  private httpOptions = {};
   constructor(private httpclient: HttpClient) {
+<<<<<<< HEAD
     this.httpOptions={
       headers:new HttpHeaders({
         'Content-Type': 'application/json' ,
@@ -18,6 +19,21 @@ export class ClassesService {
 
 
   };
+=======
+    this.httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+      }),
+    };
+  }
+
+  getAllclass(): Observable<classes[]> {
+    return this.httpclient.get<classes[]>(`${environment.APIBaseURL}/classes`);
+  }
+ 
+  getClassByID(cal:number):Observable<classes>{
+    return this.httpclient.get<classes>(`${environment.APIBaseURL}/classes/${cal}`);
+>>>>>>> 811e6643eec038697100e7b959f8daddefa33cc7
   }
 
 

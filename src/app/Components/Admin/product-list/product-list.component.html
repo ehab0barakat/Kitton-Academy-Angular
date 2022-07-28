@@ -1,0 +1,39 @@
+<div class="container">
+
+  <div class="card text-center">
+    <div class="card-header">
+      <h3 class="fw-light">Products Page</h3>
+    </div>
+    <div class="card-body">
+      <br>
+      <a routerLink="/AddNewProduct" class="btn btn-success ml-3">Add Product</a>
+    </div>
+  </div>
+
+  <div class="album py-5 bg-light ">
+    <div class="container ">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 ">
+          <div class="col card-group d-flex "  *ngFor="let Prod of prodListOfCat">
+            <div class="card shadow-sm">
+              <img class="img-fluid" src="{{ Prod.ImgURL }}" />
+              <h3 class="card-title m-2">
+                {{ Prod.Name }}
+              </h3>
+              <div class="card-body">
+                <p class="card-text">
+                  Price: {{ Prod.Price }}
+                </p>
+                <div class="d-flex justify-content-center align-items-center">
+                  <div class="btn-group ">
+                    <a class="btn btn-success edit" routerLink="/UpdateProduct/{{ Prod.ID }}">Edit</a>
+                    <a class="btn btn-danger delete" onclick="return alert('Are You sure?')"
+                      routerLink="/DeleteProduct/{{ Prod.ID }}" >Delete</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>

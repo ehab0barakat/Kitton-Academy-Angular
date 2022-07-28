@@ -1,0 +1,46 @@
+<div class="container">
+  <form (ngSubmit)="EditProduct()" #f="ngForm">
+
+
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Name</label>
+      <input type="text" class="form-control" id="exampleInputText" [(ngModel)]="editProd.Name">
+    </div>
+
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Price</label>
+      <input type="text" class="form-control" id="exampleInputPassword1" [(ngModel)]="editProd.Price">
+    </div>
+
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">image</label>
+      <input type="file" class="form-control" value="1" id="exampleInputPassword1" [(ngModel)]="editProd.ImgURL">
+    </div>
+
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Quantity</label>
+      <input type="text" class="form-control" id="exampleInputPassword1" [(ngModel)]="editProd.Quantity">
+    </div>
+
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Description</label>
+      <input type="text" class="form-control" id="exampleInputPassword1" [(ngModel)]="editProd.Description">
+    </div>
+
+    <select class="form-select" aria-label="Default select example" [(ngModel)]="editProd.CateogryID">
+      <option selected>Open this select menu</option>
+      <option *ngFor="let cat of catList " value="{{cat.ID}}">{{cat.Name}}</option>
+    </select>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+
+
+  </form>
+
+</div>
+
+
+<div>
+  {{editProd | json }}
+</div>
