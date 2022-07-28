@@ -27,6 +27,18 @@ import { DeleteClassComponent } from './Components/Class/crud-class/delete-class
 import { FilteredClassComponent } from './Components/Class/filtered-class/filtered-class.component';
 import { CatClassComponent } from './Components/Class/cat-class/cat-class.component';
 import { DetailsClassComponent } from './Components/Class/details-class/details-class.component';
+import { WelcomeComponent } from './Components/welcome/welcome.component';
+import { SigninAsadminComponent } from './Components/signin-asadmin/signin-asadmin.component';
+import { SignupAsteacherComponent } from './Components/signup-asteacher/signup-asteacher.component';
+import { FormTeacherComponent } from './Components/form-teacher/form-teacher.component';
+import { SignUpComponent } from './Components/sign-up/sign-up.component';
+import { SignInComponent } from './Components/sign-in/sign-in.component';
+import { SingleTeacherComponent } from './Components/single-teacher/single-teacher.component';
+import { TeachersComponent } from './Components/teachers/teachers.component';
+import { CrudCatClassComponent } from './Components/Class/crud-cat-class/crud-cat-class.component';
+import { AddCatClassComponent } from './Components/Class/crud-cat-class/add-cat-class/add-cat-class.component';
+import { UpdateCatClassComponent } from './Components/Class/crud-cat-class/update-cat-class/update-cat-class.component';
+import { DeleteCatClassComponent } from './Components/Class/crud-cat-class/delete-cat-class/delete-cat-class.component';
 
 const routes: Routes = [
   {path: '',component:MainLayoutComponent,children:[
@@ -47,12 +59,24 @@ const routes: Routes = [
     {path:'cart',component:CartComponent},
     {path:'shop',component:ShopComponent},
     {path:'product',component:ProductComponent},
+    {path : "teachers" , component:TeachersComponent},
+  {path : "single-teacher/:id" , component:SingleTeacherComponent},
+  {path : "sign-in" , component:SignInComponent},
+  {path : "sign-up" , component:SignUpComponent},
+  {path : "form-teacher" , component:FormTeacherComponent},
+  {path : "sign-up as teacher" , component:SignupAsteacherComponent},
+  {path : "submit-admin" , component:SigninAsadminComponent},
+  {path : "Welcome" , component:WelcomeComponent},
     {path:'classes',component:CatClassComponent},
     {path: 'classes/:id',component:DetailsClassComponent},
     {path: 'classes-index',component:CrudClassComponent},
+    {path: 'classescat-index',component:CrudCatClassComponent},
     {path : "classes-add" , component: AddClassComponent},
+    {path : "classescat-add" , component: AddCatClassComponent},
     {path : "classes-update/:id" , component: UpdateClassComponent},
+    {path : "classescat-update/:id" , component: UpdateCatClassComponent},
     {path : "classes-delete/:id" , component: DeleteClassComponent},
+    {path : "classescat-delete/:id" , component: DeleteCatClassComponent},
     {path: 'checkout/:id',component:CheckoutComponent},
   ]},
   {path:'**',component:NotFoundComponent},

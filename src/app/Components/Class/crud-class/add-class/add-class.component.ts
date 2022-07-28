@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { classCats } from 'src/app/Models/classcats';
+import { classCats } from 'src/app/Models/classCats';
 import { classes } from 'src/app/Models/classes';
 import { ClassCatsService } from 'src/app/Services/class-cats.service';
 import { ClassesService } from 'src/app/Services/classes.service';
@@ -20,13 +20,14 @@ export class AddClassComponent implements OnInit {
     this.classcatsService.getAllClassCats().subscribe(response=>{
       this.AllClassCats=response ;
     })
-   
+
   }
   create(){
     this.classService.create(this.NewClass).subscribe(response=> {
-      // if (response){
+      console.log(response);
+      if (response){
         this.router.navigate(['/classes-index']);
-      // }
+      }
     })
   }
 }

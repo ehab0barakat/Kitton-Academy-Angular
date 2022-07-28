@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { classCats } from 'src/app/Models/classcats';
+import { classCats } from 'src/app/Models/classCats';
 import { classes } from 'src/app/Models/classes';
 import { ClassCatsService } from 'src/app/Services/class-cats.service';
 import { ClassesService } from 'src/app/Services/classes.service';
@@ -20,7 +20,7 @@ export class UpdateClassComponent implements OnInit {
 
     AllClassCats:classCats[] = []
     currentPrdID= Number(this.activatedRoute.snapshot.paramMap.get("id")) ;
-  
+
   ngOnInit(): void {
     this.classcatsService.getAllClassCats().subscribe(response=>{
       this.AllClassCats=response ;
@@ -32,8 +32,11 @@ export class UpdateClassComponent implements OnInit {
     });
 }
 update(){
+  // console.log(this.editClass);
+  // console.log(this.currentPrdID);
    this.classService.update(this.editClass, this.currentPrdID).subscribe(response =>{
     console.log(response);
+
   if(response){
     this.router.navigate(['/classes-index']);
   }

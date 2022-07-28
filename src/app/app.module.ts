@@ -35,6 +35,20 @@ import { DeleteClassComponent } from './Components/Class/crud-class/delete-class
 import { CatClassComponent } from './Components/Class/cat-class/cat-class.component';
 import { FilteredClassComponent } from './Components/Class/filtered-class/filtered-class.component';
 import { DetailsClassComponent } from './Components/Class/details-class/details-class.component';
+import { TeachersComponent } from './Components/teachers/teachers.component';
+import { SingleTeacherComponent } from './Components/single-teacher/single-teacher.component';
+import { SignInComponent } from './Components/sign-in/sign-in.component';
+import { SignUpComponent } from './Components/sign-up/sign-up.component';
+import { FormTeacherComponent } from './Components/form-teacher/form-teacher.component';
+import { PaymentComponent } from './Components/payment/payment.component';
+import { SignupAsteacherComponent } from './Components/signup-asteacher/signup-asteacher.component';
+import { SigninAsadminComponent } from './Components/signin-asadmin/signin-asadmin.component';
+import { WelcomeComponent } from './Components/welcome/welcome.component';
+import { CrudCatClassComponent } from './Components/Class/crud-cat-class/crud-cat-class.component';
+import { AddCatClassComponent } from './Components/Class/crud-cat-class/add-cat-class/add-cat-class.component';
+import { UpdateCatClassComponent } from './Components/Class/crud-cat-class/update-cat-class/update-cat-class.component';
+import { DeleteCatClassComponent } from './Components/Class/crud-cat-class/delete-cat-class/delete-cat-class.component';
+
 
 
 @NgModule({
@@ -71,7 +85,20 @@ import { DetailsClassComponent } from './Components/Class/details-class/details-
     CatClassComponent,
     FilteredClassComponent,
     DetailsClassComponent,
-
+    EventDeleteComponent,
+    TeachersComponent,
+    SingleTeacherComponent,
+    SignInComponent,
+    SignUpComponent,
+    FormTeacherComponent,
+    PaymentComponent,
+    SignupAsteacherComponent,
+    SigninAsadminComponent,
+    WelcomeComponent,
+    CrudCatClassComponent,
+    AddCatClassComponent,
+    UpdateCatClassComponent,
+    DeleteCatClassComponent,
   ],
   imports: [
     BrowserModule,
@@ -80,7 +107,6 @@ import { DetailsClassComponent } from './Components/Class/details-class/details-
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
-
   ],
   // providers: [ { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },],
   bootstrap: [AppComponent]

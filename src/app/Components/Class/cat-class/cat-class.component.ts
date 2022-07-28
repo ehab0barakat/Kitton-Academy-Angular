@@ -1,5 +1,5 @@
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { classCats } from 'src/app/Models/classcats';
+import { classCats } from 'src/app/Models/classCats';
 import { classes } from 'src/app/Models/classes';
 import { ClassCatsService } from 'src/app/Services/class-cats.service';
 import { ClassesService } from 'src/app/Services/classes.service';
@@ -12,7 +12,7 @@ import { ClassesService } from 'src/app/Services/classes.service';
 export class CatClassComponent implements OnInit, OnChanges  {
 
 
-  constructor( 
+  constructor(
     private classService:ClassesService,
     private classcatsService:ClassCatsService) { }
     allClasses:classes[]=[];
@@ -26,6 +26,7 @@ export class CatClassComponent implements OnInit, OnChanges  {
 
     this.classcatsService.getAllClassCats().subscribe(response=>{
       this.AllClassCats= response ;
+      console.log(this.AllClassCats);
     });
   }
 
@@ -33,7 +34,7 @@ export class CatClassComponent implements OnInit, OnChanges  {
     this.selected = id
     }
 
-  
+
   ngOnChanges(changes: SimpleChanges): void {
   }
 

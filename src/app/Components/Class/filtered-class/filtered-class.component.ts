@@ -16,14 +16,14 @@ export class FilteredClassComponent implements OnInit, OnChanges {
     private classcatsService:ClassCatsService ) { }
 
     @Input() selected:number = 0 ;
-    AllClasses:classes[] = []; 
+    AllClasses:classes[] = [];
   ngOnInit(): void {
   }
   ngOnChanges(changes: SimpleChanges): void {
 
     console.log(this.selected)
 
-    if(this.selected != 0 ){
+    if(this.selected!= 0 ){
 
       this.classcatsService.getClassByCatID(this.selected).subscribe(response=>{
         this.AllClasses = response
@@ -32,6 +32,7 @@ export class FilteredClassComponent implements OnInit, OnChanges {
     }else{
       this.classService.getAll().subscribe(response=>{
       this.AllClasses = response
+      console.log(this.AllClasses)
     })
 
     }
