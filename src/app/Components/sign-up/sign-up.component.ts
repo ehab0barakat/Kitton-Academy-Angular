@@ -44,16 +44,9 @@ export class SignUpComponent implements OnInit {
     this.age = event.target.value
 
   }
-
-
-
-
-
   message:any = {
     message : ""
   } ;
-
-
 
   private httpOptions={};
 
@@ -64,14 +57,12 @@ export class SignUpComponent implements OnInit {
       this.message= data
       console.log(this.message);
       
+      this.route.navigate(['/home'])
     })
   }
 
-    // this.route.navigate(['/teachers'])
 
-
-
-  }
+}
 
 
 

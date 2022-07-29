@@ -1,7 +1,8 @@
 export interface Games {
   id:number ,
   title:string,
+  image:string,
+  isActive:number,
   description:string,
-  img:string,
   gameCat_id:number,
 }

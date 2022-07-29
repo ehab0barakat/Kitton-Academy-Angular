@@ -4,6 +4,7 @@ import { EventsService } from 'src/app/Services/events.service';
 import { Event } from 'src/app/Models/event'
 import { Eventcats } from 'src/app/Models/eventcats'
 import { EventCatsService } from 'src/app/Services/event-cats.service';
+import { AuthService } from 'src/app/Services/auth.service';
 
 @Component({
   selector: 'app-event-update',
@@ -15,7 +16,8 @@ export class EventUpdateComponent implements OnInit {
   constructor( private router:Router,
     private eventService:EventsService,
     private eventcatsService:EventCatsService,
-    private activatedRoute : ActivatedRoute) {
+    private activatedRoute : ActivatedRoute,
+    private authService:AuthService) {
   }
 
 
@@ -23,8 +25,22 @@ export class EventUpdateComponent implements OnInit {
   targetId = Number(this.activatedRoute.snapshot.paramMap.get("id")) ;
   AllEventCats:Eventcats[] = [] ;
 
+  auth:any = localStorage.getItem("role");
 
   ngOnInit(): void {
+
+
+
+this.authService.Auth().subscribe(response=>{
+  this.auth = response ;
+  if(this.auth.role != 2 ){
+    this.router.navigate(['/not-auth']);
+  }
+});
+
+if(this.auth != 2){
+  this.router.navigate(['/not-auth']);
+}
 
     this.eventcatsService.getAlleventCats().subscribe(response=>{
       this.AllEventCats=response ;
@@ -39,19 +55,24 @@ export class EventUpdateComponent implements OnInit {
 
   }
 
-
-
   EditEvent(){
-    this.eventService.editEvent(this.editEvent , this.targetId ).subscribe(response =>{
-        if(response){
-          this.router.navigate(['/event-index']);
+    this.authService.Auth().subscribe(response=>{
+      this.auth = response ;
+      if(this.auth.role != 2 ){
+        this.router.navigate(['/not-auth']);
+      }else{
+        this.eventService.editEvent(this.editEvent , this.targetId ).subscribe(response =>{
+          if(response){
+            this.router.navigate(['/event-index']);
+          }
         }
+      )
       }
-    )
+    });
   }
 
 
 
-  
+
 
 }

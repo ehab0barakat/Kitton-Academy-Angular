@@ -1,0 +1,7 @@
+.tags>li:hover{
+  color: white;
+}
+.tags>li{
+  color: black;
+  cursor: pointer;
+}

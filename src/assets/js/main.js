@@ -23,23 +23,23 @@
       }
     });
     // bind filter button click
-    // $('ul.filter').on('click', 'li', function () {
-    //   var filterValue = $(this).attr('data-filter');
-    //   // use filterFn if matches value
-    //   filterValue = filterFns[filterValue] || filterValue;
-    //   $grid.isotope({
-    //     filter: filterValue
-    //   });
-    // });
+    $('ul.filter').on('click', 'li', function () {
+      var filterValue = $(this).attr('data-filter');
+      // use filterFn if matches value
+      filterValue = filterFns[filterValue] || filterValue;
+      $grid.isotope({
+        filter: filterValue
+      });
+    });
     // change is-checked class on buttons
-  //   $('ul.filter').each(function (i, buttonGroup) {
-  //     var $buttonGroup = $(buttonGroup);
-  //     $buttonGroup.on('click', 'li', function () {
-  //       $buttonGroup.find('.active').removeClass('active');
-  //       $(this).addClass('active');
-  //     });
-  //   });
-  // }
+    $('ul.filter').each(function (i, buttonGroup) {
+      var $buttonGroup = $(buttonGroup);
+      $buttonGroup.on('click', 'li', function () {
+        $buttonGroup.find('.active').removeClass('active');
+        $(this).addClass('active');
+      });
+    });
+  }
   // Gallery Masonary
   function galleryMasonaryTwo() {
     // filter functions
@@ -265,34 +265,12 @@
     });
     //Circle ProgressbarOne
     var skillLevel1 = jQuery('#circles .first').data('percent');
-    $('.first.circle').circleProgress({
-      value: '0.' + skillLevel1,
-      fill: {
-        gradient: ['#6dc72a']
-      }
-    }).on('circle-animation-progress', function (event, progress) {
-      $(this).find('strong').html(Math.round(skillLevel1 * progress) + '<i>%</i>');
-    });
+
     //Circle ProgressBarTwo
     var skillLevel2 = jQuery('#circles .second').data('percent');
-    $('.second.circle').circleProgress({
-      value: '0.' + skillLevel2,
-      fill: {
-        gradient: ['#aa2293']
-      }
-    }).on('circle-animation-progress', function (event, progress) {
-      $(this).find('strong').html(Math.round(skillLevel2 * progress) + '<i>%</i>');
-    });
+
     //Circle ProgressBarThree
-    var skillLevel3 = jQuery('#circles .third').data('percent');
-    $('.third.circle').circleProgress({
-      value: '0.' + skillLevel3,
-      fill: {
-        gradient: ['#ff6514']
-      }
-    }).on('circle-animation-progress', function (event, progress) {
-      $(this).find('strong').html(Math.round(skillLevel3 * progress) + '<i>%</i>');
-    });
+
     // shop cart + - start here
     var CartPlusMinus = $('.cart-plus-minus');
     CartPlusMinus.prepend('<div class="dec qtybutton">-</div>');
@@ -381,4 +359,4 @@
       reviewContent.removeClass('review-content-show description-show').addClass(viewRev);
     });
   });
-}})(jQuery);
+})(jQuery);

@@ -25,10 +25,10 @@ export class EventsArchiveComponent implements OnInit , OnChanges  {
 
   ngOnInit(): void {
 
-    this.eventService.getAllevents().subscribe(response=>{
-      this.AllEvents=response ;
-      console.log(this.AllEvents);
-    })
+    // this.eventService.getAllActiveEvents().subscribe(response=>{
+    //   this.AllEvents=response ;
+    //   console.log(this.AllEvents);
+    // })
 
     this.eventCatsService.getAlleventCats().subscribe(response=>{
       this.AllEventCats = response ;
