@@ -41,6 +41,9 @@ import { PaymentComponent } from './Components/payment/payment.component';
 import { SignupAsteacherComponent } from './Components/signup-asteacher/signup-asteacher.component';
 import { SigninAsadminComponent } from './Components/signin-asadmin/signin-asadmin.component';
 import { WelcomeComponent } from './Components/welcome/welcome.component';
+import { UserCommentsComponent } from './Components/user-comments/user-comments.component';
+import { ToastrModule } from 'ngx-toastr';
+import{BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
 
@@ -85,13 +88,16 @@ import { WelcomeComponent } from './Components/welcome/welcome.component';
     SignupAsteacherComponent,
     SigninAsadminComponent,
     WelcomeComponent,
+    UserCommentsComponent,
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
+    ToastrModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
