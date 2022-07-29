@@ -50,9 +50,6 @@ import { PaymentComponent } from './Components/payment/payment.component';
 import { SignupAsteacherComponent } from './Components/signup-asteacher/signup-asteacher.component';
 import { SigninAsadminComponent } from './Components/signin-asadmin/signin-asadmin.component';
 import { WelcomeComponent } from './Components/welcome/welcome.component';
-import { UserCommentsComponent } from './Components/user-comments/user-comments.component';
-import { ToastrModule } from 'ngx-toastr';
-import{BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { SignOutComponent } from './Components/sign-out/sign-out.component';
 import { SlachpageComponent } from './Components/slachpage/slachpage.component';
 import { CrudCatClassComponent } from './Components/Class/crud-cat-class/crud-cat-class.component';
@@ -66,6 +63,7 @@ import { UpdateProductComponent } from './Components/Admin/update-product/update
 import { DeleteProductComponent } from './Components/Admin/delete-product/delete-product.component';
 import { AddProductComponent } from './Components/Admin/add-product/add-product.component';
 import { ProductListComponent } from './Components/Admin/product-list/product-list.component';
+import { EditProfileComponent } from './Components/Profile/edit-profile/edit-profile.component';
 
 @NgModule({
   declarations: [
@@ -116,16 +114,6 @@ import { ProductListComponent } from './Components/Admin/product-list/product-li
     SignupAsteacherComponent,
     SigninAsadminComponent,
     WelcomeComponent,
-    UserCommentsComponent,
-  ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    AppRoutingModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    FormsModule,
-    ToastrModule.forRoot(),
     SignOutComponent,
     SlachpageComponent,
     CrudCatClassComponent,
@@ -145,10 +133,18 @@ import { ProductListComponent } from './Components/Admin/product-list/product-li
     UpdateProductComponent,
     DeleteProductComponent,
     ProductDetailsComponent,
+    EditProfileComponent,
+  ],
+  imports: [
+    BrowserModule,
+    ReactiveFormsModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule,
     CommonModule,
     FormsModule
-  ],
 
+  ],
   // providers: [ { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },],
   bootstrap: [AppComponent]
 })

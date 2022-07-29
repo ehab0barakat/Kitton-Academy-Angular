@@ -62,6 +62,8 @@ export class SignUpComponent implements OnInit {
                                         JSON.stringify(myform.value),
                                         this.httpOptions).subscribe( data =>{
       this.message= data
+      console.log(this.message);
+      
     })
   }
 
