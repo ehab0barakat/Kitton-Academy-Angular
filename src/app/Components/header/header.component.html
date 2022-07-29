@@ -20,11 +20,11 @@
                 <a routerLinkActive="active" routerLink="/Welcome">Sign Up</a>
               </li>
         </div>
-        
+
         <div *ngIf="userData !='0'">
               <li>
                 <a class="px-3" routerLinkActive="active" routerLink="/sign-out">Sign Out</a>
-                <a class="px-3" routerLinkActive="active" routerLink="/sign-out">{{userData.email}}</a>
+                <a class="px-3" routerLinkActive="active" >{{userData.email}}</a>
               </li>
         </div>
 

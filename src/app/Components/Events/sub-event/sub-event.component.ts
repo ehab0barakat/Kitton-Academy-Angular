@@ -43,7 +43,7 @@ export class SubEventComponent implements OnInit , OnChanges{
         console.log(this.AllEvents)
       })
     }else{
-      this.eventService.getAllevents().subscribe(response=>{
+      this.eventService.getAllActiveEvents().subscribe(response=>{
       this.AllEvents = response
     })
 

@@ -58,10 +58,10 @@ export class SignupAsteacherComponent implements OnInit {
                                         this.httpOptions).subscribe( data =>{
       this.message= data
       console.log(data)
+      this.route.navigate(['/home'])
     })
   }
 
-    // this.route.navigate(['/teachers'])
 
 
 }

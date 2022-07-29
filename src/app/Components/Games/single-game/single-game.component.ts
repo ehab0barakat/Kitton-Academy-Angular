@@ -22,7 +22,8 @@ export class SingleGameComponent implements OnInit {
     id: 0,
     title: '',
     description: '',
-    img: '',
+    isActive: 0,
+    image: '',
     gameCat_id: 0
   }
 

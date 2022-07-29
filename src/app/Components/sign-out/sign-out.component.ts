@@ -14,6 +14,7 @@ export class SignOutComponent implements OnInit {
 
 
     localStorage.setItem('token',"");
+    localStorage.setItem('role',"");
     this.router.navigate(['/slachpage']);
 
 

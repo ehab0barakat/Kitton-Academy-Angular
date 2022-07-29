@@ -44,16 +44,9 @@ export class SignUpComponent implements OnInit {
     this.age = event.target.value
 
   }
-
-
-
-
-
   message:any = {
     message : ""
   } ;
-
-
 
   private httpOptions={};
 
@@ -62,14 +55,12 @@ export class SignUpComponent implements OnInit {
                                         JSON.stringify(myform.value),
                                         this.httpOptions).subscribe( data =>{
       this.message= data
+      this.route.navigate(['/home'])
     })
   }
 
-    // this.route.navigate(['/teachers'])
 
-
-
-  }
+}
 
 
 
