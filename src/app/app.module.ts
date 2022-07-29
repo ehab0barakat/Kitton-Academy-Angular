@@ -18,16 +18,25 @@ import { EventsSingleComponent } from './Components/Events/events-single/events-
 import { HomeComponent } from './Components/home/home.component';
 import { CrudGameComponent } from './Components/Games/crud-game/crud-game.component';
 import { CrudEventComponent } from './Components/Events/crud-event/crud-event.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ClassesComponent } from './Components/classes/classes.component';
-import { HttpClientModule } from '@angular/common/http';
-import { ProductComponent } from './Components/product/product.component';
+// import { ProductComponent } from './Components/product/product.component';
+import { ProductDetailsComponent } from './Components/product_Details/product.component';
 import { ShopComponent } from './Components/shop/shop.component';
-import { ClassDetailsComponent } from './Components/class-details/class-details.component';
+import { ProductsComponent } from './Components/products/products.component';
+import { CommonModule } from '@angular/common';
 import { SubEventComponent } from './Components/Events/sub-event/sub-event.component';
 import { EventAddComponent } from './Components/Events/crud-event/event-add/event-add.component';
 import { EventUpdateComponent } from './Components/Events/crud-event/event-update/event-update.component';
 import { EventDeleteComponent } from './Components/Events/crud-event/event-delete/event-delete.component';
+import { CheckoutComponent } from './Components/checkout/checkout.component';
+import { MyclassesComponent } from './Components/myclasses/myclasses.component';
+import { CrudClassComponent } from './Components/Class/crud-class/crud-class.component';
+import { AddClassComponent } from './Components/Class/crud-class/add-class/add-class.component';
+import { UpdateClassComponent } from './Components/Class/crud-class/update-class/update-class.component';
+import { DeleteClassComponent } from './Components/Class/crud-class/delete-class/delete-class.component';
+import { CatClassComponent } from './Components/Class/cat-class/cat-class.component';
+import { FilteredClassComponent } from './Components/Class/filtered-class/filtered-class.component';
 import { UpdatePostComponent } from './Components/posts/Posts_Crud/update-post/update-post.component';
 import { AddPostComponent } from './Components/posts/Posts_Crud/add-post/add-post.component';
 import { DeletePostComponent } from './Components/posts/Posts_Crud/delete-post/delete-post.component';
@@ -44,8 +53,19 @@ import { WelcomeComponent } from './Components/welcome/welcome.component';
 import { UserCommentsComponent } from './Components/user-comments/user-comments.component';
 import { ToastrModule } from 'ngx-toastr';
 import{BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { SignOutComponent } from './Components/sign-out/sign-out.component';
+import { SlachpageComponent } from './Components/slachpage/slachpage.component';
+import { CrudCatClassComponent } from './Components/Class/crud-cat-class/crud-cat-class.component';
+import { AddCatClassComponent } from './Components/Class/crud-cat-class/add-cat-class/add-cat-class.component';
+import { UpdateCatClassComponent } from './Components/Class/crud-cat-class/update-cat-class/update-cat-class.component';
+import { DeleteCatClassComponent } from './Components/Class/crud-cat-class/delete-cat-class/delete-cat-class.component';
+import { DetailsClassComponent } from './Components/Class/details-class/details-class.component';
 
 
+import { UpdateProductComponent } from './Components/Admin/update-product/update-product.component';
+import { DeleteProductComponent } from './Components/Admin/delete-product/delete-product.component';
+import { AddProductComponent } from './Components/Admin/add-product/add-product.component';
+import { ProductListComponent } from './Components/Admin/product-list/product-list.component';
 
 @NgModule({
   declarations: [
@@ -61,19 +81,27 @@ import{BrowserAnimationsModule} from '@angular/platform-browser/animations';
     SingleGameComponent,
     EventsArchiveComponent,
     EventsSingleComponent,
+    EventDeleteComponent,
     HomeComponent,
     CrudGameComponent,
     CrudEventComponent,
     NotFoundComponent,
     MainLayoutComponent,
-    ClassesComponent,
-    ClassDetailsComponent,
+    MyclassesComponent,
+    CheckoutComponent,
+    DetailsClassComponent,
     ShopComponent,
-    ProductComponent,
-    ClassDetailsComponent,
+    // ProductComponent,
     SubEventComponent,
     EventAddComponent,
     EventUpdateComponent,
+    CrudClassComponent,
+    AddClassComponent,
+    UpdateClassComponent,
+    DeleteClassComponent,
+    CatClassComponent,
+    FilteredClassComponent,
+    DetailsClassComponent,
     EventDeleteComponent,
     UpdatePostComponent,
     AddPostComponent,
@@ -98,8 +126,30 @@ import{BrowserAnimationsModule} from '@angular/platform-browser/animations';
     HttpClientModule,
     FormsModule,
     ToastrModule.forRoot(),
+    SignOutComponent,
+    SlachpageComponent,
+    CrudCatClassComponent,
+    AddCatClassComponent,
+    UpdateCatClassComponent,
+    DeleteCatClassComponent,
+    // ClassesComponent,
+    // ClassDetailsComponent,
+    SubEventComponent,
+    EventAddComponent,
+    EventUpdateComponent,
+    EventDeleteComponent,
+    ShopComponent,
+    ProductsComponent,
+    AddProductComponent,
+    ProductListComponent,
+    UpdateProductComponent,
+    DeleteProductComponent,
+    ProductDetailsComponent,
+    CommonModule,
+    FormsModule
   ],
-  providers: [],
+
+  // providers: [ { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

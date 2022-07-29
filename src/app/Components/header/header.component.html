@@ -11,12 +11,23 @@
         <li>
           <i class="fas fa-map-marker-alt"></i> Beverley, New York 224 US
         </li>
-        <li>
-          <a routerLinkActive="active" routerLink="/sign-in">Sign In</a>
-        </li>
-        <li>
-          <a routerLinkActive="active" routerLink="/Welcome">Sign Up</a>
-        </li>
+
+        <div *ngIf="userData =='0'" class="d-flex" >
+              <li>
+                <a routerLinkActive="active" routerLink="/sign-in">Sign In</a>
+              </li>
+              <li>
+                <a routerLinkActive="active" routerLink="/Welcome">Sign Up</a>
+              </li>
+        </div>
+        
+        <div *ngIf="userData !='0'">
+              <li>
+                <a class="px-3" routerLinkActive="active" routerLink="/sign-out">Sign Out</a>
+                <a class="px-3" routerLinkActive="active" routerLink="/sign-out">{{userData.email}}</a>
+              </li>
+        </div>
+
       </ul>
       <ul class="social-icons">
         <li>
@@ -38,6 +49,8 @@
     </div>
   </div>
 </div>
+<!--  -->
+
 <div class="header-bottom">
   <div class="container">
     <div class="header-wrapper">
@@ -55,13 +68,10 @@
             <a routerLinkActive="active" routerLink="/about_us"><i class="fas fa-user"></i>About</a>
           </li>
           <li class="menu-item-has-children">
-            <a href="#0"><i class="fas fa-book"></i>Classes</a>
+            <a routerLink="/classes"><i class="fas fa-book"></i>Classes</a>
             <ul class="submenu">
               <li>
                 <a routerLink="/classes">Classes</a>
-              </li>
-              <li>
-                <a href="class-single.html">Class Single</a>
               </li>
               <li>
                 <a href="class-schedule.html">Class Schedule</a>
@@ -103,9 +113,6 @@
                   <li>
                     <a routerLinkActive="active" routerLink="/events-archive">Our Events</a>
                   </li>
-                  <li>
-                    <a routerLinkActive="active" routerLink="/">Events Single</a>
-                  </li>
                 </ul>
               </li>
 
@@ -114,9 +121,6 @@
                 <ul class="submenu">
                   <li>
                     <a routerLinkActive="active" routerLink="/shop">Our Shop</a>
-                  </li>
-                  <li>
-                    <a routerLinkActive="active" routerLink="/product">product</a>
                   </li>
                   <li>
                     <a routerLinkActive="active" routerLink="/cart">Cart</a>
@@ -129,9 +133,6 @@
                 <ul class="submenu">
                   <li>
                     <a routerLinkActive="active" routerLink="/games-archive">Games</a>
-                  </li>
-                  <li>
-                    <a routerLinkActive="active" routerLink="/single-game">Single Game</a>
                   </li>
                 </ul>
               </li>
@@ -161,7 +162,7 @@
           </a>
         </div>
         <div class="cart-button">
-          <a href="#">
+          <a routerLink="/cart">
             <span class="cart-amount">05</span>
             <i class="fas fa-shopping-basket"></i>
           </a>
@@ -182,7 +183,7 @@
 
 
 
-
+<!--  -->
 <div class="cart-sidebar-area ">
   <div class="top-content">
     <a href="index.html" class="logo">
@@ -250,6 +251,7 @@
   </div>
 </div>
 
+<!--  -->
 <div class="header-form ">
   <div class="bg-lay">
     <div class="cross">
@@ -262,3 +264,4 @@
   </form>
 
 </div>
+<!-- <section _ngcontent-htu-c57="" data-background="./assets/images/banner/page-header.jpg" class="page-header bg_img" style="background-image: url(&quot;./assets/images/banner/page-header.jpg&quot;);"><div _ngcontent-htu-c57="" class="container"><div _ngcontent-htu-c57="" class="page-header-content"><h1 _ngcontent-htu-c57="" class="title">Our Popular Classes</h1><ul _ngcontent-htu-c57="" class="breadcrumb"><li _ngcontent-htu-c57=""><a _ngcontent-htu-c57="" href="index.html">Home</a></li><a routerLink="/classes"><li _ngcontent-htu-c57=""> Classes </li></a></ul></div></div></section> -->

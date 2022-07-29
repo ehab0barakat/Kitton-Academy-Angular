@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { catchError, throwError } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -17,24 +18,28 @@ export class HeaderComponent implements OnInit {
       this.httpOptions={
         headers:new HttpHeaders({
           'Content-Type': 'application/json',
-          "Authorization": `Bearer${localStorage.getItem('token')}`,
+          "Authorization": `Bearer ${localStorage.getItem('token')}`,
         })
       };
   }
+
+  userData:any  = "0" ;
+
   ngOnInit(): void {
-
-    console.log(this.httpOptions)
-    console.log(localStorage.getItem('token'))
-
-    this.httpclient.post<object>(`${environment.APIBaseURL}/api/auth/me`,
-    this.httpOptions).subscribe( data =>{
-      console.log(data)
+    this.httpclient.get<any>(`${environment.APIBaseURL}/api/auth/me`,this.httpOptions).subscribe( data =>{
+      this.userData = data ;
+      console.log(this.userData)
     })
 
-    this.httpclient.post(`${environment.APIBaseURL}/api/auth/me`, {headers: new HttpHeaders().set('Authorization', `${localStorage.getItem('token')}`)})
-    .subscribe(data => {
-      console.log(data)
-   })
+    console.log(this.userData)
   }
+
+
+
+  ngOnChanges() {
+
+  }
+
+
 
 }

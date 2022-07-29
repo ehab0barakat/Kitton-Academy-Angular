@@ -15,22 +15,20 @@ export class EventsService {
     this.httpOptions={
       headers:new HttpHeaders({
         'Content-Type': 'application/json' ,
-        // "Authorization": "Bearer {P6z5dUpeoHbUH0z4KjEtdLCHloT4PQpk9wtyiDxl}",
-
+        "Authorization": `Bearer ${localStorage.getItem('token')}`,
       })
     };
-
    }
 
 
    getAllevents():Observable<Event[]>{
-    return this.httpclient.get<Event[]>(`${environment.APIBaseURL}/api/event`);
+    return this.httpclient.get<Event[]>(`${environment.APIBaseURL}/api/event`,this.httpOptions);
 
   }
 
 
   geteventByID(claID:number):Observable<Event>{
-    return this.httpclient.get<Event>(`${environment.APIBaseURL}/api/event/${claID}`);
+    return this.httpclient.get<Event>(`${environment.APIBaseURL}/api/event/${claID}`,this.httpOptions);
   }
 
 
