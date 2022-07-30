@@ -56,6 +56,8 @@ import { EventCatsUpdateComponent } from './Components/event-cats-crud/event-cat
 import { EventCatsDeleteComponent } from './Components/event-cats-crud/event-cats-delete/event-cats-delete.component';
 import { EventCatsAddComponent } from './Components/event-cats-crud/event-cats-add/event-cats-add.component';
 import { AdminControlComponent } from './Components/Events/admin-control/admin-control.component';
+import { EditProfileComponent } from './Components/Profile/edit-profile/edit-profile.component';
+import { PostingComponent } from './Components/posts/Posts_Crud/posting/posting.component';
 
 
 const routes: Routes = [
@@ -88,8 +90,9 @@ const routes: Routes = [
   {path:'post-index',component:PostsComponent},
   {path:'show-post',component:ShowPostComponent},
   {path:'single-post/:id',component:SinglePostComponent},
-  {path:'add-post',component:AddPostComponent},
   {path:'update-post/:id',component:UpdatePostComponent},
+  // {path:'posting',component:AddPostComponent},
+  {path:'posting',component:PostingComponent},
   {path:'delete-post/:id',component:DeletePostComponent},
   {path:'contact_us',component:ContactUsComponent},
   {path:'about_us',component:AboutUsComponent},
@@ -99,6 +102,7 @@ const routes: Routes = [
   {path:'shop',component:ShopComponent},
   {path:'product',component:ProductsComponent},
   {path:'profile',component:ProfileComponent},
+  {path:'edit-profile',component:EditProfileComponent},
   {path : "teachers" , component:TeachersComponent},
   {path : "single-teacher/:id" , component:SingleTeacherComponent},
   {path : "sign-in" , component:SignInComponent},

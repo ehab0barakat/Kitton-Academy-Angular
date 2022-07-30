@@ -21,17 +21,23 @@
 
   <!-- comment section  -->
 
-  <div class="card m-5"  *ngFor="let comment of allcoments" >
+  <div   *ngFor="let comment of allcoments"  >
+    <div *ngIf="comment.post_id == singlePost?.id">
+        
+
     
-        <div class="event-content">
+    
+        <!-- <div class="event-content">
             <h5 class="title p-3">
          user id :{{comment.user_id}}
                 
         </h5>
             
-        </div>
-        <div class="event-content">
-            <h5 class="title p-3">
+        </div> -->
+        <div  class="card m-2 p-2">
+        <p>{{data.childName}} </p>
+        
+            <h5 >
          {{comment.comment}}
                 
             </h5>
@@ -43,10 +49,10 @@
                 
         </h5>
             
-        </div> -->
+        </div>  -->
+         
         
-        
-        
+    </div>
     
   </div>
  
@@ -55,10 +61,8 @@
         <h5 class="title">Leave a Comment</h5>
     </div>
     <div class="widget-body">
-        <form class="comment-form" (ngSubmit)="send_comment()">
-            <!-- <div class="form-group">
-                <input type="text" placeholder="Full Name" name="name">
-            </div> -->
+        <form class="comment-form" (ngSubmit)="send_comment(singlePost?.id,data.id)">
+            
             <!-- <div class="form-group">
                 <input type="text" placeholder="Your Email" name="email">
             </div> -->

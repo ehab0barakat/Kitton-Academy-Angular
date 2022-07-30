@@ -1,10 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { PostsApiService } from 'src/app/Components/Services/posts-api.service';
 import { Posts } from 'src/app/Models/posts';
 import { FormGroup,Validators,FormBuilder } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { ApiPostsService } from 'src/app/Components/Services/api-posts.service';
 
 @Component({
   selector: 'app-add-post',
@@ -16,7 +16,7 @@ export class AddPostComponent implements OnInit {
 
 
   
-  constructor( private postApiService:PostsApiService,
+  constructor( private postApiService:ApiPostsService,
    private router:Router,private httpclient: HttpClient ,
    private toastr:ToastrService,private fb:FormBuilder,
     ) {
@@ -26,6 +26,7 @@ export class AddPostComponent implements OnInit {
 
    
   ngOnInit(): void {
+    
   }
 
   
@@ -43,11 +44,6 @@ export class AddPostComponent implements OnInit {
 
 
 })
-
-
-  
-
-  
    
   }
 

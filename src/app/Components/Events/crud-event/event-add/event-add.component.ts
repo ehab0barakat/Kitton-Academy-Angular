@@ -38,7 +38,7 @@ export class EventAddComponent implements OnInit {
 
     this.authService.Auth().subscribe(response=>{
       this.auth = response ;
-      if(this.auth.role != 2 ){
+      if(this.auth.role != 2){
           this.router.navigate(['/not-auth']);
         }
       });

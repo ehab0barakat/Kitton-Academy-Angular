@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { PostsApiService } from 'src/app/Components/Services/posts-api.service';
+import { Router } from '@angular/router';
+import { ApiPostsService } from 'src/app/Components/Services/api-posts.service';
 import { Posts } from 'src/app/Models/posts';
+import { AuthService } from 'src/app/Services/auth.service';
 
 @Component({
   selector: 'app-show-post',
@@ -9,14 +11,30 @@ import { Posts } from 'src/app/Models/posts';
 })
 export class ShowPostComponent implements OnInit {
   posts:Posts[]=[];
+  auth:any = localStorage.getItem("role");
 
-  constructor(private postApiService:PostsApiService ) { }
+
+  constructor(private postApiService:ApiPostsService,private authService : AuthService,
+    private router:Router ) { }
 
   ngOnInit(): void {
-    this.postApiService.getAllPosts().subscribe(response=>{
-      this.posts=response;
-      // console.log(this.posts);
-    });
+
+    this.authService.Auth().subscribe(response=>{
+      this.auth = response ;
+      if(this.auth.role != 2 ){
+          this.router.navigate(['/not-auth']);
+        }
+        else{
+          this.postApiService.getAllPosts().subscribe(response=>{
+            this.posts=response;
+            // console.log(this.posts);
+          });
+        }
+      });
+        if(this.auth != 2){
+          this.router.navigate(['/not-auth']);
+        }
+    
 
   }
 
