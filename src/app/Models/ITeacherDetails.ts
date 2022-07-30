@@ -2,10 +2,10 @@ export interface ITeacherDetails {
   id: number;
   title: string;
   description: string;
-  imgurl: string;
+  image: string;
   email: string;
   phone:string;
-  Address:string;
+  address:string;
   faceurl:string;
   googleurl:string;
   dribbleurl:string;
