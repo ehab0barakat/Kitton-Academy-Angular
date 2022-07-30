@@ -75,7 +75,7 @@ import { AdminControlComponent } from './Components/Events/admin-control/admin-c
 import { AdminHeaderComponent } from './Components/admin_view/admin-header/admin-header.component';
 import { DashboardComponent } from './Components/admin_view/dashboard/dashboard.component';
 import { AdminMainLayoutComponent } from './Components/admin_view/admin-main-layout/admin-main-layout.component';
-import { NgxDropzoneModule } from 'ngx-dropzone';
+// import { NgxDropzoneModule } from 'ngx-dropzone';
 
 @NgModule({
   declarations: [
@@ -100,8 +100,6 @@ import { NgxDropzoneModule } from 'ngx-dropzone';
     MyclassesComponent,
     CheckoutComponent,
     DetailsClassComponent,
-    ShopComponent,
-    // ProductComponent,
     SubEventComponent,
     EventAddComponent,
     EventUpdateComponent,
@@ -138,6 +136,7 @@ import { NgxDropzoneModule } from 'ngx-dropzone';
     EventAddComponent,
     EventUpdateComponent,
     EventDeleteComponent,
+    // 
     ShopComponent,
     ProductsComponent,
     AddProductComponent,
@@ -145,6 +144,7 @@ import { NgxDropzoneModule } from 'ngx-dropzone';
     UpdateProductComponent,
     DeleteProductComponent,
     ProductDetailsComponent,
+    // 
     GameCatsIndexComponent,
     GameCatsAddComponent,
     GameCatsUpdateComponent,
@@ -166,7 +166,7 @@ import { NgxDropzoneModule } from 'ngx-dropzone';
     HttpClientModule,
     CommonModule,
     FormsModule,
-    NgxDropzoneModule
+    // NgxDropzoneModule
 
   ],
   // providers: [ { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },],

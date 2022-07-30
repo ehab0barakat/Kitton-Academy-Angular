@@ -100,7 +100,7 @@ const routes: Routes = [
       { path: 'shop', component: ShopComponent },
       { path: 'cart', component: CartComponent },
       { path: 'cart/:id', component: CartComponent },
-      { path: 'product', component: ProductsComponent },
+      // { path: 'product', component: ProductsComponent },
       { path: 'Products', component: ProductsComponent },
       { path: 'ProductList', component: ProductListComponent },
       { path: 'AddNewProduct', component: AddProductComponent },

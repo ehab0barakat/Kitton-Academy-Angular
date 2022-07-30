@@ -1,56 +1,66 @@
-
 <div class="container">
-  <form (ngSubmit)="create()" #f="ngForm" >
+  <form (ngSubmit)="create()" #f="ngForm">
 
 
     <div class="mb-3">
       <label for="exampleInputname" class="form-label">Name</label>
-      <input type="text" class="form-control" id="exampleInputname" aria-describedby="name"  [ngModelOptions]="{standalone:true}" [(ngModel)]="NewClass.name">
+      <input type="text" class="form-control" id="exampleInputname" aria-describedby="name"
+        [ngModelOptions]="{standalone:true}" [(ngModel)]="NewClass.name">
     </div>
 
 
 
     <div class="mb-3">
       <label for="exampleInputPrice" class="form-label">Price</label>
-      <input type="text" class="form-control" id="exampleInputPrice" [ngModelOptions]="{standalone:true}" [(ngModel)]="NewClass.price" >
+      <input type="text" class="form-control" id="exampleInputPrice" [ngModelOptions]="{standalone:true}"
+        [(ngModel)]="NewClass.price">
     </div>
     <div class="mb-3">
       <label for="exampleInputDuration" class="form-label">Duration</label>
-      <input type="text" class="form-control" id="exampleInputDuration" [ngModelOptions]="{standalone:true}" [(ngModel)]="NewClass.duration" >
+      <input type="text" class="form-control" id="exampleInputDuration" [ngModelOptions]="{standalone:true}"
+        [(ngModel)]="NewClass.duration">
     </div>
     <div class="mb-3">
       <label for="exampleInputPassword1" class="form-label">Date</label>
-      <input type="date" class="form-control" id="exampleInputPassword1" [ngModelOptions]="{standalone:true}" [(ngModel)]="NewClass.date" >
+      <input type="date" class="form-control" id="exampleInputPassword1" [ngModelOptions]="{standalone:true}"
+        [(ngModel)]="NewClass.date">
     </div>
     <div class="mb-3">
       <label for="exampleInputPassword1" class="form-label">Target Age</label>
-      <input type="number" min="1" class="form-control" id="exampleInputPassword1" [ngModelOptions]="{standalone:true}" [(ngModel)]="NewClass.targetAge" >
+      <input type="number" min="1" class="form-control" id="exampleInputPassword1" [ngModelOptions]="{standalone:true}"
+        [(ngModel)]="NewClass.targetAge">
     </div>
     <div class="mb-3">
       <label for="exampleInputPassword1" class="form-label">Size</label>
-      <input type="text" class="form-control" id="exampleInputPassword1" [ngModelOptions]="{standalone:true}" [(ngModel)]="NewClass.size" >
+      <input type="text" class="form-control" id="exampleInputPassword1" [ngModelOptions]="{standalone:true}"
+        [(ngModel)]="NewClass.size">
     </div>
     <div class="mb-3">
       <label for="exampleInputPassword1" class="form-label">time</label>
-      <input type="time" class="form-control" id="exampleInputPassword1" [ngModelOptions]="{standalone:true}" [(ngModel)]="NewClass.time" >
+      <input type="time" class="form-control" id="exampleInputPassword1" [ngModelOptions]="{standalone:true}"
+        [(ngModel)]="NewClass.time">
     </div>
     <div class="mb-3">
       <label for="exampleInputPassword1" class="form-label">Image</label>
-      <input type="file"  class="form-control" value="1" id="exampleInputPassword1" [ngModelOptions]="{standalone:true}" [(ngModel)]="NewClass.image" >
+      <input type="file" class="form-control" value="1" id="exampleInputPassword1" [ngModelOptions]="{standalone:true}"
+        [(ngModel)]="NewClass.image">
     </div>
     <div class="mb-3">
       <label for="exampleInputPassword1" class="form-label">Description</label>
-      <input type="text" class="form-control" id="exampleInputPassword1" [ngModelOptions]="{standalone:true}" [(ngModel)]="NewClass.description" >
+      <input type="text" class="form-control" id="exampleInputPassword1" [ngModelOptions]="{standalone:true}"
+        [(ngModel)]="NewClass.description">
     </div>
     <div class="mb-3">
       <label for="exampleInputPassword1" class="form-label">teacher id</label>
-      <input type="number" min="1"  class="form-control" value="1" id="exampleInputPassword1" [ngModelOptions]="{standalone:true}" [(ngModel)]="NewClass.teacher_id" >
+      <input type="number" min="1" class="form-control" value="1" id="exampleInputPassword1"
+        [ngModelOptions]="{standalone:true}" [(ngModel)]="NewClass.teacher_id">
     </div>
 
-    <select class="form-select" aria-label="Default select example"  [ngModelOptions]="{standalone:true}" [(ngModel)]="NewClass.classCat_id" >
+    <select class="form-select" aria-label="Default select example" [ngModelOptions]="{standalone:true}"
+      [(ngModel)]="NewClass.classCat_id">
 
       <option selected>Select Class Cat</option>
-      <option *ngFor="let cat of AllClassCats "  value="{{cat.id}}">{{cat.name}}</option>
+      <option *ngFor="let cat of AllClassCats " value="{{cat.id}}">{{cat.name}}</option>
 
     </select>
 
@@ -64,6 +74,6 @@
 </div>
 
 
-  <div>
-      {{NewClass | json }}
-  </div>
+<div>
+  {{NewClass | json }}
+</div>
