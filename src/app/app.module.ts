@@ -25,10 +25,10 @@ import { ProductDetailsComponent } from './Components/product_Details/product.co
 import { ShopComponent } from './Components/shop/shop.component';
 import { ProductsComponent } from './Components/products/products.component';
 import { CommonModule } from '@angular/common';
-import { SubEventComponent } from './Components/Events/sub-event/sub-event.component';
-import { EventAddComponent } from './Components/Events/crud-event/event-add/event-add.component';
-import { EventUpdateComponent } from './Components/Events/crud-event/event-update/event-update.component';
-import { EventDeleteComponent } from './Components/Events/crud-event/event-delete/event-delete.component';
+// import { SubEventComponent } from './Components/Events/sub-event/sub-event.component';
+// import { EventAddComponent } from './Components/Events/crud-event/event-add/event-add.component';
+// import { EventUpdateComponent } from './Components/Events/crud-event/event-update/event-update.component';
+// import { EventDeleteComponent } from './Components/Events/crud-event/event-delete/event-delete.component';
 import { CheckoutComponent } from './Components/checkout/checkout.component';
 import { MyclassesComponent } from './Components/Class/myclasses/myclasses.component';
 import { CrudClassComponent } from './Components/Class/crud-class/crud-class.component';
@@ -41,6 +41,7 @@ import { UpdatePostComponent } from './Components/posts/Posts_Crud/update-post/u
 import { AddPostComponent } from './Components/posts/Posts_Crud/add-post/add-post.component';
 import { DeletePostComponent } from './Components/posts/Posts_Crud/delete-post/delete-post.component';
 import { ShowPostComponent } from './Components/posts/Posts_Crud/show-post/show-post.component';
+// import { ClassDetailsComponent } from './Components/class-details/class-details.component';
 import { TeachersComponent } from './Components/teachers/teachers.component';
 import { SingleTeacherComponent } from './Components/single-teacher/single-teacher.component';
 import { SignInComponent } from './Components/sign-in/sign-in.component';
@@ -58,11 +59,11 @@ import { UpdateCatClassComponent } from './Components/Class/crud-cat-class/updat
 import { DeleteCatClassComponent } from './Components/Class/crud-cat-class/delete-cat-class/delete-cat-class.component';
 import { DetailsClassComponent } from './Components/Class/details-class/details-class.component';
 
-
 import { UpdateProductComponent } from './Components/Admin/update-product/update-product.component';
 import { DeleteProductComponent } from './Components/Admin/delete-product/delete-product.component';
 import { AddProductComponent } from './Components/Admin/add-product/add-product.component';
 import { ProductListComponent } from './Components/Admin/product-list/product-list.component';
+import { EditProfileComponent } from './Components/Profile/edit-profile/edit-profile.component';
 import { GameCatsIndexComponent } from './Components/game-cats-crud/game-cats-index/game-cats-index.component';
 import { GameCatsAddComponent } from './Components/game-cats-crud/game-cats-add/game-cats-add.component';
 import { GameCatsUpdateComponent } from './Components/game-cats-crud/game-cats-update/game-cats-update.component';
@@ -72,6 +73,19 @@ import { EventCatsAddComponent } from './Components/event-cats-crud/event-cats-a
 import { EventCatsUpdateComponent } from './Components/event-cats-crud/event-cats-update/event-cats-update.component';
 import { EventCatsDeleteComponent } from './Components/event-cats-crud/event-cats-delete/event-cats-delete.component';
 import { AdminControlComponent } from './Components/Events/admin-control/admin-control.component';
+import { PostingComponent } from './Components/posts/Posts_Crud/posting/posting.component';
+import { AdminHeaderComponent } from './Components/admin_view/admin-header/admin-header.component';
+import { DashboardComponent } from './Components/admin_view/dashboard/dashboard.component';
+import { AdminMainLayoutComponent } from './Components/admin_view/admin-main-layout/admin-main-layout.component';
+import { NgxDropzoneModule } from 'ngx-dropzone';
+import { AddTeacherComponent } from './Components/add-teacher/add-teacher.component';
+import { EditTeacherComponent } from './Components/edit-teacher/edit-teacher.component';
+import { DeleteTeacherComponent } from './Components/delete-teacher/delete-teacher.component';
+
+import { SubEventComponent } from './Components/Events/sub-event/sub-event.component';
+import { EventAddComponent } from './Components/Events/crud-event/event-add/event-add.component';
+import { EventUpdateComponent } from './Components/Events/crud-event/event-update/event-update.component';
+import { EventDeleteComponent } from './Components/Events/crud-event/event-delete/event-delete.component';
 
 @NgModule({
   declarations: [
@@ -113,6 +127,8 @@ import { AdminControlComponent } from './Components/Events/admin-control/admin-c
     AddPostComponent,
     DeletePostComponent,
     ShowPostComponent,
+    // ProductComponent,
+    // ClassDetailsComponent,
     TeachersComponent,
     SingleTeacherComponent,
     SignInComponent,
@@ -141,6 +157,7 @@ import { AdminControlComponent } from './Components/Events/admin-control/admin-c
     UpdateProductComponent,
     DeleteProductComponent,
     ProductDetailsComponent,
+    EditProfileComponent,
     GameCatsIndexComponent,
     GameCatsAddComponent,
     GameCatsUpdateComponent,
@@ -150,6 +167,17 @@ import { AdminControlComponent } from './Components/Events/admin-control/admin-c
     EventCatsUpdateComponent,
     EventCatsDeleteComponent,
     AdminControlComponent,
+    PostingComponent,
+    AdminHeaderComponent,
+    DashboardComponent,
+    AdminMainLayoutComponent,
+    AddTeacherComponent,
+    EditTeacherComponent,
+    DeleteTeacherComponent,
+    SubEventComponent,
+    EventAddComponent,
+    EventUpdateComponent,
+    EventDeleteComponent
   ],
   imports: [
     BrowserModule,
@@ -158,7 +186,9 @@ import { AdminControlComponent } from './Components/Events/admin-control/admin-c
     ReactiveFormsModule,
     HttpClientModule,
     CommonModule,
-    FormsModule
+    FormsModule,
+    NgxDropzoneModule,
+
 
   ],
   // providers: [ { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },],

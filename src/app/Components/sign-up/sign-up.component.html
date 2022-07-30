@@ -138,12 +138,27 @@
                     <div style="color:red;" *ngIf="childGender.errors?.['required']">
                         childGender is required
                     </div>
+                  </div>
 
-                </div>
-                <div class="form-group mt-5">
-                    <input type="file" name="childImage" ngModel #childImage="ngModel">
-                </div>
 
+                    <!-- Terminal -->
+                    <div class="terminal">
+                      <ngx-dropzone (change)="onSelect($event)" style="margin: 20px;">
+                        <ngx-dropzone-label>Drop it, baby!</ngx-dropzone-label>
+                        <ngx-dropzone-image-preview
+                          ngProjectAs="ngx-dropzone-preview"
+                          *ngFor="let f of files"
+                          [file]="f"
+                          [removable]="true"
+                          (removed)="onRemove(f)"
+                        >
+                          <ngx-dropzone-label> ({{ f.type }})</ngx-dropzone-label>
+                        </ngx-dropzone-image-preview>
+                      </ngx-dropzone>
+                      <div>
+                        <button (click)="onload()">Upload</button>
+                      </div>
+                    </div>
                 <div class="form-group">
                     <button type="submit" [disabled]="myform.invalid" class="d-block custom-button"><span >Get Started
                             Now</span></button>

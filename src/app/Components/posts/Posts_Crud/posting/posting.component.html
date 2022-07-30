@@ -1,0 +1,52 @@
+
+
+<h1>hello</h1>
+
+<div class="container mb-5">
+    
+<form #postForm="ngForm"  (ngSubmit)="addPost()">
+
+    
+    <div class="mb-3">
+        <label for="PostTitle" class="form-label">Post Title</label>
+      
+        <input #PostTitleInput="ngModel"  type="text" 
+        class="form-control" name="PostTitle" id="PostTitle" [ngModelOptions]="{standalone:true}" [(ngModel)]="NewPost.title" > 
+    </div> 
+    <div class="mb-3">
+        <label for="PostImg" class="form-label">image</label>
+        <input type="file"  class="form-control"  id="PostImg" [ngModelOptions]="{standalone:true}" [(ngModel)]="NewPost.image" >
+      </div>
+    
+   
+    <div class="mb-3">
+      <label for="postDesc" class="form-label">Description</label>
+      <input type="text"
+        class="form-control" name="postDesc" id="postDesc" required  [ngModelOptions]="{standalone:true}" [(ngModel)]="NewPost.description">
+    </div>
+
+    <div class="mb-3">
+        <label for="teacherId" class="form-label">Teacher ID</label>
+        <input type="text"
+          class="form-control" name="teacherId" id="teacherId" required [ngModelOptions]="{standalone:true}"  [(ngModel)]="NewPost.teacher_id">
+      </div>
+     
+   
+  
+   
+   
+
+    <button type="submit" class="btn btn-success mb-5" >Submit</button>
+   
+</form>
+   
+</div>
+
+
+   <hr>
+   <div>
+    {{NewPost | json }}
+</div>
+
+   
+   

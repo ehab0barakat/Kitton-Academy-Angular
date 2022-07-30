@@ -19,8 +19,7 @@ export class SignInComponent implements OnInit {
       this.httpOptions={
         headers:new HttpHeaders({
           'Content-Type': 'application/json' ,
-          "responseType": 'text'
-          // "Authorization": "Bearer {P6z5dUpeoHbUH0z4KjEtdLCHloT4PQpk9wtyiDxl}",
+          // "Authorization": `Bearer ${this.token}`
 
         })
       };
@@ -29,22 +28,30 @@ export class SignInComponent implements OnInit {
   }
 
 
-  message:any = {
-    message : ""
-  } ;
+  message:any
 
-
-
+  token:any
+  userData:any
   mysubmit(myform:NgForm){
 
-    return this.httpclient.post(`${environment.APIBaseURL}/api/auth/login`,
-    JSON.stringify(myform.value),
-    this.httpOptions).subscribe( data =>{
-      this.message= data;
-      window.localStorage.setItem("token" ,this.message.token );
-      this.route.navigate(['/slachpage'])
+    return this.httpclient.post(`${environment.APIBaseURL}/api/auth/login`,JSON.stringify(myform.value),this.httpOptions).subscribe( data =>{
+      this.token = data
+      this.httpclient.get<any>(`${environment.APIBaseURL}/api/auth/me`, {
+        headers:new HttpHeaders({
+          'Content-Type': 'application/json' ,
+          "Authorization": `Bearer ${this.token.token}`
+        })
+      }).subscribe( data =>{
+        this.userData = data ;
+        if(this.userData.role != 3){
+          window.localStorage.setItem("token" ,this.token.token );
+          window.localStorage.setItem("role",`${this.userData.role}`)
+          this.route.navigate(['/slachpage'])
+        }else{
+          this.message = "Email or Password is Not Valid";
+        }
+      })
     })
-
   }
 
 

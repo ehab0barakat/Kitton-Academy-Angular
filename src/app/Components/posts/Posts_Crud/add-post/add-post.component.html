@@ -1,6 +1,9 @@
-<div class="container mb-5">
+
+<h1>hello</h1>
+
+<!-- <div class="container mb-5">
     
-<form #postForm="ngForm" (ngSubmit)="addPost()">
+<form #postForm="ngForm"  (ngSubmit)="addPost()">
 
     
     <div class="mb-3">
@@ -11,7 +14,10 @@
     </div> 
     <div class="mb-3">
         <label for="PostImg" class="form-label">image</label>
-        <input type="file"  class="form-control"  id="PostImg" [ngModelOptions]="{standalone:true}"  [(ngModel)]="NewPost.image" >
+        <input type="file"  class="form-control"  id="PostImg" [ngModelOptions]="{standalone:true}" [(ngModel)]="NewPost.image" >
+      </div>
+      <div *ngIf = "submitted && f.image.errors" class="invalid-feedback" >
+       <div *ngIf ="f.image.errors.required"> the image is required</div>
       </div>
    
     <div class="mb-3">
@@ -31,7 +37,7 @@
    
    
 
-    <button type="submit" class="btn btn-success mb-5" [disabled]="postForm.invalid">Submit</button>
+    <button type="submit" class="btn btn-success mb-5" >Submit</button>
    
 </form>
    
@@ -44,4 +50,4 @@
 </div>
 
    
-   
+    -->
