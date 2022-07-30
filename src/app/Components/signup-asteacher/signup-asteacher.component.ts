@@ -52,6 +52,7 @@ export class SignupAsteacherComponent implements OnInit {
 
 
   mysubmit(myform:NgForm){
+    localStorage.clear();
     console.log(myform.value);
     return this.httpclient.post<object>(`${environment.APIBaseURL}/api/auth/signupteacher`,
                                         JSON.stringify(myform.value),

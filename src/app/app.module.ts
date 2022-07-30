@@ -72,6 +72,9 @@ import { EventCatsAddComponent } from './Components/event-cats-crud/event-cats-a
 import { EventCatsUpdateComponent } from './Components/event-cats-crud/event-cats-update/event-cats-update.component';
 import { EventCatsDeleteComponent } from './Components/event-cats-crud/event-cats-delete/event-cats-delete.component';
 import { AdminControlComponent } from './Components/Events/admin-control/admin-control.component';
+import { AdminHeaderComponent } from './Components/admin_view/admin-header/admin-header.component';
+import { DashboardComponent } from './Components/admin_view/dashboard/dashboard.component';
+import { AdminMainLayoutComponent } from './Components/admin_view/admin-main-layout/admin-main-layout.component';
 
 @NgModule({
   declarations: [
@@ -150,6 +153,9 @@ import { AdminControlComponent } from './Components/Events/admin-control/admin-c
     EventCatsUpdateComponent,
     EventCatsDeleteComponent,
     AdminControlComponent,
+    AdminHeaderComponent,
+    DashboardComponent,
+    AdminMainLayoutComponent,
   ],
   imports: [
     BrowserModule,

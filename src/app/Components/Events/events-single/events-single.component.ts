@@ -63,7 +63,6 @@ alreadyEnroller:any = false ;
       this.teacher = response;
     })
 
-
     var x = setInterval(()=>{
       this.date = new Date(this.SingleEvents.date)
       this.timeLeft = this.date.getTime()  -   new Date().getTime()   ;
@@ -77,6 +76,13 @@ alreadyEnroller:any = false ;
         }
     }, 1000);
   })
+
+  setTimeout(()=>{
+    if(this.SingleEvents.id == 0){
+      this.router.navigate(['/not-auth']);
+    }
+  },1500)
+
 }
 
 message:string = ""
@@ -98,6 +104,8 @@ inroll(){
         this.eventService.addEnrollEvent({"user_id": this.auth.id , "event_id" : this.SingleEvents.id}).subscribe(response=>{
           this.eventService.usersCount(this.prod).subscribe(response=>{
             this.gonnaGo = response ;
+            this.message = 'U R ENROLLED ;) '
+
           });
         })
       }
