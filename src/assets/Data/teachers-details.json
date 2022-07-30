@@ -1,0 +1,60 @@
+[
+  {
+    "id": 1,
+    "title": "Jason Kovalsky",
+    "description": "Samet consectetuer apiscing elitsed diam nonumy nibh euismod nciduns awesome team mumber",
+    "imgurl": "./assets/images/teacher/teacher05.jpg",
+    "email":"esraa@g.com",
+    "phone":"+021 548 736 982 ,01236985",
+    "Address":"7 Melbourne, Australia",
+    "faceurl": "faceurl 1",
+    "googleurl":"google 1",
+    "dribbleurl": "dribble 1",
+    "vimeourl":"vimeo1",
+    "pinteresturl":"pinterest1"
+
+  
+  },
+  {
+    "id": 2,
+    "title": "Bangile Yusha",
+    "description": "Samet consectetuer apiscing elitsed diam nonumy nibh euismod nciduns awesome team mumber",
+    "imgurl": "./assets/images/teacher/teacher06.jpg",
+    "email":"esraa@g.com",
+    "phone":"+021 548 736 982 ,01236985",
+    "Address":"7 Melbourne, Africia",
+    "faceurl": "faceurl 2",
+    "googleurl":"google 2",
+    "dribbleurl": "dribble 2",
+    "pinteresturl":"pinterest2"
+
+  },
+  {
+    "id": 3,
+    "title": "Willium Kovalsky",
+    "description": "Samet consectetuer apiscing elitsed diam nonumy nibh euismod nciduns awesome team mumber",
+    "imgurl": "./assets/images/teacher/teacher07.jpg",
+    "email":"esraa@g.com",
+    "phone":"+021 548 736 982 ,01236985",
+    "Address":"7 Melbourne, Europe",
+    "faceurl": "faceurl 3",
+    "googleurl":"google 3",
+    "dribbleurl": "dribble 3",
+    "pinteresturl":"pinterest3"
+
+  },
+  {
+    "id": 4,
+    "title": "Bini Zaara",
+    "description": "Samet consectetuer apiscing elitsed diam nonumy nibh euismod nciduns awesome team mumber",
+    "imgurl":"./assets/images/teacher/teacher08.jpg",
+    "email":"esraa@g.com",
+    "phone":"+021 548 736 982 ,01236985",
+    "Address":"7 Melbourne, Egypt",
+    "faceurl": "faceurl 4",
+    "googleurl":"google 4",
+    "dribbleurl": "dribble 4",
+    "pinteresturl":"pinterest4"
+
+  }
+]

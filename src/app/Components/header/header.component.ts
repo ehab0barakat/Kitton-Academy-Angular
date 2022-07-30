@@ -1,4 +1,8 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { catchError, throwError } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-header',
@@ -6,10 +10,37 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  httpOptions: { headers: HttpHeaders; };
 
-  constructor() { }
+  constructor( private route:Router,
+    private httpclient: HttpClient ) {
+
+      this.httpOptions={
+        headers:new HttpHeaders({
+          'Content-Type': 'application/json',
+          "Authorization": `Bearer ${localStorage.getItem('token')}`,
+        })
+      };
+  }
+
+  userData:any  = "0" ;
 
   ngOnInit(): void {
+    this.httpclient.get<any>(`${environment.APIBaseURL}/api/auth/me`,this.httpOptions).subscribe( data =>{
+      this.userData = data ;
+      window.localStorage.setItem("role",`${this.userData.role}`)
+      console.log(data)
+    })
+
+    console.log(this.userData)
   }
+
+
+
+  ngOnChanges() {
+
+  }
+
+
 
 }

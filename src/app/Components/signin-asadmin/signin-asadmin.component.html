@@ -1,0 +1,42 @@
+
+<!-- ==========Login Section Section Starts Here========== -->
+<div class="login-section padding-top padding-bottom">
+  <div class="container">
+      <div class="account-wrapper">
+          <h3 class="title">Login</h3>
+          <form class="account-form" #myform="ngForm" (ngSubmit)="mysubmit(myform)">
+
+            <div class="form-group">
+                <input type="text" placeholder="Email" name="email" required ngModel #email="ngModel">
+                <div *ngIf="email.invalid && (email.dirty || email.touched) ">
+                    <div style="color:red;" *ngIf="email.errors?.['required']">
+                        email is required
+                    </div>
+                </div>
+            </div>
+
+              <div class="form-group">
+                  <input type="password" placeholder="Password" name="password" required ngModel #password="ngModel"
+                      name="password">
+                  <div *ngIf="password.invalid && (password.dirty || password.touched) ">
+                      <div style="color:red;" *ngIf="password.errors?.['required']">
+                          password is required
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="fs-2  text-danger">{{message}}</div>
+
+
+              <div class="form-group">
+                  <button type="submit" [disabled]="myform.invalid" class="btn btn-primary d-block customs-button mt-5 "
+                      style="background-color:purple; height:50px; text-decoration:none; color: #fff; font-size: 15px;">Submit
+                      Now</button>
+                  <!-- <button class="d-block custom-button"><span>Submit Now As UserandTeacher</span></button> -->
+              </div>
+          </form>
+
+      </div>
+  </div>
+</div>
+<!-- ==========Login Section Section Ends Here========== -->

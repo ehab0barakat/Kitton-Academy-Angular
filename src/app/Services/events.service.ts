@@ -15,25 +15,60 @@ export class EventsService {
     this.httpOptions={
       headers:new HttpHeaders({
         'Content-Type': 'application/json' ,
-        // "Authorization": "Bearer {P6z5dUpeoHbUH0z4KjEtdLCHloT4PQpk9wtyiDxl}",
-
+        "Authorization": `Bearer ${localStorage.getItem('token')}`,
       })
     };
-
    }
 
 
+   getAllActiveEvents():Observable<Event[]>{
+    return this.httpclient.get<Event[]>(`${environment.APIBaseURL}/api/event/active`,this.httpOptions);
+
+  }
+
+   getAllNONActiveEvents():Observable<Event[]>{
+    return this.httpclient.get<Event[]>(`${environment.APIBaseURL}/api/event/nonactive`,this.httpOptions);
+
+  }
+
    getAllevents():Observable<Event[]>{
-    return this.httpclient.get<Event[]>(`${environment.APIBaseURL}/api/event`);
+    return this.httpclient.get<Event[]>(`${environment.APIBaseURL}/api/event`,this.httpOptions);
+
+  }
+
+
+  getTeacher_events(newPrd:any):Observable<Event[]>{
+    return this.httpclient.post<Event[]>(`${environment.APIBaseURL}/api/event/teacher_events`,JSON.stringify(newPrd),this.httpOptions);
 
   }
 
 
   geteventByID(claID:number):Observable<Event>{
-    return this.httpclient.get<Event>(`${environment.APIBaseURL}/api/event/${claID}`);
+    return this.httpclient.get<Event>(`${environment.APIBaseURL}/api/event/${claID}`,this.httpOptions);
   }
 
 
+
+
+  usersCount(claID:number):Observable<any>{
+    return this.httpclient.get<any>(`${environment.APIBaseURL}/api/event/userscount/${claID}`,this.httpOptions);
+  }
+
+
+
+
+  search_inrollement(newPrd:any):Observable<any>{
+    return this.httpclient.post<any>(`${environment.APIBaseURL}/api/event/search_inrollement/`,JSON.stringify(newPrd),this.httpOptions);
+  }
+
+
+
+
+    addEnrollEvent(newPrd:any):Observable<any>{
+        return this.httpclient.post<any>(`${environment.APIBaseURL}/api/event/inroll_add`,
+                                                  JSON.stringify(newPrd),
+                                                  this.httpOptions)
+                                                }
 
 
   // -----------------------------  ( event crud )  -----------------------------
@@ -55,10 +90,25 @@ export class EventsService {
                                               }
 
 
+  ActivationeditEvent(newPrd:any , id:number ):Observable<any>{
+      return this.httpclient.put<any>(`${environment.APIBaseURL}/api/event/${id}`,
+                                                JSON.stringify(newPrd),
+                                                this.httpOptions)
+                                              }
+
+
 
 
   deleteEvent( id:number ):Observable<Event>{
       return this.httpclient.delete<Event>(`${environment.APIBaseURL}/api/event/${id}`,
+                                                this.httpOptions)
+                                              }
+
+
+
+
+  getTeacherName( id:number ):Observable<any>{
+      return this.httpclient.get<any>(`${environment.APIBaseURL}/api/event/teacherbyid/${id}`,
                                                 this.httpOptions)
                                               }
 

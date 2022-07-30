@@ -11,6 +11,23 @@
         <li>
           <i class="fas fa-map-marker-alt"></i> Beverley, New York 224 US
         </li>
+
+        <div *ngIf="userData =='0'" class="d-flex" >
+              <li>
+                <a routerLinkActive="active" routerLink="/sign-in">Sign In</a>
+              </li>
+              <li>
+                <a routerLinkActive="active" routerLink="/Welcome">Sign Up</a>
+              </li>
+        </div>
+
+        <div *ngIf="userData !='0'">
+              <li>
+                <a class="px-3" routerLinkActive="active" routerLink="/sign-out">Sign Out</a>
+                <a class="px-3" routerLinkActive="active" >{{userData.email}}</a>
+              </li>
+        </div>
+
       </ul>
       <ul class="social-icons">
         <li>
@@ -51,7 +68,7 @@
             <a routerLinkActive="active" routerLink="/about_us"><i class="fas fa-user"></i>About</a>
           </li>
           <li class="menu-item-has-children">
-            <a href="#0"><i class="fas fa-book"></i>Classes</a>
+            <a routerLink="/classes"><i class="fas fa-book"></i>Classes</a>
             <ul class="submenu">
               <li>
                 <a routerLink="/classes">Classes</a>
@@ -62,7 +79,7 @@
             </ul>
           </li>
           <li class="menu-item-has-children">
-            <a routerLinkActive="active" routerLink="/posts"><i class="fas fa-pencil-alt"></i>Posts</a>
+            <a routerLinkActive="active" routerLink="/post-index"><i class="fas fa-pencil-alt"></i>Posts</a>
           </li>
 
           <li class="menu-item-has-children">
@@ -72,26 +89,33 @@
                 <a href="#0">Teacher</a>
                 <ul class="submenu">
                   <li>
-                    <a routerLinkActive="active" routerLink="">Our Teacher</a>
-                  </li>                 
+                    <a routerLinkActive="active" routerLink="/teachers">Our Teacher</a>
+                  </li>
+                  <li>
+                    <a routerLinkActive="active" routerLink="/single-teacher">Teacher Single</a>
+                  </li>
                 </ul>
               </li>
-              <li class="menu-item-has-children">
+              <!-- <li class="menu-item-has-children">
                 <a href="#0">Account</a>
                 <ul class="submenu">
                   <li>
-                    <a routerLinkActive="active" routerLink="/">Sign In</a>
+                    <a routerLinkActive="active" routerLink="/sign-in">Sign In</a>
                   </li>
                   <li>
-                    <a routerLinkActive="active" routerLink="/">Sign Up</a>
+                    <a routerLinkActive="active" routerLink="sign-up/">Sign Up</a>
                   </li>
                 </ul>
-              </li>
+              </li> -->
               <li class="menu-item-has-children">
                 <a routerLink="/events-archive">Events</a>
-                <ul class="submenu">
+
+                <ul class="submenu" *ngIf="userData?.role==2" >
                   <li>
-                    <a routerLinkActive="active" routerLink="/events-archive">Our Events</a>
+                    <a routerLinkActive="active" routerLink="/event-index">My Events</a>
+                  </li>
+                  <li>
+                    <a routerLinkActive="active" routerLink="/event-add">ADD Event</a>
                   </li>
                 </ul>
               </li>
@@ -159,6 +183,8 @@
     </div>
   </div>
 </div>
+
+
 
 
 <!--  -->
@@ -242,3 +268,4 @@
   </form>
 
 </div>
+<!-- <section _ngcontent-htu-c57="" data-background="./assets/images/banner/page-header.jpg" class="page-header bg_img" style="background-image: url(&quot;./assets/images/banner/page-header.jpg&quot;);"><div _ngcontent-htu-c57="" class="container"><div _ngcontent-htu-c57="" class="page-header-content"><h1 _ngcontent-htu-c57="" class="title">Our Popular Classes</h1><ul _ngcontent-htu-c57="" class="breadcrumb"><li _ngcontent-htu-c57=""><a _ngcontent-htu-c57="" href="index.html">Home</a></li><a routerLink="/classes"><li _ngcontent-htu-c57=""> Classes </li></a></ul></div></div></section> -->

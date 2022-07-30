@@ -1,0 +1,171 @@
+   <!-- ==========Banner Section Starts Here========== -->
+   <section class="page-header bg_img" data-background="./assets/images/banner/page-header.jpg" style="background-image: url(&quot;./assets/images/banner/page-header.jpg&quot;);">
+    <div class="container">
+        <div class="page-header-content">
+            <h1 class="title">kittons Register Now</h1>
+            <ul class="breadcrumb">
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="#">Pages</a>
+                </li>
+                <li>
+                    Register Now
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- ==========Banner Section Ends Here========== -->
+<!-- ==========Login Section Section Starts Here========== -->
+    <div class="login-section padding-top padding-bottom">
+        <div class="container">
+            <div class="account-wrapper">
+                <h3 class="title">Register Now</h3>
+                <form class="account-form" #myform="ngForm" (ngSubmit)="mysubmit(myform)" >
+                    <div class="form-group">
+                        <input type="text" placeholder="Name" name="name" required ngModel #Name="ngModel">
+                        <div *ngIf="Name.invalid && (Name.dirty || Name.touched) ">
+                            <div style="color:red;" *ngIf="Name.errors?.['required']">
+                                Name is required
+                            </div>
+                            <div style="color:red;" *ngIf="Name.errors?.['minlength']">
+                                Name must be at least 1 characters long.
+                            </div>
+                            <div style="color:red;" *ngIf="Name.errors?.['maxlength']">
+                                Name must be least then 20 characters
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Email" name="email" required ngModel #email="ngModel">
+                        <div *ngIf="email.invalid && (email.dirty || email.touched) ">
+                            <div style="color:red;" *ngIf="email.errors?.['required']">
+                                email is required
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="enter your phone" name="phone" required minlength="11" ngModel
+                            #phone="ngModel">
+                        <div *ngIf="phone.invalid && (phone.dirty || phone.touched) ">
+                            <div style="color:red;" *ngIf="phone.errors?.['required']">
+                                phone is required
+                            </div>
+                            <div style="color:red;" *ngIf="phone.errors?.['minlength']">
+                                Name must be at least 11 characters long.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="enter your SSID" name="ssid" (keyup)="onKeymax($event)" required maxlength="14" ngModel
+                        #SSID="ngModel">
+                        <div *ngIf="SSID.invalid && (SSID.dirty || SSID.touched) ">
+                            <div style="color:red;" *ngIf="SSID.errors?.['required']">
+                                SSID is required
+                            </div>
+                        </div>
+                        <div style="color:red;" *ngIf="(max.length>14) &&  (SSID.touched)">
+                            Name must be at least 14 characters long.
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Address" name="address"  required ngModel #Address="ngModel">
+                        <div *ngIf="Address.invalid && (Address.dirty || Address.touched) ">
+                            <div style="color:red;" *ngIf="Address.errors?.['required']">
+                                Address is required
+                            </div>
+                            <div style="color:red;" *ngIf="Address.errors?.['minlength']">
+                                Address must be at least 1 characters long.
+                            </div>
+                            <div style="color:red;" *ngIf="Address.errors?.['maxlength']">
+                                Address must be least then 20 characters
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" (keyup)="onKeypassword($event)" placeholder="Password" name="password" minlength="6" maxlength="15" required
+                            ngModel #password="ngModel">
+                        <div *ngIf="password.invalid && (password.dirty || password.touched) ">
+                            <div style="color:red;" *ngIf="password.errors?.['required']">
+                                password is required
+                            </div>
+                            <div style="color:red;" *ngIf="password.errors?.['minlength']">
+                                Name must be at least 6 characters long.
+                            </div>
+                            <div style="color:red;" *ngIf="password.errors?.['maxlength']">
+                                Name must be least then 15 characters
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" (keyup)="onKey($event)"  placeholder="Confirm Password"  required ngModel #confirmpassword="ngModel">
+                        <div *ngIf="confirmpassword.invalid && (confirmpassword.dirty || confirmpassword.touched) ">
+                            <div style="color:red;" *ngIf="confirmpassword.errors?.['required']">
+                                confirm password is required
+                            </div>
+
+
+                        </div>
+                        <div style="color:red;" *ngIf="conpass!=pass">
+                            confirm password is invalid
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Terminal -->
+                    <div class="terminal">
+                      <ngx-dropzone (change)="onSelect($event)" style="margin: 20px;">
+                        <ngx-dropzone-label>Drop it, baby!</ngx-dropzone-label>
+                        <ngx-dropzone-image-preview
+                          ngProjectAs="ngx-dropzone-preview"
+                          *ngFor="let f of files"
+                          [file]="f"
+                          [removable]="true"
+                          (removed)="onRemove(f)"
+                        >
+                          <ngx-dropzone-label> ({{ f.type }})</ngx-dropzone-label>
+                        </ngx-dropzone-image-preview>
+                      </ngx-dropzone>
+                      <div>
+                        <button (click)="onload()">Upload</button>
+                      </div>
+                    </div>
+
+
+
+
+                <div class="form-group">
+                    <button [disabled]="myform.invalid&&max.length<=14" class="d-block custom-button"><span>Get Started Now</span></button>
+                    <!-- <a routerLink="/sign-up as teacher" class="btn btn-primary d-block customs-button mt-5 " style="background-color:purple; height:50px; text-decoration:none; color: #fff; font-size: 15px;">Get Started Now As Teacher</a> -->
+            </div>
+            </form>
+            <div class="account-bottom">
+                <span class="d-block cate pt-10">Are you a member? <a href="login.html">Login</a></span>
+                <span class="or"><span>or</span></span>
+                <h5 class="subtitle">Register With Social Media</h5>
+                <ul class="social-icons justify-content-center">
+                    <li>
+                        <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                    </li>
+                    <li>
+                        <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
+                    </li>
+                    <li>
+                        <a href="#" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+                    </li>
+                    <li>
+                        <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
+                    </li>
+                    <li>
+                        <a href="#" class="pinterest"><i class="fab fa-pinterest"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ==========Login Section Section Ends Here========== -->
