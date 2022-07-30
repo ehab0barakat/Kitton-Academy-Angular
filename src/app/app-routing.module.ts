@@ -51,6 +51,7 @@ import { ProductListComponent } from './Components/Admin/product-list/product-li
 import { AddProductComponent } from './Components/Admin/add-product/add-product.component';
 import { UpdateProductComponent } from './Components/Admin/update-product/update-product.component';
 import { DeleteProductComponent } from './Components/Admin/delete-product/delete-product.component';
+import { MyclassesComponent } from './Components/Class/myclasses/myclasses.component';
 
 
 
@@ -106,6 +107,7 @@ const routes: Routes = [
   {path : "classescat-update/:id" , component: UpdateCatClassComponent},
   {path : "classescat-delete/:id" , component: DeleteCatClassComponent},
   {path: 'checkout/:id',component:CheckoutComponent},
+  {path: 'myclasses/:id',component:MyclassesComponent},
 
   {path:'Products',component:ProductsComponent},
   {path:'ProductList',component:ProductListComponent},

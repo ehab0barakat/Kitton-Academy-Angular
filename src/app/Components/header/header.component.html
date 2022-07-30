@@ -6,10 +6,10 @@
           <i class="far fa-clock"></i> 9:30am - 6:30pm Mon - Sun
         </li>
         <li>
-          <a href="#"><i class="fas fa-phone-alt"></i> +800-123-4567 6587</a>
+          <a href="#"><i class="fas fa-phone-alt"></i> +201030020210</a>
         </li>
         <li>
-          <i class="fas fa-map-marker-alt"></i> Beverley, New York 224 US
+          <i class="fas fa-map-marker-alt"></i> Cairo, Egypt
         </li>
 
         <div *ngIf="userData =='0'" class="d-flex" >
@@ -20,7 +20,12 @@
                 <a routerLinkActive="active" routerLink="/Welcome">Sign Up</a>
               </li>
         </div>
-        
+        <div *ngIf="userData !='0'">
+          <li>
+            <a class="px-3"  routerLinkActive="active" routerLink="/myclasses/{{ userData.id }}">My Classes</a>
+          </li>
+    </div>
+
         <div *ngIf="userData !='0'">
               <li>
                 <a class="px-3" routerLinkActive="active" routerLink="/sign-out">Sign Out</a>

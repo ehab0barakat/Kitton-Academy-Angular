@@ -30,7 +30,7 @@ import { EventAddComponent } from './Components/Events/crud-event/event-add/even
 import { EventUpdateComponent } from './Components/Events/crud-event/event-update/event-update.component';
 import { EventDeleteComponent } from './Components/Events/crud-event/event-delete/event-delete.component';
 import { CheckoutComponent } from './Components/checkout/checkout.component';
-import { MyclassesComponent } from './Components/myclasses/myclasses.component';
+import { MyclassesComponent } from './Components/Class/myclasses/myclasses.component';
 import { CrudClassComponent } from './Components/Class/crud-class/crud-class.component';
 import { AddClassComponent } from './Components/Class/crud-class/add-class/add-class.component';
 import { UpdateClassComponent } from './Components/Class/crud-class/update-class/update-class.component';
