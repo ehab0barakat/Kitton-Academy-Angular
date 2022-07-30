@@ -75,6 +75,7 @@ import { AdminControlComponent } from './Components/Events/admin-control/admin-c
 import { AdminHeaderComponent } from './Components/admin_view/admin-header/admin-header.component';
 import { DashboardComponent } from './Components/admin_view/dashboard/dashboard.component';
 import { AdminMainLayoutComponent } from './Components/admin_view/admin-main-layout/admin-main-layout.component';
+import { NgxDropzoneModule } from 'ngx-dropzone';
 
 @NgModule({
   declarations: [
@@ -164,7 +165,9 @@ import { AdminMainLayoutComponent } from './Components/admin_view/admin-main-lay
     ReactiveFormsModule,
     HttpClientModule,
     CommonModule,
-    FormsModule
+    FormsModule,
+    NgxDropzoneModule,
+
 
   ],
   // providers: [ { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },],
