@@ -21,11 +21,11 @@
     "bootstrap-icons": "^1.9.1",
     "json-server": "^0.17.0",
     "mdb-ui-kit": "^4.3.0",
-<<<<<<< HEAD
+
     "ngx-toastr": "^15.0.0",
-=======
+
     "ngx-dropzone": "^3.1.0",
->>>>>>> 385a8622141c1ee02d5e630773e69a0b4ca1d0da
+
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
