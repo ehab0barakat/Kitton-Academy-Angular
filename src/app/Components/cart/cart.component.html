@@ -14,28 +14,29 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr *ngFor="let selection of cart.selections">
             <td class="product-item-2">
               <div class="p-thumb">
-                <a ><img [src]="product?.image" alt="product"></a>
+                <a ><img [src]="selection.product.image" alt="product"></a>
               </div>
               <div class="p-content">
-                <a href="#">{{ product?.name }}</a>
+                <a href="#">{{selection.product.name}}</a>
               </div>
             </td>
-            <td>{{ product?.price }}</td>
+            <td>${{selection.product.price}}</td>
             <td>
               <div class="cart-plus-minus">
                 <div class="dec qtybutton">-</div>
                 <div class="dec qtybutton">-</div>
-                <input class="cart-plus-minus-box" type="text" name="qtybutton" value="2">
+                <!-- <input class="cart-plus-minus-box" type="text" name="qtybutton" value="2"> -->
+                <input #quantity [value]="selection.quantity" type="number" (change)="onQuantityChange(selection, quantity.value)" min="1" />
                 <div class="inc qtybutton">+</div>
                 <div class="inc qtybutton">+</div>
               </div>
             </td>
-            <td>$500.00</td>
+            <td>${{subTotal() }}</td>
             <td>
-              <a routerLink="/cart" class="btn btn-outline-danger">
+              <a (click)="remove(selection.product)" class="btn btn-outline-danger">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16"><path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z"></path></svg>
               </a>
             </td>
@@ -44,7 +45,6 @@
       </table>
     </div>
 
-    <!--  -->
     <div class="cart-checkout-box mb-widget">
       <div class="coupon-area">
         <form class="coupon">
@@ -58,7 +58,6 @@
       </div>
     </div>
 
-    <!--  -->
     <div class="shiping-box mb-widget">
       <div class="row">
         <div class="col-md-6 col-12">
@@ -107,7 +106,7 @@
           </div>
         </div>
 
-        <!--  -->
+        
         <div class="col-md-6 col-12">
           <div class="cart-overview">
             <h5 class="title">Cart Totals</h5>
@@ -134,3 +133,9 @@
   </div>
 </div>
 <!-- ==========Shop Section Ends Here========== -->
+
+  
+  <!-- <a class="btn btn-primary" routerLink="/checkout">Checkout</a> -->
+<div *ngIf="!cart.selections.length">
+  <p>Your cart is empty.  Check out our great <a routerLink="/products">Products</a>!</p>
+</div>

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { ErrorHandler, Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -33,6 +33,8 @@ export class ProductsService {
     );
   }
 
+  // ----------------------------------------------------------------//
+
   addProduct(newProd: IProduct): Observable<IProduct> {
     return this.httpclient.post<IProduct>(
       `${environment.APIBaseURL}/api/Product`,
@@ -56,7 +58,14 @@ export class ProductsService {
     );
   }
 
-   // searchProductByName(prodName:string):IProduct|undefined{
+  // searchProductByName(prodName:string):IProduct|undefined{
   //   return this.prdList.find(prod=>prod.name==prodName);
   // }
+
+  getProducts(): Observable<IProduct[]> {
+    return this.httpclient.get<IProduct[]>(
+      `${environment.APIBaseURL}/api/Product`,
+      this.httpOptions
+    );
+  }
 }

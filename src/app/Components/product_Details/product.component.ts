@@ -27,34 +27,12 @@ export class ProductDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.prodService.getProductByID(this.prod).subscribe((response) => {
+      console.log(response)
+
       this.product = response;
       console.log(this.product);
     });
 
   }
-  // goBack() {
-  //   this.location.back();
-  // }
-  // searchProduct(prdName:string){
-  //  let foundedPrd= this.prodService.searchProductByName(prdName);
-  //  if(foundedPrd)
-  //  {
-  //   this.prd=foundedPrd;
-  //  }
-  //  else{
-  //   alert("Product not found");
-  //  }
-  // }
-  // goPrevious() {
-  //   this.currentIndex = this.prdIDList.findIndex(
-  //     (item) => item == this.currentPrdID
-  //   );
-  //   this.router.navigate(['/Products', this.prdIDList[--this.currentIndex]]);
-  // }
-  // goNext() {
-  //   this.currentIndex = this.prdIDList.findIndex(
-  //     (item) => item == this.currentPrdID
-  //   );
-  //   this.router.navigate(['/Products', this.prdIDList[++this.currentIndex]]);
-  // }
+
 }

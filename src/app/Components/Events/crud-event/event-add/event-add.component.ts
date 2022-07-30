@@ -29,10 +29,7 @@ export class EventAddComponent implements OnInit {
 
 
   AllEventCats:Eventcats[] = []
-<<<<<<< HEAD
-=======
 
->>>>>>> 385a8622141c1ee02d5e630773e69a0b4ca1d0da
   NewEvent :Event ={} as Event ;
 
   auth:any = localStorage.getItem("role");

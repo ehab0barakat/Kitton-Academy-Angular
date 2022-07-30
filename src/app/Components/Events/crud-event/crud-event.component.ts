@@ -17,8 +17,6 @@ export class CrudEventComponent implements OnInit {
 
 
     AllEvents:Event[] = [];
-
-
     auth:any = localStorage.getItem("role");
 
     ngOnInit(): void {
