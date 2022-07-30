@@ -5,19 +5,24 @@ import { Event } from 'src/app/Models/event'
 import { Eventcats } from 'src/app/Models/eventcats'
 import { EventCatsService } from 'src/app/Services/event-cats.service';
 import { AuthService } from 'src/app/Services/auth.service';
+import { UploadService } from 'src/app/Services/upload.service';
 
 @Component({
   selector: 'app-event-update',
   templateUrl: './event-update.component.html',
-  styleUrls: ['./event-update.component.css']
+  styleUrls: ['./event-update.component.css'],
+  providers: [UploadService],
 })
 export class EventUpdateComponent implements OnInit {
+
+  title = 'angular-cloudinary';
 
   constructor( private router:Router,
     private eventService:EventsService,
     private eventcatsService:EventCatsService,
     private activatedRoute : ActivatedRoute,
-    private authService:AuthService) {
+    private authService:AuthService,
+    private _uploadService: UploadService) {
   }
 
 
@@ -55,7 +60,48 @@ if(this.auth != 2){
 
   }
 
+
+  image:any
+
+  files: File[] = [];
+
+  onSelect(event:any) {
+    console.log(event);
+    this.files.push(...event.addedFiles);
+  }
+
+  onRemove(event:any) {
+    console.log(event);
+    this.files.splice(this.files.indexOf(event), 1);
+  }
+
+  onload() {
+    //Scape empty array
+    if (!this.files[0]) {
+      alert('Please upload an image first.');
+    }
+
+    //Upload my image to cloudinary
+    const file_data = this.files[0];
+    const data = new FormData();
+    data.append('file', file_data);
+    data.append('upload_preset', 'ml_default');
+    data.append('cloud_name', 'el-safwa');
+
+    this._uploadService.uploadImage(data).subscribe((response) => {
+      if (response) {
+        this.image = response
+        console.log(response.secure_url);
+      }
+    });
+  }
+
+
+
+
   EditEvent(){
+
+    this.editEvent.image = this.image.secure_url;
     this.authService.Auth().subscribe(response=>{
       this.auth = response ;
       if(this.auth.role != 2 ){

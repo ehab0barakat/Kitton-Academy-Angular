@@ -113,9 +113,31 @@
                         </div>
 
                     </div>
-                    <div class="form-group">
-                        <input type="file" name="image" ngModel #image="ngModel">
+
+
+
+                    <!-- Terminal -->
+                    <div class="terminal">
+                      <ngx-dropzone (change)="onSelect($event)" style="margin: 20px;">
+                        <ngx-dropzone-label>Drop it, baby!</ngx-dropzone-label>
+                        <ngx-dropzone-image-preview
+                          ngProjectAs="ngx-dropzone-preview"
+                          *ngFor="let f of files"
+                          [file]="f"
+                          [removable]="true"
+                          (removed)="onRemove(f)"
+                        >
+                          <ngx-dropzone-label> ({{ f.type }})</ngx-dropzone-label>
+                        </ngx-dropzone-image-preview>
+                      </ngx-dropzone>
+                      <div>
+                        <button (click)="onload()">Upload</button>
+                      </div>
                     </div>
+
+
+
+
                 <div class="form-group">
                     <button [disabled]="myform.invalid&&max.length<=14" class="d-block custom-button"><span>Get Started Now</span></button>
                     <!-- <a routerLink="/sign-up as teacher" class="btn btn-primary d-block customs-button mt-5 " style="background-color:purple; height:50px; text-decoration:none; color: #fff; font-size: 15px;">Get Started Now As Teacher</a> -->

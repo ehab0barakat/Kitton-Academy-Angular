@@ -109,9 +109,13 @@
               </li> -->
               <li class="menu-item-has-children">
                 <a routerLink="/events-archive">Events</a>
-                <ul class="submenu">
+
+                <ul class="submenu" *ngIf="userData?.role==2" >
                   <li>
-                    <a routerLinkActive="active" routerLink="/events-archive">Our Events</a>
+                    <a routerLinkActive="active" routerLink="/event-index">My Events</a>
+                  </li>
+                  <li>
+                    <a routerLinkActive="active" routerLink="/event-add">ADD Event</a>
                   </li>
                 </ul>
               </li>

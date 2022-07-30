@@ -12,12 +12,10 @@ export class SignOutComponent implements OnInit {
 
   ngOnInit(): void {
 
+    console.log("haha")
 
-    localStorage.setItem('token',"");
-    localStorage.setItem('role',"");
+    localStorage.clear();
     this.router.navigate(['/slachpage']);
-
-
 
   }
 

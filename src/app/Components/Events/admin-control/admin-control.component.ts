@@ -28,9 +28,11 @@ export class AdminControlComponent implements OnInit {
       if(this.auth.role != 3 ){
           this.router.navigate(['/not-auth']);
         }else{
-          this.eventService.getAllNONActiveEvents().subscribe(res =>{
+
+          this.eventService.getAllevents().subscribe(res =>{
             this.AllEvents = res;
           });
+
         }
       });
         if(this.auth != 3 ){
@@ -38,15 +40,15 @@ export class AdminControlComponent implements OnInit {
         }
   }
 
-  toggle(id:any){
-    this.eventService.ActivationeditEvent({"isActive":0},id).subscribe(data =>{
-      this.router.navigate(["/event-control"])
+  toggle(id:any ,isActive:any){
+    isActive == 0 ? isActive = 1 : isActive = 0 ;
+    this.eventService.ActivationeditEvent({"isActive":isActive},id).subscribe(data =>{
+      this.router.navigate(["admin/event-control"])
     });
 
 
+    this.all()
   }
-
-
 
 
   delete(id:any){
@@ -55,6 +57,25 @@ export class AdminControlComponent implements OnInit {
     });
 
   }
+
+
+
+
+  all(){
+    this.eventService.getAllevents().subscribe(res =>{
+      this.AllEvents = res;
+    });
+  }
+
+
+  nonactive(){
+    this.eventService.getAllNONActiveEvents().subscribe(res =>{
+      this.AllEvents = res;
+    });
+  }
+
+
+
 
   }
 

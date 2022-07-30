@@ -74,6 +74,10 @@ import { EventCatsUpdateComponent } from './Components/event-cats-crud/event-cat
 import { EventCatsDeleteComponent } from './Components/event-cats-crud/event-cats-delete/event-cats-delete.component';
 import { AdminControlComponent } from './Components/Events/admin-control/admin-control.component';
 import { PostingComponent } from './Components/posts/Posts_Crud/posting/posting.component';
+import { AdminHeaderComponent } from './Components/admin_view/admin-header/admin-header.component';
+import { DashboardComponent } from './Components/admin_view/dashboard/dashboard.component';
+import { AdminMainLayoutComponent } from './Components/admin_view/admin-main-layout/admin-main-layout.component';
+// import { NgxDropzoneModule } from 'ngx-dropzone';
 
 @NgModule({
   declarations: [
@@ -154,6 +158,9 @@ import { PostingComponent } from './Components/posts/Posts_Crud/posting/posting.
     EventCatsDeleteComponent,
     AdminControlComponent,
     PostingComponent,
+    AdminHeaderComponent,
+    DashboardComponent,
+    AdminMainLayoutComponent,
   ],
   imports: [
     BrowserModule,
@@ -162,7 +169,9 @@ import { PostingComponent } from './Components/posts/Posts_Crud/posting/posting.
     ReactiveFormsModule,
     HttpClientModule,
     CommonModule,
-    FormsModule
+    FormsModule,
+    // NgxDropzoneModule,
+
 
   ],
   // providers: [ { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },],

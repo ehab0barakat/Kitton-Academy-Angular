@@ -58,6 +58,9 @@ import { EventCatsAddComponent } from './Components/event-cats-crud/event-cats-a
 import { AdminControlComponent } from './Components/Events/admin-control/admin-control.component';
 import { EditProfileComponent } from './Components/Profile/edit-profile/edit-profile.component';
 import { PostingComponent } from './Components/posts/Posts_Crud/posting/posting.component';
+import { AdminHeaderComponent } from './Components/admin_view/admin-header/admin-header.component';
+import { DashboardComponent } from './Components/admin_view/dashboard/dashboard.component';
+import { AdminMainLayoutComponent } from './Components/admin_view/admin-main-layout/admin-main-layout.component';
 
 
 const routes: Routes = [
@@ -70,7 +73,6 @@ const routes: Routes = [
   {path:'posts',component:PostsComponent},
 
   // ------------------------ (  event crud start  )   -----------------------------
-  {path : "event-control" , component: AdminControlComponent},
   {path : "events-archive" , component: EventsArchiveComponent},
   {path : "event/:id" , component: EventsSingleComponent},
   {path : "event-index" , component: CrudEventComponent},
@@ -82,10 +84,7 @@ const routes: Routes = [
   // ####################################################################################
 
   // ------------------------ (  event cats crud start  )   -----------------------------
-  {path:'eventcats-index',component:EventCatsIndexComponent},
-  {path:'eventcats-add',component:EventCatsAddComponent},
-  {path:'eventcats-update/:id',component:EventCatsUpdateComponent},
-  {path:'eventcats-delete/:id',component:EventCatsDeleteComponent},
+
   // ------------------------ (  event cats crud end  )   -----------------------------
   {path:'post-index',component:PostsComponent},
   {path:'show-post',component:ShowPostComponent},
@@ -133,6 +132,32 @@ const routes: Routes = [
   // -------------------------------------------------//
 
 ]},
+
+{path:'admin',component:AdminMainLayoutComponent,children:[
+
+  {path : "event-control" , component: AdminControlComponent},
+  {path : "event-control/event/:id" , component: EventsSingleComponent},
+  {path:'eventcats-index',component:EventCatsIndexComponent},
+  {path:'eventcats-add',component:EventCatsAddComponent},
+  {path:'eventcats-update/:id',component:EventCatsUpdateComponent},
+  {path:'eventcats-delete/:id',component:EventCatsDeleteComponent},
+
+
+]},
+
+
+
+
+
+
+
+
+
+
+
+
+
+{path:'admin-sign',component:SigninAsadminComponent},
 {path:'slachpage',component:SlachpageComponent},
 {path:'**',component:NotFoundComponent}
 
