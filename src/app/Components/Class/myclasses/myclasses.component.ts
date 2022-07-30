@@ -1,7 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { classes } from 'src/app/Models/classes';
 import { myClasses } from 'src/app/Models/myclasses';
+import { ClassesService } from 'src/app/Services/classes.service';
 import { MyclassesService } from 'src/app/Services/myclasses.service';
 
 @Component({
@@ -11,18 +12,26 @@ import { MyclassesService } from 'src/app/Services/myclasses.service';
 })
 export class MyclassesComponent implements OnInit {
 
-  constructor(private myclassService:MyclassesService,private router: Router) { }
-
+  constructor(private myclassService:MyclassesService,private router: Router,private activatedRoute : ActivatedRoute,
+    private classService:ClassesService) { }
+    auth:any = localStorage.getItem("role");
+  ID= Number(this.activatedRoute.snapshot.paramMap.get("id")) ;
 
   myClass:classes[] = [];
   ngOnInit(): void {
 
 
-      this.myclassService.getMyClasses().subscribe(response=>{
+
+      this.classService.getMyClasses(this.ID ).subscribe(response=>{
         this.myClass = response
         console.log(this.myClass)
       })
 };
-  }
+
+}
+// addtoMyclasses(event:any){
+// console.log(event);
+// }
+  
 
 

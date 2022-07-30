@@ -4935,7 +4935,7 @@ div[class*=col]:nth-of-type(5n + 5) .event-item .event-thumb .date-tag::before {
   left: 0;
   bottom: 0;
   right: 0;
-  background: url(./img/shape1.png) no-repeat center center;
+  background: url(http://labartisan.net/demo/kitton/assets/css/img/shape1.png) no-repeat center center;
   background-size: contain;
   z-index: 1;
 }
@@ -4962,15 +4962,15 @@ div[class*=col]:nth-of-type(5n + 5) .event-item .event-thumb .date-tag::before {
   margin-bottom: 0 !important;
 }
 .countdown li:nth-of-type(4n + 2)::after {
-  background: url(./img/shape2.png) no-repeat center center;
+  background: url(	http://labartisan.net/demo/kitton/assets/css/img/shape2.png) no-repeat center center;
   background-size: contain;
 }
 .countdown li:nth-of-type(4n + 3)::after {
-  background: url(./img/shape3.png) no-repeat center center;
+  background: url(	http://labartisan.net/demo/kitton/assets/css/img/shape3.png) no-repeat center center;
   background-size: contain;
 }
 .countdown li:nth-of-type(4n + 4)::after {
-  background: url(./img/shape4.png) no-repeat center center;
+  background: url(	http://labartisan.net/demo/kitton/assets/css/img/shape4.png) no-repeat center center;
   background-size: contain;
 }
 @media (max-width: 575px) {

@@ -42,7 +42,6 @@ export class SignInComponent implements OnInit {
     this.httpOptions).subscribe( data =>{
       this.message= data;
       window.localStorage.setItem("token" ,this.message.token );
-      console.log(localStorage.getItem("token"))
       this.route.navigate(['/slachpage'])
     })
 

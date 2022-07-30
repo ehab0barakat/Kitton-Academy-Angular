@@ -28,7 +28,8 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     this.httpclient.get<any>(`${environment.APIBaseURL}/api/auth/me`,this.httpOptions).subscribe( data =>{
       this.userData = data ;
-      console.log(this.userData)
+      window.localStorage.setItem("role",`${this.userData.role}`)
+      console.log(data)
     })
 
     console.log(this.userData)

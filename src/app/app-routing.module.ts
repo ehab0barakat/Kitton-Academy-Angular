@@ -52,12 +52,14 @@ import { AddProductComponent } from './Components/Admin/add-product/add-product.
 import { UpdateProductComponent } from './Components/Admin/update-product/update-product.component';
 import { DeleteProductComponent } from './Components/Admin/delete-product/delete-product.component';
 import { MyclassesComponent } from './Components/Class/myclasses/myclasses.component';
+import { EventCatsIndexComponent } from './Components/event-cats-crud/event-cats-index/event-cats-index.component';
+import { EventCatsUpdateComponent } from './Components/event-cats-crud/event-cats-update/event-cats-update.component';
+import { EventCatsDeleteComponent } from './Components/event-cats-crud/event-cats-delete/event-cats-delete.component';
+import { EventCatsAddComponent } from './Components/event-cats-crud/event-cats-add/event-cats-add.component';
+import { AdminControlComponent } from './Components/Events/admin-control/admin-control.component';
 
 
 
-// const routes: Routes = [
-//   {path: '',component:MainLayoutComponent,children:[
-//   {path: '', redirectTo: '/slachpage', pathMatch:'full'},
 const routes: Routes = [
   {path: '',component:MainLayoutComponent,children:[
 
@@ -65,14 +67,26 @@ const routes: Routes = [
   {path : "home" , component: HomeComponent},
   {path : "games-archive" , component: GamesComponent},
   {path : "single-game" , component: SingleGameComponent},
+  {path:'posts',component:PostsComponent},
+
+  // ------------------------ (  event crud start  )   -----------------------------
+  {path : "event-control" , component: AdminControlComponent},
   {path : "events-archive" , component: EventsArchiveComponent},
   {path : "event/:id" , component: EventsSingleComponent},
   {path : "event-index" , component: CrudEventComponent},
   {path : "event-add" , component: EventAddComponent},
   {path : "event-update/:id" , component: EventUpdateComponent},
   {path : "event-delete/:id" , component: EventDeleteComponent},
-  {path:'posts',component:PostsComponent},
+  // ------------------------ (  event crud start  )   -----------------------------
 
+  // ####################################################################################
+
+  // ------------------------ (  event cats crud start  )   -----------------------------
+  {path:'eventcats-index',component:EventCatsIndexComponent},
+  {path:'eventcats-add',component:EventCatsAddComponent},
+  {path:'eventcats-update/:id',component:EventCatsUpdateComponent},
+  {path:'eventcats-delete/:id',component:EventCatsDeleteComponent},
+  // ------------------------ (  event cats crud end  )   -----------------------------
   {path:'post-index',component:PostsComponent},
   {path:'show-post',component:ShowPostComponent},
   {path:'single-post/:id',component:SinglePostComponent},
@@ -108,7 +122,6 @@ const routes: Routes = [
   {path : "classescat-delete/:id" , component: DeleteCatClassComponent},
   {path: 'checkout/:id',component:CheckoutComponent},
   {path: 'myclasses/:id',component:MyclassesComponent},
-
   {path:'Products',component:ProductsComponent},
   {path:'ProductList',component:ProductListComponent},
   {path:'AddNewProduct',component:AddProductComponent},
@@ -123,8 +136,6 @@ const routes: Routes = [
 {path:'**',component:NotFoundComponent}
 
 ]
-
-
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

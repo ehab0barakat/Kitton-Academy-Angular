@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { catchError, Observable, retry, throwError } from 'rxjs';
 import { classes } from '../Models/classes';
 import { environment } from 'src/environments/environment';
@@ -61,7 +61,21 @@ create(newPrd:classes):Observable<classes>{
     return this.httpclient.delete<classes>(`${environment.APIBaseURL}/api/classes/${id}`, this.httpOptions)
 
   }
+  getMyClasses(id:number):Observable<classes[]>{
+    return this.httpclient.get<classes[]>(`${environment.APIBaseURL}/api/myclasses/${id}`,this.httpOptions);
 
+  }
+
+
+  // insertToMyclasses(id: number, classItemId: number, cartQuantity: number): Observable<classes> {
+  //   try {
+  //     const params = new HttpParams().set('quantity', cartQuantity.toString());
+  //     const urlById = `${environment.APIBaseURL}/${id}/myclasses/${classItemId}`;
+  //     return this.httpclient.post<classes>(urlById, null, {
+  //       params
+  //     });
+  //   }
+  // }
 
   errorHandler(error: { error: { message: string; }; status: any; message: any; }) {
     let errorMessage = '';

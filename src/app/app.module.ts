@@ -63,6 +63,15 @@ import { UpdateProductComponent } from './Components/Admin/update-product/update
 import { DeleteProductComponent } from './Components/Admin/delete-product/delete-product.component';
 import { AddProductComponent } from './Components/Admin/add-product/add-product.component';
 import { ProductListComponent } from './Components/Admin/product-list/product-list.component';
+import { GameCatsIndexComponent } from './Components/game-cats-crud/game-cats-index/game-cats-index.component';
+import { GameCatsAddComponent } from './Components/game-cats-crud/game-cats-add/game-cats-add.component';
+import { GameCatsUpdateComponent } from './Components/game-cats-crud/game-cats-update/game-cats-update.component';
+import { GameCatsDeleteComponent } from './Components/game-cats-crud/game-cats-delete/game-cats-delete.component';
+import { EventCatsIndexComponent } from './Components/event-cats-crud/event-cats-index/event-cats-index.component';
+import { EventCatsAddComponent } from './Components/event-cats-crud/event-cats-add/event-cats-add.component';
+import { EventCatsUpdateComponent } from './Components/event-cats-crud/event-cats-update/event-cats-update.component';
+import { EventCatsDeleteComponent } from './Components/event-cats-crud/event-cats-delete/event-cats-delete.component';
+import { AdminControlComponent } from './Components/Events/admin-control/admin-control.component';
 
 @NgModule({
   declarations: [
@@ -132,6 +141,15 @@ import { ProductListComponent } from './Components/Admin/product-list/product-li
     UpdateProductComponent,
     DeleteProductComponent,
     ProductDetailsComponent,
+    GameCatsIndexComponent,
+    GameCatsAddComponent,
+    GameCatsUpdateComponent,
+    GameCatsDeleteComponent,
+    EventCatsIndexComponent,
+    EventCatsAddComponent,
+    EventCatsUpdateComponent,
+    EventCatsDeleteComponent,
+    AdminControlComponent,
   ],
   imports: [
     BrowserModule,

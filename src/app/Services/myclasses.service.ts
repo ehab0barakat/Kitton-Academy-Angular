@@ -19,10 +19,17 @@ export class MyclassesService {
     })
 
   }}
-  // getMyClasses(): Observable<myClasses[]> {
-  //   return this.httpClient.get<myClasses[]>(`${environment.APIBaseURL}/api/myclasses`)
-  // }
-  getMyClasses(): Observable<classes[]> {
-    return this.httpClient.get<classes[]>(`${environment.APIBaseURL}/api/myclasses`)
+  getMyClasses(id:number):Observable<classes[]>{
+    return this.httpClient.get<classes[]>(`${environment.APIBaseURL}/api/myclasses/${id}`,this.httpOptions);
+
   }
+  storemyclasses(newPrd:classes):Observable<classes>{
+    return this.httpClient.post<classes>(`${environment.APIBaseURL}/api/myclasses`,
+                                              JSON.stringify(newPrd),
+                                              this.httpOptions)
+                                            }
+
+  // getMyClasses(): Observable<classes[]> {
+  //   return this.httpClient.get<classes[]>(`${environment.APIBaseURL}/api/myclasses`)
+  // }
 }
