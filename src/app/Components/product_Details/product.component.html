@@ -30,8 +30,8 @@
             <!--products detalies  -->
             <div class="col-md-6 col-12">
               <div class="product-single-thumb o">
-                <div class="slider-for slick-initialized slick-slider"><button class="slick-prev slick-arrow"
-                    aria-label="Previous" type="button">Previous</button>
+                <div class="slider-for slick-initialized slick-slider">
+                  <button class="slick-prev slick-arrow" aria-label="Previous" type="button">Previous</button>
                   <div class="slick-list draggable">
                     <div class="slick-track"
                       style="opacity: 1; width: 7714px; transform: translate3d(-2842px, 0px, 0px);">
@@ -39,11 +39,12 @@
                         style="width: 406px;" tabindex="-1">
                         <img [src]="product?.image" alt="shop">
                       </div>
-
                     </div>
                   </div>
                   <button class="slick-next slick-arrow" aria-label="Next" type="button">Next</button>
                 </div>
+
+                <!-- slider nav -->
                 <div class="slider-nav slick-initialized slick-slider"><button class="slick-prev slick-arrow"
                     aria-label="Previous" type="button">Previous</button>
                   <div class="slick-list draggable">
@@ -55,7 +56,6 @@
                       </div>
                     </div>
                   </div>
-
                   <button class="slick-next slick-arrow" aria-label="Next" type="button">Next</button>
                 </div>
               </div>
@@ -92,8 +92,11 @@
                   </div>
                   <div class="discount-code">
                     <input type="text" placeholder="Enter Discount Code">
+
                   </div>
-                  <button type="submit" class="custom-button"><span>Add To Cart</span></button>
+                  <!-- <a routerLink="/cart/{{ product.id }}"> -->
+                    <button type="submit" class="custom-button"><span>Add To Cart</span></button>
+                  <!-- </a> -->
                 </form>
               </div>
             </div>
@@ -104,8 +107,7 @@
         <!-- review -->
         <div class="review">
           <ul class="review-nav">
-            <li class="desc" data-target="description-show">Description</li>
-            <li class="rev active" data-target="review-content-show">Reviews 4</li>
+            <li class="rev " data-target="review-content-show">Reviews 4</li>
           </ul>
           <div class="review-content review-content-show">
             <div class="review-showing">
@@ -184,88 +186,6 @@
               </div>
             </div>
 
-            <!--  -->
-            <div class="description" *ngFor="let Prod of prodListOfCat">
-              <div class="rev-item">
-                <div class="rev-thumb">
-                  <img src="" alt="shop">
-                </div>
-                <div class="rev-content">
-                  <ul>
-                    <li>
-                      Donec non est at libero vulputate rutrum.
-                    </li>
-                    <li>
-                      Morbi ornare lectus quis justo gravida semper.
-                    </li>
-                    <li>
-                      Pellentesque aliquet, sem eget laoreet ultrices.
-                    </li>
-
-                  </ul>
-                </div>
-              </div>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- sidebar -->
-      <div class="col-lg-4 col-xl-3 mb-50">
-        <div class="single-sidebar">
-          <div class="widget widget-search">
-            <div class="widget-body">
-              <form class="search-form">
-                <input type="text" placeholder="Search Here">
-                <button type="submit"><i class="fas fa-search"></i></button>
-              </form>
-            </div>
-          </div>
-          <!-- Category -->
-          <div class="widget widget-category">
-            <div class="widget-header">
-              <h5 class="title">Post Category</h5>
-            </div>
-            <div class="widget-body">
-              <ul>
-                <li>
-                  <a href="#"><span><i class="fas fa-angle-double-right"></i>Themeforest</span><span>05</span></a>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <!--  latest -->
-
-          <div class="widget widget-product">
-            <div class="widget-header">
-              <h5 class="title">latest products</h5>
-            </div>
-            <div class="widget-body" *ngFor="let Prod of prodListOfCat">
-              <ul>
-                <li>
-                  <div class="product-thumb">
-                    <a href="#"><img src="{{ Prod.ImgURL }}" alt="shop"></a>
-                  </div>
-                  <div class="product-content">
-                    <h6><a href="shop-single.html">{{ Prod.Name }}</a></h6>
-                    <p>
-                      <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i
-                        class="far fa-star"></i><i class="far fa-star"></i> <span>{{ Prod.Rate }}</span>
-                    </p>
-                    <h6 class="subtitle">{{ Prod.Price }}</h6>
-                  </div>
-                </li>
-              </ul>
-            </div>
           </div>
         </div>
       </div>
@@ -273,76 +193,7 @@
 
 
     <!--  -->
-    <div class="modal" id="quick_view">
-      <div class="modal-dialog modal-lg modal-dialog-centered">
-        <div class="modal-content">
-          <button type="button" class="close" data-dismiss="modal"><i class="fas fa-window-close"></i></button>
-          <div class="modal-body">
-            <div class="product-details-inner">
-              <div class="row">
-
-                <!--  -->
-                <div class="col-lg-5 col-12">
-                  <div class="popup-slide">
-
-                    <div class="slider-for slick-initialized slick-slider"><button class="slick-prev slick-arrow"
-                        aria-label="Previous" type="button">Previous</button>
-                      <div class="slick-list draggable" style="height: 289px; overflow: hidden;">
-                        <div class="slick-track"
-                          style="opacity: 1; width: 5491px; transform: translate3d(-2023px, 0px, 0px); transition: transform 500ms ease 0s;">
-                          <div class="thumb slick-slide slick-cloned" data-slick-index="-1" id="" aria-hidden="true"
-                            style="width: 289px;" tabindex="-1">
-                            <img src="assets/images/shop/09.jpg" alt="shop">
-                          </div>
-
-                        </div>
-                      </div>
-                      <button class="slick-next slick-arrow" aria-label="Next" type="button">Next</button>
-                    </div>
-
-                  </div>
-                </div>
-
-                <!--  -->
-                <div class="col-lg-7">
-                  <div class="product-content">
-                    <h5 class="title"><a href="#">Baby Bags</a></h5>
-                    <p>
-                      <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i
-                        class="far fa-star"></i><i class="far fa-star"></i> <span>(3 review)</span>
-                    </p>
-                    <h6>
-                      $200
-                    </h6>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                      veniam,
-                      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    </p>
-                    <div class="cart-button-2">
-                      <div class="cart-plus-minus">
-                        <div class="dec qtybutton">-</div>
-                        <div class="dec qtybutton">-</div>
-                        <input class="cart-plus-minus-box" type="text" name="qtybutton" value="2">
-                        <div class="inc qtybutton">+</div>
-                        <div class="inc qtybutton">+</div>
-                      </div>
-                      <button type="submit">
-                        <i class="fas fa-shopping-cart"></i>
-                      </button>
-                    </div>
-                  </div>
-                </div>
-
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
+ 
 
   </div>
 </div>

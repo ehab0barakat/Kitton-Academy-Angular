@@ -40,9 +40,6 @@ export class ProductsService {
       this.httpOptions
     );
   }
-  // searchProductByName(prodName:string):IProduct|undefined{
-  //   return this.prdList.find(prod=>prod.name==prodName);
-  // }
 
   editProd(newProd: IProduct, ProdID: number): Observable<IProduct> {
     return this.httpclient.put<IProduct>(
@@ -58,4 +55,8 @@ export class ProductsService {
       this.httpOptions
     );
   }
+
+   // searchProductByName(prodName:string):IProduct|undefined{
+  //   return this.prdList.find(prod=>prod.name==prodName);
+  // }
 }

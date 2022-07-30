@@ -44,17 +44,18 @@ const routes: Routes = [
   {path:'about_us',component:AboutUsComponent},
   {path:'profile',component:ProfileComponent},
   {path:'classes',component:ClassesComponent},
-  {path:'cart',component:CartComponent},
-  {path:'cart/:id',component:CartComponent},
+ 
   // -------------------------------------------------//
   {path:'shop',component:ShopComponent},
+  {path:'cart',component:CartComponent},
+  {path:'cart/:id',component:CartComponent},
   {path:'Products',component:ProductsComponent},
   {path:'ProductList',component:ProductListComponent},
   {path:'AddNewProduct',component:AddProductComponent},
-  {path:'UpdateProduct',component:UpdateProductComponent},
-  {path:'DeleteProduct',component:DeleteProductComponent},
-  {path:'productDetails/:id',component:ProductDetailsComponent},
   {path:'productDetails',component:ProductDetailsComponent},
+  {path:'UpdateProduct/:id',component:UpdateProductComponent},
+  {path:'DeleteProduct/:id',component:DeleteProductComponent},
+  {path:'productDetails/:id',component:ProductDetailsComponent},
   // -------------------------------------------------//
 
   {path:'classes',component:ClassesComponent},

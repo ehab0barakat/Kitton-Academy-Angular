@@ -25,6 +25,7 @@ export class UpdateProductComponent implements OnInit {
   ngOnInit(): void {
     this.CatService.getAllCategories().subscribe((response) => {
       this.catList = response;
+      console.log(this.catList);
     });
 
     this.prodService.getProductByID(this.targetId).subscribe((response) => {
@@ -35,7 +36,8 @@ export class UpdateProductComponent implements OnInit {
   }
 
   EditProduct() {
-    this.prodService.editProd(this.editProd, this.targetId).subscribe((response) => {
+    this.prodService
+      .editProd(this.editProd, this.targetId).subscribe((response) => {
         if (response) {
           this.router.navigate(['/ProductList']);
         }

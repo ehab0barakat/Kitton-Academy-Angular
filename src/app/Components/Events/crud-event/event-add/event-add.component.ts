@@ -23,8 +23,6 @@ export class EventAddComponent implements OnInit {
 
 
   AllEventCats:Eventcats[] = []
-
-
   NewEvent :Event ={} as Event ;
 
 

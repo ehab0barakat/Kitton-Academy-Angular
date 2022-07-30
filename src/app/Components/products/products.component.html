@@ -8,7 +8,8 @@
           </a>
           <div class="product-action-link">
             <a href="#"><i class="far fa-heart"></i></a>
-            <a routerLink="/cart/{{ Prod.id }}"><i class="fas fa-cart-plus"></i></a>
+            <a (click)="add()" ><i class="fas fa-cart-plus"></i></a>
+            <!-- routerLink="/cart/{{ Prod.id }}" -->
           </div>
         </div>
         <div class="product-content">
@@ -26,7 +27,7 @@
           <img src="{{ Prod.image }}" alt="shop">
           <div class="product-action-link">
             <a href="#"><i class="far fa-heart"></i></a>
-            <a href="#"><i class="fas fa-cart-plus"></i></a>
+            <a routerLink="/cart/{{ Prod.id }}"><i class="fas fa-cart-plus"></i></a>
           </div>
         </div>
         <div class="product-content">
@@ -47,23 +48,7 @@
 
 
 
-<!-- <div class="widget-body" *ngFor="let Prod of prodListOfCat">
-  <ul>
-    <li>
-      <div class="product-thumb">
-        <a href="#"><img src="{{ Prod.image }}" alt="shop"></a>
-      </div>
-      <div class="product-content">
-        <h6><a href="shop-single.html">{{ Prod.name }}</a></h6>
-        <p>
-          <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i
-            class="far fa-star"></i> <span>{{ Prod.Rate }}</span>
-        </p>
-        <h6 class="subtitle">{{ Prod.price }}</h6>
-      </div>
-    </li>
-  </ul>
-</div> -->
+
 
 
 <!-- <div class="col-lg-7">

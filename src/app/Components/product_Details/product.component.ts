@@ -10,12 +10,12 @@ import { Location } from '@angular/common';
   styleUrls: ['./product.component.css'],
 })
 export class ProductDetailsComponent implements OnInit {
-  id: number = 0;
   product: IProduct | undefined;
   prdIDList: number[] = [];
   currentPrdID: number = 0;
   currentIndex: number = 0;
   prodListOfCat: IProduct[] = [];
+
   constructor(
     private router: Router,
     private prodService: ProductsService,
@@ -23,10 +23,10 @@ export class ProductDetailsComponent implements OnInit {
     private location: Location
   ) {}
 
-  prd = Number(this.activatedRoute.snapshot.paramMap.get('id'));
+  prod = Number(this.activatedRoute.snapshot.paramMap.get('id'));
 
   ngOnInit(): void {
-    this.prodService.getProductByID(this.prd).subscribe((response) => {
+    this.prodService.getProductByID(this.prod).subscribe((response) => {
       this.product = response;
       console.log(this.product);
     });

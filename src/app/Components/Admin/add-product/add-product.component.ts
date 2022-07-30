@@ -1,3 +1,5 @@
+
+
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { IProduct } from 'src/app/Models/iproduct';
@@ -11,7 +13,7 @@ import { CategoriesService } from 'src/app/Services/categories.service';
   styleUrls: ['./add-product.component.css'],
 })
 export class AddProductComponent implements OnInit {
-  catList: Icategory[] = [];
+  CategoryProducts: Icategory[] = [];
   NewProd: IProduct = {} as IProduct;
 
   constructor(
@@ -23,20 +25,26 @@ export class AddProductComponent implements OnInit {
 
   ngOnInit(): void {
     this.CatService.getAllCategories().subscribe((response) => {
-      this.catList = response;
-      console.log(this.catList);
+      this.CategoryProducts = response;
+      console.log(this.CategoryProducts);
     });
   }
 
   InsertProduct() {
-    this.prodService.addProduct(this.NewProd).subscribe({
-      next: (prd) => {
+    // this.prodService.addProduct(this.NewProd).subscribe({
+    //   next: (prd) => {
+    //     this.router.navigate(['/ProductList']);
+    //   },
+    //   error: (err) => {
+    //     alert('Error occured');
+    //   },
+    // });
+
+    this.prodService.addProduct(this.NewProd).subscribe(data => {
+      if (data){
         this.router.navigate(['/ProductList']);
-      },
-      error: (err) => {
-        alert('Error occured');
-      },
-    });
+      }
+    })
   }
 }
 

@@ -1,191 +1,196 @@
+<!-- ==========Banner Section Starts Here========== -->
+<section class="page-header bg_img" data-background="./assets/images/banner/page-header.jpg"
+  style="background-image: url(&quot;./assets/images/banner/page-header.jpg&quot;);">
+  <div class="container">
+    <div class="page-header-content">
+      <h1 class="title">Our Product Page</h1>
+      <ul class="breadcrumb">
+        <li>
+          <a href="index.html">Home</a>
+        </li>
+        <li>
+          <a href="#">Pages</a>
+        </li>
+        <li>
+          Shop
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+<!-- ==========Banner Section Ends Here========== -->
 
-  <!-- ==========Banner Section Starts Here========== -->
-  <section class="page-header bg_img" data-background="./assets/images/banner/page-header.jpg"
-    style="background-image: url(&quot;./assets/images/banner/page-header.jpg&quot;);">
-    <div class="container">
-      <div class="page-header-content">
-        <h1 class="title">Our Product Page</h1>
-        <ul class="breadcrumb">
+
+<!-- ==========Shop Section Starts Here========== -->
+<div class="shop-page padding-top padding-bottom">
+  <div class="container">
+    <div class="row mb--50">
+      <div class="col-lg-8 col-xl-9 mb-50">
+        <div class="shop-title d-flex flex-wrap justify-content-between">
+          <p>Showing 01 - 12 of 139 Results</p>
+          <div class="product-view-mode">
+            <a class="active" data-target="grid"><i class="fas fa-th"></i></a>
+            <a data-target="list"><i class="fas fa-list"></i></a>
+          </div>
+        </div>
+
+        <app-products [receivedID]="selectedID"></app-products>
+
+        <ul class="default-pagination">
           <li>
-            <a href="index.html">Home</a>
+            <a href="#"><i class="fas fa-angle-left"></i></a>
           </li>
           <li>
-            <a href="#">Pages</a>
+            <a href="#">01</a>
           </li>
           <li>
-            Shop
+            <a href="#" class="active">02</a>
+          </li>
+          <li>
+            <a href="#">03</a>
+          </li>
+          <li>
+            <a href="#"><i class="fas fa-angle-right"></i></a>
           </li>
         </ul>
       </div>
-    </div>
-  </section>
-  <!-- ==========Banner Section Ends Here========== -->
-
-
-  <!-- ==========Shop Section Starts Here========== -->
-  <div class="shop-page padding-top padding-bottom">
-    <div class="container">
-      <div class="row mb--50">
-        <div class="col-lg-8 col-xl-9 mb-50">
-          <div class="shop-title d-flex flex-wrap justify-content-between">
-            <p>Showing 01 - 12 of 139 Results</p>
-            <div class="product-view-mode">
-              <a class="active" data-target="grid"><i class="fas fa-th"></i></a>
-              <a data-target="list"><i class="fas fa-list"></i></a>
+      <!--  -->
+      <div class="col-lg-4 col-xl-3 mb-50">
+        <div class="single-sidebar">
+          <div class="widget widget-search">
+            <div class="widget-body">
+              <form class="search-form">
+                <input type="text" placeholder="Search Here">
+                <button type="submit"><i class="fas fa-search"></i></button>
+              </form>
             </div>
           </div>
-        
-          <app-products [receivedID]="selectedID" ></app-products>
 
 
-          <ul class="default-pagination">
-            <li>
-              <a href="#"><i class="fas fa-angle-left"></i></a>
-            </li>
-            <li>
-              <a href="#">01</a>
-            </li>
-            <li>
-              <a href="#" class="active">02</a>
-            </li>
-            <li>
-              <a href="#">03</a>
-            </li>
-            <li>
-              <a href="#"><i class="fas fa-angle-right"></i></a>
-            </li>
-          </ul>
-        </div>
-        <div class="col-lg-4 col-xl-3 mb-50">
-          <div class="single-sidebar">
-            <div class="widget widget-search">
-              <div class="widget-body">
-                <form class="search-form">
-                  <input type="text" placeholder="Search Here">
-                  <button type="submit"><i class="fas fa-search"></i></button>
-                </form>
-              </div>
+          <div class="widget widget-category">
+            <div class="widget-header">
+              <h5 class="title">Post Category</h5>
             </div>
-            <div class="widget widget-category">
-              <div class="widget-header">
-                <h5 class="title">Post Category</h5>
-              </div>
-              <div class="widget-body" >
-                <ul>
-                  <li *ngFor="let cat of CategoryProducts" (click)="prodcatid(cat.id)">
-                    <a>
-                      <span><i class="fas fa-angle-double-right"></i>{{cat.name}}</span><span>05</span>
-                    </a>
-                  </li>                 
-                </ul>
-              </div>
-            </div>
-            <div class="widget widget-product">
-              <div class="widget-header">
-                <h5 class="title">latest products</h5>
-              </div>
-              <div class="widget-body">
-                <ul>
-                  <li>
-                    <div class="product-thumb">
-                      <a href="#"><img src="assets/images/shop/01.jpg" alt="shop"></a>
-                    </div>
-                    <div class="product-content">
-                      <h6><a href="shop-single.html">Baby Bags</a></h6>
-                      <p>
-                        <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i
-                          class="far fa-star"></i><i class="far fa-star"></i> <span>(3 review)</span>
-                      </p>
-                      <h6 class="subtitle">$200</h6>
-                    </div>
-                  </li>               
-                </ul>
-              </div>
+            <div class="widget-body">
+              <ul>
+                <li *ngFor="let cat of CategoryProducts" (click)="prodcatid(cat.id)">
+                  <a>
+                    <span><i class="fas fa-angle-double-right"></i>{{cat.name}}</span>
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
+
+          <div class="widget widget-product">
+            <div class="widget-header">
+              <h5 class="title">latest products</h5>
+            </div>
+            <div class="widget-body" *ngFor="let Prod of prodListOfCat">
+              <ul>
+                <li>
+                  <div class="product-thumb">
+                    <a href="#"><img src="{{ Prod.image }}" alt="shop"></a>
+                  </div>
+                  <div class="product-content">
+                    <h6><a href="shop-single.html">{{ Prod.name }}</a></h6>
+                    <p>
+                      <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i
+                        class="far fa-star"></i><i class="far fa-star"></i> <span>{{ Prod.Rate }}</span>
+                    </p>
+                    <h6 class="subtitle">{{ Prod.price }}</h6>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
         </div>
       </div>
-      <div class="modal" id="quick_view">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-          <div class="modal-content">
-            <button type="button" class="close" data-dismiss="modal"><i class="fas fa-window-close"></i></button>
-            <div class="modal-body">
-              <div class="product-details-inner">
-                <div class="row">
-                  <div class="col-lg-5 col-12">
-                    <div class="popup-slide">
-                      <div class="slider-for slick-initialized slick-slider"><button class="slick-prev slick-arrow"
-                          aria-label="Previous" type="button" >Previous</button>
-                        <div class="slick-list draggable" style="height: 289px;">
-                          <div class="slick-track"
-                            style="opacity: 1; width: 5491px; transform: translate3d(-289px, 0px, 0px);">
-                            <div class="thumb slick-slide slick-cloned" data-slick-index="-1" id="" aria-hidden="true"
-                              style="width: 289px;" tabindex="-1">
-                              <img src="assets/images/shop/09.jpg" alt="shop">
-                            </div>
-                            
+    </div>
+
+    <!--  -->
+    <div class="modal" id="quick_view">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <button type="button" class="close" data-dismiss="modal"><i class="fas fa-window-close"></i></button>
+          <div class="modal-body">
+            <div class="product-details-inner">
+              <div class="row">
+                <div class="col-lg-5 col-12">
+                  <div class="popup-slide">
+                    <div class="slider-for slick-initialized slick-slider"><button class="slick-prev slick-arrow"
+                        aria-label="Previous" type="button">Previous</button>
+                      <div class="slick-list draggable" style="height: 289px;">
+                        <div class="slick-track"
+                          style="opacity: 1; width: 5491px; transform: translate3d(-289px, 0px, 0px);">
+                          <div class="thumb slick-slide slick-cloned" data-slick-index="-1" id="" aria-hidden="true"
+                            style="width: 289px;" tabindex="-1">
+                            <img src="assets/images/shop/09.jpg" alt="shop">
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <button class="slick-next slick-arrow" aria-label="Next" type="button">Next</button>
+                    </div>
+                    <div class="slider-nav slick-initialized slick-slider"><button class="slick-prev slick-arrow"
+                        aria-label="Previous" type="button">Previous</button>
+                      <div class="slick-list draggable">
+                        <div class="slick-track"
+                          style="opacity: 1; width: 1334px; transform: translate3d(-290px, 0px, 0px);">
+                          <div class="thumb slick-slide slick-cloned" data-slick-index="-5" id="" aria-hidden="true"
+                            style="width: 56px;" tabindex="-1">
+                            <img src="assets/images/shop/05.png" alt="shop">
                           </div>
                         </div>
-
-                        <button class="slick-next slick-arrow" aria-label="Next" type="button" >Next</button>
                       </div>
-                      <div class="slider-nav slick-initialized slick-slider"><button class="slick-prev slick-arrow"
-                          aria-label="Previous" type="button" >Previous</button>
-                        <div class="slick-list draggable">
-                          <div class="slick-track"
-                            style="opacity: 1; width: 1334px; transform: translate3d(-290px, 0px, 0px);">
-                            <div class="thumb slick-slide slick-cloned" data-slick-index="-5" id="" aria-hidden="true"
-                              style="width: 56px;" tabindex="-1">
-                              <img src="assets/images/shop/05.png" alt="shop">
-                            </div>                          
-                          </div>
-                        </div>
 
-                        <button class="slick-next slick-arrow" aria-label="Next" type="button" >Next</button>
-                      </div>
+                      <button class="slick-next slick-arrow" aria-label="Next" type="button">Next</button>
                     </div>
                   </div>
-
-                  <!--  -->
-                  <div class="col-lg-7">
-                    <div class="product-content">
-                      <h5 class="title"><a href="shop-single.html">Baby Bags</a></h5>
-                      <p>
-                        <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i
-                          class="far fa-star"></i><i class="far fa-star"></i> <span>(3 review)</span>
-                      </p>
-                      <h6>
-                        $200
-                      </h6>
-                      <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                        veniam,
-                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                      </p>
-                      <div class="cart-button-2">
-                        <div class="cart-plus-minus">
-                          <div class="dec qtybutton">-</div>
-                          <div class="dec qtybutton">-</div>
-                          <input class="cart-plus-minus-box" type="text" name="qtybutton" value="2">
-                          <div class="inc qtybutton">+</div>
-                          <div class="inc qtybutton">+</div>
-                        </div>
-                        <button type="submit">
-                          <i class="fas fa-shopping-cart"></i>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!--  -->
                 </div>
+
+                <!--  -->
+                <div class="col-lg-7">
+                  <div class="product-content">
+                    <h5 class="title"><a href="shop-single.html">Baby Bags</a></h5>
+                    <p>
+                      <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i
+                        class="far fa-star"></i><i class="far fa-star"></i> <span>(3 review)</span>
+                    </p>
+                    <h6>
+                      $200
+                    </h6>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                      veniam,
+                      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    </p>
+                    <div class="cart-button-2">
+                      <div class="cart-plus-minus">
+                        <div class="dec qtybutton">-</div>
+                        <div class="dec qtybutton">-</div>
+                        <input class="cart-plus-minus-box" type="text" name="qtybutton" value="2">
+                        <div class="inc qtybutton">+</div>
+                        <div class="inc qtybutton">+</div>
+                      </div>
+                      <button type="submit">
+                        <i class="fas fa-shopping-cart"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!--  -->
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <!--  -->
   </div>
-  <!-- ==========Shop Section Ends Here========== -->
-
+</div>
+<!-- ==========Shop Section Ends Here========== -->

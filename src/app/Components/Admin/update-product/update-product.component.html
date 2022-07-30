@@ -27,8 +27,8 @@
       <input type="text" class="form-control" id="exampleInputPassword1" [(ngModel)]="editProd.description">
     </div>
 
-    <select class="form-select" aria-label="Default select example" [(ngModel)]="editProd.cat_id">
-      <option selected>Open this select menu</option>
+    <select class="form-select mb-3" aria-label="Default select example" [(ngModel)]="editProd.cat_id">
+      <option selected>Category</option>
       <option *ngFor="let cat of catList " value="{{cat.id}}">{{cat.name}}</option>
     </select>
 

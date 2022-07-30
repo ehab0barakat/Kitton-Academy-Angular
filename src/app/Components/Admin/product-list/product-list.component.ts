@@ -9,7 +9,7 @@ import { ProductsService } from 'src/app/Services/products.service';
   styleUrls: ['./product-list.component.css'],
 })
 export class ProductListComponent implements OnInit {
-  prodListOfCat: IProduct[] = [];
+  prodList: IProduct[] = [];
 
   constructor(
     private router: Router,
@@ -19,15 +19,15 @@ export class ProductListComponent implements OnInit {
 
   ngOnInit(): void {
     this.prodService.getAllProducts().subscribe((response) => {
-      this.prodListOfCat = response;
-      console.log(this.prodListOfCat);
+      this.prodList = response;
+      console.log(this.prodList);
     });
   }
 
-  openUpdateProduct(prodID: number) {
-    this.router.navigate(['ProductList', prodID]);
-  }
-  openDeleteProduct(prodID: number) {
-    this.router.navigate(['ProductList', prodID]);
-  }
+  // openUpdateProduct(prodID: number) {
+  //   this.router.navigate(['ProductList', prodID]);
+  // }
+  // openDeleteProduct(prodID: number) {
+  //   this.router.navigate(['ProductList', prodID]);
+  // }
 }

@@ -3,17 +3,7 @@
     <div class="mb-3">
       <label for="prodName" class="form-label">Product Name</label>
       <input #prodNameInput="ngModel" type="text" class="form-control" name="prodName" id="prodName"
-        [(ngModel)]="NewProd.name" required pattern="[A-Za-z]{3,10}" [class.is-valid]="prodNameInput.valid"
-        [class.is-invalid]="prodNameInput.invalid">
-
-      <div class="alert alert-danger" [hidden]="prodNameInput.valid || prodNameInput.untouched">
-        <small *ngIf="prodNameInput.errors?.['required']">
-          Product Name is required
-        </small>
-        <small *ngIf="prodNameInput.errors?.['pattern']">
-          Product Name must be 3 letters at least
-        </small>
-      </div>
+        [(ngModel)]="NewProd.name" required>
     </div>
 
     <div class="mb-3">
@@ -36,13 +26,13 @@
     <div class="mb-3">
       <label for="prdCat" class="form-label">Select Category</label>
       <select class="form-control" name="prdCat" id="prdCat" required  [(ngModel)]="NewProd.cat_id">
-        <option *ngFor="let cat of catList" [value]="cat.id">
+        <option *ngFor="let cat of CategoryProducts" [value]="cat.id">
           {{cat.name}}
         </option>
       </select>
     </div>
 
-    <button type="submit" class="btn btn-success" [disabled]="prodForm.invalid">Submit</button>
+    <button type="submit" class="btn btn-success">Submit</button>
   </form>
 
   
