@@ -3,7 +3,7 @@ export interface ITeacher {
     title:string;
     specialization:string;
     description:string;
-    imgurl:string;
+    image:string;
     faceurl:string;
     googleurl:string;
     dribbleurl:string;

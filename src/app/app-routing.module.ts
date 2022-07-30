@@ -36,6 +36,8 @@ import { AddPostComponent } from './Components/posts/Posts_Crud/add-post/add-pos
 import { UpdatePostComponent } from './Components/posts/Posts_Crud/update-post/update-post.component';
 import { DeletePostComponent } from './Components/posts/Posts_Crud/delete-post/delete-post.component';
 import { ShowPostComponent } from './Components/posts/Posts_Crud/show-post/show-post.component';
+import { SignInComponent } from './Components/sign-in/sign-in.component';
+import { SignUpComponent } from './Components/sign-up/sign-up.component';
 import { SingleTeacherComponent } from './Components/single-teacher/single-teacher.component';
 import { TeachersComponent } from './Components/teachers/teachers.component';
 import { SignOutComponent } from './Components/sign-out/sign-out.component';
@@ -44,8 +46,6 @@ import { CrudCatClassComponent } from './Components/Class/crud-cat-class/crud-ca
 import { AddCatClassComponent } from './Components/Class/crud-cat-class/add-cat-class/add-cat-class.component';
 import { UpdateCatClassComponent } from './Components/Class/crud-cat-class/update-cat-class/update-cat-class.component';
 import { DeleteCatClassComponent } from './Components/Class/crud-cat-class/delete-cat-class/delete-cat-class.component';
-import { SignInComponent } from './Components/sign-in/sign-in.component';
-import { SignUpComponent } from './Components/sign-up/sign-up.component';
 import { ProductsComponent } from './Components/products/products.component';
 import { ProductListComponent } from './Components/Admin/product-list/product-list.component';
 import { AddProductComponent } from './Components/Admin/add-product/add-product.component';

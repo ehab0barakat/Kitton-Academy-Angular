@@ -25,10 +25,10 @@ import { ProductDetailsComponent } from './Components/product_Details/product.co
 import { ShopComponent } from './Components/shop/shop.component';
 import { ProductsComponent } from './Components/products/products.component';
 import { CommonModule } from '@angular/common';
-import { SubEventComponent } from './Components/Events/sub-event/sub-event.component';
-import { EventAddComponent } from './Components/Events/crud-event/event-add/event-add.component';
-import { EventUpdateComponent } from './Components/Events/crud-event/event-update/event-update.component';
-import { EventDeleteComponent } from './Components/Events/crud-event/event-delete/event-delete.component';
+// import { SubEventComponent } from './Components/Events/sub-event/sub-event.component';
+// import { EventAddComponent } from './Components/Events/crud-event/event-add/event-add.component';
+// import { EventUpdateComponent } from './Components/Events/crud-event/event-update/event-update.component';
+// import { EventDeleteComponent } from './Components/Events/crud-event/event-delete/event-delete.component';
 import { CheckoutComponent } from './Components/checkout/checkout.component';
 import { MyclassesComponent } from './Components/myclasses/myclasses.component';
 import { CrudClassComponent } from './Components/Class/crud-class/crud-class.component';
@@ -41,6 +41,7 @@ import { UpdatePostComponent } from './Components/posts/Posts_Crud/update-post/u
 import { AddPostComponent } from './Components/posts/Posts_Crud/add-post/add-post.component';
 import { DeletePostComponent } from './Components/posts/Posts_Crud/delete-post/delete-post.component';
 import { ShowPostComponent } from './Components/posts/Posts_Crud/show-post/show-post.component';
+// import { ClassDetailsComponent } from './Components/class-details/class-details.component';
 import { TeachersComponent } from './Components/teachers/teachers.component';
 import { SingleTeacherComponent } from './Components/single-teacher/single-teacher.component';
 import { SignInComponent } from './Components/sign-in/sign-in.component';
@@ -57,7 +58,6 @@ import { AddCatClassComponent } from './Components/Class/crud-cat-class/add-cat-
 import { UpdateCatClassComponent } from './Components/Class/crud-cat-class/update-cat-class/update-cat-class.component';
 import { DeleteCatClassComponent } from './Components/Class/crud-cat-class/delete-cat-class/delete-cat-class.component';
 import { DetailsClassComponent } from './Components/Class/details-class/details-class.component';
-
 
 import { UpdateProductComponent } from './Components/Admin/update-product/update-product.component';
 import { DeleteProductComponent } from './Components/Admin/delete-product/delete-product.component';
@@ -78,6 +78,14 @@ import { AdminHeaderComponent } from './Components/admin_view/admin-header/admin
 import { DashboardComponent } from './Components/admin_view/dashboard/dashboard.component';
 import { AdminMainLayoutComponent } from './Components/admin_view/admin-main-layout/admin-main-layout.component';
 import { NgxDropzoneModule } from 'ngx-dropzone';
+import { AddTeacherComponent } from './Components/add-teacher/add-teacher.component';
+import { EditTeacherComponent } from './Components/edit-teacher/edit-teacher.component';
+import { DeleteTeacherComponent } from './Components/delete-teacher/delete-teacher.component';
+
+import { SubEventComponent } from './Components/Events/sub-event/sub-event.component';
+import { EventAddComponent } from './Components/Events/crud-event/event-add/event-add.component';
+import { EventUpdateComponent } from './Components/Events/crud-event/event-update/event-update.component';
+import { EventDeleteComponent } from './Components/Events/crud-event/event-delete/event-delete.component';
 
 @NgModule({
   declarations: [
@@ -119,6 +127,8 @@ import { NgxDropzoneModule } from 'ngx-dropzone';
     AddPostComponent,
     DeletePostComponent,
     ShowPostComponent,
+    // ProductComponent,
+    // ClassDetailsComponent,
     TeachersComponent,
     SingleTeacherComponent,
     SignInComponent,
@@ -161,6 +171,13 @@ import { NgxDropzoneModule } from 'ngx-dropzone';
     AdminHeaderComponent,
     DashboardComponent,
     AdminMainLayoutComponent,
+    AddTeacherComponent,
+    EditTeacherComponent,
+    DeleteTeacherComponent,
+    SubEventComponent,
+    EventAddComponent,
+    EventUpdateComponent,
+    EventDeleteComponent
   ],
   imports: [
     BrowserModule,
