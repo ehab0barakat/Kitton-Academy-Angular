@@ -40,7 +40,6 @@ export class SignInComponent implements OnInit {
         headers:new HttpHeaders({
           'Content-Type': 'application/json' ,
           "Authorization": `Bearer ${this.token.token}`
-
         })
       }).subscribe( data =>{
         this.userData = data ;
@@ -51,13 +50,8 @@ export class SignInComponent implements OnInit {
         }else{
           this.message = "Email or Password is Not Valid";
         }
-
       })
-
-
-
     })
-
   }
 
 
