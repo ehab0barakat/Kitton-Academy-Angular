@@ -10,10 +10,8 @@ import { Location } from '@angular/common';
   styleUrls: ['./product.component.css'],
 })
 export class ProductDetailsComponent implements OnInit {
-  product: IProduct | undefined;
   prdIDList: number[] = [];
-  currentPrdID: number = 0;
-  currentIndex: number = 0;
+  product: IProduct | undefined ;
   prodListOfCat: IProduct[] = [];
 
   constructor(
@@ -27,9 +25,9 @@ export class ProductDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.prodService.getProductByID(this.prod).subscribe((response) => {
-      console.log(response)
-
       this.product = response;
+
+      
       console.log(this.product);
     });
 

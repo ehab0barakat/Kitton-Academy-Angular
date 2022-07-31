@@ -16,10 +16,14 @@ export class CartComponent implements OnInit {
   product: IProduct | undefined;
   prdIDList: number[] = [];
   prodListOfCat: IProduct[] = [];
-  // 
+  //
+  total: number = 0;
+  success: boolean = false;
+  cartProducts: any[] = [];
+
   constructor(
     private router: Router,
-    public cart: CartService,
+    public CartService: CartService,
     private prodService: ProductsService,
     private cartCalculator: CartcalculatorService,
     private activatedRoute: ActivatedRoute
@@ -32,23 +36,71 @@ export class CartComponent implements OnInit {
       this.product = response;
       console.log(this.product);
     });
+
+    this.getCartProducts();
+  }
+  // -------------------------------------------------------------------------------//
+
+  getCartProducts() {
+    if ('cart' in localStorage) {
+      this.cartProducts = JSON.parse(localStorage.getItem('cart')!);
+    } this.getCartTotal();
+
+    console.log(this.cartProducts);
+  }
+
+  getCartTotal() {
+    this.total = 0;
+    for (let x in this.cartProducts) {
+      this.total +=
+        this.cartProducts[x].item.price * this.cartProducts[x].quantity;
+    }
+  }
+  // 
+  addAmount(index: number) {
+    this.cartProducts[index].quantity++;
+    this.getCartTotal();
+    localStorage.setItem('cart', JSON.stringify(this.cartProducts));
+  }
+  minsAmount(index: number) {
+    this.cartProducts[index].quantity--;
+    this.getCartTotal();
+    localStorage.setItem('cart', JSON.stringify(this.cartProducts));
+  }
+  detectChange() {
+    this.getCartTotal();
+    localStorage.setItem('cart', JSON.stringify(this.cartProducts));
   }
 
   // 
-  subTotal(): number {
-    return this.cartCalculator.calculateSubTotal(this.cart);
+  deleteProduct(index: number) {
+    this.cartProducts.splice(index, 1);
+    this.getCartTotal();
+    localStorage.setItem('cart', JSON.stringify(this.cartProducts));
   }
 
-  remove(product: IProduct): void {
-    this.cart.remove(product);
+  clearCart() {
+    this.cartProducts = [];
+    this.getCartTotal();
+    localStorage.setItem('cart', JSON.stringify(this.cartProducts));
   }
+  //--------------------------------------------------------------------------------------//
 
-  onQuantityChange(selection: ProdSelect, quantity: any) {
-    if (quantity > 0) {
-      selection.quantity = quantity;
-    }
-    else {
-      selection.quantity = 1;
-    }
+  // backend:
+  addCart() {
+    let products = this.cartProducts.map((item) => {
+      return { productId: item.item.id, quantity: item.quantity };
+    });
+
+    let Model = {
+      userId: 5,
+      products: products,
+    };
+
+    this.CartService.createNewCart(Model).subscribe((res) => {
+      this.success = true;
+    });
+
+    console.log(Model);
   }
 }

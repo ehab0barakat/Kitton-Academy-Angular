@@ -14,7 +14,7 @@ import { ProductsComponent } from '../products/products.component';
 export class ShopComponent implements OnInit {
   selectedID: number = 0;
   CategoryProducts: Icategory[] = [];
-  prodListOfCat: IProduct[] = [];
+  prodList: IProduct[] = [];
   prod: IProduct | undefined = undefined;
 
   @ViewChild(ProductsComponent) productsRef!: ProductsComponent;
@@ -24,20 +24,42 @@ export class ShopComponent implements OnInit {
     private CatService: CategoriesService
   ) {}
 
-  ngOnInit(): void {
-    this.CatService.getAllCategories().subscribe((response) => {
-      this.CategoryProducts = response;
-      console.log(this.CategoryProducts);
-    });
 
-    //
-    this.prodService.getAllProducts().subscribe((response) => {
-      this.prodListOfCat = response;
-      console.log(this.prodListOfCat);
-    });
-  }
+  // ------------------------------fillter------------------------------------//
 
   prodcatid(id: number) {
     this.selectedID = id;
+  }
+
+  ngOnInit(): void {
+    this.CatService.getAllCategories().subscribe((response) => {
+      this.CategoryProducts = response;
+      // console.log(this.CategoryProducts);
+    });
+    //
+    this.prodService.getAllProducts().subscribe((response) => {
+      this.prodList = response;
+      console.log(this.prodList);
+    });
+  }
+
+  // -----------------------------------------------------------------------------//
+
+  cartProducts:any[] = [];
+
+  addToCart(event:any) {
+    if("cart" in localStorage) {
+      this.cartProducts = JSON.parse(localStorage.getItem("cart")!)
+      let exist = this.cartProducts.find(item => item.item.id == event.item.id)
+      if(exist) {
+        alert("Product is already in your cart")
+      }else {
+        this.cartProducts.push(event)
+        localStorage.setItem("cart" , JSON.stringify(this.cartProducts))
+      }
+    } else {
+      this.cartProducts.push(event)
+      localStorage.setItem("cart" , JSON.stringify(this.cartProducts))
+    }
   }
 }

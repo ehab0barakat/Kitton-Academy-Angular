@@ -1,4 +1,3 @@
-
 <!-- ==========Shop Section Starts Here========== -->
 <div class="shop-cart padding-top padding-bottom">
   <div class="container">
@@ -14,30 +13,40 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let selection of cart.selections">
+          <tr *ngFor="let item of cartProducts; let index = index">
             <td class="product-item-2">
               <div class="p-thumb">
-                <a ><img [src]="selection.product.image" alt="product"></a>
+                <a><img [src]="item.item.image" alt="product"></a>
               </div>
               <div class="p-content">
-                <a href="#">{{selection.product.name}}</a>
+                <a href="#">{{item.item.name}}</a>
               </div>
             </td>
-            <td>${{selection.product.price}}</td>
+            <td>${{item.item.price}}</td>
             <td>
+
               <div class="cart-plus-minus">
-                <div class="dec qtybutton">-</div>
-                <div class="dec qtybutton">-</div>
-                <!-- <input class="cart-plus-minus-box" type="text" name="qtybutton" value="2"> -->
-                <input #quantity [value]="selection.quantity" type="number" (change)="onQuantityChange(selection, quantity.value)" min="1" />
-                <div class="inc qtybutton">+</div>
-                <div class="inc qtybutton">+</div>
+                <button class="inc qtybutton" (click)="addAmount(index)"></button>
+                <input class="cart-plus-minus-box" type="number" (change)="detectChange()" [(ngModel)]="item.quantity" min="1" value="{{item.item.quantity}}">
+                <button class="dec qtybutton" (click)="minsAmount(index)">-</button>
               </div>
+              <!-- <div class="cart-plus-minus">
+                <div class="dec qtybutton" (click)="minsAmount(index)" >-</div>
+                <div class="dec qtybutton" (click)="minsAmount(index)">-</div>
+                <input class="cart-plus-minus-box" type="number" min="1" value="2">
+                <div class="inc qtybutton" (click)="addAmount(index)">+</div>
+                <div class="inc qtybutton" (click)="addAmount(index)">+</div>
+              </div> -->
             </td>
-            <td>${{subTotal() }}</td>
+            <td>${{item.item.price * item.quantity}}</td>
             <td>
-              <a (click)="remove(selection.product)" class="btn btn-outline-danger">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16"><path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z"></path></svg>
+              <a (click)="deleteProduct(index)" class="btn btn-outline-danger">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                  class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                  <path
+                    d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z">
+                  </path>
+                </svg>
               </a>
             </td>
           </tr>
@@ -45,75 +54,15 @@
       </table>
     </div>
 
-    <div class="cart-checkout-box mb-widget">
-      <div class="coupon-area">
-        <form class="coupon">
-          <input type="text" name="coupon" placeholder="Coupon Code..." class="cart-page-input-text">
-          <input type="submit" value="Apply Coupon">
-        </form>
-        <form class="cart-checkout">
-          <input type="submit" value="Update Cart">
-          <input type="submit" value="Proceed to Checkout">
-        </form>
-      </div>
-    </div>
-
     <div class="shiping-box mb-widget">
       <div class="row">
-        <div class="col-md-6 col-12">
-          <div class="calculate-shiping">
-            <h5 class="title">Calculate Shipping</h5>
-            <form class="calculate-form">
-              <div class="outline-select w-100">
-                <select class="select-bar" style="display: none;">
-                  <option value="volvo">United Kingdom (UK)</option>
-                  <option value="saab">Bangladesh</option>
-                  <option value="saab">Pakisthan</option>
-                  <option value="saab">India</option>
-                  <option value="saab">Nepal</option>
-                </select>
-                <div class="nice-select select-bar" tabindex="0"><span class="current">United Kingdom (UK)</span>
-                  <ul class="list">
-                    <li data-value="volvo" class="option selected">United Kingdom (UK)</li>
-                    <li data-value="saab" class="option">Bangladesh</li>
-                    <li data-value="saab" class="option">Pakisthan</li>
-                    <li data-value="saab" class="option">India</li>
-                    <li data-value="saab" class="option">Nepal</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="outline-select shipping-select">
-                <select class="select-bar" style="display: none;">
-                  <option value="volvo">State/Country</option>
-                  <option value="saab">Dhaka</option>
-                  <option value="saab">Benkok</option>
-                  <option value="saab">Kolkata</option>
-                  <option value="saab">Kapasia</option>
-                </select>
-                <div class="nice-select select-bar" tabindex="0"><span class="current">State/Country</span>
-                  <ul class="list">
-                    <li data-value="volvo" class="option selected">State/Country</li>
-                    <li data-value="saab" class="option">Dhaka</li>
-                    <li data-value="saab" class="option">Benkok</li>
-                    <li data-value="saab" class="option">Kolkata</li>
-                    <li data-value="saab" class="option">Kapasia</li>
-                  </ul>
-                </div>
-              </div>
-              <input type="text" name="coupon" placeholder="Postcode/ZIP">
-              <button type="submit" class="custom-button"><span>Update Total</span></button>
-            </form>
-          </div>
-        </div>
-
-        
-        <div class="col-md-6 col-12">
+        <div class="col-md-8 col-12">
           <div class="cart-overview">
             <h5 class="title">Cart Totals</h5>
             <ul>
               <li>
                 <span class="pull-left">Cart Subtotal</span>
-                <p class="pull-right">$ 0.00</p>
+                <p class="pull-right">$ {{total}}</p>
               </li>
               <li>
                 <span class="pull-left">Shipping and Handling</span>
@@ -121,21 +70,24 @@
               </li>
               <li>
                 <span class="pull-left">Order Total</span>
-                <p class="pull-right">$ 2940.00</p>
+                <p class="pull-right">$ {{total}}</p>
               </li>
             </ul>
           </div>
         </div>
+        <div class="col-md-2">
 
+          <button type="submit" class="custom-button" (click)="addCart()"><span>Order Now</span></button>
 
+        </div>
       </div>
     </div>
   </div>
 </div>
 <!-- ==========Shop Section Ends Here========== -->
 
-  
-  <!-- <a class="btn btn-primary" routerLink="/checkout">Checkout</a> -->
-<div *ngIf="!cart.selections.length">
+
+<!-- <a class="btn btn-primary" routerLink="/checkout">Checkout</a> -->
+<!-- <div *ngIf="!cart.selections.length">
   <p>Your cart is empty.  Check out our great <a routerLink="/products">Products</a>!</p>
-</div>
+</div> -->

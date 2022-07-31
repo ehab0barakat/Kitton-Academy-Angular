@@ -29,7 +29,7 @@ export class ProductsService {
   }
   getProductsByCatID(catID: number): Observable<IProduct[]> {
     return this.httpclient.get<IProduct[]>(
-      `${environment.APIBaseURL}/api/ProductsCategory${catID}`
+      `${environment.APIBaseURL}/api/ProductsCategory/${catID}`
     );
   }
 

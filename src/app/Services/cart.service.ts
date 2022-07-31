@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
 import { IProduct } from '../Models/iproduct';
 import { ProdSelect } from '../Models/prod-select';
 
@@ -7,7 +9,7 @@ import { ProdSelect } from '../Models/prod-select';
 })
 export class CartService {
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
   selections: ProdSelect[] = [];
 
@@ -41,5 +43,13 @@ export class CartService {
 
   count(): number {
     return this.selections.map((selection) => selection.quantity).reduce((sum, quantity) => sum += quantity, 0);
+  }
+
+
+
+  // 
+  
+  createNewCart(model:any) {
+    return this.http.post(environment.APIBaseURL + 'carts' , model )
   }
 }

@@ -24,7 +24,7 @@
 <!-- ==========Shop Section Starts Here========== -->
 <div class="shop-page padding-top padding-bottom">
   <div class="container">
-    <div class="row mb--50">
+    <div class="row mb-50">
       <div class="col-lg-8 col-xl-9 mb-50">
         <div class="shop-title d-flex flex-wrap justify-content-between">
           <p>Showing 01 - 12 of 139 Results</p>
@@ -34,7 +34,18 @@
           </div>
         </div>
 
-        <app-products [receivedID]="selectedID"></app-products>
+
+        <div class="shop-product-wrap grid row mb-30-none">
+          <div class="col-xl-4 col-md-6">
+            <div class="row row-cols-2 m-5" style="width: 800px;">
+              <div class="shop-item" *ngFor="let item of prodList">
+
+                <app-products [receivedID]="selectedID" [data]="item" (item)="addToCart($event)"></app-products>
+              
+              </div>
+            </div>
+          </div>
+        </div>
 
         <ul class="default-pagination">
           <li>
@@ -65,8 +76,7 @@
               </form>
             </div>
           </div>
-
-
+          <!--  -->
           <div class="widget widget-category">
             <div class="widget-header">
               <h5 class="title">Post Category</h5>
@@ -82,28 +92,28 @@
             </div>
           </div>
 
-          <div class="widget widget-product">
+          <!-- <div class="widget widget-product">
             <div class="widget-header">
               <h5 class="title">latest products</h5>
             </div>
-            <div class="widget-body" *ngFor="let Prod of prodListOfCat">
+            <div class="widget-body" >
               <ul>
                 <li>
                   <div class="product-thumb">
-                    <a href="#"><img src="{{ Prod.image }}" alt="shop"></a>
+                    <a href="#"><img src="{{ data.image }}" alt="shop"></a>
                   </div>
                   <div class="product-content">
-                    <h6><a href="shop-single.html">{{ Prod.name }}</a></h6>
+                    <h6><a href="shop-single.html">{{ data.name }}</a></h6>
                     <p>
                       <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i
-                        class="far fa-star"></i><i class="far fa-star"></i> <span>{{ Prod.Rate }}</span>
+                        class="far fa-star"></i><i class="far fa-star"></i> <span>{{ data.Rate }}</span>
                     </p>
-                    <h6 class="subtitle">{{ Prod.price }}</h6>
+                    <h6 class="subtitle">{{ data.price }}</h6>
                   </div>
                 </li>
               </ul>
             </div>
-          </div>
+          </div>  -->
 
         </div>
       </div>

@@ -76,6 +76,7 @@ import { AdminHeaderComponent } from './Components/admin_view/admin-header/admin
 import { DashboardComponent } from './Components/admin_view/dashboard/dashboard.component';
 import { AdminMainLayoutComponent } from './Components/admin_view/admin-main-layout/admin-main-layout.component';
 import { NgxDropzoneModule } from 'ngx-dropzone';
+import { CartComponent } from './Components/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -138,6 +139,7 @@ import { NgxDropzoneModule } from 'ngx-dropzone';
     EventDeleteComponent,
     // 
     ShopComponent,
+    CartComponent,
     ProductsComponent,
     AddProductComponent,
     ProductListComponent,

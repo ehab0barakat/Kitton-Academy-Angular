@@ -1,53 +1,45 @@
-<div class="shop-product-wrap grid row mb-30-none">
-  <div class="col-xl-4 col-md-6">
-    <div class="row row-cols-2 m-5" style="width: 800px;">
-      <div class="shop-item" *ngFor="let Prod of products">
-        <div class="product-thumb">
-          <a routerLink="/productDetails/{{ Prod.id }}">
-            <img src="{{ Prod.image }}" alt="shop">
-          </a>
-          <select #quantity>
-            <option *ngFor="let option of quantityOptions" [value]="option">{{option}}</option>
-          </select>
-          <div class="product-action-link">
-            <a href="#"><i class="far fa-heart"></i></a>
-            <!-- <a (click)="addToCart(Prod, +quantity.value, image);" ><i class="fas fa-cart-plus"></i></a> -->
-            <!-- routerLink="/cart/{{ Prod.id }}" -->
-          </div>
-        </div>
-        <div class="product-content">
-          <h5 class="title"><a href="shop-single.html">{{ Prod.name }}</a></h5>
-          <p>
-            <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i
-              class="far fa-star"></i><i class="far fa-star"></i> <span>{{ Prod.Rate }}</span>
-          </p>
-          <h6 class="subtitle">{{ Prod.price }}</h6>
-        </div>
-      </div>
 
-      
-      <!--  -->
-      <div class="product-list-item" *ngFor="let Prod of products">
-        <div class="product-thumb">
-          <img src="{{ Prod.image }}" alt="shop">
-          <div class="product-action-link">
-            <a href="#"><i class="far fa-heart"></i></a>
-            <a routerLink="/cart/{{ Prod.id }}"><i class="fas fa-cart-plus"></i></a>
-          </div>
-        </div>
-        <div class="product-content">
-          <h5 class="title"><a href="shop-single.html">{{ Prod.name }}</a></h5>
-          <p>
-            <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i
-              class="far fa-star"></i><i class="far fa-star"></i> <span>(3 review)</span>
-          </p>
-          <h6 class="subtitle">{{ Prod.price }}</h6>
-          <p>
-            {{ Prod.description }}
-          </p>
-        </div>
-      </div>
+
+<div class="product-thumb">
+  <a routerLink="/productDetails/{{ data.id }}">
+    <img src="{{ data.image }}" alt="shop">
+  </a>
+  <select #quantity>
+    <option *ngFor="let option of quantityOptions" [value]="option">{{option}}</option>
+  </select>
+  <div class="product-action-link">
+    <a ><i class="far fa-heart"></i></a>
+    <a (click)="add()"><i class="fas fa-cart-plus"></i></a>
+    <!-- <a (click)="addToCart(Prod, +quantity.value, image);" ><i class="fas fa-cart-plus"></i></a> -->
+  </div>
+</div>
+<div class="product-content">
+  <h5 class="title"><a href="shop-single.html">{{ data.name }}</a></h5>
+  <p>
+    <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i
+      class="far fa-star"></i> <span>{{ data.Rate }}</span>
+  </p>
+  <h6 class="subtitle">{{ data.price }}</h6>
+</div>
+<!--  -->
+<div class="product-list-item">
+  <div class="product-thumb">
+    <img src="{{ data.image }}" alt="shop">
+    <div class="product-action-link">
+      <a href="#"><i class="far fa-heart"></i></a>
+      <a><i class="fas fa-cart-plus"></i></a>
     </div>
+  </div>
+  <div class="product-content">
+    <h5 class="title"><a href="shop-single.html">{{ data.name }}</a></h5>
+    <p>
+      <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i
+        class="far fa-star"></i> <span>(3 review)</span>
+    </p>
+    <h6 class="subtitle">{{ data.price }}</h6>
+    <p>
+      {{ data.description }}
+    </p>
   </div>
 </div>
 
@@ -56,8 +48,10 @@
 
 
 
+
+
 <!-- <div class="col-lg-7">
-  <div class="product-content" *ngFor="let Prod of prodListOfCat">
+  <div class="product-content" *ngFor="let Prod of prodList">
     <h5 class="title"><a href="shop-single.html">{{ Prod.name }}</a></h5>
     <p>
       <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i
