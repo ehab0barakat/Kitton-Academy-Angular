@@ -20,15 +20,14 @@ import { CrudGameComponent } from './Components/Games/crud-game/crud-game.compon
 import { CrudEventComponent } from './Components/Events/crud-event/crud-event.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-// import { ProductComponent } from './Components/product/product.component';
 import { ProductDetailsComponent } from './Components/product_Details/product.component';
 import { ShopComponent } from './Components/shop/shop.component';
 import { ProductsComponent } from './Components/products/products.component';
 import { CommonModule } from '@angular/common';
-import { SubEventComponent } from './Components/Events/sub-event/sub-event.component';
-import { EventAddComponent } from './Components/Events/crud-event/event-add/event-add.component';
-import { EventUpdateComponent } from './Components/Events/crud-event/event-update/event-update.component';
-import { EventDeleteComponent } from './Components/Events/crud-event/event-delete/event-delete.component';
+// import { SubEventComponent } from './Components/Events/sub-event/sub-event.component';
+// import { EventAddComponent } from './Components/Events/crud-event/event-add/event-add.component';
+// import { EventUpdateComponent } from './Components/Events/crud-event/event-update/event-update.component';
+// import { EventDeleteComponent } from './Components/Events/crud-event/event-delete/event-delete.component';
 import { CheckoutComponent } from './Components/checkout/checkout.component';
 import { MyclassesComponent } from './Components/myclasses/myclasses.component';
 import { CrudClassComponent } from './Components/Class/crud-class/crud-class.component';
@@ -38,9 +37,9 @@ import { DeleteClassComponent } from './Components/Class/crud-class/delete-class
 import { CatClassComponent } from './Components/Class/cat-class/cat-class.component';
 import { FilteredClassComponent } from './Components/Class/filtered-class/filtered-class.component';
 import { UpdatePostComponent } from './Components/posts/Posts_Crud/update-post/update-post.component';
-import { AddPostComponent } from './Components/posts/Posts_Crud/add-post/add-post.component';
 import { DeletePostComponent } from './Components/posts/Posts_Crud/delete-post/delete-post.component';
 import { ShowPostComponent } from './Components/posts/Posts_Crud/show-post/show-post.component';
+// import { ClassDetailsComponent } from './Components/class-details/class-details.component';
 import { TeachersComponent } from './Components/teachers/teachers.component';
 import { SingleTeacherComponent } from './Components/single-teacher/single-teacher.component';
 import { SignInComponent } from './Components/sign-in/sign-in.component';
@@ -57,12 +56,11 @@ import { AddCatClassComponent } from './Components/Class/crud-cat-class/add-cat-
 import { UpdateCatClassComponent } from './Components/Class/crud-cat-class/update-cat-class/update-cat-class.component';
 import { DeleteCatClassComponent } from './Components/Class/crud-cat-class/delete-cat-class/delete-cat-class.component';
 import { DetailsClassComponent } from './Components/Class/details-class/details-class.component';
-
-
 import { UpdateProductComponent } from './Components/Admin/update-product/update-product.component';
 import { DeleteProductComponent } from './Components/Admin/delete-product/delete-product.component';
 import { AddProductComponent } from './Components/Admin/add-product/add-product.component';
 import { ProductListComponent } from './Components/Admin/product-list/product-list.component';
+import { EditProfileComponent } from './Components/Profile/edit-profile/edit-profile.component';
 import { GameCatsIndexComponent } from './Components/game-cats-crud/game-cats-index/game-cats-index.component';
 import { GameCatsAddComponent } from './Components/game-cats-crud/game-cats-add/game-cats-add.component';
 import { GameCatsUpdateComponent } from './Components/game-cats-crud/game-cats-update/game-cats-update.component';
@@ -72,11 +70,22 @@ import { EventCatsAddComponent } from './Components/event-cats-crud/event-cats-a
 import { EventCatsUpdateComponent } from './Components/event-cats-crud/event-cats-update/event-cats-update.component';
 import { EventCatsDeleteComponent } from './Components/event-cats-crud/event-cats-delete/event-cats-delete.component';
 import { AdminControlComponent } from './Components/Events/admin-control/admin-control.component';
+import { PostingComponent } from './Components/posts/Posts_Crud/posting/posting.component';
 import { AdminHeaderComponent } from './Components/admin_view/admin-header/admin-header.component';
 import { DashboardComponent } from './Components/admin_view/dashboard/dashboard.component';
 import { AdminMainLayoutComponent } from './Components/admin_view/admin-main-layout/admin-main-layout.component';
 import { NgxDropzoneModule } from 'ngx-dropzone';
 import { CartComponent } from './Components/cart/cart.component';
+import { AddTeacherComponent } from './Components/add-teacher/add-teacher.component';
+import { EditTeacherComponent } from './Components/edit-teacher/edit-teacher.component';
+import { DeleteTeacherComponent } from './Components/delete-teacher/delete-teacher.component';
+import { SubEventComponent } from './Components/Events/sub-event/sub-event.component';
+import { EventAddComponent } from './Components/Events/crud-event/event-add/event-add.component';
+import { EventUpdateComponent } from './Components/Events/crud-event/event-update/event-update.component';
+import { EventDeleteComponent } from './Components/Events/crud-event/event-delete/event-delete.component';
+import { SlachAdminComponent } from './Components/slach-admin/slach-admin.component';
+import { AddPostComponent } from './Components/posts/Posts_Crud/add-post/add-post.component';
+
 
 @NgModule({
   declarations: [
@@ -112,8 +121,8 @@ import { CartComponent } from './Components/cart/cart.component';
     FilteredClassComponent,
     DetailsClassComponent,
     EventDeleteComponent,
-    UpdatePostComponent,
     AddPostComponent,
+    UpdatePostComponent,
     DeletePostComponent,
     ShowPostComponent,
     TeachersComponent,
@@ -147,6 +156,7 @@ import { CartComponent } from './Components/cart/cart.component';
     DeleteProductComponent,
     ProductDetailsComponent,
     // 
+    EditProfileComponent,
     GameCatsIndexComponent,
     GameCatsAddComponent,
     GameCatsUpdateComponent,
@@ -156,9 +166,18 @@ import { CartComponent } from './Components/cart/cart.component';
     EventCatsUpdateComponent,
     EventCatsDeleteComponent,
     AdminControlComponent,
+    PostingComponent,
     AdminHeaderComponent,
     DashboardComponent,
     AdminMainLayoutComponent,
+    AddTeacherComponent,
+    EditTeacherComponent,
+    DeleteTeacherComponent,
+    SubEventComponent,
+    EventAddComponent,
+    EventUpdateComponent,
+    EventDeleteComponent,
+    SlachAdminComponent
   ],
   imports: [
     BrowserModule,

@@ -24,7 +24,7 @@ export class SigninAsadminComponent implements OnInit {
       this.httpOptions={
         headers:new HttpHeaders({
           'Content-Type': 'application/json' ,
-          "responseType": 'text'
+          // "responseType": 'text'
           // "Authorization": "Bearer {P6z5dUpeoHbUH0z4KjEtdLCHloT4PQpk9wtyiDxl}",
 
         })
@@ -78,7 +78,7 @@ export class SigninAsadminComponent implements OnInit {
         if(this.userData.role == 3){
           window.localStorage.setItem("token" ,this.token.token );
           window.localStorage.setItem("role",`${this.userData.role}`)
-          this.route.navigate(['/admin'])
+          this.route.navigate(['/slachAdmin'])
         }else{
           this.message = "Email or Password is Not Valid";
         }

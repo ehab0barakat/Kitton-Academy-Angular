@@ -1,9 +1,10 @@
 <div class="row" >
-  <ng-container *ngFor="let event of AllEvents " >
+  <ng-container *ngFor="let event of AllEvents ;  let i =index" >
     <div class="class-inner col-sm-4"  >
       <div class="event-item">
+        <div class="expired" *ngIf="All[i]" >EXPIRED</div>
             <div class="event-humb">
-                <a routerLink="/event/{{event.id}}"><img src="{{event.image}}" width="370" alt="events"></a>
+                <a routerLink="/event/{{event.id}}"><img src="{{event.image}}" width="100%" alt="events"></a>
                 <div class="date-tag">
                     <h3 class="title">{{event.title}}</h3>
                     <span class="mon">{{event.date}}</span>

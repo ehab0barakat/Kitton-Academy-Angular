@@ -36,6 +36,8 @@ import { AddPostComponent } from './Components/posts/Posts_Crud/add-post/add-pos
 import { UpdatePostComponent } from './Components/posts/Posts_Crud/update-post/update-post.component';
 import { DeletePostComponent } from './Components/posts/Posts_Crud/delete-post/delete-post.component';
 import { ShowPostComponent } from './Components/posts/Posts_Crud/show-post/show-post.component';
+import { SignInComponent } from './Components/sign-in/sign-in.component';
+import { SignUpComponent } from './Components/sign-up/sign-up.component';
 import { SingleTeacherComponent } from './Components/single-teacher/single-teacher.component';
 import { TeachersComponent } from './Components/teachers/teachers.component';
 import { SignOutComponent } from './Components/sign-out/sign-out.component';
@@ -44,8 +46,6 @@ import { CrudCatClassComponent } from './Components/Class/crud-cat-class/crud-ca
 import { AddCatClassComponent } from './Components/Class/crud-cat-class/add-cat-class/add-cat-class.component';
 import { UpdateCatClassComponent } from './Components/Class/crud-cat-class/update-cat-class/update-cat-class.component';
 import { DeleteCatClassComponent } from './Components/Class/crud-cat-class/delete-cat-class/delete-cat-class.component';
-import { SignInComponent } from './Components/sign-in/sign-in.component';
-import { SignUpComponent } from './Components/sign-up/sign-up.component';
 import { ProductsComponent } from './Components/products/products.component';
 import { ProductListComponent } from './Components/Admin/product-list/product-list.component';
 import { AddProductComponent } from './Components/Admin/add-product/add-product.component';
@@ -56,9 +56,12 @@ import { EventCatsUpdateComponent } from './Components/event-cats-crud/event-cat
 import { EventCatsDeleteComponent } from './Components/event-cats-crud/event-cats-delete/event-cats-delete.component';
 import { EventCatsAddComponent } from './Components/event-cats-crud/event-cats-add/event-cats-add.component';
 import { AdminControlComponent } from './Components/Events/admin-control/admin-control.component';
+import { EditProfileComponent } from './Components/Profile/edit-profile/edit-profile.component';
+import { PostingComponent } from './Components/posts/Posts_Crud/posting/posting.component';
 import { AdminHeaderComponent } from './Components/admin_view/admin-header/admin-header.component';
 import { DashboardComponent } from './Components/admin_view/dashboard/dashboard.component';
 import { AdminMainLayoutComponent } from './Components/admin_view/admin-main-layout/admin-main-layout.component';
+import { SlachAdminComponent } from './Components/slach-admin/slach-admin.component';
 
 const routes: Routes = [
   {
@@ -80,23 +83,7 @@ const routes: Routes = [
       { path: 'event-delete/:id', component: EventDeleteComponent },
       // ------------------------ (  event crud start  )   -----------------------------
 
-      // ####################################################################################
-
-      // ------------------------ (  event cats crud start  )   -----------------------------
-
-      // ------------------------ (  event cats crud end  )   -----------------------------
-      { path: 'post-index', component: PostsComponent },
-      { path: 'show-post', component: ShowPostComponent },
-      { path: 'single-post/:id', component: SinglePostComponent },
-      { path: 'add-post', component: AddPostComponent },
-      { path: 'update-post/:id', component: UpdatePostComponent },
-      { path: 'delete-post/:id', component: DeletePostComponent },
-      { path: 'contact_us', component: ContactUsComponent },
-      { path: 'about_us', component: AboutUsComponent },
-      { path: 'profile', component: ProfileComponent },
-      // { path: 'classes', component: ClassesComponent },
-
-      // -------------------------------------------------//
+      // ------------------------shop page ----------------------------------//
       { path: 'shop', component: ShopComponent },
       { path: 'cart', component: CartComponent },
       { path: 'cart/:id', component: CartComponent },
@@ -109,48 +96,70 @@ const routes: Routes = [
       { path: 'productDetails/:id', component: ProductDetailsComponent },
 
       // --------------------------------------------------------------------//
-      { path: 'profile', component: ProfileComponent },
-      { path: 'teachers', component: TeachersComponent },
-      { path: 'single-teacher/:id', component: SingleTeacherComponent },
-      { path: 'sign-in', component: SignInComponent },
-      { path: 'sign-up', component: SignUpComponent },
-      { path: 'form-teacher', component: FormTeacherComponent },
-      { path: 'sign-up as teacher', component: SignupAsteacherComponent },
-      { path: 'sign-out', component: SignOutComponent },
-      { path: 'Welcome', component: WelcomeComponent },
-      { path: 'submit-admin', component: SigninAsadminComponent },
-      // -----------------------------------------------------------------//
-      { path: 'classes', component: CatClassComponent },
-      { path: 'classes/:id', component: DetailsClassComponent },
-      { path: 'classes-index', component: CrudClassComponent },
-      { path: 'classes-add', component: AddClassComponent },
-      { path: 'classes-delete/:id', component: DeleteClassComponent },
-      { path: 'classes-update/:id', component: UpdateClassComponent },
-      { path: 'classescat-index', component: CrudCatClassComponent },
-      { path: 'classescat-add', component: AddCatClassComponent },
-      { path: 'classescat-update/:id', component: UpdateCatClassComponent },
-      { path: 'classescat-delete/:id', component: DeleteCatClassComponent },
-      { path: 'checkout/:id', component: CheckoutComponent },
-      
-      // --------------------------------------------------------------------------//
-    ],
-  },
 
-  { path: 'admin', component: AdminMainLayoutComponent,
-    children: [
-      { path: 'event-control', component: AdminControlComponent },
-      { path: 'event-control/event/:id', component: EventsSingleComponent },
-      { path: 'eventcats-index', component: EventCatsIndexComponent },
-      { path: 'eventcats-add', component: EventCatsAddComponent },
-      { path: 'eventcats-update/:id', component: EventCatsUpdateComponent },
-      { path: 'eventcats-delete/:id', component: EventCatsDeleteComponent },
-    ],
-  },
+      {path:'post-index',component:PostsComponent},
+      {path:'show-post',component:ShowPostComponent},
+      {path:'single-post/:id',component:SinglePostComponent},
+      {path:'update-post/:id',component:UpdatePostComponent},
+      // {path:'posting',component:AddPostComponent},
+      {path:'posting',component:PostingComponent},
+      {path:'delete-post/:id',component:DeletePostComponent},
+      {path:'contact_us',component:ContactUsComponent},
+      {path:'about_us',component:AboutUsComponent},
+    
+  // -------------------------------------------------//
 
-  { path: 'admin-sign', component: SigninAsadminComponent },
-  { path: 'slachpage', component: SlachpageComponent },
-  { path: '**', component: NotFoundComponent },
-];
+      {path:'profile',component:ProfileComponent},
+      {path:'edit-profile',component:EditProfileComponent},
+      {path : "teachers" , component:TeachersComponent},
+      {path : "single-teacher/:id" , component:SingleTeacherComponent},
+      {path : "sign-in" , component:SignInComponent},
+      {path : "sign-up" , component:SignUpComponent},
+      {path : "form-teacher" , component:FormTeacherComponent},
+      {path : "sign-up as teacher" , component:SignupAsteacherComponent},
+      {path : "sign-out" , component:SignOutComponent},
+      {path : "Welcome" , component:WelcomeComponent},
+      {path : "submit-admin" , component:SigninAsadminComponent},
+      {path:'classes',component:CatClassComponent},
+      {path: 'classes/:id',component:DetailsClassComponent},
+      {path: 'classes-index',component:CrudClassComponent},
+      {path : "classes-add" , component: AddClassComponent},
+      {path : "classes-delete/:id" , component: DeleteClassComponent},
+      {path : "classes-update/:id" , component: UpdateClassComponent},
+      {path: 'classescat-index',component:CrudCatClassComponent},
+      {path : "classescat-add" , component: AddCatClassComponent},
+      {path : "classescat-update/:id" , component: UpdateCatClassComponent},
+      {path : "classescat-delete/:id" , component: DeleteCatClassComponent},
+      {path: 'checkout/:id',component:CheckoutComponent},
+      {path:'slachAdmin',component:SlachAdminComponent},
+
+
+  // -------------------------------------------------//
+
+]},
+
+{path:'admin',component:AdminMainLayoutComponent,children:[
+
+  {path : "home" , component: HomeComponent},
+  {path:'contact_us',component:ContactUsComponent},
+  {path:'about_us',component:AboutUsComponent},
+  {path:'profile',component:ProfileComponent},
+  {path : "event-control" , component: AdminControlComponent},
+  {path : "event-control/event/:id" , component: EventsSingleComponent},
+  {path : "event/:id" , component: EventsSingleComponent},
+  {path : "events-archive" , component: EventsArchiveComponent},
+  {path:'eventcats-index',component:EventCatsIndexComponent},
+  {path:'eventcats-add',component:EventCatsAddComponent},
+  {path:'eventcats-update/:id',component:EventCatsUpdateComponent},
+  {path:'eventcats-delete/:id',component:EventCatsDeleteComponent},
+
+]},
+
+  {path:'admin-sign',component:SigninAsadminComponent},
+  {path:'slachpage',component:SlachpageComponent},
+  {path:'**',component:NotFoundComponent}
+
+]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

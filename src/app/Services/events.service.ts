@@ -54,11 +54,12 @@ export class EventsService {
     );
   }
 
-  usersCount(claID: number): Observable<any> {
-    return this.httpclient.get<any>(
-      `${environment.APIBaseURL}/api/event/userscount/${claID}`,
+  searchForTeacherByName(newPrd: any): Observable<any> {
+    return this.httpclient.post<any>(
+      `${environment.APIBaseURL}/api/event/search_for_teacher_events/`,
+      JSON.stringify(newPrd),
       this.httpOptions
-    );
+    ); //search for teacher by email
   }
 
   search_inrollement(newPrd: any): Observable<any> {
@@ -68,6 +69,7 @@ export class EventsService {
       this.httpOptions
     );
   }
+
 
   addEnrollEvent(newPrd: any): Observable<any> {
     return this.httpclient.post<any>(
@@ -116,4 +118,30 @@ export class EventsService {
       this.httpOptions
     );
   }
+
+  // ------------------------------------------------------------------------------
+  // (notification)
+
+  teacherNotify(newPrd: any): Observable<any> {
+    return this.httpclient.post<any>(
+      `${environment.APIBaseURL}/api/event-notification/create`,
+      JSON.stringify(newPrd),
+      this.httpOptions
+    );
+  }
+
+  showNotifyToTeacher(): Observable<any> {
+    return this.httpclient.get<any>(
+      `${environment.APIBaseURL}/api/event-notification/show`,
+      this.httpOptions
+    );
+  }
+
+  teacherCheckNotify(id: number): Observable<any> {
+    return this.httpclient.get<any>(
+      `${environment.APIBaseURL}/api/event-notification/update/${id}`,
+      this.httpOptions
+    );
+  }
+
 }

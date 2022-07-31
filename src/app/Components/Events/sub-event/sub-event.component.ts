@@ -26,10 +26,19 @@ export class SubEventComponent implements OnInit , OnChanges{
 
 
   AllEvents:Event[] = [];
+  All:any
+
+
+  auth:any = localStorage.getItem("role");
 
   ngOnInit(): void {
 
+    console.log(this.auth)
+
+
   }
+
+
 
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -45,6 +54,10 @@ export class SubEventComponent implements OnInit , OnChanges{
     }else{
       this.eventService.getAllActiveEvents().subscribe(response=>{
       this.AllEvents = response
+      this.All = this.AllEvents.map((el:any)=>{
+        return new Date(el.date).getTime() < new Date().getTime()
+      })
+
     })
 
     }

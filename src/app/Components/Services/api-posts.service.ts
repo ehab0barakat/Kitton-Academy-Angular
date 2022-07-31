@@ -1,28 +1,29 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { observable, Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { Posts } from 'src/app/Models/posts';
+import {  HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs/internal/Observable';
 import { environment } from 'src/environments/environment';
-
 
 
 @Injectable({
   providedIn: 'root'
 })
-export class PostsApiService {
- newPost:Posts[]=[];
- private httpOptions={};
-  constructor(private httpclient: HttpClient ,private router:Router) { 
+export class ApiPostsService {
+  newPost:Posts[]=[];
+  private httpOptions={};
+  constructor(private httpclient: HttpClient ,private router:Router) {
     this.httpOptions={
       headers:new HttpHeaders({
         'Content-Type': 'application/json' ,
 
       })
     }
-  }
+   }
 
-// to get all posts
+
+  // to get all posts
   getAllPosts():Observable<Posts[]>{
     return  this.httpclient.get<Posts[]>(`${environment.APIBaseURL}/api/post`)
  
@@ -56,8 +57,5 @@ export class PostsApiService {
       return this.httpclient.delete<Posts>(`${environment.APIBaseURL}/api/post/${id}`,
                                                 this.httpOptions)
                                               }
-
-
-
 
 }
