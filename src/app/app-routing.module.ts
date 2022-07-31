@@ -61,6 +61,7 @@ import { PostingComponent } from './Components/posts/Posts_Crud/posting/posting.
 import { AdminHeaderComponent } from './Components/admin_view/admin-header/admin-header.component';
 import { DashboardComponent } from './Components/admin_view/dashboard/dashboard.component';
 import { AdminMainLayoutComponent } from './Components/admin_view/admin-main-layout/admin-main-layout.component';
+import { SlachAdminComponent } from './Components/slach-admin/slach-admin.component';
 
 
 const routes: Routes = [
@@ -81,11 +82,6 @@ const routes: Routes = [
   {path : "event-delete/:id" , component: EventDeleteComponent},
   // ------------------------ (  event crud start  )   -----------------------------
 
-  // ####################################################################################
-
-  // ------------------------ (  event cats crud start  )   -----------------------------
-
-  // ------------------------ (  event cats crud end  )   -----------------------------
   {path:'post-index',component:PostsComponent},
   {path:'show-post',component:ShowPostComponent},
   {path:'single-post/:id',component:SinglePostComponent},
@@ -129,14 +125,22 @@ const routes: Routes = [
   {path:'DeleteProduct',component:DeleteProductComponent},
   {path:'productDetails/:id',component:ProductDetailsComponent},
   {path:'productDetails',component:ProductDetailsComponent},
+  {path:'slachAdmin',component:SlachAdminComponent},
+
   // -------------------------------------------------//
 
 ]},
 
 {path:'admin',component:AdminMainLayoutComponent,children:[
 
+  {path : "home" , component: HomeComponent},
+  {path:'contact_us',component:ContactUsComponent},
+  {path:'about_us',component:AboutUsComponent},
+  {path:'profile',component:ProfileComponent},
   {path : "event-control" , component: AdminControlComponent},
   {path : "event-control/event/:id" , component: EventsSingleComponent},
+  {path : "event/:id" , component: EventsSingleComponent},
+  {path : "events-archive" , component: EventsArchiveComponent},
   {path:'eventcats-index',component:EventCatsIndexComponent},
   {path:'eventcats-add',component:EventCatsAddComponent},
   {path:'eventcats-update/:id',component:EventCatsUpdateComponent},

@@ -30,7 +30,18 @@ export class EventAddComponent implements OnInit {
 
   AllEventCats:Eventcats[] = []
 
-  NewEvent :Event ={} as Event ;
+  NewEvent :Event ={
+    id: 0,
+    title: '',
+    location: '',
+    isActive: 0,
+    date: '',
+    time: '',
+    image: '',
+    description: '',
+    teacher_id: 0,
+    eventCat_id: 0
+  } ;
 
   auth:any = localStorage.getItem("role");
   image:any
@@ -59,6 +70,7 @@ export class EventAddComponent implements OnInit {
   onSelect(event:any) {
     console.log(event);
     this.files.push(...event.addedFiles);
+    this.onUpload();
   }
 
   onRemove(event:any) {

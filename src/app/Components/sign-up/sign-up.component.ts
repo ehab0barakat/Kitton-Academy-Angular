@@ -68,6 +68,7 @@ export class SignUpComponent implements OnInit {
   onSelect(event:any) {
     console.log(event);
     this.files.push(...event.addedFiles);
+    this.onload();
   }
 
   onRemove(event:any) {
@@ -102,12 +103,12 @@ export class SignUpComponent implements OnInit {
 
 
   mysubmit(myform:NgForm){
+    myform.value.childImage=this.image.secure_url
     return this.httpclient.post<object>(`${environment.APIBaseURL}/api/auth/signupuser`,
                                         JSON.stringify(myform.value),
                                         this.httpOptions).subscribe( data =>{
       this.message= data
       console.log(this.message);
-      
       this.route.navigate(['/home'])
     })
   }

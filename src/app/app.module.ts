@@ -86,6 +86,7 @@ import { SubEventComponent } from './Components/Events/sub-event/sub-event.compo
 import { EventAddComponent } from './Components/Events/crud-event/event-add/event-add.component';
 import { EventUpdateComponent } from './Components/Events/crud-event/event-update/event-update.component';
 import { EventDeleteComponent } from './Components/Events/crud-event/event-delete/event-delete.component';
+import { SlachAdminComponent } from './Components/slach-admin/slach-admin.component';
 
 @NgModule({
   declarations: [
@@ -177,7 +178,8 @@ import { EventDeleteComponent } from './Components/Events/crud-event/event-delet
     SubEventComponent,
     EventAddComponent,
     EventUpdateComponent,
-    EventDeleteComponent
+    EventDeleteComponent,
+    SlachAdminComponent
   ],
   imports: [
     BrowserModule,

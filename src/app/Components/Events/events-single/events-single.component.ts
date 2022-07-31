@@ -47,7 +47,9 @@ alreadyEnroller:any = false ;
 
 
   ngOnInit(): void {
-
+    if(this.auth == 3){
+      this.router.navigate([`/admin/event/${this.prod}`])
+    }
 
     this.eventService.usersCount(this.prod).subscribe(response=>{
       this.gonnaGo = response ;
@@ -81,7 +83,7 @@ alreadyEnroller:any = false ;
     if(this.SingleEvents.id == 0){
       this.router.navigate(['/not-auth']);
     }
-  },1500)
+  },2500)
 
 }
 

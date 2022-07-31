@@ -161,9 +161,7 @@
 
         <!--  -->
         <div class="search-button">
-          <a href="#">
-            <i class="fas fa-search"></i>
-          </a>
+
         </div>
         <div class="cart-button">
           <a routerLink="/cart">
@@ -171,6 +169,28 @@
             <i class="fas fa-shopping-basket"></i>
           </a>
         </div>
+
+
+
+        <div class="c-button">
+            <a class="dropdown-togle" id="dropdownMenuButton1" data-bs-toggle="dropdown">
+              <span class="cart-amount">{{notification?.count}}</span>
+              <i class="fas fa-bell"></i>
+            </a>
+
+            <ul class="dropdown-menu meu"  aria-labelledby="dropdownMenuButton1" >
+              <li class="position-relative" *ngFor="let not of notification?.data ; let i=index " (click)="check(notification?.check[i].id)" ><a class="dropdown-item " routerLink="/event/{{not.id}}" class="lala" class="d-flex" >
+                <img src="{{not.image}}" width="100px" >
+                <p>admins has approved for this event <strong>{{not.title}}</strong></p>
+                <span *ngIf="notification?.check[i].check == 0" class="overlay--a"></span>
+              </a>
+            </li>
+            </ul>
+
+        </div>
+
+
+
         <div class="header-bar d-lg-none">
           <span></span>
           <span></span>

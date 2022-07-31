@@ -31,12 +31,12 @@
         <ngx-dropzone-label> ({{ f.type }})</ngx-dropzone-label>
       </ngx-dropzone-image-preview>
     </ngx-dropzone>
-    <div>
+    <!-- <div>
       <button (click)="onUpload()">Upload</button>
-    </div>
+    </div> -->
   </div>
 
-<!-- 
+<!--
     <div class="mb-3">
       <label for="exampleInputPassword1" class="form-label">image</label>
       <input type="file"  class="form-control" value="1" id="exampleInputPassword1" [ngModelOptions]="{standalone:true}" [(ngModel)]="NewEvent.image" >
@@ -60,11 +60,9 @@
     </div>
 
 
-    <select class="form-select" aria-label="Default select example"  [ngModelOptions]="{standalone:true}" [(ngModel)]="NewEvent.eventCat_id" >
-
-      <option selected>Open this select menu</option>
+    <select class="form-select" aria-label="Default select example" value="0" [ngModelOptions]="{standalone:true}" [(ngModel)]="NewEvent.eventCat_id" >
+      <option  value="0" >Open this select menu</option>
       <option *ngFor="let cat of AllEventCats "  value="{{cat.id}}">{{cat.title}}</option>
-
     </select>
 
 

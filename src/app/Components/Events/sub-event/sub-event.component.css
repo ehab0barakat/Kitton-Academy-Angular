@@ -1,0 +1,17 @@
+.expired{
+  width: 100%;
+  height: max-content;
+  padding: 15px;
+  transform: rotateZ(-30deg)  translate(-50%, -50%);
+  background-color: black;
+  color: red;
+  position: absolute;
+  top: -5%;
+  left: 25%;
+  text-align: center;
+  font-size: 40px;
+}
+.event-item{
+ position: relative;
+ overflow: hidden;
+}

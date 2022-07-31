@@ -1,17 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { SignOutComponent } from './sign-out.component';
 
-describe('SignOutComponent', () => {
-  let component: SignOutComponent;
-  let fixture: ComponentFixture<SignOutComponent>;
+import { SlachAdminComponent } from './slach-admin.component';
+
+describe('SlachAdminComponent', () => {
+  let component: SlachAdminComponent;
+  let fixture: ComponentFixture<SlachAdminComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SignOutComponent ]
+      declarations: [ SlachAdminComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SignOutComponent);
+    fixture = TestBed.createComponent(SlachAdminComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

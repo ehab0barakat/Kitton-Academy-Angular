@@ -1,0 +1,40 @@
+.header-wrapper .menu-area .c-button a .cart-amount {
+    position: absolute;
+    top: 27px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    background: #92278f;
+    height: 24px;
+    width: 24px;
+    line-height: 24px;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+    color: #fff;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+.lala{
+  height: 100px;
+  background-color: #eee;
+  width: fit-content;
+}
+.meu{
+  width: 300px;
+  position: absolute ;
+}
+.ss{
+  background-color: rgb(231, 227, 227);
+}
+.overlay--a{
+  position: absolute;
+  top: 0;
+  right: 3%;
+  border-radius: 50px;
+  width: 10px;
+  height: 10px;
+  background: black;
+}

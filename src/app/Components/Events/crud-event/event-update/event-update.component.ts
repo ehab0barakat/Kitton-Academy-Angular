@@ -68,6 +68,7 @@ if(this.auth != 2){
   onSelect(event:any) {
     console.log(event);
     this.files.push(...event.addedFiles);
+    this.onload();
   }
 
   onRemove(event:any) {
@@ -100,6 +101,7 @@ if(this.auth != 2){
 
 
   EditEvent(){
+
 
     this.editEvent.image = this.image.secure_url;
     this.authService.Auth().subscribe(response=>{
