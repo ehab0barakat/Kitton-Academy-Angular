@@ -24,7 +24,7 @@ export class DeleteClassComponent implements OnInit {
       }else{
     this.classService.delete(this.targetId).subscribe(response =>{
       if(response){
-        this.router.navigate(['/classes-index']);
+        this.router.navigate(['/admin/classes-index']);
       }
     }
   )

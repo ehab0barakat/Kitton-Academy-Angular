@@ -187,7 +187,7 @@ import { EventDeleteComponent } from './Components/Events/crud-event/event-delet
     HttpClientModule,
     CommonModule,
     FormsModule,
-    NgxDropzoneModule,
+    NgxDropzoneModule
 
 
   ],
