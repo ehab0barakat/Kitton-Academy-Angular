@@ -27,7 +27,7 @@ export class UpdateClassComponent implements OnInit {
   ngOnInit(): void {
     this.authService.Auth().subscribe(response=>{
       this.auth = response ;
-      if(this.auth.role != 2 ){
+      if(this.auth.role != 3 ){
         this.router.navigate(['/not-auth']);
       }
     });
@@ -45,13 +45,7 @@ export class UpdateClassComponent implements OnInit {
     });
 }
 update(){
-  this.authService.Auth().subscribe(response=>{
-    this.auth = response ;
-    if(this.auth.role != 3 ){
-      this.router.navigate(['/not-auth']);
-    }else{
-  // console.log(this.editClass);
-  // console.log(this.currentPrdID);
+
    this.classService.update(this.editClass, this.currentPrdID).subscribe(response =>{
     console.log(response);
 
@@ -61,5 +55,4 @@ update(){
 }
 )
 }
-});
-}}
+}

@@ -1,16 +1,13 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { classes } from 'src/app/Models/classes';
-import { ClassCatsService } from 'src/app/Services/class-cats.service';
 import { ClassesService } from 'src/app/Services/classes.service';
 import { MyclassesService } from 'src/app/Services/myclasses.service';
-
 @Component({
-  selector: 'app-details-class',
-  templateUrl: './details-class.component.html',
-  styleUrls: ['./details-class.component.css']
+  selector: 'app-payed-class',
+  templateUrl: './payed-class.component.html',
+  styleUrls: ['./payed-class.component.css']
 })
-export class DetailsClassComponent implements OnInit {
+export class PayedClassComponent implements OnInit {
 
   constructor(private activatedRoute : ActivatedRoute,public router: Router ,
     private classService:ClassesService,
@@ -30,9 +27,17 @@ export class DetailsClassComponent implements OnInit {
         })
 
       }
-      
-    }
+      currentRate:number=3;
+     
+      onRateChange(event: number){
+        this.MyclassesService.rateChange({'class_id':`${this.selected}`,'rate':`${event}`}).subscribe(response=>{
+          // this.AllmyClasses =response;
+          // console.log(this.selected);
+          // console.log(`${event}`);
+          // console.log(response);
 
-  
-  
+        })
+        // alert(`rate is ${event}`);
+      }
+    }
 
