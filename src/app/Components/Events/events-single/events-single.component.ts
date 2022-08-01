@@ -83,7 +83,7 @@ alreadyEnroller:any = false ;
     if(this.SingleEvents.id == 0){
       this.router.navigate(['/not-auth']);
     }
-  },2500)
+  },1500)
 
 }
 

@@ -13,9 +13,18 @@ export class TeacherService {
   // allTeacherUrl = './assets/Data/teachers.json';
   // teachersDetailsUrl = './assets/Data/teachers-details.json';
   teachersDetails: ITeacherDetails | undefined;
-  constructor(
-    private httpClient: HttpClient
-  ) { }
+ private httpOptions={};
+
+  constructor(private httpClient: HttpClient) {
+
+
+    this.httpOptions={
+      headers:new HttpHeaders({
+        'Content-Type': 'application/json' ,
+
+      })
+    }
+   }
 
   getAllTeacher(): Observable<ITeacher[]> {
     return this.httpClient.get<ITeacher[]>(`http://localhost:8000/api/teacher`).pipe(
@@ -27,6 +36,14 @@ export class TeacherService {
       map(m => m as ITeacherDetails)
     );
 }
+
+// edit teacher profile 
+
+editProfile( data:any, id:number ):Observable<any>{
+  return this.httpClient.put<any>(`${environment.APIBaseURL}/api/teacher/${id}`,
+                                            JSON.stringify(data),
+                                            this.httpOptions)
+                                          }
 
 }
 
