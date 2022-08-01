@@ -54,6 +54,13 @@ export class EventsService {
     );
   }
 
+  usersCount(claID: number): Observable<any> {
+    return this.httpclient.get<any>(
+      `${environment.APIBaseURL}/api/event/userscount/${claID}`,
+      this.httpOptions
+    );
+  }
+
   searchForTeacherByName(newPrd: any): Observable<any> {
     return this.httpclient.post<any>(
       `${environment.APIBaseURL}/api/event/search_for_teacher_events/`,
@@ -62,6 +69,14 @@ export class EventsService {
     ); //search for teacher by email
   }
 
+  // search_inrollement(newPrd: any): Observable<any> {
+  //   return this.httpclient.post<any>(
+  //     `${environment.APIBaseURL}/api/event/search_inrollement/`,
+  //     JSON.stringify(newPrd),
+  //     this.httpOptions
+  //   );
+  // }
+
   search_inrollement(newPrd: any): Observable<any> {
     return this.httpclient.post<any>(
       `${environment.APIBaseURL}/api/event/search_inrollement/`,
@@ -69,7 +84,6 @@ export class EventsService {
       this.httpOptions
     );
   }
-
 
   addEnrollEvent(newPrd: any): Observable<any> {
     return this.httpclient.post<any>(
@@ -88,6 +102,12 @@ export class EventsService {
       this.httpOptions
     );
   }
+
+  // addEvent(newPrd:Event):Observable<Event>{
+  //     return this.httpclient.post<Event>(`${environment.APIBaseURL}/api/event`,
+  //                                               JSON.stringify(newPrd),
+  //                                               this.httpOptions)
+  //                                             }
 
   editEvent(newPrd: Event, id: number): Observable<Event> {
     return this.httpclient.put<Event>(
@@ -144,4 +164,25 @@ export class EventsService {
     );
   }
 
+  // ActivationeditEvent(newPrd: any, id: number): Observable<any> {
+  //   return this.httpclient.put<any>(
+  //     `${environment.APIBaseURL}/api/event/${id}`,
+  //     JSON.stringify(newPrd),
+  //     this.httpOptions
+  //   );
+  // }
+
+  // deleteEvent(id: number): Observable<Event> {
+  //   return this.httpclient.delete<Event>(
+  //     `${environment.APIBaseURL}/api/event/${id}`,
+  //     this.httpOptions
+  //   );
+  // }
+
+  // getTeacherName(id: number): Observable<any> {
+  //   return this.httpclient.get<any>(
+  //     `${environment.APIBaseURL}/api/event/teacherbyid/${id}`,
+  //     this.httpOptions
+  //   );
+  // }
 }

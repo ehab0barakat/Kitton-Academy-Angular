@@ -1,82 +1,49 @@
+  <div class="row row-cols-2 m-5" style="width: 800px;">
 
+    <div class="shop-item">
 
-<div class="product-thumb">
-  <a routerLink="/productDetails/{{ data.id }}">
-    <img src="{{ data.image }}" alt="shop">
-  </a>
-  <select #quantity>
-    <option *ngFor="let option of quantityOptions" [value]="option">{{option}}</option>
-  </select>
-  <div class="product-action-link">
-    <a ><i class="far fa-heart"></i></a>
-    <a (click)="add()"><i class="fas fa-cart-plus"></i></a>
-    <!-- <a (click)="addToCart(Prod, +quantity.value, image);" ><i class="fas fa-cart-plus"></i></a> -->
-  </div>
-</div>
-<div class="product-content">
-  <h5 class="title"><a href="shop-single.html">{{ data.name }}</a></h5>
-  <p>
-    <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i
-      class="far fa-star"></i> <span>{{ data.Rate }}</span>
-  </p>
-  <h6 class="subtitle">{{ data.price }}</h6>
-</div>
-<!--  -->
-<div class="product-list-item">
-  <div class="product-thumb">
-    <img src="{{ data.image }}" alt="shop">
-    <div class="product-action-link">
-      <a href="#"><i class="far fa-heart"></i></a>
-      <a><i class="fas fa-cart-plus"></i></a>
-    </div>
-  </div>
-  <div class="product-content">
-    <h5 class="title"><a href="shop-single.html">{{ data.name }}</a></h5>
-    <p>
-      <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i
-        class="far fa-star"></i> <span>(3 review)</span>
-    </p>
-    <h6 class="subtitle">{{ data.price }}</h6>
-    <p>
-      {{ data.description }}
-    </p>
-  </div>
-</div>
-
-
-
-
-
-
-
-
-<!-- <div class="col-lg-7">
-  <div class="product-content" *ngFor="let Prod of prodList">
-    <h5 class="title"><a href="shop-single.html">{{ Prod.name }}</a></h5>
-    <p>
-      <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i
-        class="far fa-star"></i> <span>{{ Prod.Rate }}</span>
-    </p>
-    <h6>
-      {{ Prod.price }}
-    </h6>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    </p>
-    <div class="cart-button-2">
-      <div class="cart-plus-minus">
-        <div class="dec qtybutton">-</div>
-        <div class="dec qtybutton">-</div>
-        <input class="cart-plus-minus-box" type="text" name="qtybutton" value="2">
-        <div class="inc qtybutton">+</div>
-        <div class="inc qtybutton">+</div>
+      <div class="product-thumb">
+        <a routerLink="/productDetails/{{ data.id }}">
+          <img src="{{ data.image }}" alt="shop">
+        </a>
+        <select #quantity>
+          <option *ngFor="let option of quantityOptions" [value]="option">{{option}}</option>
+        </select>
+        <div class="product-action-link">
+          <a><i class="far fa-heart"></i></a>
+          <a (click)="add()"><i class="fas fa-cart-plus"></i></a>
+          <!-- <a (click)="addToCart(Prod, +quantity.value, image);" ><i class="fas fa-cart-plus"></i></a> -->
+        </div>
       </div>
-      <button type="submit">
-        <i class="fas fa-shopping-cart"></i>
-      </button>
+      <div class="product-content">
+        <h5 class="title"><a href="shop-single.html">{{ data.name }}</a></h5>
+        <p>
+          <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i
+            class="far fa-star"></i> <span>{{ data.Rate }}</span>
+        </p>
+        <h6 class="subtitle">{{ data.price }}</h6>
+      </div>
+    </div>
+    <!--  -->
+    <div class="product-list-item">
+      <div class="product-thumb">
+        <img src="{{ data.image }}" alt="shop">
+        <div class="product-action-link">
+          <a href="#"><i class="far fa-heart"></i></a>
+          <a><i class="fas fa-cart-plus"></i></a>
+        </div>
+      </div>
+      <div class="product-content">
+        <h5 class="title"><a href="shop-single.html">{{ data.name }}</a></h5>
+        <p>
+          <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i
+            class="far fa-star"></i> <span>(3 review)</span>
+        </p>
+        <h6 class="subtitle">{{ data.price }}</h6>
+        <p>
+          {{ data.description }}
+        </p>
+      </div>
     </div>
   </div>
-</div>  -->
+

@@ -35,15 +35,10 @@
         </div>
 
 
-        <div class="shop-product-wrap grid row mb-30-none">
+        <div class="shop-product-wrap grid row mb-30-none" *ngFor="let item of prodList">
           <div class="col-xl-4 col-md-6">
-            <div class="row row-cols-2 m-5" style="width: 800px;">
-              <div class="shop-item" *ngFor="let item of prodList">
 
-                <app-products [receivedID]="selectedID" [data]="item" (item)="addToCart($event)"></app-products>
-              
-              </div>
-            </div>
+            <app-products [receivedID]="selectedID" [data]="item" (item)="addToCart($event)"></app-products>
           </div>
         </div>
 
