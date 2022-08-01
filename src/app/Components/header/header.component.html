@@ -153,10 +153,11 @@
 
         <div>
 
-          <a routerLinkActive="active" routerLink="profile"
-            style="font-weight:bold; text-transform: uppercase; color: black;"><i class="fa-solid fa-gear"></i>
-            setting</a>
-
+          
+          <a *ngIf="userData.role==1 ||  userData.role==2 ||  userData.role==3" routerLinkActive="active" routerLink="profile"
+            style="font-weight:bold; text-transform: uppercase; color: rgb(156, 137, 14);"><i class="fa-solid fa-gear"></i>
+           Profile</a>
+          
         </div>
 
         <!--  -->

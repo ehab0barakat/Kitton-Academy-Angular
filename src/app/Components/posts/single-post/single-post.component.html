@@ -1,5 +1,5 @@
-<div class="mt-5" >
-      <div class="class-inner col-sm-4"  >
+<div class="mt-5 d-flex justify-content-center" >
+      <div class="class-inner col-sm-4 "  >
         <div class="event-item">
               <div class="event-humb m-2">
                   <a routerLink="/post/{{singlePost?.id}}"><img src="./assets/images/blog/blog03.jpg" alt="post"></a>
@@ -14,7 +14,15 @@
               </div>
               
           </div>
-      </div>
+         
+          
+           <div>
+            <i [class.text-danger]="likestatus.liked == true" (click)="addlike(singlePost?.id,data.id)" style="font-size: 40px;" class="fa-solid fa-heart btn "></i>
+
+
+           </div>
+      
+        </div>
   
   
   </div>
@@ -22,13 +30,13 @@
   <!-- comment section for user  -->
 
  
-    <div   *ngFor="let comment of allcoments"  >
-        <div *ngIf="comment.post_id == singlePost?.id">
+    <div   *ngFor="let comment of allcoments"   >
+        <div *ngIf="comment.post_id == singlePost?.id  || comment.user_id==data.id  ">
             
     
 
-            <div  class="card m-2 p-2" >
-            <!-- <p>{{data.childName}} </p> -->
+            <div  class="card m-2 p-2"  *ngIf="data.role==1">
+               <p> user id: {{comment.user_id}} </p>
 
             
                 <h5 >{{comment.comment}}</h5>
@@ -47,7 +55,7 @@
 
 
         <div  class="card m-2 p-2" >
-        <p>{{data.name}} </p>
+        <p> teacher id :{{techercomment.teacher_id}} </p>
 
         
         <h5 >{{techercomment.comment}}</h5>
