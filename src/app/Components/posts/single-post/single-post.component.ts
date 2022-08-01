@@ -30,15 +30,19 @@ export class SinglePostComponent implements OnInit {
   constructor(private activatedRoute:ActivatedRoute, private postApiService:ApiPostsService,
     private router:Router,
     private commentApiService:CommentsApiService, private authService:AuthService,
-    private userLikeService:UserlikesApiService ) { 
+    private userLikeService:UserlikesApiService ) {
 
-    
+
   }
 
   post = Number(this.activatedRoute.snapshot.paramMap.get("id"));
- 
+
   ngOnInit(): void {
-  // to get post by id 
+
+    if(this.auth == 3){
+      this.router.navigate([`/admin/single-post/${this.post}`])
+    }
+  // to get post by id
     this.postApiService.getPostById(this.post).subscribe(response=>{
       this.singlePost = response ;
       console.log(this.singlePost.id);
@@ -47,19 +51,19 @@ export class SinglePostComponent implements OnInit {
         console.log(res);
         this.likestatus=res;
         })
-      
+
       // get all comments of users
     this.commentApiService.getComments().subscribe(response=>{
       this.allcoments=response;
       console.log(this.allcoments[0].post_id);
-     
-      
+
+
     })
-    // teacher section 
+    // teacher section
 // show all comments
 this.commentApiService.getTeacherComments().subscribe(res=>{
   this.allteachercoments=res;
- 
+
  })
 
 
@@ -84,7 +88,7 @@ send_comment(postId:any,userId:any){
   this.userComment.post_id=postId;
 this.commentApiService.sendComments(this.userComment).subscribe(response=>{
   console.log(this.userComment);
-  
+
   if(response){
   //  this.router.navigate([`/single-posts/${this.userComment.post_id}`]);
 
@@ -104,12 +108,12 @@ teacherSend_comment(postId:any,teacherId:any){
   ;
    this.commentApiService.teacherSendComments(this.teaherComment).subscribe(response=>{
     console.log(this.teaherComment);
-  
+
    })
-  
-  
+
+
    }
-  
+
 }
 
 
@@ -124,7 +128,7 @@ if(this.likestatus.liked==true)
 
 this.userLikeService.deletelike(this.userLikes.post_id).subscribe(res=>{
   console.log(res);
-  
+
 })
 }
 
@@ -136,12 +140,12 @@ else{
 
 
 
-    
+
 
 
   })
 }
- 
+
 
 }
 

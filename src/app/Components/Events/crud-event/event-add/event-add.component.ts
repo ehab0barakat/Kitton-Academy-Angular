@@ -102,8 +102,9 @@ export class EventAddComponent implements OnInit {
   AddEvent(){
 
     this.NewEvent.image=this.image.secure_url
-
+    
     this.NewEvent.teacher_id = this.auth.id
+
     this.eventService.addEvent(this.NewEvent).subscribe(data => {
       if (data){
         this.router.navigate(['/event-index']);

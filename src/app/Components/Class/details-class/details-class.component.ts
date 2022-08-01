@@ -20,8 +20,13 @@ export class DetailsClassComponent implements OnInit {
     selected= Number(this.activatedRoute.snapshot.paramMap.get("id")) ;
 
     AllClasses:any ;
+    auth:any = localStorage.getItem("role");
 
     ngOnInit(): void {
+
+    if(this.auth == 3){
+      this.router.navigate([`/admin/classes/${this.selected}`])
+    }
 
 
         this.classService.getById(this.selected).subscribe(response=>{
@@ -30,9 +35,9 @@ export class DetailsClassComponent implements OnInit {
         })
 
       }
-      
+
     }
 
-  
-  
+
+
 

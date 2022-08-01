@@ -80,7 +80,7 @@ console.log("hello");
         if(this.userData.role == 3){
           window.localStorage.setItem("token" ,this.token.token );
           window.localStorage.setItem("role",`${this.userData.role}`)
-          this.route.navigate(['/slachAdmin'])
+          this.route.navigate(['/admin'])
         }else{
           this.message = "Email or Password is Not Valid";
         }

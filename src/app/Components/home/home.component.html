@@ -5,7 +5,7 @@
             <h1 class="title">For Your Childs</h1>
             <p>Prescholer for the apcation testing and enrollment process for
                 publc and private schools the city of alo abu mal kita kores vai</p>
-            <a href="#" class="custom-button"><span>Get Started Now</span></a>
+            <a routerLink="/sign-in" class="custom-button"><span>Get Started Now</span></a>
         </div>
     </div>
 </section>
@@ -85,3 +85,272 @@
       </div>
   </div>
 </section>
+
+
+<div class="counter-section padding-top padding-bottom bg_img" data-background="assets/images/counter/counter-bg.jpg" style="background-image: url(&quot;assets/images/counter/counter-bg.jpg&quot;);">
+  <div class="container">
+      <div class="row justify-content-center mb-30-none">
+          <div class="col-lg-4 col-md-6 col-sm-10">
+              <div class="counter-item">
+                  <div class="counter-thumb">
+                      <img src="http://labartisan.net/demo/kitton/assets/images/counter/counter1.png" alt="counter">
+                  </div>
+                  <div class="counter-content">
+                      <div class="counter-header">
+                          <h2 class="title odometer odometer-auto-theme" data-odometer-final="830"><div class="odometer-inside"><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">8</span></span></span></span></span><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">3</span></span></span></span></span><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">0</span></span></span></span></span></div></h2>
+                      </div>
+                      <span class="cate">Students Enrolled</span>
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-10">
+              <div class="counter-item">
+                  <div class="counter-thumb">
+                      <img src="http://labartisan.net/demo/kitton/assets/images/counter/counter2.png" alt="counter">
+                  </div>
+                  <div class="counter-content">
+                      <div class="counter-header">
+                          <h2 class="title odometer odometer-auto-theme" data-odometer-final="26"><div class="odometer-inside"><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">2</span></span></span></span></span><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">6</span></span></span></span></span></div></h2>
+                          <h2 class="title">+</h2>
+                      </div>
+                      <span class="cate">Certified Trainer</span>
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-10">
+              <div class="counter-item">
+                  <div class="counter-thumb">
+                      <img src="http://labartisan.net/demo/kitton/assets/images/counter/counter3.png" alt="counter">
+                  </div>
+                  <div class="counter-content">
+                      <div class="counter-header">
+                          <h2 class="title odometer odometer-auto-theme" data-odometer-final="100"><div class="odometer-inside"><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">1</span></span></span></span></span><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">0</span></span></span></span></span><span class="odometer-digit"><span class="odometer-digit-spacer">8</span><span class="odometer-digit-inner"><span class="odometer-ribbon"><span class="odometer-ribbon-inner"><span class="odometer-value">0</span></span></span></span></span></div></h2>
+                          <h2 class="title">%</h2>
+                      </div>
+                      <span class="cate">Yearly Success Rate</span>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+<section class="class-section padding-top padding-bottom pos-rel">
+  <div class="top-shape-center">
+      <img src="assets/css/img/gallery1.png" alt="css">
+  </div>
+  <div class="container">
+      <div class="row justify-content-center">
+          <div class="col-lg-8">
+              <div class="section-header">
+                  <span class="cate">Our School Classes</span>
+                  <h3 class="title">Most Popular School Classes</h3>
+              </div>
+          </div>
+      </div>
+      <div class="row justify-content-center mb-30-none">
+
+
+        <div class="row row-cols-4  " style="width: 1400px;">
+          <div class="class-item m-3 " *ngFor="let cla of AllClasses" >
+            <div class="class-thumb">
+        <!-- <li> -->
+              <a  routerLink="/classes/{{ cla.id }}"
+                ><img src="{{ cla.image }}" alt="class"
+              /></a>
+            </div>
+            <div class="class-content">
+              <h5 class="title">
+                <a  routerLink="/classes/{{ cla.id }}">{{ cla.name }}</a>
+              </h5>
+              <div class="class-meta">
+                <div class="class-author">
+                  <div class="thumb">
+                    <a href="teacher-single.html"
+                      ><img src="./assets/images/class/teacher02.jpg" alt="class"
+                    /></a>
+                  </div>
+                  <div class="content">
+                    <h6 class="subtitle">
+                      <a routerLink ="/single-teacher/{{cla.teacher_id}}">Joly Smith</a>
+                    </h6>
+                    <a routerLink ="/single-teacher/{{cla.teacher_id}}" class="info">View Profile</a>
+                  </div>
+                </div>
+                <div class="cost-area">
+                  <h6 class="subtitle">Price ({{ cla.price }})</h6>
+                  <span class="info">Per Month</span>
+                </div>
+              </div>
+              <div class="schedule-area">
+                <div class="schedule-item">
+                  <h6 class="sub-title">Duration ({{ cla.duration }})</h6>
+                  <span class="info">Days</span>
+                </div>
+                <div class="schedule-item">
+                  <h6 class="sub-title">Target Age ({{ cla.targetAge }})</h6>
+                  <span class="info">Years Old</span>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+      <div class="load-more">
+          <a routerLink="/classes" class="custom-button"><span>Get Started Now</span></a>
+      </div>
+  </div>
+</section>
+
+
+<section class="facilities-section">
+  <div class="container-fluid p-0">
+      <div class="row m-0">
+          <div class="col-lg-7 col-xl-6 px-0">
+              <div class="facility-area padding-bottom padding-top bg_img" data-background="http://labartisan.net/demo/kitton/assets/images/facilities/facility-bg2.jpg" style="background-image: url(&quot;http://labartisan.net/demo/kitton/assets/images/facilities/facility-bg2.jpg&quot;);">
+                  <div class="facility-container">
+                      <div class="cl-white section-header left-style">
+                          <span class="cate">School Facilities</span>
+                          <h3 class="title">EveryDay Care For Your Children.</h3>
+                          <p>Dolor ame consectetur elite eusmod tempor dunt aliqua utas enim veniam minim veniam
+                              quis nostrud ullamco laboris nisiut aliquip</p>
+                      </div>
+                      <div class="facility-wrapper">
+                          <div class="facility-item">
+                              <div class="facility-inner">
+                                  <div class="facility-thumb">
+                                      <img src="http://labartisan.net/demo/kitton/assets/images/facilities/facility1.png" alt="facility">
+                                  </div>
+                                  <h6 class="title">Clean Playgrounds</h6>
+                              </div>
+                          </div>
+                          <div class="facility-item">
+                              <div class="facility-inner">
+                                  <div class="facility-thumb">
+                                      <img src="http://labartisan.net/demo/kitton/assets/images/facilities/facility2.png" alt="facility">
+                                  </div>
+                                  <h6 class="title">Private School Bus</h6>
+                              </div>
+                          </div>
+                          <div class="facility-item">
+                              <div class="facility-inner">
+                                  <div class="facility-thumb">
+                                      <img src="http://labartisan.net/demo/kitton/assets/images/facilities/facility3.png" alt="facility">
+                                  </div>
+                                  <h6 class="title">Modern Canteen</h6>
+                              </div>
+                          </div>
+                          <div class="facility-item">
+                              <div class="facility-inner">
+                                  <div class="facility-thumb">
+                                      <img src="http://labartisan.net/demo/kitton/assets/images/facilities/facility4.png" alt="facility">
+                                  </div>
+                                  <h6 class="title">Colorful Classes</h6>
+                              </div>
+                          </div>
+                          <div class="facility-item">
+                              <div class="facility-inner">
+                                  <div class="facility-thumb">
+                                      <img src="http://labartisan.net/demo/kitton/assets/images/facilities/facility5.png" alt="facility">
+                                  </div>
+                                  <h6 class="title">Positive Learning</h6>
+                              </div>
+                          </div>
+                          <div class="facility-item">
+                              <div class="facility-inner">
+                                  <div class="facility-thumb">
+                                      <img src="http://labartisan.net/demo/kitton/assets/images/facilities/facility6.png" alt="facility">
+                                  </div>
+                                  <h6 class="title">Fun With Games</h6>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="col-lg-5 col-xl-6 px-0 bg_img" data-background="http://labartisan.net/demo/kitton/assets/images/facilities/facility-bg.jpg" style="background-image: url(&quot;http://labartisan.net/demo/kitton/assets/images/facilities/facility-bg.jpg&quot;);">
+          </div>
+      </div>
+  </div>
+</section>
+
+
+    <!-- ==========Teacher Section Starts Here========== -->
+    <section class="teacher-section padding-bottom padding-top bg_img" data-background="./assets/images/teacher/teacher-bg.jpg" style="background-image: url(&quot;./assets/images/teacher/teacher-bg.jpg&quot;);">
+      <div class="container">
+          <div class="row justify-content-center">
+              <div class="col-lg-8">
+                  <div class="section-header">
+                      <span class="cate">Meet Our Stuffy</span>
+                      <h3 class="title">Our Best Popular Teachers</h3>
+                  </div>
+              </div>
+          </div>
+          <div class="row mb-30-none justify-content-center">
+              <div class="col-lg-6" *ngFor="let teacher of teachers" >
+                  <div class="teacher-item">
+                      <div class="teacher-inner">
+                          <div class="teacher-thumb">
+                              <div class="thumb-inner">
+                                  <a  (click)="viewTeacherDetails(teacher.id)"><img [src]="teacher.image" alt="teacher"></a>
+                              </div>
+                          </div>
+                          <div class="teacher-content">
+                              <h6 class="title"><a (click)="viewTeacherDetails(teacher.id)"></a></h6>
+                              <span class="info">{{teacher.specialization}}</span>
+                              <p>{{teacher.description}}</p>
+                              <ul class="teacher-social">
+
+                                  <li>
+                                      <a [href]="teacher.faceurl" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                                  </li>
+                                  <li>
+                                      <a [href]="teacher.googleurl" class="google"><i class="fab fa-google-plus-g"></i></a>
+                                  </li>
+                                  <li>
+                                      <a [href]="teacher.dribbleurl" class="dribble"><i class="fab fa-dribbble"></i></a>
+                                  </li>
+                                  <li>
+                                      <a [href]="teacher.vimeourl" class="vimeo"><i class="fab fa-vimeo-v"></i></a>
+                                  </li>
+                                  <li>
+                                      <a [href]="teacher.pinteresturl" class="pinterest"><i class="fab fa-pinterest-p"></i></a>
+                                  </li>
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+        </div>
+      </div>
+  </section>
+
+
+  <div class="d-flex" >
+
+    <ng-container *ngFor="let post of posts " >
+      <div class="class-inner col-sm-4"  >
+        <div class="event-item">
+              <div class="event-humb">
+                  <a routerLink="/single-post/{{post.id}}"><img src="./assets/images/blog/blog03.jpg" alt="post"></a>
+                  <div class="date-tag">
+                      <h3 class="title">{{post.title}}</h3>
+
+                  </div>
+              </div>
+              <div class="event-content">
+                  <h5 class="title">
+                      <a routerLink="/single-post/{{post.id}}">{{post.description}}</a>
+                  </h5>
+
+              </div>
+          </div>
+      </div>
+    </ng-container>
+
+  </div>
+
+  
