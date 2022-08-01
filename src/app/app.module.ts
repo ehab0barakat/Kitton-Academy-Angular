@@ -190,6 +190,7 @@ import { SlachAdminComponent } from './Components/slach-admin/slach-admin.compon
     CommonModule,
     FormsModule,
     NgxDropzoneModule,
+   
 
 
   ],

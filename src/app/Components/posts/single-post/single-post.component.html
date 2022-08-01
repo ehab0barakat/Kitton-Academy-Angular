@@ -19,44 +19,48 @@
   
   </div>
 
-  <!-- comment section  -->
+  <!-- comment section for user  -->
 
-  <div   *ngFor="let comment of allcoments"  >
-    <div *ngIf="comment.post_id == singlePost?.id">
-        
-
-    
-    
-        <!-- <div class="event-content">
-            <h5 class="title p-3">
-         user id :{{comment.user_id}}
-                
-        </h5>
+ 
+    <div   *ngFor="let comment of allcoments"  >
+        <div *ngIf="comment.post_id == singlePost?.id">
             
-        </div> -->
-        <div  class="card m-2 p-2">
-        <p>{{data.childName}} </p>
-        
-            <h5 >
-         {{comment.comment}}
-                
-            </h5>
+    
+
+            <div  class="card m-2 p-2" >
+            <!-- <p>{{data.childName}} </p> -->
+
+            
+                <h5 >{{comment.comment}}</h5>
+         </div>
+             
             
         </div>
-        <!-- <div class="event-content">
-            <h5 class="title">
-        <td> post id :{{comment.post_id}}</td>
-                
-        </h5>
-            
-        </div>  -->
+        
+      </div>
+  
+ <!-- comment section for teacher  -->
+
+ <div   *ngFor="let techercomment of allteachercoments"  >
+    <div *ngIf="techercomment.post_id == singlePost?.id">
+        
+
+
+        <div  class="card m-2 p-2" >
+        <p>{{data.name}} </p>
+
+        
+        <h5 >{{techercomment.comment}}</h5>
+     </div>
          
         
     </div>
     
   </div>
- 
-  <div class="widget widget-comment">
+
+
+
+  <div class="widget widget-comment" *ngIf="data.role==1">
     <div class="widget-header">
         <h5 class="title">Leave a Comment</h5>
     </div>
@@ -76,4 +80,24 @@
     </div>
 </div>
   
-  
+  <!-- teacher comment section  -->
+
+<div class="widget widget-comment" *ngIf="data.role==2">
+    <div class="widget-header">
+        <h5 class="title">Leave a Comment</h5>
+    </div>
+    <div class="widget-body">
+        <form class="comment-form" (ngSubmit)="teacherSend_comment(singlePost?.id,data.id)">
+            
+            <!-- <div class="form-group">
+                <input type="text" placeholder="Your Email" name="email">
+            </div> -->
+            <div class="form-group w-100">
+                <textarea  name="message" placeholder="Your Comments" [ngModelOptions]="{standalone:true}"   [(ngModel)]="teaherComment.comment"></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="custom-button" ><span>Send Comment</span></button>
+            </div>
+        </form>
+    </div>
+</div>
