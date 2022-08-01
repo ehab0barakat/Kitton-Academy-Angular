@@ -86,6 +86,7 @@ const routes: Routes = [
 
   {path:'post-index',component:PostsComponent},
   {path:'show-post',component:ShowPostComponent},
+  {path:'add-post',component:AddPostComponent},
   {path:'single-post/:id',component:SinglePostComponent},
   {path:'update-post/:id',component:UpdatePostComponent},
   // {path:'posting',component:AddPostComponent},
