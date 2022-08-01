@@ -1,8 +1,9 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { classes } from 'src/app/Models/classes';
 import { ClassCatsService } from 'src/app/Services/class-cats.service';
 import { ClassesService } from 'src/app/Services/classes.service';
+import { MyclassesService } from 'src/app/Services/myclasses.service';
 
 @Component({
   selector: 'app-details-class',
@@ -11,39 +12,27 @@ import { ClassesService } from 'src/app/Services/classes.service';
 })
 export class DetailsClassComponent implements OnInit {
 
-  constructor(public router: Router ,
+  constructor(private activatedRoute : ActivatedRoute,public router: Router ,
     private classService:ClassesService,
-    private classcatsService:ClassCatsService) { }
+    private MyclassesService:MyclassesService) { }
 
 
+    selected= Number(this.activatedRoute.snapshot.paramMap.get("id")) ;
 
-    @Input() selected:number = 0 ;
+    AllClasses:any ;
 
-
-    AllClasses:classes[] = [];
-  
     ngOnInit(): void {
-  
-    
-  
-  
-    // ngOnChanges(changes: SimpleChanges): void {
-  
-      console.log(this.selected)
-  
-      if(this.selected != 0 ){
-  
-        this.classcatsService.getClassByCatID(this.selected).subscribe(response=>{
+
+
+        this.classService.getById(this.selected).subscribe(response=>{
           this.AllClasses = response
           console.log(this.AllClasses)
         })
-      }else{
-        this. classService.getAll().subscribe(response=>{
-        this.AllClasses = response
-      })
-  
+
       }
+      
+    }
+
   
-  };
   
-}
+

@@ -64,9 +64,10 @@ export class SigninAsadminComponent implements OnInit {
 
 
   mysubmit(myform:NgForm){
-
+console.log("hello");
     return this.httpclient.post(`${environment.APIBaseURL}/api/auth/login`,JSON.stringify(myform.value),this.httpOptions).subscribe( data =>{
       this.token = data
+      console.log(this.token);
       this.httpclient.get<any>(`${environment.APIBaseURL}/api/auth/me`, {
         headers:new HttpHeaders({
           'Content-Type': 'application/json' ,
@@ -75,6 +76,7 @@ export class SigninAsadminComponent implements OnInit {
         })
       }).subscribe( data =>{
         this.userData = data ;
+        console.log(this.userData);
         if(this.userData.role == 3){
           window.localStorage.setItem("token" ,this.token.token );
           window.localStorage.setItem("role",`${this.userData.role}`)

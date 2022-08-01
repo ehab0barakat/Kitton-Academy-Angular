@@ -9,7 +9,7 @@ import { ClassesService } from 'src/app/Services/classes.service';
   templateUrl: './cat-class.component.html',
   styleUrls: ['./cat-class.component.css']
 })
-export class CatClassComponent implements OnInit, OnChanges  {
+export class CatClassComponent implements OnInit{
 
 
   constructor(
@@ -19,10 +19,10 @@ export class CatClassComponent implements OnInit, OnChanges  {
     AllClassCats:classCats[] = [];
     selected:number = 0 ;
   ngOnInit(): void {
-    this.classService.getAll().subscribe(response=>{
-      this. allClasses=response ;
-      console.log(this.allClasses);
-    })
+    // this.classService.getAll().subscribe(response=>{
+    //   this. allClasses=response ;
+    //   console.log(this.allClasses);
+    // })
 
     this.classcatsService.getAllClassCats().subscribe(response=>{
       this.AllClassCats= response ;
@@ -33,9 +33,4 @@ export class CatClassComponent implements OnInit, OnChanges  {
   GetCatId(id:number){
     this.selected = id
     }
-
-
-  ngOnChanges(changes: SimpleChanges): void {
-  }
-
 }

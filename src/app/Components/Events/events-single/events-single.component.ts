@@ -81,7 +81,7 @@ alreadyEnroller:any = false ;
 
   setTimeout(()=>{
     if(this.SingleEvents.id == 0){
-      this.router.navigate(['/not-auth']);
+      // this.router.navigate(['/not-auth']);
     }
   },1500)
 

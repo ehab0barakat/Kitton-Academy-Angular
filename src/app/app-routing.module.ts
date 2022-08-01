@@ -51,6 +51,7 @@ import { ProductListComponent } from './Components/Admin/product-list/product-li
 import { AddProductComponent } from './Components/Admin/add-product/add-product.component';
 import { UpdateProductComponent } from './Components/Admin/update-product/update-product.component';
 import { DeleteProductComponent } from './Components/Admin/delete-product/delete-product.component';
+import { MyclassesComponent } from './Components/Class/myclasses/myclasses.component';
 import { EventCatsIndexComponent } from './Components/event-cats-crud/event-cats-index/event-cats-index.component';
 import { EventCatsUpdateComponent } from './Components/event-cats-crud/event-cats-update/event-cats-update.component';
 import { EventCatsDeleteComponent } from './Components/event-cats-crud/event-cats-delete/event-cats-delete.component';
@@ -62,6 +63,7 @@ import { AdminHeaderComponent } from './Components/admin_view/admin-header/admin
 import { DashboardComponent } from './Components/admin_view/dashboard/dashboard.component';
 import { AdminMainLayoutComponent } from './Components/admin_view/admin-main-layout/admin-main-layout.component';
 import { SlachAdminComponent } from './Components/slach-admin/slach-admin.component';
+
 
 
 const routes: Routes = [
@@ -109,15 +111,16 @@ const routes: Routes = [
   {path : "submit-admin" , component:SigninAsadminComponent},
   {path:'classes',component:CatClassComponent},
   {path: 'classes/:id',component:DetailsClassComponent},
-  {path: 'classes-index',component:CrudClassComponent},
+  {path: 'admin/classes-index',component:CrudClassComponent},
   {path : "classes-add" , component: AddClassComponent},
   {path : "classes-delete/:id" , component: DeleteClassComponent},
   {path : "classes-update/:id" , component: UpdateClassComponent},
-  {path: 'classescat-index',component:CrudCatClassComponent},
+  {path: 'admin/classescat-index',component:CrudCatClassComponent},
   {path : "classescat-add" , component: AddCatClassComponent},
   {path : "classescat-update/:id" , component: UpdateCatClassComponent},
   {path : "classescat-delete/:id" , component: DeleteCatClassComponent},
   {path: 'checkout/:id',component:CheckoutComponent},
+  {path: 'myclasses/:id',component:MyclassesComponent},
   {path:'Products',component:ProductsComponent},
   {path:'ProductList',component:ProductListComponent},
   {path:'AddNewProduct',component:AddProductComponent},
@@ -166,8 +169,6 @@ const routes: Routes = [
 {path:'**',component:NotFoundComponent}
 
 ]
-
-
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
