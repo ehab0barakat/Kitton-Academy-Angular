@@ -29,18 +29,19 @@ this.authService.Auth().subscribe(response=>{
 
   update(){
 
-    
-     
+
+
     this.normalUserApi.editProfile(this.data,this.data.id).subscribe(res=>{
       
+
        if(Response){
-   
+
         this.router.navigate(['/profile'])
 
      }
-       
+
     }
-       
+
       )
 
 
@@ -52,7 +53,7 @@ this.authService.Auth().subscribe(response=>{
     this.teacherService.editProfile(this.data,this.data.id).subscribe(res=>{
 
       if(res){
-   
+
         this.router.navigate(['/profile'])
 
      }
