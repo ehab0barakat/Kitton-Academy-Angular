@@ -29,18 +29,20 @@ export class HeaderComponent implements OnInit {
   notification:any
   ngOnInit(): void {
 
-    this.httpclient.get<any>(`${environment.APIBaseURL}/api/auth/me`,this.httpOptions).subscribe( data =>{
-      this.userData = data ;
-      window.localStorage.setItem("role",`${this.userData.role}`)
-      console.log(data)
+    this.httpclient.get<any>(`${environment.APIBaseURL}/api/auth/me`,this.httpOptions).subscribe({
+      next: (data) => {
+                        this.userData = data;
+                        window.localStorage.setItem("role",`${this.userData.role}`)
+      },
+      error: err =>  console.log(err)
+
+      // console.log(data)
     })
     console.log(this.userData)
 
-
-
-    this.eventservice.showNotifyToTeacher().subscribe(response=>{
-      this.notification = response ;
-      console.log(this.notification)
+    this.eventservice.showNotifyToTeacher().subscribe({
+        next: data => this.notification =data,
+        error: err =>  console.log(err)
     });
 
 

@@ -39,10 +39,8 @@ export class HomeComponent implements OnInit {
   });
 
     this.classService.getAll().subscribe(response=>{
-      this.AllClasses = response.slice(0 , 3)
-
-
-      console.log(this.AllClasses)
+      this.AllClasses = response.slice(0 , 3);
+      console.log(this.AllClasses);
     })
 
   }

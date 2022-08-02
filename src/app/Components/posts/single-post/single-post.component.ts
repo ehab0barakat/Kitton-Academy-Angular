@@ -46,11 +46,13 @@ export class SinglePostComponent implements OnInit {
     this.postApiService.getPostById(this.post).subscribe(response=>{
       this.singlePost = response ;
       console.log(this.singlePost.id);
-      this.userLikeService.getuserId(this.singlePost.id).subscribe(res=>{
 
-        console.log(res);
-        this.likestatus=res;
+      if(this.auth == 1){
+        this.userLikeService.getuserId(this.singlePost.id).subscribe(res=>{
+          console.log(res);
+          this.likestatus=res;
         })
+      }
 
       // get all comments of users
     this.commentApiService.getComments().subscribe(response=>{

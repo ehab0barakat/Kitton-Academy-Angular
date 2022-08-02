@@ -103,7 +103,7 @@ if(this.auth != 2){
   EditEvent(){
 
 
-    this.editEvent.image = this.image.secure_url;
+    this.editEvent.image = this.image?.secure_url;
     this.authService.Auth().subscribe(response=>{
       this.auth = response ;
       if(this.auth.role != 2 ){

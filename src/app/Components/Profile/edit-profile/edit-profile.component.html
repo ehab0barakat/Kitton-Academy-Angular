@@ -1,7 +1,7 @@
 
 <h3 class="mt-5 text-center "> Update Profile </h3>
 <!-- update user profile  -->
-<div class="container mt-3 mb-5 d-flex justify-content-evenly" *ngIf="data.role==1">
+<div class="container mt-3 mb-5 d-flex justify-content-evenly" *ngIf="data?.role==1">
 
    <div >
    <form #postForm="ngForm"  (ngSubmit)="update()" >
@@ -101,8 +101,8 @@
 
 
             <div class="mb-3">
-            <label for="childImg" class="form-label"> Child Image</label>
-            <input type="file"  class="form-control"  id="childImg"  [(ngModel)]="data.childImage" [ngModelOptions]="{standalone:true}">
+            <!-- <label for="childImg" class="form-label"> Child Image</label> -->
+            <!-- <input type="file"  class="form-control"  id="childImg"  [(ngModel)]="data.childImage" [ngModelOptions]="{standalone:true}"> -->
           </div>
 
           </div>
@@ -111,7 +111,7 @@
 </div>
 
 <!-- update teacher profile -->
-<div class="container mt-3 mb-5 d-flex justify-content-evenly" *ngIf="data.role==2">
+<div class="container mt-3 mb-5 d-flex justify-content-evenly" *ngIf="data?.role==2">
 
   <div >
   <form #postForm="ngForm"  (ngSubmit)="teacherUpdate()" >
@@ -198,7 +198,7 @@
 
            <div class="mb-3">
            <label for="childImg" class="form-label">  Image</label>
-           <input type="file"  class="form-control"  id="childImg"  [(ngModel)]="data.image" [ngModelOptions]="{standalone:true}">
+           <!-- <input type="file"  class="form-control"  id="childImg"  [(ngModel)]="data.image" [ngModelOptions]="{standalone:true}"> -->
          </div>
 
          </div>
