@@ -1,6 +1,6 @@
 export interface UserComments {
     id:number ,
-    // name:string,
+    name:string,
     post_id:number,
     user_id:number,
     comment:string

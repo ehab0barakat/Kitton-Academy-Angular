@@ -84,10 +84,11 @@ this.authService.Auth().subscribe(response=>{
 
 }
 // user add comments
-send_comment(postId:any,userId:any){
+send_comment(postId:any,userId:any,userName:any){
   if(this.data.role==1){
   this.userComment.user_id=userId;
   this.userComment.post_id=postId;
+  this.userComment.name=userName;
 this.commentApiService.sendComments(this.userComment).subscribe(response=>{
   console.log(this.userComment);
 
@@ -100,16 +101,20 @@ this.commentApiService.sendComments(this.userComment).subscribe(response=>{
 }
 
 // teacher add comments
-teacherSend_comment(postId:any,teacherId:any){
+teacherSend_comment(postId:any,teacherId:any,teacherName:any){
   this.teaherComment.post_id=postId;
-
+  this.teaherComment.name=teacherName;
   this.teaherComment.teacher_id=teacherId
   if(this.data.role==2){
 
     // teacher send comments
-  ;
+  
    this.commentApiService.teacherSendComments(this.teaherComment).subscribe(response=>{
     console.log(this.teaherComment);
+    // this.router.navigate(['single-post/:singlePost.id'])
+    // .then(() => {
+    //   window.location.reload();
+    // });
 
    })
 
@@ -150,6 +155,7 @@ else{
 
 
 }
+
 
 
 
