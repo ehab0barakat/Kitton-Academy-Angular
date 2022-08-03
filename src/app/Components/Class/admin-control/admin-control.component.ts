@@ -52,9 +52,6 @@ export class AdminControlComponent implements OnInit {
       this.router.navigate(["admin/event-control"])
     });
 
-
-
-
     this.all()
   }
 

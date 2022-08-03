@@ -19,4 +19,13 @@ export class UploadService {
       data
     );
   }
+
+  uploadVideo(vals:any): Observable<any> {
+    let data = vals;
+
+    return this._http.post(
+      'https://api.cloudinary.com/v1_1/el-safwa/video/upload',
+      data
+    );
+  }
 }

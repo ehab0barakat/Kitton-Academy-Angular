@@ -87,6 +87,12 @@ import { EventAddComponent } from './Components/Events/crud-event/event-add/even
 import { EventUpdateComponent } from './Components/Events/crud-event/event-update/event-update.component';
 import { EventDeleteComponent } from './Components/Events/crud-event/event-delete/event-delete.component';
 import { SlachAdminComponent } from './Components/slach-admin/slach-admin.component';
+import { AddComponent } from './Components/class-content/add/add.component';
+import { ContentArchiveComponent } from './Components/class-content/content-archive/content-archive.component';
+import { ContentUpdataComponent } from './Components/class-content/content-updata/content-updata.component';
+import { ContentDeleteComponent } from './Components/class-content/content-delete/content-delete.component';
+import { ContentIndexComponent } from './Components/class-content/content-index/content-index.component';
+import { ContentSingleComponent } from './Components/class-content/content-single/content-single.component';
 
 @NgModule({
   declarations: [
@@ -179,7 +185,13 @@ import { SlachAdminComponent } from './Components/slach-admin/slach-admin.compon
     EventAddComponent,
     EventUpdateComponent,
     EventDeleteComponent,
-    SlachAdminComponent
+    SlachAdminComponent,
+    AddComponent,
+    ContentArchiveComponent,
+    ContentUpdataComponent,
+    ContentDeleteComponent,
+    ContentIndexComponent,
+    ContentSingleComponent
   ],
   imports: [
     BrowserModule,

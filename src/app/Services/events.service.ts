@@ -48,6 +48,11 @@ export class EventsService {
   }
 
 
+  geteventByIDforGuest(claID:number):Observable<any>{
+    return this.httpclient.get<any>(`${environment.APIBaseURL}/api/event/single-event/${claID}`,this.httpOptions);
+  }
+
+
 
 
   usersCount(claID:number):Observable<any>{

@@ -12,6 +12,8 @@ import { UploadService } from 'src/app/Services/upload.service';
   templateUrl: './add-class.component.html',
   styleUrls: ['./add-class.component.css']
 })
+
+
 export class AddClassComponent implements OnInit {
   class:classes[]=[];
   NewClass :classes ={} as classes ;
@@ -24,14 +26,16 @@ export class AddClassComponent implements OnInit {
 
     this.classcatsService.getAllClassCats().subscribe(response=>{
       this.AllClassCats=response ;
+      console.log(this.AllClassCats);
     })
     this.authService.Auth().subscribe(response=>{
       this.auth = response ;
-      if(this.auth.role != 3 ){
+      console.log(response)
+      if(this.auth.role != 2 ){
           this.router.navigate(['/not-auth']);
         }
       });
-        if(this.auth != 3){
+        if(this.auth != 2){
           this.router.navigate(['/not-auth']);
         }
 
@@ -43,6 +47,7 @@ export class AddClassComponent implements OnInit {
   onSelect(event:any) {
     console.log(event);
     this.files.push(...event.addedFiles);
+    this.onUpload()
   }
 
   onRemove(event:any) {
@@ -73,10 +78,13 @@ export class AddClassComponent implements OnInit {
 
 
   create(){
+
+    this.NewClass.teacher_id = this.auth.id
+    this.NewClass.image = this.image.secure_url
     this.classService.create(this.NewClass).subscribe(response=> {
       console.log(response);
       if (response){
-        this.router.navigate(['/admin/classes-index']);
+        this.router.navigate(['/classes-index']);
       }
     })
   }

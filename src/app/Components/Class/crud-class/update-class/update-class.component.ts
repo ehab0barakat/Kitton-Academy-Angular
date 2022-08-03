@@ -4,6 +4,7 @@ import { classCats } from 'src/app/Models/classcats';
 import { classes } from 'src/app/Models/classes';
 import { AuthService } from 'src/app/Services/auth.service';
 import { ClassCatsService } from 'src/app/Services/class-cats.service';
+import { ClassContentService } from 'src/app/Services/class-content.service';
 import { ClassesService } from 'src/app/Services/classes.service';
 
 @Component({
@@ -12,11 +13,13 @@ import { ClassesService } from 'src/app/Services/classes.service';
   styleUrls: ['./update-class.component.css']
 })
 export class UpdateClassComponent implements OnInit {
+  valid: any;
 
   constructor( private activatedRoute : ActivatedRoute,
     private classService:ClassesService,
     private router:Router,
     private classcatsService:ClassCatsService,
+    private ClassContent:ClassContentService,
     private authService:AuthService) { }
     editClass :classes ={} as classes ;
 
@@ -27,14 +30,23 @@ export class UpdateClassComponent implements OnInit {
   ngOnInit(): void {
     this.authService.Auth().subscribe(response=>{
       this.auth = response ;
-      if(this.auth.role != 3 ){
+      if(this.auth.role != 2 ){
         this.router.navigate(['/not-auth']);
       }
     });
 
-    if(this.auth != 3){
+    if(this.auth != 2){
       this.router.navigate(['/not-auth']);
     }
+
+    this.ClassContent.ValidationForClass(this.currentPrdID).subscribe(response=>{
+      this.valid = response
+      if(!this.valid.valid){
+        this.router.navigate(['/not-auth']);
+      }
+    });
+
+
     this.classcatsService.getAllClassCats().subscribe(response=>{
       this.AllClassCats=response ;
     })
