@@ -51,6 +51,7 @@ import { ProductListComponent } from './Components/Admin/product-list/product-li
 import { AddProductComponent } from './Components/Admin/add-product/add-product.component';
 import { UpdateProductComponent } from './Components/Admin/update-product/update-product.component';
 import { DeleteProductComponent } from './Components/Admin/delete-product/delete-product.component';
+import { MyclassesComponent } from './Components/Class/myclasses/myclasses.component';
 import { EventCatsIndexComponent } from './Components/event-cats-crud/event-cats-index/event-cats-index.component';
 import { EventCatsUpdateComponent } from './Components/event-cats-crud/event-cats-update/event-cats-update.component';
 import { EventCatsDeleteComponent } from './Components/event-cats-crud/event-cats-delete/event-cats-delete.component';
@@ -61,6 +62,14 @@ import { PostingComponent } from './Components/posts/Posts_Crud/posting/posting.
 import { AdminHeaderComponent } from './Components/admin_view/admin-header/admin-header.component';
 import { DashboardComponent } from './Components/admin_view/dashboard/dashboard.component';
 import { AdminMainLayoutComponent } from './Components/admin_view/admin-main-layout/admin-main-layout.component';
+import { SlachAdminComponent } from './Components/slach-admin/slach-admin.component';
+import { AddComponent } from './Components/class-content/add/add.component';
+import { ContentIndexComponent } from './Components/class-content/content-index/content-index.component';
+import { ContentArchiveComponent } from './Components/class-content/content-archive/content-archive.component';
+import { ContentDeleteComponent } from './Components/class-content/content-delete/content-delete.component';
+import { ContentSingleComponent } from './Components/class-content/content-single/content-single.component';
+import { ContentUpdataComponent } from './Components/class-content/content-updata/content-updata.component';
+
 
 
 const routes: Routes = [
@@ -81,16 +90,12 @@ const routes: Routes = [
   {path : "event-delete/:id" , component: EventDeleteComponent},
   // ------------------------ (  event crud start  )   -----------------------------
 
-  // ####################################################################################
-
-  // ------------------------ (  event cats crud start  )   -----------------------------
-
-  // ------------------------ (  event cats crud end  )   -----------------------------
   {path:'post-index',component:PostsComponent},
   {path:'show-post',component:ShowPostComponent},
+  {path:'add-post',component:AddPostComponent},
   {path:'single-post/:id',component:SinglePostComponent},
   {path:'update-post/:id',component:UpdatePostComponent},
-  // {path:'posting',component:AddPostComponent},
+  
   {path:'posting',component:PostingComponent},
   {path:'delete-post/:id',component:DeletePostComponent},
   {path:'contact_us',component:ContactUsComponent},
@@ -113,15 +118,14 @@ const routes: Routes = [
   {path : "submit-admin" , component:SigninAsadminComponent},
   {path:'classes',component:CatClassComponent},
   {path: 'classes/:id',component:DetailsClassComponent},
-  {path: 'classes-index',component:CrudClassComponent},
   {path : "classes-add" , component: AddClassComponent},
   {path : "classes-delete/:id" , component: DeleteClassComponent},
   {path : "classes-update/:id" , component: UpdateClassComponent},
-  {path: 'classescat-index',component:CrudCatClassComponent},
   {path : "classescat-add" , component: AddCatClassComponent},
   {path : "classescat-update/:id" , component: UpdateCatClassComponent},
   {path : "classescat-delete/:id" , component: DeleteCatClassComponent},
   {path: 'checkout/:id',component:CheckoutComponent},
+  {path: 'myclasses/:id',component:MyclassesComponent},
   {path:'Products',component:ProductsComponent},
   {path:'ProductList',component:ProductListComponent},
   {path:'AddNewProduct',component:AddProductComponent},
@@ -129,18 +133,46 @@ const routes: Routes = [
   {path:'DeleteProduct',component:DeleteProductComponent},
   {path:'productDetails/:id',component:ProductDetailsComponent},
   {path:'productDetails',component:ProductDetailsComponent},
+  {path:'slachAdmin',component:SlachAdminComponent},
+
+  {path: 'classes-index',component:CrudClassComponent},
+
+  {path:'content-add/:id',component:AddComponent}, //id of class itself
+  {path:'content-index/:id',component:ContentIndexComponent}, //id of class itself
+  {path:'content-archive/:id',component:ContentArchiveComponent}, //id of class itself
+
+  {path:'content-update/:id',component:ContentUpdataComponent}, //id of video
+  {path:'content-delete/:id',component:ContentDeleteComponent}, //id of video
+  {path:'content-single/:id',component:ContentSingleComponent}, //id of video
+
   // -------------------------------------------------//
 
 ]},
 
 {path:'admin',component:AdminMainLayoutComponent,children:[
 
+  {path : "home" , component: HomeComponent},
+  {path:'contact_us',component:ContactUsComponent},
+  {path:'about_us',component:AboutUsComponent},
+  {path:'profile',component:ProfileComponent},
   {path : "event-control" , component: AdminControlComponent},
   {path : "event-control/event/:id" , component: EventsSingleComponent},
+  {path : "event/:id" , component: EventsSingleComponent},
+  {path : "events-archive" , component: EventsArchiveComponent},
+
   {path:'eventcats-index',component:EventCatsIndexComponent},
   {path:'eventcats-add',component:EventCatsAddComponent},
   {path:'eventcats-update/:id',component:EventCatsUpdateComponent},
   {path:'eventcats-delete/:id',component:EventCatsDeleteComponent},
+  {path: 'classescat-index',component:CrudCatClassComponent},
+  {path: 'classes-index',component:CrudClassComponent},
+  {path:'classes',component:CatClassComponent},
+  {path : "teachers" , component:TeachersComponent},
+  {path:'post-index',component:PostsComponent},
+  {path:'show-post',component:ShowPostComponent},
+  {path:'single-post/:id',component:SinglePostComponent},
+  {path:'edit-profile',component:EditProfileComponent},
+  {path: 'classes/:id',component:DetailsClassComponent},
 
 
 ]},
@@ -162,8 +194,6 @@ const routes: Routes = [
 {path:'**',component:NotFoundComponent}
 
 ]
-
-
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

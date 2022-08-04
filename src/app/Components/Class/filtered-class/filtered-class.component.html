@@ -8,40 +8,37 @@
     </div>
     <div class="class-content">
       <h5 class="title">
-        <a href="class-single.html">{{ cla.name }}</a>
+        <a  routerLink="/classes/{{ cla.id }}">{{ cla.name }}</a>
       </h5>
       <div class="class-meta">
         <div class="class-author">
           <div class="thumb">
-            <a href="teacher-single.html"
+            <a routerLink ="/single-teacher/{{cla.teacher_id}}"
               ><img src="./assets/images/class/teacher02.jpg" alt="class"
             /></a>
           </div>
           <div class="content">
             <h6 class="subtitle">
-              <a href="teacher-single.html">Joly Smith</a>
+              <a routerLink ="/single-teacher/{{cla.teacher_id}}">Smith</a>
             </h6>
-            <a href="teacher-single.html" class="info">View Profile</a>
+            <a routerLink ="/single-teacher/{{cla.teacher_id}}" class="info">View Profile</a>
           </div>
         </div>
         <div class="cost-area">
-          <h6 class="subtitle">{{ cla.price }}</h6>
+          <h6 class="subtitle">Price ({{ cla.price }})</h6>
           <span class="info">Per Month</span>
         </div>
       </div>
       <div class="schedule-area">
         <div class="schedule-item">
-          <h6 class="sub-title">24 - 30</h6>
-          <span class="info">Class Size</span>
+          <h6 class="sub-title">Duration ({{ cla.duration }})</h6>
+          <span class="info">Days</span>
         </div>
         <div class="schedule-item">
-          <h6 class="sub-title">09:30 -12:00</h6>
-          <span class="info">Class Time</span>
-        </div>
-        <div class="schedule-item">
-          <h6 class="sub-title">06 - 08</h6>
+          <h6 class="sub-title">Target Age ({{ cla.targetAge }})</h6>
           <span class="info">Years Old</span>
         </div>
+
       </div>
     </div>
   </div>

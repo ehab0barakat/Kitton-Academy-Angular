@@ -21,8 +21,6 @@ export class FilteredClassComponent implements OnInit, OnChanges {
   }
   ngOnChanges(changes: SimpleChanges): void {
 
-    console.log(this.selected)
-
     if(this.selected!= 0 ){
 
       this.classcatsService.getClassByCatID(this.selected).subscribe(response=>{

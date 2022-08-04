@@ -67,6 +67,7 @@ export class SignupAsteacherComponent implements OnInit {
   onSelect(event:any) {
     console.log(event);
     this.files.push(...event.addedFiles);
+    this.onload()
   }
 
   onRemove(event:any) {
@@ -94,9 +95,6 @@ export class SignupAsteacherComponent implements OnInit {
       }
     });
   }
-
-
-
 
 
   mysubmit(myform:NgForm){

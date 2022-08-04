@@ -1,0 +1,36 @@
+<div class="container-fluid">
+  <div class="row">
+      <div class="box1 col-lg-8 col-md-8 col-sm-11">
+
+          <div class="iframe-cont">
+            <div class="about-video" style="height:500px ;" >
+              <img src="{{TargetVideo?.image}}" style="height:500px ;" alt="about">
+              <a href="{{TargetVideo?.link}}" class="video-button popup" (click)="watch()"  ><i class="flaticon-play"></i></a>
+          </div>
+          <div class="d-flex` fs-1 py-2"> VIEWS : <strong class="text-danger" >{{HowManyViews}}</strong></div>
+        </div>
+      </div>
+
+      <div class="box2 col-lg-4 col-md-4 col-sm-1">
+          <ul class="video-table">
+              <li class="video-lessons"><h5>Course Content</h5></li>
+              <li class="video-lessons"   id="video1" *ngFor="let video of AllEvents ;  let i =index" routerLinkActive="bg-primary" [class.haha]="SeenForAll[i] == true" (click)="change(video.id)">
+
+              <a routerLink="/content-single/{{video?.id}}"  routerLinkActive="active">
+                <div class="row">
+                  <div class="col-sm-4">
+                    <img src="{{video?.image}}" style="width: 100% ;" alt="">
+                  </div>
+                  <div class="col-sm-8">
+                      <div class="p-2"routerLinkActive="text-white">{{video?.title}}</div>
+                      <div class="p-2"routerLinkActive="text-white">{{video?.description}}</div>
+                  </div>
+                </div>
+              </a>
+              </li>
+           </ul>
+      </div>
+
+
+  </div>
+</div>

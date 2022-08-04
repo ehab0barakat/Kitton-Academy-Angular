@@ -56,7 +56,7 @@ export class EventCatsUpdateComponent implements OnInit {
   EditEvent(){
     this.eventcatsService.editEventCat(this.editEvent , this.targetId ).subscribe(response =>{
         if(response){
-          this.router.navigate(['/eventcats-index']);
+          this.router.navigate(['/admin/eventcats-index']);
         }
       }
     )

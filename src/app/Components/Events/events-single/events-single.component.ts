@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/Services/auth.service';
 import { EventsService } from 'src/app/Services/events.service';
 import { Event} from "../../../Models/event"
+import { ApiPostsService } from '../../Services/api-posts.service';
 
 @Component({
   selector: 'app-events-single',
@@ -14,7 +15,8 @@ export class EventsSingleComponent implements OnInit {
   constructor( private router:Router,
     private eventService:EventsService,
     private activatedRoute : ActivatedRoute,
-    private authService : AuthService) { }
+    private authService : AuthService,
+    private postApiService:ApiPostsService) { }
 
 
   SingleEvents : Event = {
@@ -39,7 +41,7 @@ seconds:any = "00";
 teacher:any ;
 gonnaGo:any ;
 alreadyEnroller:any = false ;
-
+posts:any ;
 
   auth:any = localStorage.getItem("role");
 
@@ -47,6 +49,14 @@ alreadyEnroller:any = false ;
 
 
   ngOnInit(): void {
+    if(this.auth == 3){
+      this.router.navigate([`/admin/event/${this.prod}`])
+    }
+
+
+    this.postApiService.getAllPosts().subscribe(response=>{
+      this.posts=response.slice(0,3);
+    });
 
 
     this.eventService.usersCount(this.prod).subscribe(response=>{
@@ -54,9 +64,11 @@ alreadyEnroller:any = false ;
     });
 
 
-    this.eventService.geteventByID(this.prod).subscribe(response=>{
+    this.eventService.geteventByIDforGuest(this.prod).subscribe(response=>{
       this.SingleEvents = response ;
+      console.log(response)
 
+      // if(response?.valid == false){this.router.navigate(['/not-auth'])}
 
       this.eventService.getTeacherName(this.SingleEvents.teacher_id).subscribe(response=>{
       console.log(response)
@@ -79,7 +91,7 @@ alreadyEnroller:any = false ;
 
   setTimeout(()=>{
     if(this.SingleEvents.id == 0){
-      this.router.navigate(['/not-auth']);
+      // this.router.navigate(['/not-auth']);
     }
   },1500)
 

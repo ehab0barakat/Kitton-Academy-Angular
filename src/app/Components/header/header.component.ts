@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { catchError, throwError } from 'rxjs';
+import { EventsService } from 'src/app/Services/events.service';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -13,7 +14,8 @@ export class HeaderComponent implements OnInit {
   httpOptions: { headers: HttpHeaders; };
 
   constructor( private route:Router,
-    private httpclient: HttpClient ) {
+    private httpclient: HttpClient,
+    private eventservice : EventsService  ) {
 
       this.httpOptions={
         headers:new HttpHeaders({
@@ -24,15 +26,27 @@ export class HeaderComponent implements OnInit {
   }
 
   userData:any  = "0" ;
-
+  notification:any
   ngOnInit(): void {
-    this.httpclient.get<any>(`${environment.APIBaseURL}/api/auth/me`,this.httpOptions).subscribe( data =>{
-      this.userData = data ;
-      window.localStorage.setItem("role",`${this.userData.role}`)
-      console.log(data)
-    })
 
+    this.httpclient.get<any>(`${environment.APIBaseURL}/api/auth/me`,this.httpOptions).subscribe({
+      next: (data) => {
+                        this.userData = data;
+                        window.localStorage.setItem("role",`${this.userData.role}`)
+      },
+      error: err =>  console.log(err)
+
+      // console.log(data)
+    })
     console.log(this.userData)
+
+    this.eventservice.showNotifyToTeacher().subscribe({
+        next: data => this.notification =data,
+        error: err =>  console.log(err)
+    });
+
+
+
   }
 
 
@@ -42,5 +56,11 @@ export class HeaderComponent implements OnInit {
   }
 
 
+  check(id:number){
+    this.eventservice.teacherCheckNotify(id).subscribe(response=>{
+      console.log(response)
+    });
+
+  }
 
 }

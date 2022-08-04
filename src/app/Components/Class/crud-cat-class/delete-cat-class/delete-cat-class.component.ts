@@ -14,7 +14,7 @@ export class DeleteCatClassComponent implements OnInit {
   ngOnInit(): void {
     this.classcatsService.delete(this.targetId).subscribe(response =>{
       if(response){
-        this.router.navigate(['/classescat-index']);
+        this.router.navigate(['/admin/classescat-index']);
       }
     }
   )

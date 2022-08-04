@@ -3,13 +3,13 @@
     <div class="header-top-area">
       <ul class="left">
         <li>
-          <i class="far fa-clock"></i> 9:30am - 6:30pm Mon - Sun
+          <!-- <i class="far fa-clock"></i> 9:30am - 6:30pm Mon - Sun -->
         </li>
         <li>
-          <a href="#"><i class="fas fa-phone-alt"></i> +800-123-4567 6587</a>
+          <!-- <a href="#"><i class="fas fa-phone-alt"></i> +201030020210</a> -->
         </li>
         <li>
-          <i class="fas fa-map-marker-alt"></i> Beverley, New York 224 US
+          <!-- <i class="fas fa-map-marker-alt"></i> Cairo, Egypt -->
         </li>
 
         <div *ngIf="userData =='0'" class="d-flex" >
@@ -20,7 +20,14 @@
                 <a routerLinkActive="active" routerLink="/Welcome">Sign Up</a>
               </li>
         </div>
-
+        <div *ngIf="userData !='0'">
+          <div *ngIf=" userData.role!='3' ;">
+          <li>
+            <a class="px-3"  routerLinkActive="active" routerLink="/myclasses/{{ userData.id }}">My Classes</a>
+            <!-- <a class="px-3"  routerLinkActive="active" routerLink="/myclasses">My Classes</a> -->
+          </li>
+    </div>
+  </div>
         <div *ngIf="userData !='0'">
               <li>
                 <a class="px-3" routerLinkActive="active" routerLink="/sign-out">Sign Out</a>
@@ -29,7 +36,7 @@
         </div>
 
       </ul>
-      <ul class="social-icons">
+      <!-- <ul class="social-icons">
         <li>
           <a href="#"><i class="fab fa-facebook-messenger"></i></a>
         </li>
@@ -45,7 +52,7 @@
         <li>
           <a href="#"><i class="fas fa-wifi"></i></a>
         </li>
-      </ul>
+      </ul> -->
     </div>
   </div>
 </div>
@@ -61,7 +68,7 @@
       </div>
       <div class="menu-area">
         <ul class="menu">
-          <li class="menu-item-has-children">
+          <li class="menu-item-has-hildren">
             <a routerLinkActive="active" routerLink="/home"><i class="fas fa-home"></i>Home</a>
           </li>
           <li>
@@ -69,47 +76,42 @@
           </li>
           <li class="menu-item-has-children">
             <a routerLink="/classes"><i class="fas fa-book"></i>Classes</a>
-            <ul class="submenu">
+
+            <ul class="submenu" *ngIf="userData?.role==2" >
               <li>
-                <a routerLink="/classes">Classes</a>
+                <a routerLink="/classes-index">My Classes</a>
               </li>
               <li>
-                <a href="class-schedule.html">Class Schedule</a>
+                <a routerLink="/classes-add">Add Classes</a>
+              </li>
+            </ul>
+
+          </li>
+
+
+          <li class="menu-item-has-children">
+            <a routerLink="/post-index">Posts</a>
+
+            <ul class="submenu" *ngIf="userData?.role==2" >
+              <li>
+                <a routerLinkActive="active" routerLink="/show-post">My Posts</a>
+              </li>
+              <li>
+                <a routerLinkActive="active" routerLink="/posting">ADD Post</a>
               </li>
             </ul>
           </li>
-          <li class="menu-item-has-children">
-            <a routerLinkActive="active" routerLink="/post-index"><i class="fas fa-pencil-alt"></i>Posts</a>
-          </li>
 
           <li class="menu-item-has-children">
-            <a href="#0"><i class="fas fa-layer-group"></i>Pages</a>
+            <a ><i class="fas fa-layer-group"></i>Pages</a>
             <ul class="submenu">
+
               <li class="menu-item-has-children">
-                <a href="#0">Teacher</a>
-                <ul class="submenu">
-                  <li>
-                    <a routerLinkActive="active" routerLink="/teachers">Our Teacher</a>
-                  </li>
-                  <li>
-                    <a routerLinkActive="active" routerLink="/single-teacher">Teacher Single</a>
-                  </li>
-                </ul>
+                <a routerLinkActive="active" routerLink="/teachers">Teacher</a>
               </li>
-              <!-- <li class="menu-item-has-children">
-                <a href="#0">Account</a>
-                <ul class="submenu">
-                  <li>
-                    <a routerLinkActive="active" routerLink="/sign-in">Sign In</a>
-                  </li>
-                  <li>
-                    <a routerLinkActive="active" routerLink="sign-up/">Sign Up</a>
-                  </li>
-                </ul>
-              </li> -->
+
               <li class="menu-item-has-children">
                 <a routerLink="/events-archive">Events</a>
-
                 <ul class="submenu" *ngIf="userData?.role==2" >
                   <li>
                     <a routerLinkActive="active" routerLink="/event-index">My Events</a>
@@ -119,33 +121,11 @@
                   </li>
                 </ul>
               </li>
-
-              <li class="menu-item-has-children">
-                <a href="#0">Shop</a>
-                <ul class="submenu">
-                  <li>
-                    <a routerLinkActive="active" routerLink="/shop">Our Shop</a>
-                  </li>
-                  <li>
-                    <a routerLinkActive="active" routerLink="/cart">Cart</a>
-                  </li>
-                </ul>
-              </li>
-
-              <li class="menu-item-has-children">
-                <a href="#0">Games</a>
-                <ul class="submenu">
-                  <li>
-                    <a routerLinkActive="active" routerLink="/games-archive">Games</a>
-                  </li>
-                </ul>
-              </li>
-
-              <li>
-                <a routerLinkActive="active" routerLink="/product">404 Error</a>
-              </li>
             </ul>
           </li>
+
+
+
           <li>
             <a routerLinkActive="active" routerLink="/contact_us"><i class="fas fa-map-marker-alt"></i>Contact</a>
           </li>
@@ -153,25 +133,33 @@
 
         <div>
 
-          
+
           <a *ngIf="userData.role==1 ||  userData.role==2 ||  userData.role==3" routerLinkActive="active" routerLink="profile"
             style="font-weight:bold; text-transform: uppercase; color: rgb(156, 137, 14);"><i class="fa-solid fa-gear"></i>
            Profile</a>
-          
+
         </div>
 
-        <!--  -->
         <div class="search-button">
-          <a href="#">
-            <i class="fas fa-search"></i>
-          </a>
+
         </div>
-        <div class="cart-button">
-          <a routerLink="/cart">
-            <span class="cart-amount">05</span>
-            <i class="fas fa-shopping-basket"></i>
-          </a>
+
+        <div class="c-button">
+            <a class="dropdown-togle" id="dropdownMenuButton1" data-bs-toggle="dropdown">
+              <span class="cart-amount">{{notification?.count}}</span>
+              <i class="fas fa-bell"></i>
+            </a>
+
+            <ul class="dropdown-menu meu"  aria-labelledby="dropdownMenuButton1" >
+              <li class="position-relative" *ngFor="let not of notification?.data ; let i=index " (click)="check(notification?.check[i].id)" ><a class="dropdown-item " routerLink="/event/{{not.id}}" class="lala" class="d-flex" >
+                <img src="{{not.image}}" width="100px" >
+                <p>admins has approved for this event <strong>{{not.title}}</strong></p>
+                <span *ngIf="notification?.check[i].check == 0" class="overlay--a"></span>
+              </a>
+            </li>
+            </ul>
         </div>
+
         <div class="header-bar d-lg-none">
           <span></span>
           <span></span>
@@ -184,8 +172,6 @@
     </div>
   </div>
 </div>
-
-
 
 
 <!--  -->

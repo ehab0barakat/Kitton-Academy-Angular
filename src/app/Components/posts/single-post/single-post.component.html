@@ -2,110 +2,116 @@
       <div class="class-inner col-sm-4 "  >
         <div class="event-item">
               <div class="event-humb m-2">
-                  <a routerLink="/post/{{singlePost?.id}}"><img src="./assets/images/blog/blog03.jpg" alt="post"></a>
+                  <a routerLink="/post/{{singlePost?.id}}"><img src="{{singlePost?.image}}" width="100%" alt="post"></a>
                   <div class="date-tag mt-3">
                       <h3 class="title">{{singlePost?.title}}</h3>
-    
+
                   </div>
                  <div class="date-tag mt-3">
                       <p class="title">{{singlePost?.description}}</p>
-    
+
                   </div>
               </div>
-              
-          </div>
-         
-          
-           <div>
-            <i [class.text-danger]="likestatus.liked == true" (click)="addlike(singlePost?.id,data.id)" style="font-size: 40px;" class="fa-solid fa-heart btn "></i>
 
+          </div>
+
+
+           <div>
+
+            <div class="d-flex justify-content-start">
+            <i [class.text-danger]="likestatus?.liked == true" (click)="addlike(singlePost?.id,data?.id)" style="font-size: 30px;" class="fa-solid fa-heart btn "></i>
+            <h6 class="mt-2">{{numberOfLikes}}</h6>
+            </div>
 
            </div>
-      
+
         </div>
-  
-  
+
+
   </div>
 
   <!-- comment section for user  -->
 
- 
+
     <div   *ngFor="let comment of allcoments"   >
-        <div *ngIf="comment.post_id == singlePost?.id  || comment.user_id==data.id  ">
-            
-    
+        <div *ngIf="comment.post_id == singlePost?.id ">
 
-            <div  class="card m-2 p-2"  *ngIf="data.role==1">
-               <p> user id: {{comment.user_id}} </p>
 
+
+            <div  class="card m-2 p-2"  *ngIf="data?.role==1">
             
-                <h5 >{{comment.comment}}</h5>
+                <p>{{comment.name}}</p>
+
+
+                <h5>{{comment.comment}}</h5>
          </div>
-             
-            
+
+
         </div>
-        
+
       </div>
-  
+
  <!-- comment section for teacher  -->
 
  <div   *ngFor="let techercomment of allteachercoments"  >
     <div *ngIf="techercomment.post_id == singlePost?.id">
-        
+
 
 
         <div  class="card m-2 p-2" >
-        <p> teacher id :{{techercomment.teacher_id}} </p>
+        <p> {{techercomment.name}} </p>
 
-        
+
         <h5 >{{techercomment.comment}}</h5>
      </div>
-         
-        
+
+
     </div>
-    
+
   </div>
 
 
 
-  <div class="widget widget-comment" *ngIf="data.role==1">
+  <div class="widget widget-comment" *ngIf="data?.role==1">
     <div class="widget-header">
         <h5 class="title">Leave a Comment</h5>
     </div>
     <div class="widget-body">
-        <form class="comment-form" (ngSubmit)="send_comment(singlePost?.id,data.id)">
-            
-            <!-- <div class="form-group">
-                <input type="text" placeholder="Your Email" name="email">
-            </div> -->
+        <form class="comment-form" (ngSubmit)="send_comment(singlePost?.id,data?.id,userComment.name)">
+
+            <div class="form-group">
+                <input type="text" placeholder="Your Name" name="name" [ngModelOptions]="{standalone:true}"   [(ngModel)]="userComment.name" >
+            </div>
             <div class="form-group w-100">
                 <textarea  name="message" placeholder="Your Comments" [ngModelOptions]="{standalone:true}"   [(ngModel)]="userComment.comment"></textarea>
             </div>
             <div class="form-group">
-                <button type="submit" class="custom-button" ><span>Send Comment</span></button>
+                <button type="submit"   class="custom-button" ><span>Send Comment</span></button>
             </div>
         </form>
     </div>
 </div>
-  
+
   <!-- teacher comment section  -->
 
-<div class="widget widget-comment" *ngIf="data.role==2">
+<div class="widget widget-comment" *ngIf="data?.role==2">
     <div class="widget-header">
         <h5 class="title">Leave a Comment</h5>
     </div>
     <div class="widget-body">
-        <form class="comment-form" (ngSubmit)="teacherSend_comment(singlePost?.id,data.id)">
-            
-            <!-- <div class="form-group">
-                <input type="text" placeholder="Your Email" name="email">
-            </div> -->
+        <form class="comment-form" (ngSubmit)="teacherSend_comment(singlePost?.id,data?.id,teaherComment.name)">
+
+            <div class="form-group">
+                <input type="text" placeholder="Your name" name="name" [ngModelOptions]="{standalone:true}"   [(ngModel)]="teaherComment.name">
+            </div>
             <div class="form-group w-100">
                 <textarea  name="message" placeholder="Your Comments" [ngModelOptions]="{standalone:true}"   [(ngModel)]="teaherComment.comment"></textarea>
             </div>
             <div class="form-group">
-                <button type="submit" class="custom-button" ><span>Send Comment</span></button>
+                <button type="submit"  class="custom-button" ><span>Send Comment</span></button>
             </div>
         </form>
     </div>
 </div>
+
+

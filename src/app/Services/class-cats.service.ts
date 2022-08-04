@@ -27,8 +27,8 @@ export class ClassCatsService {
     getClassByCatID(id: number): Observable<classes[]> {
       return this.httpClient.get<classes[]>(`${environment.APIBaseURL}/api/classescats/${id}`)
     }
-    getClassCatID(id: number): Observable<classCats[]> {
-      return this.httpClient.get<classCats[]>(`${environment.APIBaseURL}/api/classescats/${id}`)
+    getClassCatID(id: number): Observable<classCats> {
+      return this.httpClient.get<classCats>(`${environment.APIBaseURL}/api/classcats/${id}`)
     }
 
 create(newPrd:classCats):Observable<classCats>{

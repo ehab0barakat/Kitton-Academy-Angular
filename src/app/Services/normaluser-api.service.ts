@@ -17,12 +17,14 @@ export class NormaluserApiService {
       this.httpOptions={
         headers:new HttpHeaders({
           'Content-Type': 'application/json' ,
-  
+          "Authorization": `Bearer ${localStorage.getItem('token')}`,
+
+
         })
       }
 
 
-    
+
    }
 
    // edit profile
@@ -30,9 +32,9 @@ export class NormaluserApiService {
     // / get data of  login user
 this.authService.Auth().subscribe(response=>{
   this.data=response;
-  
 
-  
+
+
 })
 
 
@@ -45,12 +47,12 @@ this.authService.Auth().subscribe(response=>{
                                               this.httpOptions)
                                             }
 
-  
-  
-    
-  
-  
 
-  
+
+
+
+
+
+
 
 }

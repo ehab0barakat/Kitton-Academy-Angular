@@ -3,7 +3,9 @@
     <tr>
       <th scope="col">#</th>
       <th scope="col"></th>
+      <th scope="col"></th>
       <th scope="col">name</th>
+      <th scope="col">is active</th>
       <th scope="col">price</th>
       <th scope="col">duration</th>
       <th scope="col"></th>
@@ -13,19 +15,21 @@
 
     <tr *ngFor="let item of classListOfCat   ;  let i =index" >
       <th scope="row">{{i+1}}</th>
+      <th scope="row"><a routerLink="/content-index/{{item.id}}"> ADD Content </a></th>
       <td><a routerLink="/classes"> View Classes</a></td>
       <td>{{item.name}}</td>
 
-      <td >{{ item.price }}</td>
-      
+      <td *ngIf="item.isActive== 0"><i class="fa-solid fa-x fs-2 text-danger "></i></td>
+      <td *ngIf="item.isActive== 1"><i class="fa-solid fa-check fs-2 text-success "></i></td>
 
-      <td>{{item.duration}</td>
+      <td >{{ item.price }}</td>
+      <td>{{item.duration}}</td>
       <td ><button  routerLink="/classes-update/{{item.id}}"   class="btn btn-warning"> UPDATE  </button></td>
       <td ><button routerLink="/classes-delete/{{item.id}}" class="btn btn-danger"> DELETE  </button></td>
     </tr>
 
     <tr>
-      <td><button routerLink="/classes-add" class="btn btn-secondary ms-5"> ADD ROW  </button></td>
+      <td><button routerLink="/classes-add" class="btn btn-secondary ms-5"> ADD Class  </button></td>
     </tr>
 
 

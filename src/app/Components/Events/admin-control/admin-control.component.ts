@@ -21,6 +21,7 @@ export class AdminControlComponent implements OnInit {
   AllEvents:any ;
   auth:any = localStorage.getItem("role");
 
+
   ngOnInit(): void {
 
     this.authService.Auth().subscribe(response=>{
@@ -40,11 +41,18 @@ export class AdminControlComponent implements OnInit {
         }
   }
 
-  toggle(id:any ,isActive:any){
+
+  toggle(id:any ,isActive:any , teacher_id:any){
     isActive == 0 ? isActive = 1 : isActive = 0 ;
     this.eventService.ActivationeditEvent({"isActive":isActive},id).subscribe(data =>{
       this.router.navigate(["admin/event-control"])
     });
+
+    this.eventService.teacherNotify({"event_id" : id  , "teacher_id" : teacher_id}).subscribe(data =>{
+      this.router.navigate(["admin/event-control"])
+    });
+
+
 
 
     this.all()
@@ -53,13 +61,11 @@ export class AdminControlComponent implements OnInit {
 
   delete(id:any){
     this.eventService.deleteEvent(id).subscribe(data =>{
-      this.router.navigate(["/event-control"])
+      this.router.navigate(["/admin/event-control"])
+      this.all()
     });
 
   }
-
-
-
 
   all(){
     this.eventService.getAllevents().subscribe(res =>{
@@ -75,6 +81,18 @@ export class AdminControlComponent implements OnInit {
   }
 
 
+
+  teacherEmail:any;
+  message:string = "";
+  search(email:any){
+    console.log(email)
+    this.eventService.searchForTeacherByName({"email":email}).subscribe(res =>{
+      console.log(res)
+      this.message = res.message ;
+      this.AllEvents = res ;
+    });
+
+  }
 
 
   }

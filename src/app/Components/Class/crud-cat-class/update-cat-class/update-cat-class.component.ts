@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { classCats } from 'src/app/Models/classcats';
 import { ClassCatsService } from 'src/app/Services/class-cats.service';
 
 @Component({
@@ -32,7 +31,7 @@ update(){
     console.log(response);
 
   if(response){
-    this.router.navigate(['/classescat-index']);
+    this.router.navigate(['/admin/classescat-index']);
   }
 }
 )

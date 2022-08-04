@@ -34,14 +34,14 @@ export class AdminHeaderComponent implements OnInit {
     if(this.auth != 3 ){
       this.router.navigate(['/not-auth']);
     }
-    this.authService.Auth().subscribe(response=>{
-      this.auth = response ;
-      this.userData = response ;
-      if(this.auth.role != 3 ){
+
+    this.httpclient.get<any>(`${environment.APIBaseURL}/api/auth/me`,this.httpOptions).subscribe( data =>{
+      this.userData = data ;
+      console.log(data)
+      if(this.userData.role != 3 ){
           this.router.navigate(['/not-auth']);
         }
-      });
+    })
   }
-
 
   }

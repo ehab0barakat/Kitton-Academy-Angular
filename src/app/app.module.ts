@@ -30,7 +30,7 @@ import { CommonModule } from '@angular/common';
 // import { EventUpdateComponent } from './Components/Events/crud-event/event-update/event-update.component';
 // import { EventDeleteComponent } from './Components/Events/crud-event/event-delete/event-delete.component';
 import { CheckoutComponent } from './Components/checkout/checkout.component';
-import { MyclassesComponent } from './Components/myclasses/myclasses.component';
+import { MyclassesComponent } from './Components/Class/myclasses/myclasses.component';
 import { CrudClassComponent } from './Components/Class/crud-class/crud-class.component';
 import { AddClassComponent } from './Components/Class/crud-class/add-class/add-class.component';
 import { UpdateClassComponent } from './Components/Class/crud-class/update-class/update-class.component';
@@ -86,6 +86,13 @@ import { SubEventComponent } from './Components/Events/sub-event/sub-event.compo
 import { EventAddComponent } from './Components/Events/crud-event/event-add/event-add.component';
 import { EventUpdateComponent } from './Components/Events/crud-event/event-update/event-update.component';
 import { EventDeleteComponent } from './Components/Events/crud-event/event-delete/event-delete.component';
+import { SlachAdminComponent } from './Components/slach-admin/slach-admin.component';
+import { AddComponent } from './Components/class-content/add/add.component';
+import { ContentArchiveComponent } from './Components/class-content/content-archive/content-archive.component';
+import { ContentUpdataComponent } from './Components/class-content/content-updata/content-updata.component';
+import { ContentDeleteComponent } from './Components/class-content/content-delete/content-delete.component';
+import { ContentIndexComponent } from './Components/class-content/content-index/content-index.component';
+import { ContentSingleComponent } from './Components/class-content/content-single/content-single.component';
 
 @NgModule({
   declarations: [
@@ -177,7 +184,14 @@ import { EventDeleteComponent } from './Components/Events/crud-event/event-delet
     SubEventComponent,
     EventAddComponent,
     EventUpdateComponent,
-    EventDeleteComponent
+    EventDeleteComponent,
+    SlachAdminComponent,
+    AddComponent,
+    ContentArchiveComponent,
+    ContentUpdataComponent,
+    ContentDeleteComponent,
+    ContentIndexComponent,
+    ContentSingleComponent
   ],
   imports: [
     BrowserModule,
@@ -187,8 +201,7 @@ import { EventDeleteComponent } from './Components/Events/crud-event/event-delet
     HttpClientModule,
     CommonModule,
     FormsModule,
-    NgxDropzoneModule,
-   
+    NgxDropzoneModule
 
 
   ],

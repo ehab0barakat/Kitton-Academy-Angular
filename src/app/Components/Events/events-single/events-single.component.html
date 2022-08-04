@@ -80,8 +80,10 @@
                               </li>
                               <li>
                                   <div class="ques cl-i-six"><i class="fas fa-user"></i>Event Organizer</div>
-                                  <div class="ans">{{teacher.name}}</div>
+                                  <div class="ans">{{teacher?.name}}</div>
                               </li>
+
+<!--
                               <li>
                                   <div class="ques cl-i-seven"><i class="fas fa-star"></i>Rating</div>
                                   <div class="ans cl-i-seven"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
@@ -90,6 +92,10 @@
                                   <div class="ques cl-i-eight"><i class="fas fa-coins"></i>Event Ticket</div>
                                   <div class="ans">$2500.00</div>
                               </li>
+ -->
+
+
+
                           </ul>
                       </div>
                   </div>
@@ -99,53 +105,19 @@
                       </div>
                       <div class="widget-body">
                           <ul>
-                              <li>
+
+                              <li *ngFor="let post of posts " >
                                   <div class="thumb">
-                                      <a href="blog-single.html">
-                                          <img src="./assets/images/blog/side1.jpg" alt="blog">
+                                      <a routerLink="/single-post/{{post.id}}">
+                                          <img src="./assets/images/blog/blog03.jpg" alt="blog">
                                       </a>
                                   </div>
                                   <div class="content">
-                                      <a href="blog-single.html">How Kids make sense of Life Experiences</a>
+                                      <a href="blog-single.html">{{post.title}}</a>
                                       <span>April 08,2022</span>
                                   </div>
                               </li>
-                              <li>
-                                  <div class="thumb">
-                                      <a href="blog-single.html">
-                                          <img src="./assets/images/blog/side2.jpg" alt="blog">
-                                      </a>
-                                  </div>
-                                  <div class="content">
-                                      <a href="blog-single.html">Why do aerobically have
-                                          better Math Skills</a>
-                                      <span>April 08,2022</span>
-                                  </div>
-                              </li>
-                              <li>
-                                  <div class="thumb">
-                                      <a href="blog-single.html">
-                                          <img src="./assets/images/blog/side3.jpg" alt="blog">
-                                      </a>
-                                  </div>
-                                  <div class="content">
-                                      <a href="blog-single.html">How Kids make sense of
-                                          Life Experiences</a>
-                                      <span>April 08,2022</span>
-                                  </div>
-                              </li>
-                              <li>
-                                  <div class="thumb">
-                                      <a href="blog-single.html">
-                                          <img src="./assets/images/blog/side4.jpg" alt="blog">
-                                      </a>
-                                  </div>
-                                  <div class="content">
-                                      <a href="blog-single.html">Remo Suppor Center What For Semiconductor
-                                          Provider</a>
-                                      <span>April 08,2022</span>
-                                  </div>
-                              </li>
+
                           </ul>
                       </div>
                   </div>

@@ -1,21 +1,17 @@
+
 <section class="class-single-section padding-top padding-bottom">
-  <div class="container" *ngFor="let cla of  AllClasses">
+  <div class="container" >
       <div class="row mb--50">
           <div class="col-lg-8 mb-50">
               <div class="class-single-item">
                   <div class="class-single-inner " >
                       <div class="class-single-thumb" >
-                          <img [src]="cla.image " alt="class">
+                          <img [src]="AllClasses?.image " alt="class">
                       </div>
                       <div class="class-single-content">
-
                           <ul class="meta-post">
                               <li>
-                                  <a href="#"><i class="far fa-cla"></i> William Khanna: {{cla.name}}</a>
-                              </li>
-                          <ul class="meta-post">
-                              <li>
-                                  <a href="#"><i class="far fa-cla"></i> William Khanna: {{cla.name}}</a>
+                                  <a href="#"><i class="far fa-cla"></i> Class Name : {{AllClasses?.name}}</a>
                               </li>
                               <li>
                                   <a href="#"><i class="far fa-heart"></i>124 Likes</a>
@@ -24,7 +20,7 @@
                                   <a href="#"><i class="far fa-comments"></i>09 Comments</a>
                               </li>
                           </ul>
-                          <button type="submit" routerLink="/checkout/{{cla.id}}" class="custom-button m-3"><span>Buy Now</span></button>
+                          <button type="submit" routerLink="/checkout/{{AllClasses?.id}}" click="add()" class="custom-button m-3"><span>Buy Now</span></button>
                           <p>
                               Serenity hassr taken posseson of my entire soung like these sweet mornngs sprng whch
                               enjoy with
@@ -40,13 +36,9 @@
                               souing like
                               these sweet present moment and yet feel that never was greater artst
                           </p>
-                          </ul>
                           <blockquote class="single-quote">
                               <div class="quotes">
-                                  Steal into The nering Sanc How Mysef Down Amon The Hal Gras Buz
-                                  Lttle World Amon The Stak And Grow Fama With Couns And Fesingri
-                                  Steal intoing Thene Sanc Hrow Myse Down Amon The Hall Gras Biss
-                                  The Almighty Among The Staks
+                                 {{AllClasses?.description}}
                                   <span>...Melissa Hunter</span>
                               </div>
                           </blockquote>
@@ -67,40 +59,76 @@
                               these sweet present moment and yet feel that never was greater artst
                           </p>
 
-                          <div class="video-area">
-                              <img src="./assets/images/class/single2.jpg" alt="class">
-                              <a href="https://www.youtube.com/embed/6E9J8biF8RE" class="video-button popup"><i class="flaticon-play"></i></a>
+                        <div class="father" *ngIf="valid?.own != true" >
+                          <div class="container-fluid">
+                            <div class="iframe-cont">
+                              <div class="about-video" >
+                                <img src="{{firstEvents?.image}}"  alt="about">
+                                <a href="{{firstEvents?.link}}" class="video-button popup"><i class="flaticon-play"></i></a>
+                            </div>
                           </div>
-                          <p>
-                              Serenity hassr taken posseson of my entire soung like these sweet mornngs sprng whch
-                              enjoy with
-                              my whole heart I am alonesi and feel the charm of exstenceths spot whch was the blis
-                              of souls like
-                              mineing am soo happy my dear frend absoribed the exquste sense enjoy with my whole
-                              heart in am
-                              alone and feel the charm of exstenceths spot whch was the blis of souls like mineing
-                              am so happyr
-                              my dear frend so absoribed the exqust sense tranquil existence that neglect my
-                              talentsr Ins should
-                              bye ncapable of drawng and singe wonderful serenty has taken possesison of my entrei
-                              souing like
-                              these sweet present moment and yet feel that never was greater artst
-                          </p>
+                          </div>
+                          <div class="box2 ">
+                            <ul class="video-table">
+                                <li class="video-lessons"><h5>Course Content</h5></li>
+                                <li class="video-lessons" id="video1" *ngFor="let video of AllEvents" routerLinkActive="bg-primary">
+                                  <div class="row">
+                                    <div class="col-sm-4">
+                                      <img src="{{video?.image}}" style="width: 100% ;" alt="">
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <div class="p-2"routerLinkActive="text-white">{{video?.title}}</div>
+                                        <div class="p-2"routerLinkActive="text-white">{{video?.description}}</div>
+                                    </div>
+                                  </div>
+                                </li>
+                            </ul>
+                          </div>
+                        </div>
+
+                        <div class="father" *ngIf="valid?.own == true" >
+                          <div class="container-fluid">
+                            <div class="iframe-cont">
+                              <div class="about-video" >
+                                <img src="{{firstEvents?.image}}"  alt="about">
+                                <a href="{{firstEvents?.link}}" class="video-button popup"><i class="flaticon-play"></i></a>
+                            </div>
+                          </div>
+                          </div>
+                          <div class="box2 ">
+                            <ul class="video-table">
+                                <li class="video-lessons"><h5>Course Content</h5></li>
+                                <li class="video-lessons" id="video1" *ngFor="let video of AllEvents" routerLinkActive="bg-primary">
+                                  <a routerLink="/content-single/{{video?.id}}"  routerLinkActive="active">
+                                    <div class="row">
+                                      <div class="col-sm-4">
+                                        <img src="{{video?.image}}" style="width: 100% ;" alt="">
+                                      </div>
+                                      <div class="col-sm-8">
+                                          <div class="p-2"routerLinkActive="text-white">{{video?.title}}</div>
+                                          <div class="p-2"routerLinkActive="text-white">{{video?.description}}</div>
+                                      </div>
+                                    </div>
+                                  </a>
+                                </li>
+                            </ul>
+                          </div>
+                        </div>
+
 
                       </div>
+                      <!-- \\ testmonails  // -->
+                      <!-- \\ testmonails // -->
+
+
                       <div class="tags-area">
                           <ul class="tags">
                               <li>
-                                  <a href="#">Schools</a>
+                                  <a routerLink='/classes'>Classes</a>
                               </li>
+
                               <li>
-                                <button type="submit" routerLink="/classes-index" class="custom-button m-3"><span>Manage Class</span></button>
-                              </li>
-                              <li>
-                                  <a href="#">Admission</a>
-                              </li>
-                              <li>
-                                  <a href="#">Exams</a>
+                                  <a [routerLink]="['/shop']" routerLinkActive="router-link-active" >Shop Now</a>
                               </li>
                           </ul>
                           <ul class="share">
@@ -131,36 +159,28 @@
                           <ul>
                               <li>
                                   <div class="ques cl-i-one"><i class="fas fa-bell"></i>Start Date</div>
-                                  <div class="ans">24 march 2022</div>
+                                  <div class="ans">{{ AllClasses?.date }}</div>
                               </li>
                               <li>
                                   <div class="ques cl-i-two"><i class="fas fa-cla"></i>Years old</div>
-                                  <div class="ans">04 - 06 years</div>
+                                  <div class="ans">{{ AllClasses?.targetAge  }} Years</div>
                               </li>
                               <li>
                                   <div class="ques cl-i-three"><i class="fas fa-sitemap"></i>Class Size</div>
-                                  <div class="ans">20 - 30 kids</div>
-                              </li>
-                              <li>
-                                  <div class="ques cl-i-four"><i class="fas fa-bus"></i>Carry time</div>
-                                  <div class="ans">05 hours / 06 days</div>
+                                  <div class="ans">{{ AllClasses?.size }} kids</div>
                               </li>
                               <li>
                                   <div class="ques cl-i-five"><i class="fas fa-address-book"></i>Class Duration
                                   </div>
-                                  <div class="ans">10 - 12 month</div>
+                                  <div class="ans">{{ AllClasses?.duration }} Days</div>
                               </li>
                               <li>
                                   <div class="ques cl-i-six"><i class="fas fa-clock"></i>Class time</div>
-                                  <div class="ans">09:00am - 12:00pm</div>
-                              </li>
-                              <li>
-                                  <div class="ques cl-i-seven"><i class="fas fa-star"></i>Rating</div>
-                                  <div class="ans cl-i-seven"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                                  <div class="ans">{{ AllClasses?.time }}</div>
                               </li>
                               <li>
                                   <div class="ques cl-i-eight"><i class="fas fa-coins"></i>Tution Fee</div>
-                                  <div class="ans">$2500.00</div>
+                                  <div class="ans">{{ AllClasses?.price }}</div>
                               </li>
                           </ul>
                       </div>
@@ -225,91 +245,9 @@
                           <h5 class="title">Gallery Photos</h5>
                       </div>
                       <div class="widget-body">
-                          <ul>
-                              <li>
-                                  <a href="./assets/images/gallery/gallery7.jpg" class="img-pop">
-                                      <img src="./assets/images/gallery/gallery7.jpg" alt="gallery">
-                                  </a>
-                              </li>
-                              <li>
-                                  <a href="./assets/images/gallery/gallery8.jpg" class="img-pop">
-                                      <img src="./assets/images/gallery/gallery8.jpg" alt="gallery">
-                                  </a>
-                              </li>
-                              <li>
-                                  <a href="./assets/images/gallery/gallery9.jpg" class="img-pop">
-                                      <img src="./assets/images/gallery/gallery9.jpg" alt="gallery">
-                                  </a>
-                              </li>
-                              <li>
-                                  <a href="./assets/images/gallery/gallery10.jpg" class="img-pop">
-                                      <img src="./assets/images/gallery/gallery10.jpg" alt="gallery">
-                                  </a>
-                              </li>
-                              <li>
-                                  <a href="./assets/images/gallery/gallery11.jpg" class="img-pop">
-                                      <img src="./assets/images/gallery/gallery11.jpg" alt="gallery">
-                                  </a>
-                              </li>
-                              <li>
-                                  <a href="./assets/images/gallery/gallery12.jpg" class="img-pop">
-                                      <img src="./assets/images/gallery/gallery12.jpg" alt="gallery">
-                                  </a>
-                              </li>
-                              <li>
-                                  <a href="./assets/images/gallery/gallery8.jpg" class="img-pop">
-                                      <img src="./assets/images/gallery/gallery8.jpg" alt="gallery">
-                                  </a>
-                              </li>
-                              <li>
-                                  <a href="./assets/images/gallery/gallery9.jpg" class="img-pop">
-                                      <img src="./assets/images/gallery/gallery9.jpg" alt="gallery">
-                                  </a>
-                              </li>
-                              <li>
-                                  <a href="./assets/images/gallery/gallery10.jpg" class="img-pop">
-                                      <img src="./assets/images/gallery/gallery10.jpg" alt="gallery">
-                                  </a>
-                              </li>
-                          </ul>
                       </div>
                   </div>
-                  <div class="widget widget-tags">
-                      <div class="widget-header">
-                          <h5 class="title">Popular Tags</h5>
-                      </div>
-                      <div class="widget-body">
-                          <ul class="tags">
-                              <li>
-                                  <a href="#">envato</a>
-                              </li>
-                              <li>
-                                  <a href="#" class="active">themeforest</a>
-                              </li>
-                              <li>
-                                  <a href="#">codecanyon</a>
-                              </li>
-                              <li>
-                                  <a href="#">videohive</a>
-                              </li>
-                              <li>
-                                  <a href="#">audiojungle</a>
-                              </li>
-                              <li>
-                                  <a href="#">3docean</a>
-                              </li>
-                              <li>
-                                  <a href="#">envato</a>
-                              </li>
-                              <li>
-                                  <a href="#">themeforest</a>
-                              </li>
-                              <li>
-                                  <a href="#">codecanyon</a>
-                              </li>
-                          </ul>
-                      </div>
-                  </div>
+
               </aside>
           </div>
       </div>

@@ -25,7 +25,7 @@ import { Event } from '../Models/event';
 
 
   getAlleventCats():Observable<Eventcats[]>{
-    
+
   return this.httpclient.get<Eventcats[]>(`${environment.APIBaseURL}/api/eventcats`);
   }
 

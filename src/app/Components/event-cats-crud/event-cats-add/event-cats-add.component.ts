@@ -46,7 +46,7 @@ export class EventCatsAddComponent implements OnInit {
     this.eventcatsService.addEventCat(this.NewEvent).subscribe(data => {
       console.log(data);
       if (data){
-        this.router.navigate(['/eventcats-index']);
+        this.router.navigate(['/admin/eventcats-index']);
       }
     })
 

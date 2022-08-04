@@ -48,10 +48,22 @@ export class EventsService {
   }
 
 
+  geteventByIDforGuest(claID:number):Observable<any>{
+    return this.httpclient.get<any>(`${environment.APIBaseURL}/api/event/single-event/${claID}`,this.httpOptions);
+  }
+
+
 
 
   usersCount(claID:number):Observable<any>{
     return this.httpclient.get<any>(`${environment.APIBaseURL}/api/event/userscount/${claID}`,this.httpOptions);
+  }
+
+
+
+
+  searchForTeacherByName(newPrd:any):Observable<any>{
+    return this.httpclient.post<any>(`${environment.APIBaseURL}/api/event/search_for_teacher_events/`,JSON.stringify(newPrd),this.httpOptions);  //search for teacher by email
   }
 
 
@@ -116,9 +128,28 @@ export class EventsService {
 
 
 
+// ------------------------------------------------------------------------------
+                                              // (notification)
+
+
+  teacherNotify(newPrd:any):Observable<any>{
+    return this.httpclient.post<any>(`${environment.APIBaseURL}/api/event-notification/create`,
+                                              JSON.stringify(newPrd),
+                                              this.httpOptions)
+                                            }
+
+
+  showNotifyToTeacher():Observable<any>{
+    return this.httpclient.get<any>(`${environment.APIBaseURL}/api/event-notification/show`,this.httpOptions);
+
+  }
 
 
 
+  teacherCheckNotify( id:number ):Observable<any>{
+    return this.httpclient.get<any>(`${environment.APIBaseURL}/api/event-notification/update/${id}`,
+                                              this.httpOptions)
+                                            }
 
 
 

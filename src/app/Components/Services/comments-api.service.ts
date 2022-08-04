@@ -59,7 +59,11 @@ sendComments(newComment:UserComments):Observable<UserComments>{
 
 
 }
+// getjoin(id:number):Observable<UserComments[]>{
+//   return this.httpclient.get<UserComments[]>(`${environment.APIBaseURL}/api/comment/join/${id}`,
+//   this.httpOptions)
 
+// }
 
 }
 

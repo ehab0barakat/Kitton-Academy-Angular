@@ -1,25 +1,26 @@
 <div class="d-flex" >
+  <div class="row">
 
     <ng-container *ngFor="let post of posts " >
       <div class="class-inner col-sm-4"  >
         <div class="event-item">
               <div class="event-humb">
-                  <a routerLink="/single-post/{{post.id}}"><img src="./assets/images/blog/blog03.jpg" alt="post"></a>
+                  <a routerLink="/single-post/{{post.id}}"><img src="{{post.image}}" width="100%" alt="post"></a>
                   <div class="date-tag">
                       <h3 class="title">{{post.title}}</h3>
-    
+
                   </div>
               </div>
               <div class="event-content">
                   <h5 class="title">
                       <a routerLink="/single-post/{{post.id}}">{{post.description}}</a>
                   </h5>
-                  
+
               </div>
           </div>
       </div>
     </ng-container>
-  
   </div>
-  
-  
+
+  </div>
+
