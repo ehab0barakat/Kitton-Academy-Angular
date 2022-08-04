@@ -2,8 +2,10 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { catchError, throwError } from 'rxjs';
+import { ClassesService } from 'src/app/Services/classes.service';
 import { EventsService } from 'src/app/Services/events.service';
 import { environment } from 'src/environments/environment';
+import { ApiPostsService } from '../Services/api-posts.service';
 
 @Component({
   selector: 'app-header',
@@ -12,10 +14,15 @@ import { environment } from 'src/environments/environment';
 })
 export class HeaderComponent implements OnInit {
   httpOptions: { headers: HttpHeaders; };
+  notificationClass: any;
+  notificationPost: any;
 
   constructor( private route:Router,
     private httpclient: HttpClient,
-    private eventservice : EventsService  ) {
+    private eventservice : EventsService,
+    private classService : ClassesService,
+    private PostService : ApiPostsService
+      ) {
 
       this.httpOptions={
         headers:new HttpHeaders({
@@ -43,7 +50,18 @@ export class HeaderComponent implements OnInit {
     this.eventservice.showNotifyToTeacher().subscribe({
         next: data => this.notification =data,
         error: err =>  console.log(err)
-    });
+      });
+      this.classService.showNotifyToTeacher().subscribe({
+          next: data => this.notificationClass =data,
+          error: err =>  console.log(err)
+      });
+
+      this.PostService.showNotifyToTeacher().subscribe({
+          next: data => this.notificationPost =data,
+          error: err =>  console.log(err)
+      });
+
+
 
 
 
@@ -58,6 +76,17 @@ export class HeaderComponent implements OnInit {
 
   check(id:number){
     this.eventservice.teacherCheckNotify(id).subscribe(response=>{
+      console.log(response)
+    });
+  }
+  checkClass(id:number){
+    this.classService.teacherCheckNotify(id).subscribe(response=>{
+      console.log(response)
+    });
+
+  }
+  checkPost(id:number){
+    this.PostService.teacherCheckNotify(id).subscribe(response=>{
       console.log(response)
     });
 

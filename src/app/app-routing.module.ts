@@ -69,6 +69,8 @@ import { ContentArchiveComponent } from './Components/class-content/content-arch
 import { ContentDeleteComponent } from './Components/class-content/content-delete/content-delete.component';
 import { ContentSingleComponent } from './Components/class-content/content-single/content-single.component';
 import { ContentUpdataComponent } from './Components/class-content/content-updata/content-updata.component';
+import { AdminClassControlingComponent } from './Components/Class/admin-class-controling/admin-class-controling.component';
+import { AdminPostControlComponent } from './Components/posts/admin-post-control/admin-post-control.component';
 
 
 
@@ -164,16 +166,17 @@ const routes: Routes = [
   {path:'eventcats-add',component:EventCatsAddComponent},
   {path:'eventcats-update/:id',component:EventCatsUpdateComponent},
   {path:'eventcats-delete/:id',component:EventCatsDeleteComponent},
-  {path: 'classescat-index',component:CrudCatClassComponent},
-  {path: 'classes-index',component:CrudClassComponent},
+  {path:'classescat-index',component:CrudCatClassComponent},
   {path:'classes',component:CatClassComponent},
-  {path : "teachers" , component:TeachersComponent},
+  {path :"teachers" , component:TeachersComponent},
   {path:'post-index',component:PostsComponent},
   {path:'show-post',component:ShowPostComponent},
   {path:'single-post/:id',component:SinglePostComponent},
   {path:'edit-profile',component:EditProfileComponent},
   {path: 'classes/:id',component:DetailsClassComponent},
 
+  {path: 'classes-index',component:AdminClassControlingComponent},
+  {path : "post-control" , component: AdminPostControlComponent},
 
 ]},
 

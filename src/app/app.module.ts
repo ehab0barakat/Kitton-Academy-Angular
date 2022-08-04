@@ -93,6 +93,8 @@ import { ContentUpdataComponent } from './Components/class-content/content-updat
 import { ContentDeleteComponent } from './Components/class-content/content-delete/content-delete.component';
 import { ContentIndexComponent } from './Components/class-content/content-index/content-index.component';
 import { ContentSingleComponent } from './Components/class-content/content-single/content-single.component';
+import { AdminClassControlingComponent } from './Components/Class/admin-class-controling/admin-class-controling.component';
+import { AdminPostControlComponent } from './Components/posts/admin-post-control/admin-post-control.component';
 
 @NgModule({
   declarations: [
@@ -191,7 +193,9 @@ import { ContentSingleComponent } from './Components/class-content/content-singl
     ContentUpdataComponent,
     ContentDeleteComponent,
     ContentIndexComponent,
-    ContentSingleComponent
+    ContentSingleComponent,
+    AdminClassControlingComponent,
+    AdminPostControlComponent
   ],
   imports: [
     BrowserModule,
@@ -201,7 +205,9 @@ import { ContentSingleComponent } from './Components/class-content/content-singl
     HttpClientModule,
     CommonModule,
     FormsModule,
-    NgxDropzoneModule
+    NgxDropzoneModule,
+    BrowserModule,
+
 
 
   ],

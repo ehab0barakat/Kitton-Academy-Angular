@@ -11,10 +11,10 @@ export class PostsComponent implements OnInit {
 posts:Posts[]=[];
   constructor(private postApiService:ApiPostsService ) { }
 
-  
+
 
   ngOnInit(): void {
-    this.postApiService.getAllPosts().subscribe(response=>{
+    this.postApiService.getactiveposts().subscribe(response=>{
       this.posts=response;
       // console.log(this.posts);
     });

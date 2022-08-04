@@ -44,7 +44,6 @@ export class DetailsClassComponent implements OnInit {
 
     this.ClassContent.GetAllVideosForThisClass(this.selected).subscribe(response=>{
       this.AllEvents=response ;
-      console.log(this.AllEvents)
       this.firstEvents =this.AllEvents[0]
     })
 

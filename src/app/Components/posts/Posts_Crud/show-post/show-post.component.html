@@ -3,9 +3,10 @@
     <thead>
       <tr>
         <th scope="col">#</th>
+        <th scope="col"></th>
         <th scope="col">title</th>
-        <!-- <th scope="col">is active</th> -->
-        <th scope="col">description</th>
+        <th scope="col">is active</th>
+        <!-- <th scope="col">description</th> -->
         <!-- <th scope="col">image</th> -->
         <!-- <th scope="col"> teacher id </th> -->
         <th scope="col"> Update </th>
@@ -19,14 +20,14 @@
       <tr *ngFor="let post of posts   ;  let i =index" >
         <th scope="row">{{i+1}}</th>
         <!-- go to single page -->
-        <!-- <td><a routerLink="/post/{{post.id}}"> View Post</a></td> -->
+        <td><a routerLink="/post/{{post.id}}"> View Post</a></td>
         <td>{{post.title}}</td>
-<!-- 
+
 
         <td *ngIf="post.isActive== 0"><i class="fa-solid fa-x fs-2 text-danger "></i></td>
+        <td *ngIf="post.isActive== 1"><i class="fa-solid fa-check fs-2 text-success "></i></td>
 
-        <td *ngIf="post.isActive== 1"><i class="fa-solid fa-check fs-2 text-success "></i></td> -->
-        <td>{{post.description}}</td>
+        <!-- <td>{{post.description}}</td> -->
 
         <!-- <td>{{post.teacher_id}}</td> -->
 

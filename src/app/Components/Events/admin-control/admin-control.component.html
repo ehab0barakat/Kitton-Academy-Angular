@@ -22,7 +22,7 @@
       <th scope="col"></th>
       <th scope="col">name</th>
       <th scope="col">is Active</th>
-      <th scope="col"></th>
+      <!-- <th scope="col"></th> -->
       <th scope="col"></th>
       <th scope="col"></th>
     </tr>
@@ -33,10 +33,10 @@
       <th scope="row">{{i+1}}</th>
       <td><a routerLink="event/{{item.id}}"> View Event</a></td>
       <td>{{item.title}}</td>
-
+<!--
       <td *ngIf="item.isActive== 0"><i class="fa-solid fa-x fs-2 text-danger "></i></td>
       <td *ngIf="item.isActive== 1"><i class="fa-solid fa-check fs-2 text-success "></i></td>
-
+ -->
 
       <td>
         <div class="form-check form-switch">

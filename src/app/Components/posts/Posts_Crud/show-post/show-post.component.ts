@@ -25,7 +25,7 @@ export class ShowPostComponent implements OnInit {
           this.router.navigate(['/not-auth']);
         }
         else{
-          this.postApiService.getAllPosts().subscribe(response=>{
+          this.postApiService.AllteacherPosts().subscribe(response=>{
             this.posts=response;
             // console.log(this.posts);
           });
@@ -34,7 +34,7 @@ export class ShowPostComponent implements OnInit {
         if(this.auth != 2){
           this.router.navigate(['/not-auth']);
         }
-    
+
 
   }
 
