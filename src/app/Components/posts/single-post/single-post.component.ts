@@ -27,6 +27,7 @@ export class SinglePostComponent implements OnInit {
   auth:any = localStorage.getItem("role");
   id:number =0;
   likestatus:any;
+  numberOfLikes:any=0;
   constructor(private activatedRoute:ActivatedRoute, private postApiService:ApiPostsService,
     private router:Router,
     private commentApiService:CommentsApiService, private authService:AuthService,
@@ -38,6 +39,15 @@ export class SinglePostComponent implements OnInit {
   post = Number(this.activatedRoute.snapshot.paramMap.get("id"));
 
   ngOnInit(): void {
+
+    // this.commentApiService.getjoin(this.post).subscribe(res=>{
+    //   console.log(res);
+      
+    // })
+    this.userLikeService.getAllLikes(this.post).subscribe(res=>{
+     this.numberOfLikes=res
+      //  console.log(this.numberOfLikes);
+    })
 
     if(this.auth == 3){
       this.router.navigate([`/admin/single-post/${this.post}`])
@@ -82,15 +92,29 @@ this.authService.Auth().subscribe(response=>{
 
 }
 // user add comments
-send_comment(postId:any,userId:any){
+send_comment(postId:any,userId:any,userName:any){
   if(this.data.role==1){
   this.userComment.user_id=userId;
   this.userComment.post_id=postId;
+  this.userComment.name=userName;
 this.commentApiService.sendComments(this.userComment).subscribe(response=>{
-  console.log(this.userComment);
+  console.log(this.userComment.name);
+  console.log(this.userComment.comment);
 
   if(response){
-  //  this.router.navigate([`/single-posts/${this.userComment.post_id}`]);
+    this.userComment.name=" ";
+    this.userComment.comment=" ";
+
+    this.commentApiService.getComments().subscribe(response=>{
+      this.allcoments=response;
+      console.log(this.allcoments[0].post_id);
+
+
+    })
+
+    
+  //  this.router.navigate([`/single-post/${this.singlePost?.id}`]);
+ 
 
   }
 })
@@ -98,16 +122,30 @@ this.commentApiService.sendComments(this.userComment).subscribe(response=>{
 }
 
 // teacher add comments
-teacherSend_comment(postId:any,teacherId:any){
+teacherSend_comment(postId:any,teacherId:any,teacherName:any){
   this.teaherComment.post_id=postId;
-
+  this.teaherComment.name=teacherName;
   this.teaherComment.teacher_id=teacherId
   if(this.data.role==2){
 
     // teacher send comments
-  ;
+  
    this.commentApiService.teacherSendComments(this.teaherComment).subscribe(response=>{
     console.log(this.teaherComment);
+    if(response){
+
+      this.teaherComment.name=" ";
+    this.teaherComment.comment=" ";
+
+    this.commentApiService.getTeacherComments().subscribe(res=>{
+      this.allteachercoments=res;
+    
+     })
+    }
+    // this.router.navigate(['single-post/:singlePost.id'])
+    // .then(() => {
+    //   window.location.reload();
+    // });
 
    })
 
@@ -127,6 +165,11 @@ if(this.likestatus.liked==true)
   this.likestatus.liked=!this.likestatus.liked;
 
 this.userLikeService.deletelike(this.userLikes.post_id).subscribe(res=>{
+  this.userLikeService.getAllLikes(this.post).subscribe(res=>{
+    this.numberOfLikes=res
+     //  console.log(this.numberOfLikes);
+   })
+
   console.log(res);
 
 })
@@ -137,6 +180,11 @@ else{
   this.userLikeService.addlike(this.userLikes).subscribe(res=>{
 
     console.log(res);
+    this.userLikeService.getAllLikes(this.post).subscribe(res=>{
+      this.numberOfLikes=res
+       //  console.log(this.numberOfLikes);
+     })
+ 
 
 
 
@@ -147,7 +195,9 @@ else{
 }
 
 
+
 }
+
 
 
 

@@ -43,7 +43,19 @@ export class UserlikesApiService {
 deletelike(id:number):Observable<UserLikes>{
   return this.httpclient.delete<UserLikes>(`${environment.APIBaseURL}/api/likes/${id}`,
                                             
-                            this.httpOptions)
-                                          }
+                                                                     this.httpOptions)
+}
+
+
+
+  
+// get count of likes 
+getAllLikes(id:number):Observable<UserLikes[]>{
+  return this.httpclient.get<UserLikes[]>(`${environment.APIBaseURL}/api/likes/countlikes/${id}`,
+  this.httpOptions)
 
 }
+
+
+}
+
