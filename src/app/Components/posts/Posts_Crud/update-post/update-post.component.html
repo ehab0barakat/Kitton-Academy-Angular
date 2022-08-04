@@ -1,14 +1,24 @@
+<h5 class="text-center mt-3 text-success">Edit Post</h5>
+
+
+      <div class="d-flex justify-content-center mt-3">
+        
+        <img [src]="showpost.image" alt="post image" width="100px" height="100px" srcset="">
+
+      </div>
 <div class="container mb-5">
+  
     <form  #postForm="ngForm" (ngSubmit)="EditPost()" #f="ngForm" >
   
   
       <div class="mb-3">
         <label for="postTitle" class="form-label">Title</label>
-        <input type="text" class="form-control" id="postTitle" [ngModelOptions]="{standalone:true}"    [(ngModel)]="editPost.title">
+        <input type="text" class="form-control" id="postTitle" [ngModelOptions]="{standalone:true}"    [(ngModel)]=" showpost.title">
       </div>
   
-
+      
       <div class="terminal">
+        <label for="PostImg" class="form-label">Post Image</label>
         <ngx-dropzone (change)="onSelect($event)" style="margin: 20px;">
           <ngx-dropzone-label>Drop it, baby!</ngx-dropzone-label>
           <ngx-dropzone-image-preview
@@ -22,19 +32,16 @@
           </ngx-dropzone-image-preview>
         </ngx-dropzone>
       </div>
-      <!-- <div class="mb-3">
-        <label for="postImg" class="form-label">image</label>
-        <input type="file"  class="form-control" value="1" id="postImg" [ngModelOptions]="{standalone:true}"  [(ngModel)]="editPost.image" >
-      </div> -->
+  
   
       <div class="mb-3">
         <label for="postDesc" class="form-label">Description</label>
-        <input type="text" class="form-control" id="postDesc" [ngModelOptions]="{standalone:true}" [(ngModel)]="editPost.description" >
+        <input type="text" class="form-control" id="postDesc" [ngModelOptions]="{standalone:true}" [(ngModel)]=" showpost.description" >
       </div>
   
      <div class="mb-3">
         <label for="teacherID" class="form-label">teacher id</label>
-        <input type="number"  class="form-control" disabled="true" id="teacherID" [ngModelOptions]="{standalone:true}"  [(ngModel)]="editPost.teacher_id" >
+        <input type="number"  class="form-control" disabled="true" id="teacherID" [ngModelOptions]="{standalone:true}"  [(ngModel)]=" showpost.teacher_id" >
       </div> 
   
   

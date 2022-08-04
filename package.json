@@ -21,6 +21,7 @@
     "@fortawesome/angular-fontawesome": "^0.11.1",
     "@fortawesome/fontawesome-svg-core": "^6.1.2",
     "@fortawesome/free-solid-svg-icons": "^6.1.2",
+    "animate.css": "^4.1.1",
     "bootstrap-icons": "^1.9.1",
     "json-server": "^0.17.0",
     "mdb-ui-kit": "^4.3.0",

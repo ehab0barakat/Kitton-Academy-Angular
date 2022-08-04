@@ -38,7 +38,6 @@ import { DeleteClassComponent } from './Components/Class/crud-class/delete-class
 import { CatClassComponent } from './Components/Class/cat-class/cat-class.component';
 import { FilteredClassComponent } from './Components/Class/filtered-class/filtered-class.component';
 import { UpdatePostComponent } from './Components/posts/Posts_Crud/update-post/update-post.component';
-import { AddPostComponent } from './Components/posts/Posts_Crud/add-post/add-post.component';
 import { DeletePostComponent } from './Components/posts/Posts_Crud/delete-post/delete-post.component';
 import { ShowPostComponent } from './Components/posts/Posts_Crud/show-post/show-post.component';
 // import { ClassDetailsComponent } from './Components/class-details/class-details.component';
@@ -131,7 +130,6 @@ import { ContentSingleComponent } from './Components/class-content/content-singl
     DetailsClassComponent,
     EventDeleteComponent,
     UpdatePostComponent,
-    AddPostComponent,
     DeletePostComponent,
     ShowPostComponent,
     // ProductComponent,
