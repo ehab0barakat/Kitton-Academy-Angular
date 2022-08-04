@@ -63,6 +63,12 @@ import { AdminHeaderComponent } from './Components/admin_view/admin-header/admin
 import { DashboardComponent } from './Components/admin_view/dashboard/dashboard.component';
 import { AdminMainLayoutComponent } from './Components/admin_view/admin-main-layout/admin-main-layout.component';
 import { SlachAdminComponent } from './Components/slach-admin/slach-admin.component';
+import { AddComponent } from './Components/class-content/add/add.component';
+import { ContentIndexComponent } from './Components/class-content/content-index/content-index.component';
+import { ContentArchiveComponent } from './Components/class-content/content-archive/content-archive.component';
+import { ContentDeleteComponent } from './Components/class-content/content-delete/content-delete.component';
+import { ContentSingleComponent } from './Components/class-content/content-single/content-single.component';
+import { ContentUpdataComponent } from './Components/class-content/content-updata/content-updata.component';
 
 
 
@@ -128,6 +134,16 @@ const routes: Routes = [
   {path:'productDetails/:id',component:ProductDetailsComponent},
   {path:'productDetails',component:ProductDetailsComponent},
   {path:'slachAdmin',component:SlachAdminComponent},
+
+  {path: 'classes-index',component:CrudClassComponent},
+
+  {path:'content-add/:id',component:AddComponent}, //id of class itself
+  {path:'content-index/:id',component:ContentIndexComponent}, //id of class itself
+  {path:'content-archive/:id',component:ContentArchiveComponent}, //id of class itself
+
+  {path:'content-update/:id',component:ContentUpdataComponent}, //id of video
+  {path:'content-delete/:id',component:ContentDeleteComponent}, //id of video
+  {path:'content-single/:id',component:ContentSingleComponent}, //id of video
 
   // -------------------------------------------------//
 

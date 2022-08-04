@@ -12,21 +12,28 @@ export class ClassesService {
     this.httpOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
+        "Authorization": `Bearer ${localStorage.getItem('token')}`,
+
       }),
     };
   }
 
   getAllclass(): Observable<classes[]> {
-    return this.httpclient.get<classes[]>(`${environment.APIBaseURL}/classes`);
+    return this.httpclient.get<classes[]>(`${environment.APIBaseURL}/classes`, this.httpOptions);
+  }
+
+
+  GetTeachersClasses(): Observable<classes[]> {
+    return this.httpclient.get<classes[]>(`${environment.APIBaseURL}/api/teachers-classes`, this.httpOptions);
   }
 
   getClassByID(cal:number):Observable<classes>{
-    return this.httpclient.get<classes>(`${environment.APIBaseURL}/classes/${cal}`);
+    return this.httpclient.get<classes>(`${environment.APIBaseURL}api/classes/${cal}`);
   }
 
 
   getAll(): Observable<classes[]> {
-    return this.httpclient.get<classes[]>(`${environment.APIBaseURL}/api/classes`)
+    return this.httpclient.get<classes[]>(`${environment.APIBaseURL}/api/classes`, this.httpOptions)
     .pipe(
       catchError(this.errorHandler)
     )

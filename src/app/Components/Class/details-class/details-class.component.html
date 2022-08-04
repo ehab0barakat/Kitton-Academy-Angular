@@ -6,12 +6,12 @@
               <div class="class-single-item">
                   <div class="class-single-inner " >
                       <div class="class-single-thumb" >
-                          <img [src]="AllClasses.image " alt="class">
+                          <img [src]="AllClasses?.image " alt="class">
                       </div>
                       <div class="class-single-content">
                           <ul class="meta-post">
                               <li>
-                                  <a href="#"><i class="far fa-cla"></i> Class Name : {{AllClasses.name}}</a>
+                                  <a href="#"><i class="far fa-cla"></i> Class Name : {{AllClasses?.name}}</a>
                               </li>
                               <li>
                                   <a href="#"><i class="far fa-heart"></i>124 Likes</a>
@@ -20,7 +20,7 @@
                                   <a href="#"><i class="far fa-comments"></i>09 Comments</a>
                               </li>
                           </ul>
-                          <button type="submit" routerLink="/checkout/{{AllClasses.id}}" click="add()" class="custom-button m-3"><span>Buy Now</span></button>
+                          <button type="submit" routerLink="/checkout/{{AllClasses?.id}}" click="add()" class="custom-button m-3"><span>Buy Now</span></button>
                           <p>
                               Serenity hassr taken posseson of my entire soung like these sweet mornngs sprng whch
                               enjoy with
@@ -38,7 +38,7 @@
                           </p>
                           <blockquote class="single-quote">
                               <div class="quotes">
-                                 {{AllClasses.description}}
+                                 {{AllClasses?.description}}
                                   <span>...Melissa Hunter</span>
                               </div>
                           </blockquote>
@@ -59,9 +59,68 @@
                               these sweet present moment and yet feel that never was greater artst
                           </p>
 
-                          <div _ngcontent-act-c55="" class="about-video mr-lg-4"><img _ngcontent-act-c55="" src="assets/images/about/about01.jpg" alt="about"><a _ngcontent-act-c55="" href="https://www.youtube.com/embed/6E9J8biF8RE" class="video-button popup"><i _ngcontent-act-c55="" class="flaticon-play"></i></a></div>
+                        <div class="father" *ngIf="valid?.own != true" >
+                          <div class="container-fluid">
+                            <div class="iframe-cont">
+                              <div class="about-video" >
+                                <img src="{{firstEvents?.image}}"  alt="about">
+                                <a href="{{firstEvents?.link}}" class="video-button popup"><i class="flaticon-play"></i></a>
+                            </div>
+                          </div>
+                          </div>
+                          <div class="box2 ">
+                            <ul class="video-table">
+                                <li class="video-lessons"><h5>Course Content</h5></li>
+                                <li class="video-lessons" id="video1" *ngFor="let video of AllEvents" routerLinkActive="bg-primary">
+                                  <div class="row">
+                                    <div class="col-sm-4">
+                                      <img src="{{video?.image}}" style="width: 100% ;" alt="">
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <div class="p-2"routerLinkActive="text-white">{{video?.title}}</div>
+                                        <div class="p-2"routerLinkActive="text-white">{{video?.description}}</div>
+                                    </div>
+                                  </div>
+                                </li>
+                            </ul>
+                          </div>
+                        </div>
+
+                        <div class="father" *ngIf="valid?.own == true" >
+                          <div class="container-fluid">
+                            <div class="iframe-cont">
+                              <div class="about-video" >
+                                <img src="{{firstEvents?.image}}"  alt="about">
+                                <a href="{{firstEvents?.link}}" class="video-button popup"><i class="flaticon-play"></i></a>
+                            </div>
+                          </div>
+                          </div>
+                          <div class="box2 ">
+                            <ul class="video-table">
+                                <li class="video-lessons"><h5>Course Content</h5></li>
+                                <li class="video-lessons" id="video1" *ngFor="let video of AllEvents" routerLinkActive="bg-primary">
+                                  <a routerLink="/content-single/{{video?.id}}"  routerLinkActive="active">
+                                    <div class="row">
+                                      <div class="col-sm-4">
+                                        <img src="{{video?.image}}" style="width: 100% ;" alt="">
+                                      </div>
+                                      <div class="col-sm-8">
+                                          <div class="p-2"routerLinkActive="text-white">{{video?.title}}</div>
+                                          <div class="p-2"routerLinkActive="text-white">{{video?.description}}</div>
+                                      </div>
+                                    </div>
+                                  </a>
+                                </li>
+                            </ul>
+                          </div>
+                        </div>
+
 
                       </div>
+                      <!-- \\ testmonails  // -->
+                      <!-- \\ testmonails // -->
+
+
                       <div class="tags-area">
                           <ul class="tags">
                               <li>
@@ -100,28 +159,28 @@
                           <ul>
                               <li>
                                   <div class="ques cl-i-one"><i class="fas fa-bell"></i>Start Date</div>
-                                  <div class="ans">{{ AllClasses.date }}</div>
+                                  <div class="ans">{{ AllClasses?.date }}</div>
                               </li>
                               <li>
                                   <div class="ques cl-i-two"><i class="fas fa-cla"></i>Years old</div>
-                                  <div class="ans">{{ AllClasses.targetAge  }} Years</div>
+                                  <div class="ans">{{ AllClasses?.targetAge  }} Years</div>
                               </li>
                               <li>
                                   <div class="ques cl-i-three"><i class="fas fa-sitemap"></i>Class Size</div>
-                                  <div class="ans">{{ AllClasses.size }} kids</div>
+                                  <div class="ans">{{ AllClasses?.size }} kids</div>
                               </li>
                               <li>
                                   <div class="ques cl-i-five"><i class="fas fa-address-book"></i>Class Duration
                                   </div>
-                                  <div class="ans">{{ AllClasses.duration }} Days</div>
+                                  <div class="ans">{{ AllClasses?.duration }} Days</div>
                               </li>
                               <li>
                                   <div class="ques cl-i-six"><i class="fas fa-clock"></i>Class time</div>
-                                  <div class="ans">{{ AllClasses.time }}</div>
+                                  <div class="ans">{{ AllClasses?.time }}</div>
                               </li>
                               <li>
                                   <div class="ques cl-i-eight"><i class="fas fa-coins"></i>Tution Fee</div>
-                                  <div class="ans">{{ AllClasses.price }}</div>
+                                  <div class="ans">{{ AllClasses?.price }}</div>
                               </li>
                           </ul>
                       </div>
@@ -186,53 +245,6 @@
                           <h5 class="title">Gallery Photos</h5>
                       </div>
                       <div class="widget-body">
-                          <ul>
-                              <!-- <li>
-                                  <a href="http://labartisan.net/demo/kitton/assets/images/gallery/gallery7.jpg" class="img-pop">
-                                      <img src="./assets/images/gallery/gallery7.jpg" alt="gallery">
-                                  </a>
-                              </li>
-                              <li>
-                                  <a href="./assets/images/gallery/gallery8.jpg" class="img-pop">
-                                      <img src="./assets/images/gallery/gallery8.jpg" alt="gallery">
-                                  </a>
-                              </li>
-                              <li>
-                                  <a href="./assets/images/gallery/gallery9.jpg" class="img-pop">
-                                      <img src="./assets/images/gallery/gallery9.jpg" alt="gallery">
-                                  </a>
-                              </li>
-                              <li>
-                                  <a href="/src/assets/images/gellary/gallery10.jpg" class="img-pop">
-                                      <img src="/src/assets/images/gellary/gallery10.jpg" alt="gallery">
-                                  </a>
-                              </li>
-                              <li>
-                                  <a href="./assets/images/gallery/gallery11.jpg" class="img-pop">
-                                      <img src="./assets/images/gallery/gallery11.jpg" alt="gallery">
-                                  </a>
-                              </li>
-                              <li>
-                                  <a href="./assets/images/gallery/gallery12.jpg" class="img-pop">
-                                      <img src="./assets/images/gallery/gallery12.jpg" alt="gallery">
-                                  </a>
-                              </li>
-                              <li>
-                                  <a href="./assets/images/gallery/gallery8.jpg" class="img-pop">
-                                      <img src="./assets/images/gallery/gallery8.jpg" alt="gallery">
-                                  </a>
-                              </li>
-                              <li>
-                                  <a href="./assets/images/gallery/gallery9.jpg" class="img-pop">
-                                      <img src="./assets/images/gallery/gallery9.jpg" alt="gallery">
-                                  </a>
-                              </li>
-                              <li>
-                                  <a href="./assets/images/gallery/gallery10.jpg" class="img-pop">
-                                      <img src="./assets/images/gallery/gallery10.jpg" alt="gallery">
-                                  </a>
-                              </li> -->
-                          </ul>
                       </div>
                   </div>
 

@@ -76,11 +76,16 @@
           </li>
           <li class="menu-item-has-children">
             <a routerLink="/classes"><i class="fas fa-book"></i>Classes</a>
-            <ul class="submenu">
+
+            <ul class="submenu" *ngIf="userData?.role==2" >
               <li>
-                <a routerLink="/classes">Classes</a>
+                <a routerLink="/classes-index">My Classes</a>
+              </li>
+              <li>
+                <a routerLink="/classes-add">Add Classes</a>
               </li>
             </ul>
+
           </li>
 
 

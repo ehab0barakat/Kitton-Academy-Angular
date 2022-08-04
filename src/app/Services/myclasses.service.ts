@@ -14,8 +14,7 @@ export class MyclassesService {
     this.httpOptions={
       headers:new HttpHeaders({
         'Content-Type': 'application/json' ,
-
-
+        "Authorization": `Bearer ${localStorage.getItem('token')}`,
     })
 
   }}
@@ -29,7 +28,11 @@ export class MyclassesService {
                                               this.httpOptions)
                                             }
 
-  // getMyClasses(): Observable<classes[]> {
-  //   return this.httpClient.get<classes[]>(`${environment.APIBaseURL}/api/myclasses`)
-  // }
+  user_own_class_check(id:number): Observable<any> {
+    return this.httpClient.get<any>(`${environment.APIBaseURL}/api/myclasses/user-class-owner-check/${id}`,this.httpOptions)
+  }
+
+  user_own_video_check(id:number): Observable<any> {
+    return this.httpClient.get<any>(`${environment.APIBaseURL}/api/myclasses/user-video-owner-check/${id}`,this.httpOptions)
+  }
 }
