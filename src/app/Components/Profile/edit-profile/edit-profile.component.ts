@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { AuthService } from 'src/app/Services/auth.service';
 import { NormaluserApiService } from 'src/app/Services/normaluser-api.service';
 import { TeacherService } from 'src/app/Services/teacher.service';
+import { UploadService } from 'src/app/Services/upload.service';
 
 @Component({
   selector: 'app-edit-profile',
@@ -11,8 +12,9 @@ import { TeacherService } from 'src/app/Services/teacher.service';
 })
 export class EditProfileComponent implements OnInit {
 data:any;
+  image: any;
   constructor(private authService:AuthService,private normalUserApi:NormaluserApiService,
-    private router:Router, private teacherService:TeacherService) { }
+    private router:Router, private teacherService:TeacherService,private _uploadService: UploadService) { }
 
   ngOnInit(): void {
 
@@ -25,12 +27,47 @@ this.authService.Auth().subscribe(response=>{
 
   }
 
+  files: File[] = [];
 
+  onSelect(event:any) {
+    console.log(event);
+    this.files.push(...event.addedFiles);
+    this.onUpload();
+  }
 
+  onRemove(event:any) {
+    console.log(event);
+    this.files.splice(this.files.indexOf(event), 1);
+  }
+
+  onUpload() {
+    //Scape empty array
+    if (!this.files[0]) {
+      alert('Please upload an image first.');
+    }
+
+    //Upload my image to cloudinary
+    const file_data = this.files[0];
+    const data = new FormData();
+    data.append('file', file_data);
+    data.append('upload_preset', 'ml_default');
+    data.append('cloud_name', 'el-safwa');
+
+    this._uploadService.uploadImage(data).subscribe((response) => {
+      if (response) {
+        this.image = response
+        console.log(response.secure_url);
+      }
+    });
+
+   }
+
+  //  user update profile
   update(){
+if(this.data.role==1)
+{
 
-
-
+  this.data.image=this.image.secure_url
     this.normalUserApi.editProfile(this.data,this.data.id).subscribe(res=>{
       
 
@@ -43,6 +80,8 @@ this.authService.Auth().subscribe(response=>{
     }
 
       )
+}
+    
 
 
   }
@@ -50,6 +89,8 @@ this.authService.Auth().subscribe(response=>{
 
   // teacher  update
   teacherUpdate(){
+    this.data.image=this.image.secure_url
+
     this.teacherService.editProfile(this.data,this.data.id).subscribe(res=>{
 
       if(res){

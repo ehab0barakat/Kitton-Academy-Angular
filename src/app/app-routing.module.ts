@@ -89,7 +89,7 @@ const routes: Routes = [
   {path:'add-post',component:AddPostComponent},
   {path:'single-post/:id',component:SinglePostComponent},
   {path:'update-post/:id',component:UpdatePostComponent},
-  // {path:'posting',component:AddPostComponent},
+  
   {path:'posting',component:PostingComponent},
   {path:'delete-post/:id',component:DeletePostComponent},
   {path:'contact_us',component:ContactUsComponent},

@@ -13,10 +13,25 @@
         <input #PostTitleInput="ngModel"  type="text"
         class="form-control" name="PostTitle" id="PostTitle" [ngModelOptions]="{standalone:true}" [(ngModel)]="NewPost.title" >
     </div>
-    <div class="mb-3">
+
+    <div class="terminal">
+      <ngx-dropzone (change)="onSelect($event)" style="margin: 20px;">
+        <ngx-dropzone-label>Drop it, baby!</ngx-dropzone-label>
+        <ngx-dropzone-image-preview
+          ngProjectAs="ngx-dropzone-preview"
+          *ngFor="let f of files"
+          [file]="f"
+          [removable]="true"
+          (removed)="onRemove(f)"
+        >
+          <ngx-dropzone-label> ({{ f.type }})</ngx-dropzone-label>
+        </ngx-dropzone-image-preview>
+      </ngx-dropzone>
+    </div>
+    <!-- <div class="mb-3">
         <label for="PostImg" class="form-label">image</label>
         <input type="file"  class="form-control"  id="PostImg" [ngModelOptions]="{standalone:true}" [(ngModel)]="NewPost.image" >
-      </div>
+      </div> -->
 
 
     <div class="mb-3">
