@@ -71,6 +71,7 @@ import { ContentSingleComponent } from './Components/class-content/content-singl
 import { ContentUpdataComponent } from './Components/class-content/content-updata/content-updata.component';
 import { AdminClassControlingComponent } from './Components/Class/admin-class-controling/admin-class-controling.component';
 import { AdminPostControlComponent } from './Components/posts/admin-post-control/admin-post-control.component';
+import { PaymentComponent } from './Components/payment/payment.component';
 
 
 
@@ -97,7 +98,7 @@ const routes: Routes = [
   {path:'add-post',component:AddPostComponent},
   {path:'single-post/:id',component:SinglePostComponent},
   {path:'update-post/:id',component:UpdatePostComponent},
-  
+
   {path:'posting',component:PostingComponent},
   {path:'delete-post/:id',component:DeletePostComponent},
   {path:'contact_us',component:ContactUsComponent},
@@ -136,6 +137,7 @@ const routes: Routes = [
   {path:'productDetails/:id',component:ProductDetailsComponent},
   {path:'productDetails',component:ProductDetailsComponent},
   {path:'slachAdmin',component:SlachAdminComponent},
+  {path:'payment/:id',component:PaymentComponent},
 
   {path: 'classes-index',component:CrudClassComponent},
 
@@ -174,7 +176,6 @@ const routes: Routes = [
   {path:'single-post/:id',component:SinglePostComponent},
   {path:'edit-profile',component:EditProfileComponent},
   {path: 'classes/:id',component:DetailsClassComponent},
-
   {path: 'classes-index',component:AdminClassControlingComponent},
   {path : "post-control" , component: AdminPostControlComponent},
 

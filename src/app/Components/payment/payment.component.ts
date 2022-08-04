@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-payment',
@@ -6,10 +7,68 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./payment.component.css']
 })
 export class PaymentComponent implements OnInit {
+name:any;
+  cardID:any;
+  expirDate:any;
+  securityCode:any;
 
-  constructor() { }
+  constructor(private router:Router,
+    private activatedRoute : ActivatedRoute,) { }
 
+  classId = Number(this.activatedRoute.snapshot.paramMap.get("id")) ;
   ngOnInit(): void {
+
+
+//     if (location.href.indexOf('reload')==-1)
+// {
+//    location.href=location.href+'?reload';
+// }
+
+
+  }
+
+  keyFunc(x:any,type:string) { // appending the updated value to the variable
+   if(type=='name'){
+    this.name = x.target.value;
+    console.log(this.name)
+   }else if(type=='card'){
+    this.cardID = x.target.value;
+    console.log(this.cardID)
+   }else if(type=='expire'){
+    this.expirDate = x.target.value;
+    console.log(this.expirDate)
+   }else{
+    this.securityCode = x.target.value;
+    console.log(this.securityCode)
+   }
+  }
+
+
+  pay(){
+
+    if(this.name==undefined  || this.expirDate==undefined || this.securityCode==undefined){
+   console.log("PLEASE ADD ALL DATA",localStorage.getItem('cardnumber'));
+
+    }else if(this.cardID==undefined){
+      console.log("PLEASE card",localStorage.getItem('cardnumber'));
+      this.cardID=localStorage.getItem('cardnumber');
+      console.log('ALL DATA From CARD STRORAGE',`${this.name}  ${this.cardID}  ${this.expirDate}  ${this.securityCode}`);
+      alert("SUCCEED")
+    }
+
+    else{
+      console.log('ALL DATA',`${this.name}  ${this.cardID}  ${this.expirDate}  ${this.securityCode}`);
+      alert("SUCCEED")
+
+
+
+      // here the code of adding to myclass //
+
+
+
+      
+    }
   }
 
 }
+
