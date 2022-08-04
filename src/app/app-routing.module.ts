@@ -69,6 +69,7 @@ import { ContentArchiveComponent } from './Components/class-content/content-arch
 import { ContentDeleteComponent } from './Components/class-content/content-delete/content-delete.component';
 import { ContentSingleComponent } from './Components/class-content/content-single/content-single.component';
 import { ContentUpdataComponent } from './Components/class-content/content-updata/content-updata.component';
+import { PaymentComponent } from './Components/payment/payment.component';
 
 
 
@@ -134,6 +135,7 @@ const routes: Routes = [
   {path:'productDetails/:id',component:ProductDetailsComponent},
   {path:'productDetails',component:ProductDetailsComponent},
   {path:'slachAdmin',component:SlachAdminComponent},
+  {path:'payment',component:PaymentComponent},
 
   {path: 'classes-index',component:CrudClassComponent},
 
