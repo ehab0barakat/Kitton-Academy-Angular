@@ -22,9 +22,9 @@ export class MyclassesService {
     return this.httpClient.get<classes[]>(`${environment.APIBaseURL}/api/myclasses/${id}`,this.httpOptions);
 
   }
-  storemyclasses(newPrd:classes):Observable<classes>{
-    return this.httpClient.post<classes>(`${environment.APIBaseURL}/api/myclasses`,
-                                              JSON.stringify(newPrd),
+  storemyclasses(data:any):Observable<classes>{
+    return this.httpClient.post<any>(`${environment.APIBaseURL}/api/myclasses`,
+                                              JSON.stringify(data),
                                               this.httpOptions)
                                             }
 

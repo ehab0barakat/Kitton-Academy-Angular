@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { MyclassesService } from 'src/app/Services/myclasses.service';
 
 @Component({
   selector: 'app-payment',
@@ -13,7 +14,8 @@ name:any;
   securityCode:any;
 
   constructor(private router:Router,
-    private activatedRoute : ActivatedRoute,) { }
+    private activatedRoute : ActivatedRoute,
+    private myClass : MyclassesService) { }
 
   classId = Number(this.activatedRoute.snapshot.paramMap.get("id")) ;
   ngOnInit(): void {
@@ -62,11 +64,12 @@ name:any;
 
 
 
-      // here the code of adding to myclass //
+      this.myClass.storemyclasses({"class_id": this.classId}).subscribe(data => {
+        console.log(data) ;
+      });
 
 
 
-      
     }
   }
 
