@@ -68,6 +68,7 @@ import { ContentArchiveComponent } from './Components/class-content/content-arch
 import { ContentDeleteComponent } from './Components/class-content/content-delete/content-delete.component';
 import { ContentSingleComponent } from './Components/class-content/content-single/content-single.component';
 import { ContentUpdataComponent } from './Components/class-content/content-updata/content-updata.component';
+import { DeleteProfileComponent } from './Components/Profile/delete-profile/delete-profile.component';
 
 
 
@@ -105,6 +106,7 @@ const routes: Routes = [
   {path:'product',component:ProductsComponent},
   {path:'profile',component:ProfileComponent},
   {path:'edit-profile',component:EditProfileComponent},
+  {path:'delete-profile',component:DeleteProfileComponent },
   {path : "teachers" , component:TeachersComponent},
   {path : "single-teacher/:id" , component:SingleTeacherComponent},
   {path : "sign-in" , component:SignInComponent},

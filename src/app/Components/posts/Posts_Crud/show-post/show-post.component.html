@@ -1,5 +1,5 @@
 
-<table class="table">
+<table class="table" >
     <thead>
       <tr>
         <th scope="col">#</th>
@@ -7,16 +7,17 @@
         <!-- <th scope="col">is active</th> -->
         <th scope="col">description</th>
         <th scope="col">image</th>
-        <!-- <th scope="col"> teacher id </th> -->
+        <th scope="col"> teacher id </th>
         <th scope="col"> Update </th>
         <th scope="col"> Delete </th>
 
 
       </tr>
     </thead>
-    <tbody>
+    <tbody *ngFor="let post of posts   ;  let i =index">
 
-      <tr *ngFor="let post of posts   ;  let i =index" >
+      <tr   *ngIf="post.teacher_id == auth.id">
+        
         <th scope="row">{{i+1}}</th>
         
         <td>{{post.title}}</td>
@@ -28,20 +29,22 @@
         <td>{{post.description}}</td>
         <td> <img [src]="post.image" alt="post image" width="100px" height="100px"> </td>
 
-        <!-- <td>{{post.teacher_id}}</td> -->
+        <td>{{post.teacher_id}}</td>
 
         <td><button routerLink="/update-post/{{post.id}}"   class="btn btn-warning"> UPDATE  </button></td>
         <td><button routerLink="/delete-post/{{post.id}}" class="btn btn-danger"> DELETE  </button></td>
-
+       
       </tr>
+      
 
-      <tr>
-        <td><button routerLink="/posting" class="btn btn-primary"> ADD Post </button></td>
-      </tr>
-
+     
 
 
     </tbody>
+   
+      <td><button routerLink="/posting" class="btn btn-primary"> ADD Post </button></td>
+ 
+
   </table>
 
 

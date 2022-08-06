@@ -92,6 +92,7 @@ import { ContentUpdataComponent } from './Components/class-content/content-updat
 import { ContentDeleteComponent } from './Components/class-content/content-delete/content-delete.component';
 import { ContentIndexComponent } from './Components/class-content/content-index/content-index.component';
 import { ContentSingleComponent } from './Components/class-content/content-single/content-single.component';
+import { DeleteProfileComponent } from './Components/Profile/delete-profile/delete-profile.component';
 
 @NgModule({
   declarations: [
@@ -189,7 +190,8 @@ import { ContentSingleComponent } from './Components/class-content/content-singl
     ContentUpdataComponent,
     ContentDeleteComponent,
     ContentIndexComponent,
-    ContentSingleComponent
+    ContentSingleComponent,
+    DeleteProfileComponent
   ],
   imports: [
     BrowserModule,

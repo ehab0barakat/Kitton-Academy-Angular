@@ -47,12 +47,22 @@ this.authService.Auth().subscribe(response=>{
                                               this.httpOptions)
                                             }
 
-
-
-
-
-
+deleteProfile( id:number):Observable<any>{
+  return this.httpclient.delete<any>(`${environment.APIBaseURL}/api/normaluser/${id}`,
+  
+  this.httpOptions)
+}
 
 
 
 }
+
+
+
+
+
+
+
+
+
+
