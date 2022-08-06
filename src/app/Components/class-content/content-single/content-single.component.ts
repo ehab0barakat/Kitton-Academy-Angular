@@ -11,6 +11,7 @@ import { MyclassesService } from 'src/app/Services/myclasses.service';
   styleUrls: ['./content-single.component.css']
 })
 export class ContentSingleComponent implements OnInit {
+  classid: any;
 
   constructor( private router:Router,
     private activatedRoute : ActivatedRoute,
@@ -40,20 +41,20 @@ export class ContentSingleComponent implements OnInit {
       }else{
         this.ClassContent.GetAllVideosForThisClassByVideoId(this.VideoId).subscribe(response=>{
           this.AllEvents=response ;
+          this.classid = this.AllEvents[0].id ;
           if( this.auth== 1 ){
           this.ClassContent.CheckUserVideos(this.VideoId).subscribe(response=>{
             this.AllEvents.map((el:any) => {
               response.map((nt: any) => {
-                if( el.id == nt.video_id){
-                   nt.seen > 0 ? this.SeenForAll.push(true): this.SeenForAll.push(false) ;
-                }else if (this.AllEvents.length == this.SeenForAll.length ){
+                el.id == nt.video_id && nt.seen > 0 ? this.SeenForAll.push(true): this.SeenForAll.push(false) ;
+                 if ( new Set(this.SeenForAll).size == 1 &&[...new Set(this.SeenForAll)][0]== true){
                   this.canRate = true;
                 }
               });
             });
-            // response.forEach((el:any) => {
-            //   this.HowManyViews += el.seen ;
-            // });
+            response.forEach((el:any) => {
+              this.HowManyViews += el.seen ;
+            });
           })
         }
         })
@@ -61,7 +62,6 @@ export class ContentSingleComponent implements OnInit {
         this.ClassContent.GetVideoById(this.VideoId).subscribe(response=>{
           this.TargetVideo=response.data ;
           this.HowManyViews = response.views ;
-
         })
       }
     });
@@ -74,8 +74,6 @@ export class ContentSingleComponent implements OnInit {
       this.HowManyViews = response.views ;
     })
   }
-
-
 
 
   watch(){
