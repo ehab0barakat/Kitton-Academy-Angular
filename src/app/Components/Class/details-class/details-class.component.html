@@ -20,8 +20,8 @@
                                   <a href="#"><i class="far fa-comments"></i>09 Comments</a>
                               </li>
                           </ul>
-                          <button type="submit"  *ngIf="!auth" routerLink="/sign-up" click="add()" class="custom-button m-3"><span>Buy Now</span></button>
-                          <button type="submit"  *ngIf="auth" routerLink="/checkout/{{AllClasses?.id}}" click="add()" class="custom-button m-3"><span>Buy Now</span></button>
+                          <button type="submit"  *ngIf="!auth && valid?.own != true " routerLink="/sign-up" click="add()" class="custom-button m-3"><span>Buy Now</span></button>
+                          <button type="submit"  *ngIf="auth && valid?.own != true" routerLink="/checkout/{{AllClasses?.id}}" click="add()" class="custom-button m-3"><span>Buy Now</span></button>
                           <p>
                               Serenity hassr taken posseson of my entire soung like these sweet mornngs sprng whch
                               enjoy with

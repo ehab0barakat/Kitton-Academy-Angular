@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from 'src/app/Services/auth.service';
 import { MyclassesService } from 'src/app/Services/myclasses.service';
 
 @Component({
@@ -12,15 +13,19 @@ name:any;
   cardID:any;
   expirDate:any;
   securityCode:any;
+  data: any;
 
   constructor(private router:Router,
     private activatedRoute : ActivatedRoute,
-    private myClass : MyclassesService) { }
+    private myClass : MyclassesService ,
+    private auth: AuthService) { }
 
   classId = Number(this.activatedRoute.snapshot.paramMap.get("id")) ;
   ngOnInit(): void {
 
-
+    this.auth.Auth().subscribe(response=>{
+      this.data = response
+     });
 //     if (location.href.indexOf('reload')==-1)
 // {
 //    location.href=location.href+'?reload';
@@ -62,13 +67,10 @@ name:any;
       console.log('ALL DATA',`${this.name}  ${this.cardID}  ${this.expirDate}  ${this.securityCode}`);
       alert("SUCCEED")
 
-
-
       this.myClass.storemyclasses({"class_id": this.classId}).subscribe(data => {
-        console.log(data) ;
+        // console.log(data) ;
+        this.router.navigate([`/myclasses/${this.data.id}`]);
       });
-
-
 
     }
   }
