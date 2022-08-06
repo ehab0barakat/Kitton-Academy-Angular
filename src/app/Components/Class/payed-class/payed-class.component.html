@@ -69,7 +69,29 @@
                                   <a href="#" class="google"><i class="fab fa-google-plus-g"></i></a>
                               </li>
                           </ul>
-                      </div>
+                        </div>
+                        <div class="tags-area">
+                          <div class="widget widget-comment">
+                            <div class="widget-header">
+                                <h5 class="title">Leave a Comment</h5>
+                            </div>
+                            <div class="widget-body">
+                                <form class="comment-form" (ngSubmit)="classSend_comment(AllClasses?.id,data?.id)">
+                                    <div class="form-group">
+                                        <input type="text" placeholder="Your Name" name="name" [ngModelOptions]="{standalone:true}"   [(ngModel)]="classComment.user_name">
+                                    </div>
+                                    <div class="form-group w-100">
+                                        <textarea  name="message" placeholder="Your Comments" [ngModelOptions]="{standalone:true}"   [(ngModel)]="classComment.comment"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="submit" class="custom-button" routerLink="/classes/{{ AllClasses?.id }}" ><span>Send Comment</span></button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+            </div>
+
+
                   </div>
               </div>
           </div>
@@ -109,7 +131,7 @@
                                     <div style="font-size:x-large ;color:orange">
                                     <ngb-rating [max]="5" [(rate)]="currentRate" [readonly]="false" (rateChange)="onRateChange($event)"></ngb-rating></div>
                                     <!-- <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> -->
-                                    </div> 
+                                    </div>
                               </li>
                               <li>
                                   <div class="ques cl-i-eight"><i class="fas fa-coins"></i>Tution Fee</div>

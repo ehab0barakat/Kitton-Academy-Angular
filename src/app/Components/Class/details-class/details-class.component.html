@@ -187,60 +187,35 @@
                       </div>
                   </div>
                   <div class="widget widget-post">
-                      <div class="widget-header">
-                          <h5 class="title">Most Popular Post</h5>
-                      </div>
-                      <div class="widget-body">
-                          <ul>
-                              <li>
-                                  <div class="thumb">
-                                      <a href="#">
-                                          <img src="./assets/images/blog/side1.jpg" alt="blog">
-                                      </a>
+                    <div class="widget-header">
+                        <h5 class="title">Comments On Class:</h5>
+                    </div>
+                    <div class="widget-body">
+                        <ul>
+                            <li>
+                              <div class="container bg-light">
+                                <div   *ngFor="let comment of allcomments"  >
+                                  <div *ngIf="comment.class_id == AllClasses?.id">
+
+
+
+                                      <div  class="card m-2 p-2" >
+                                      <p> User Name :{{comment.user_name}} </p>
+
+
+                                      <h5 >{{comment.comment}}</h5>
+                                   </div>
+
+
                                   </div>
-                                  <div class="content">
-                                      <a href="#">How Kids make sense of Life Experiences</a>
-                                      <span>April 08,2022</span>
-                                  </div>
-                              </li>
-                              <li>
-                                  <div class="thumb">
-                                      <a href="#">
-                                          <img src="./assets/images/blog/side2.jpg" alt="blog">
-                                      </a>
-                                  </div>
-                                  <div class="content">
-                                      <a href="#">Why do aerobically have
-                                          better Math Skills</a>
-                                      <span>April 08,2022</span>
-                                  </div>
-                              </li>
-                              <li>
-                                  <div class="thumb">
-                                      <a href="#">
-                                          <img src="./assets/images/blog/side3.jpg" alt="blog">
-                                      </a>
-                                  </div>
-                                  <div class="content">
-                                      <a href="#">How Kids make sense of
-                                          Life Experiences</a>
-                                      <span>April 08,2022</span>
-                                  </div>
-                              </li>
-                              <li>
-                                  <div class="thumb">
-                                      <a href="#">
-                                          <img src="./assets/images/blog/side4.jpg" alt="blog">
-                                      </a>
-                                  </div>
-                                  <div class="content">
-                                      <a href="#">Remo Suppor Center What For Semiconductor Provider</a>
-                                      <span>April 08,2022</span>
-                                  </div>
-                              </li>
-                          </ul>
-                      </div>
-                  </div>
+
+                                </div>
+                              </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div
                   <div class="widget widget-gallery">
                       <div class="widget-header">
                           <h5 class="title">Gallery Photos</h5>

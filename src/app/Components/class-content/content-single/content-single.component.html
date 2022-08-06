@@ -31,6 +31,10 @@
            </ul>
       </div>
 
-
+      <div *ngIf="canRate==true">
+        <div class="btn-group" *ngFor="let video of AllEvents" >
+          <button  class="btn btn-success m-3" routerLink="/myclasses/rate/{{video.class_id}}" [disabled] >Kindly Rate & Comment Class</button>
+      </div>
+      </div>
   </div>
 </div>

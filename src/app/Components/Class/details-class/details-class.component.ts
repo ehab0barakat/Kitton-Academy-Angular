@@ -1,5 +1,7 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+
+import { classComment } from 'src/app/Models/classcomment';
 import { classes } from 'src/app/Models/classes';
 import { ClassCatsService } from 'src/app/Services/class-cats.service';
 import { ClassContentService } from 'src/app/Services/class-content.service';
@@ -12,6 +14,7 @@ import { MyclassesService } from 'src/app/Services/myclasses.service';
   styleUrls: ['./details-class.component.css']
 })
 export class DetailsClassComponent implements OnInit {
+  numberOfComments: number =2;
 
   constructor(private activatedRoute : ActivatedRoute,public router: Router ,
     private classService:ClassesService,
@@ -21,14 +24,15 @@ export class DetailsClassComponent implements OnInit {
     private myClassServices : MyclassesService,
 ) { }
 
-
+    currentRate:number =2;
     selected= Number(this.activatedRoute.snapshot.paramMap.get("id")) ;
-
+ totalRate:number=0;
     AllClasses:any ;
     auth:any = localStorage.getItem("role");
     valid:any
     AllEvents:any
-    firstEvents:any
+    firstEvents:any;
+    allcomments:classComment[]=[];
     ngOnInit(): void {
 
     if(this.auth == 3){
@@ -50,11 +54,32 @@ export class DetailsClassComponent implements OnInit {
 
         this.classService.getById(this.selected).subscribe(response=>{
           this.AllClasses = response
+          // console.log(this.AllClasses)
         })
 
+        this.MyclassesService.totalRate(this.selected).subscribe(response=>{
+          console.log(response);
+       this.totalRate=response;
+        })
+        this.MyclassesService.getComments().subscribe(response=>{
+          this.allcomments=response;
+          console.log(this.allcomments[0].class_id);
+
+
+        })
+        this.MyclassesService.getCountComments(this.selected).subscribe(response=>{
+          this.numberOfComments=response
+           //  console.log(this.numberOfLikes);
+         });
+
+      }
+getCountComments(){
+
+}
       }
 
-    }
+
+
 
 
 
