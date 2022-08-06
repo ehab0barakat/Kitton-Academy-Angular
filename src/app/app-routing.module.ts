@@ -69,6 +69,7 @@ import { ContentDeleteComponent } from './Components/class-content/content-delet
 import { ContentSingleComponent } from './Components/class-content/content-single/content-single.component';
 import { ContentUpdataComponent } from './Components/class-content/content-updata/content-updata.component';
 import { DeleteProfileComponent } from './Components/Profile/delete-profile/delete-profile.component';
+import { CardsComponent } from './Components/Games/memory game/cards/cards.component';
 
 
 
@@ -97,6 +98,7 @@ const routes: Routes = [
   
   {path:'posting',component:PostingComponent},
   {path:'delete-post/:id',component:DeletePostComponent},
+  {path:'cards',component:CardsComponent},
   {path:'contact_us',component:ContactUsComponent},
   {path:'about_us',component:AboutUsComponent},
   {path:'cart',component:CartComponent},

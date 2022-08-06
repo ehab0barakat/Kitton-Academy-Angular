@@ -1,0 +1,27 @@
+<h5 class="mt-5 text-black "> Matching Cards Game  </h5>
+<div class="ui centered vertically divided grid">
+    <div class="row">
+      <button class=" btn btn-primary mt-3 mb-3" style="width:200px ; margin: auto;" (click)="shuffleCards()">NEW GAME</button>
+    </div>
+    <div class="ui centered row">
+      <div class="ui grid four column row">
+        <div class="row d-flex">
+          <div class="col-3 mt-3 " *ngFor="let card of shuffledCards">
+            <app-single-card
+              (clickCard)="handleClickCard($event)"
+              [card]="card"
+              [flipped]="card === choiceOne || card === choiceTwo || card.matched"
+            ></app-single-card>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row" *ngIf="!completed">
+      <a class=" btn btn-danger mt-3 mb-3 " style="width:200px ; margin: auto;"> TURNS TAKEN: {{ turns }} </a>
+    </div>
+  
+    <div class="row" *ngIf="completed">
+      <a class=" btn btn-danger mt-3 mb-3 " style="width:200px ; margin: auto;"> YOU TOOK {{ turns }} TURNS</a>
+    </div>
+  </div>
+  

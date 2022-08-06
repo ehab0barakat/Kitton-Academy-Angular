@@ -93,6 +93,8 @@ import { ContentDeleteComponent } from './Components/class-content/content-delet
 import { ContentIndexComponent } from './Components/class-content/content-index/content-index.component';
 import { ContentSingleComponent } from './Components/class-content/content-single/content-single.component';
 import { DeleteProfileComponent } from './Components/Profile/delete-profile/delete-profile.component';
+import { CardsComponent } from './Components/Games/memory game/cards/cards.component';
+import { SingleCardComponent } from './Components/Games/memory game/single-card/single-card.component';
 
 @NgModule({
   declarations: [
@@ -191,7 +193,9 @@ import { DeleteProfileComponent } from './Components/Profile/delete-profile/dele
     ContentDeleteComponent,
     ContentIndexComponent,
     ContentSingleComponent,
-    DeleteProfileComponent
+    DeleteProfileComponent,
+    CardsComponent,
+    SingleCardComponent
   ],
   imports: [
     BrowserModule,
