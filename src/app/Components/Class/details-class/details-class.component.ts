@@ -37,6 +37,7 @@ export class DetailsClassComponent implements OnInit {
 
     this.myClassServices.user_own_class_check(this.selected).subscribe(response=>{
       this.valid = response ;
+      console.log(response) ;
       if(this.valid.valid == false ){this.router.navigate(['/not-auth'])}
 
 

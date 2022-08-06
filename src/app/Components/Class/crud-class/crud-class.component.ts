@@ -35,5 +35,33 @@ if(this.auth != 2 &&this.auth != 3){
   this.router.navigate(['/not-auth']);
 }
 }
+
+valid:any={
+  id:"",
+  valid:"",
+  message:""
+}  ;
+
+Delete(id:number){
+  if(this.auth.role == 3){
+    this.router.navigate([`/classes-delete/${id}`]);
+  }else{
+    this.classService.checkdelete(id).subscribe(data =>{
+      this.valid = data  ;
+      if(this.valid.valid){
+        this.router.navigate([`/classes-delete/${id}`]);
+      }
+    })
+  }
+}
+
+
+
+
+
+
+
+
+
 }
 

@@ -1,4 +1,5 @@
 export interface classes {
+  valid: number;
   id: number;
   name: string;
   price: number;
@@ -12,5 +13,5 @@ export interface classes {
   description:string;
   teacher_id:number,
   classCat_id:number,
-  
+
 }

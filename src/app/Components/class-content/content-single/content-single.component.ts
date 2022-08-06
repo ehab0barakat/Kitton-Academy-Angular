@@ -33,14 +33,14 @@ export class ContentSingleComponent implements OnInit {
   canRate:any = false ;
 
   ngOnInit(): void {
-
-    this.myClassServices.user_own_video_check(this.VideoId).subscribe(response=>{
+      this.myClassServices.user_own_video_check(this.VideoId).subscribe(response=>{
       this.valid = response ;
       if(this.valid.valid == false || this.valid.own == false ){
         this.router.navigate(['/not-auth'])
       }else{
         this.ClassContent.GetAllVideosForThisClassByVideoId(this.VideoId).subscribe(response=>{
           this.AllEvents=response ;
+          if( this.auth== 1 ){
           this.ClassContent.CheckUserVideos(this.VideoId).subscribe(response=>{
             this.AllEvents.map((el:any) => {
               response.map((nt: any) => {
@@ -51,14 +51,17 @@ export class ContentSingleComponent implements OnInit {
                 }
               });
             });
-            response.forEach((el:any) => {
-              this.HowManyViews += el.seen ;
-            });
+            // response.forEach((el:any) => {
+            //   this.HowManyViews += el.seen ;
+            // });
           })
+        }
         })
-        
+
         this.ClassContent.GetVideoById(this.VideoId).subscribe(response=>{
-          this.TargetVideo=response ;
+          this.TargetVideo=response.data ;
+          this.HowManyViews = response.views ;
+
         })
       }
     });
@@ -66,8 +69,9 @@ export class ContentSingleComponent implements OnInit {
 
 
   change(id:number){
-     this.ClassContent.GetVideoById(id).subscribe(response=>{
-      this.TargetVideo=response ;
+    this.ClassContent.GetVideoById(id).subscribe(response=>{
+      this.TargetVideo=response.data ;
+      this.HowManyViews = response.views ;
     })
   }
 

@@ -43,8 +43,8 @@ export class EventsService {
   }
 
 
-  geteventByID(claID:number):Observable<Event>{
-    return this.httpclient.get<Event>(`${environment.APIBaseURL}/api/event/${claID}`,this.httpOptions);
+  geteventByID(claID:number):Observable<any>{
+    return this.httpclient.get<any>(`${environment.APIBaseURL}/api/event/${claID}`,this.httpOptions);
   }
 
 

@@ -78,6 +78,10 @@ create(newPrd:classes):Observable<classes>{
     return this.httpclient.delete<classes>(`${environment.APIBaseURL}/api/classes/${id}`, this.httpOptions)
 
   }
+  checkdelete(id: number){
+    return this.httpclient.delete<classes>(`${environment.APIBaseURL}/api/classes/check-destroy/${id}`, this.httpOptions)
+
+  }
   getMyClasses(id:number):Observable<classes[]>{
     return this.httpclient.get<classes[]>(`${environment.APIBaseURL}/api/myclasses/${id}`,this.httpOptions);
 

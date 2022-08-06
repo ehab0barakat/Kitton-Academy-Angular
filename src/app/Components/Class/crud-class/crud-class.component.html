@@ -25,7 +25,8 @@
       <td >{{ item.price }}</td>
       <td>{{item.duration}}</td>
       <td ><button  routerLink="/classes-update/{{item.id}}"   class="btn btn-warning"> UPDATE  </button></td>
-      <td ><button routerLink="/classes-delete/{{item.id}}" class="btn btn-danger"> DELETE  </button></td>
+      <td *ngIf="valid.id != item.id "   ><button  (click)="Delete(item.id)" class="btn btn-danger"> DELETE  </button></td>
+      <td *ngIf="valid.id == item.id "  > {{valid.message}}</td>
     </tr>
 
     <tr>
