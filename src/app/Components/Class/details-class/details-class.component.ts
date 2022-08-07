@@ -43,8 +43,6 @@ export class DetailsClassComponent implements OnInit {
       this.valid = response ;
       console.log(response) ;
       if(this.valid.valid == false ){this.router.navigate(['/not-auth'])}
-
-
     });
 
     this.ClassContent.GetAllVideosForThisClass(this.selected).subscribe(response=>{
@@ -76,7 +74,7 @@ export class DetailsClassComponent implements OnInit {
 getCountComments(){
 
 }
-      }
+}
 
 
 
