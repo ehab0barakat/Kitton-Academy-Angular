@@ -63,6 +63,7 @@ export class DetailsClassComponent implements OnInit {
         })
         this.MyclassesService.getComments().subscribe(response=>{
           this.allcomments=response;
+          console.log(this.allcomments);
           console.log(this.allcomments[0].class_id);
 
 

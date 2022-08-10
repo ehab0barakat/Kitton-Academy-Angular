@@ -62,13 +62,12 @@
                                           <h6 class="fw-bold mb-1">{{comment.user_name}}</h6>
                                           <div class="d-flex align-items-center mb-3">
                                             <p class="mb-0">
-                                              {{ comment.created_at}}
+                                              {{ comment.created_at | date:'medium' }}
 
                                             </p>
                                             <a href="#!" class="link-muted" routerLink="/rate/{{AllClasses?.id}}" ><i class="fas fa-pencil-alt ms-2"></i></a>
-                                            <a href="#!" class="link-muted" routerLink="/classes/{{AllClasses?.id}}"><i class="fas fa-redo-alt ms-2"></i></a>
                                           </div>
-                                          <p class="mb-3 text-danger" >
+                                          <p class="mb-3" style="color: #ad655f;" >
                                             {{comment.comment}}
                                           </p>
                                         </div>

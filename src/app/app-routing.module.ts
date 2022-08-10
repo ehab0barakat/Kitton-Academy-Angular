@@ -130,6 +130,7 @@ const routes: Routes = [
   {path : "classescat-delete/:id" , component: DeleteCatClassComponent},
   {path: 'checkout/:id',component:CheckoutComponent},
   {path: 'myclasses/:id',component:MyclassesComponent},
+  {path: 'rate/:id',component:PayClassComponent},
   {path:'Products',component:ProductsComponent},
   {path:'ProductList',component:ProductListComponent},
   {path:'AddNewProduct',component:AddProductComponent},
@@ -141,18 +142,15 @@ const routes: Routes = [
   {path:'payment/:id',component:PaymentComponent},
 
   {path: 'classes-index',component:CrudClassComponent},
+  {path: 'rate/:id',component:PayClassComponent},
 
   {path:'content-add/:id',component:AddComponent}, //id of class itself
   {path:'content-index/:id',component:ContentIndexComponent}, //id of class itself
   {path:'content-archive/:id',component:ContentArchiveComponent}, //id of class itself
-
-  {path: 'rate/:id',component:PayClassComponent},
-
-
   {path:'content-update/:id',component:ContentUpdataComponent}, //id of video
   {path:'content-delete/:id',component:ContentDeleteComponent}, //id of video
   {path:'content-single/:id',component:ContentSingleComponent}, //id of video
-
+    
   // -------------------------------------------------//
 
 ]},
@@ -167,13 +165,9 @@ const routes: Routes = [
   {path : "event-control/event/:id" , component: EventsSingleComponent},
   {path : "event/:id" , component: EventsSingleComponent},
   {path : "events-archive" , component: EventsArchiveComponent},
-
   {path: 'rate/:id',component:PayClassComponent},
 
   {path:'eventcats-index',component:EventCatsIndexComponent},
-  {path:'eventcats-add',component:EventCatsAddComponent},
-  {path:'eventcats-update/:id',component:EventCatsUpdateComponent},
-  {path:'eventcats-delete/:id',component:EventCatsDeleteComponent},
   {path:'classescat-index',component:CrudCatClassComponent},
   {path:'classes',component:CatClassComponent},
   {path :"teachers" , component:TeachersComponent},
