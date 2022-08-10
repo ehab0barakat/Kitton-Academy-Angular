@@ -74,6 +74,7 @@ import { PaymentComponent } from './Components/payment/payment.component';
 import { PayClassComponent } from './Components/Class/pay-class/pay-class.component';
 import { DeleteProfileComponent } from './Components/Profile/delete-profile/delete-profile.component';
 import { CardsComponent } from './Components/Games/memory game/cards/cards.component';
+import { CertificationComponent } from './Components/Class/certification/certification.component';
 
 
 
@@ -133,6 +134,7 @@ const routes: Routes = [
   {path: 'checkout/:id',component:CheckoutComponent},
   {path: 'myclasses/:id',component:MyclassesComponent},
   {path: 'rate/:id',component:PayClassComponent},
+  {path: 'certificate/:id',component:CertificationComponent},
   {path:'Products',component:ProductsComponent},
   {path:'ProductList',component:ProductListComponent},
   {path:'AddNewProduct',component:AddProductComponent},

@@ -21,16 +21,20 @@ currentPrdID:number =0;
   ngOnInit(): void {
     this.authService.Auth().subscribe(response=>{
       this.auth = response ;
-      if(this.auth.role != 2 && this.auth.role != 3 ){
-        this.router.navigate(['/not-auth']);
+      if(this.auth.role == 3 ){
+        this.classService.admingetall().subscribe(res=>{
+          this.classListOfCat=response;
+        })
+      }else if( this.auth.role == 2 ){
+        console.log("2")
+        this.classService.GetTeachersClasses().subscribe(response=>{
+          this.classListOfCat=response;
+        })
       }else{
-    this.classService.GetTeachersClasses().subscribe(response=>{
-      this.classListOfCat=response;
-      console.log(this.classListOfCat);
-    })
+    console.log("3")
+    this.router.navigate(['/not-auth']);
   }
 });
-
 if(this.auth != 2 &&this.auth != 3){
   this.router.navigate(['/not-auth']);
 }

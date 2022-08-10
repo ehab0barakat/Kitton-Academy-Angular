@@ -14,9 +14,6 @@
                                   <a href="#"><i class="far fa-cla"></i> Class Name : {{AllClasses?.name}}</a>
                               </li>
                               <li>
-                                  <a href="#"><i class="far fa-heart"></i>124 Likes</a>
-                              </li>
-                              <li>
                                   <a href="#"><i class="far fa-comments"></i>{{ numberOfComments }} Comments</a>
                               </li>
                           </ul>
@@ -40,11 +37,11 @@
                           <blockquote class="single-quote">
                               <div class="quotes">
                                  {{AllClasses?.description}}
-                                  <span>...Melissa Hunter</span>
+                                  
                               </div>
                           </blockquote>
 
-                          <section style="background-color: #ad655f;">
+                          <section style="background-color: #92278f; border-radius: 9px;">
                             <div class="container my-5 py-5">
                               <div class="row d-flex justify-content-center">
                                 <div class="col-md-12 col-lg-10" >
@@ -56,7 +53,7 @@
                                       <div class="d-flex flex-start p-3" *ngFor="let comment of allcomments" >
                                         <ng-container  *ngIf="comment.class_id == AllClasses?.id">
                                         <img class="rounded-circle shadow-1-strong me-3"
-                                          src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(23).webp" alt="avatar" width="60"
+                                          src="{{ data?.childImage }}" alt="avatar" width="60"
                                           height="60" />
                                         <div>
                                           <h6 class="fw-bold mb-1">{{comment.user_name}}</h6>

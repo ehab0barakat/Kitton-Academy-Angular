@@ -99,6 +99,7 @@ import { PayClassComponent } from './Components/Class/pay-class/pay-class.compon
 import { DeleteProfileComponent } from './Components/Profile/delete-profile/delete-profile.component';
 import { CardsComponent } from './Components/Games/memory game/cards/cards.component';
 import { SingleCardComponent } from './Components/Games/memory game/single-card/single-card.component';
+import { CertificationComponent } from './Components/Class/certification/certification.component';
 
 @NgModule({
   declarations: [
@@ -202,7 +203,8 @@ import { SingleCardComponent } from './Components/Games/memory game/single-card/
     PayClassComponent,
     DeleteProfileComponent,
     CardsComponent,
-    SingleCardComponent
+    SingleCardComponent,
+    CertificationComponent
   ],
   imports: [
     BrowserModule,
@@ -215,9 +217,6 @@ import { SingleCardComponent } from './Components/Games/memory game/single-card/
     NgxDropzoneModule,
     BrowserModule,
     NgbModule,
-
-
-
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA,
