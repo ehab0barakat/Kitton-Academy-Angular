@@ -1,5 +1,5 @@
-   <!-- ==========Banner Section Starts Here========== -->
-    <section class="page-header bg_img" data-background="./assets/images/banner/page-header.jpg" style="background-image: url(&quot;./assets/images/banner/page-header.jpg&quot;);">
+      <!-- ==========Banner Section Starts Here========== -->
+      <section class="page-header bg_img" data-background="./assets/images/banner/page-header.jpg" style="background-image: url(&quot;./assets/images/banner/page-header.jpg&quot;);">
         <div class="container">
             <div class="page-header-content">
                 <h1 class="title">Our Best Teachers</h1>
@@ -43,7 +43,7 @@
                             </div>
                             <div class="content">
                                 <h5 class="title">
-                                  <a [routerLink]="['/single-teacher', teacher.id]">{{teacher.title}}</a></h5>
+                                  <a [routerLink]="['/single-teacher', teacher.id]">{{teacher.name}}</a></h5>
                                 <span>{{teacher.specialization}}</span>
                             </div>
                         </div>
@@ -218,7 +218,7 @@
                             <div class="teacher-content">
                                 <h6 class="title"><a (click)="viewTeacherDetails(teacher.id)"></a></h6>
                                 <span class="info">{{teacher.specialization}}</span>
-                                <p>{{teacher.description}}</p>
+                                <p>{{teacher.name}}</p>
                                 <ul class="teacher-social">
 
                                     <li>
