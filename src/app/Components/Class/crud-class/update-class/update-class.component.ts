@@ -100,7 +100,9 @@ onUpload() {
 
 update(){
 
-  this.editClass.image=this.image.secure_url
+  if(this.image?.secure_url){
+    this.editClass.image=this.image.secure_url
+  }
 
    this.classService.update(this.editClass, this.currentPrdID).subscribe(response =>{
     console.log(response);

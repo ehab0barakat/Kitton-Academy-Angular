@@ -159,7 +159,7 @@
             </li>
               <li class="position-relative" *ngFor="let not of notificationClass?.data ; let i=index " (click)="checkClass(notificationClass?.check[i].id)" ><a class="dropdown-item " routerLink="/classes/{{not.id}}" class="lala" class="d-flex" >
                 <img src="{{not.image}}" width="100px" >
-                <p>admins has approved for this Class <strong>{{not.title}}</strong></p>
+                <p>admins has approved for this Class <strong>{{not.name}}</strong></p>
                 <span *ngIf="notificationClass?.check[i].check == 0" class="overlay--a"></span>
               </a>
             </li>
