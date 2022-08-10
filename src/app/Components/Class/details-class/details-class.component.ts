@@ -1,6 +1,6 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-
+import { count } from 'rxjs';
 import { classComment } from 'src/app/Models/classcomment';
 import { classes } from 'src/app/Models/classes';
 import { ClassCatsService } from 'src/app/Services/class-cats.service';
@@ -43,6 +43,8 @@ export class DetailsClassComponent implements OnInit {
       this.valid = response ;
       console.log(response) ;
       if(this.valid.valid == false ){this.router.navigate(['/not-auth'])}
+
+
     });
 
     this.ClassContent.GetAllVideosForThisClass(this.selected).subscribe(response=>{
@@ -74,7 +76,7 @@ export class DetailsClassComponent implements OnInit {
 getCountComments(){
 
 }
-}
+      }
 
 
 

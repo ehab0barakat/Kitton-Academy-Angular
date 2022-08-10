@@ -17,11 +17,11 @@
                                   <a href="#"><i class="far fa-heart"></i>124 Likes</a>
                               </li>
                               <li>
-                                  <a href="#"><i class="far fa-comments"></i>09 Comments</a>
+                                  <a href="#"><i class="far fa-comments"></i>{{ numberOfComments }} Comments</a>
                               </li>
                           </ul>
-                          <button type="submit"  *ngIf="!auth && valid?.own != true " routerLink="/sign-up" click="add()" class="custom-button m-3"><span>Buy Now</span></button>
-                          <button type="submit"  *ngIf="auth && valid?.own != true" routerLink="/checkout/{{AllClasses?.id}}" click="add()" class="custom-button m-3"><span>Buy Now</span></button>
+                          <button type="submit"  *ngIf="!auth" routerLink="/sign-up" click="add()" class="custom-button m-3"><span>Buy Now</span></button>
+                          <button type="submit"  *ngIf="auth && valid?.own == false" routerLink="/checkout/{{AllClasses?.id}}" click="add()" class="custom-button m-3"><span>Buy Now</span></button>
                           <p>
                               Serenity hassr taken posseson of my entire soung like these sweet mornngs sprng whch
                               enjoy with
@@ -44,21 +44,50 @@
                               </div>
                           </blockquote>
 
-                          <p>
-                              Serenity hassr taken posseson of my entire soung like these sweet mornngs sprng whch
-                              enjoy with
-                              my whole heart I am alonesi and feel the charm of exstenceths spot whch was the blis
-                              of souls like
-                              mineing am soo happy my dear frend absoribed the exquste sense enjoy with my whole
-                              heart in am
-                              alone and feel the charm of exstenceths spot whch was the blis of souls like mineing
-                              am so happyr
-                              my dear frend so absoribed the exqust sense tranquil existence that neglect my
-                              talentsr Ins should
-                              bye ncapable of drawng and singe wonderful serenty has taken possesison of my entrei
-                              souing like
-                              these sweet present moment and yet feel that never was greater artst
-                          </p>
+                          <section style="background-color: #ad655f;">
+                            <div class="container my-5 py-5">
+                              <div class="row d-flex justify-content-center">
+                                <div class="col-md-12 col-lg-10" >
+                                  <div class="card text-dark">
+                                    <div class="card-body p-4" >
+                                      <h4 class="mb-0">Recent comments On Class</h4>
+                                      <p class="fw-light mb-4 pb-2">Latest Comments section by users</p>
+<!-- ////////////////comment///////// -->
+                                      <div class="d-flex flex-start p-3" *ngFor="let comment of allcomments" >
+                                        <ng-container  *ngIf="comment.class_id == AllClasses?.id">
+                                        <img class="rounded-circle shadow-1-strong me-3"
+                                          src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(23).webp" alt="avatar" width="60"
+                                          height="60" />
+                                        <div>
+                                          <h6 class="fw-bold mb-1">{{comment.user_name}}</h6>
+                                          <div class="d-flex align-items-center mb-3">
+                                            <p class="mb-0">
+                                              {{ comment.created_at}}
+
+                                            </p>
+                                            <a href="#!" class="link-muted" routerLink="/rate/{{AllClasses?.id}}" ><i class="fas fa-pencil-alt ms-2"></i></a>
+                                            <a href="#!" class="link-muted" routerLink="/classes/{{AllClasses?.id}}"><i class="fas fa-redo-alt ms-2"></i></a>
+                                          </div>
+                                          <p class="mb-3 text-danger" >
+                                            {{comment.comment}}
+                                          </p>
+                                        </div>
+                                        </ng-container>
+                                    </div>
+                                    </div>
+
+                                    <hr class="my-0" />
+
+
+
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </section>
+
+<!-- ////////////////////end comment/////////////////////////// -->
+
 
                         <div class="father" *ngIf="valid?.own != true" >
                           <div class="container-fluid">
@@ -88,7 +117,7 @@
                         </div>
 
                         <div class="father" *ngIf="valid?.own == true" >
-                          <div class="container-fluid">
+                          <div class="container-fluid m-3">
                             <div class="iframe-cont">
                               <div class="about-video" >
                                 <img src="{{firstEvents?.image}}"  alt="about">
@@ -190,49 +219,25 @@
 
 
                               <li>
+                                <div class="ques cl-i-seven"><i class="fas fa-star"></i>Total Rating</div>
+                                <div class="ans cl-i-seven">
+                                  <div style="font-size:x-large ;color:orange">
+                                  <ngb-rating [max]="5" [(rate)]="totalRate" [readonly]="true" ></ngb-rating></div>
+                                  </div>
+                            </li>
+                              <li>
                                   <div class="ques cl-i-eight"><i class="fas fa-coins"></i>Tution Fee</div>
                                   <div class="ans">{{ AllClasses?.price }}</div>
                               </li>
                           </ul>
                       </div>
                   </div>
-                  <div class="widget widget-post">
-                    <div class="widget-header">
-                        <h5 class="title">Comments On Class:</h5>
-                    </div>
-                    <div class="widget-body">
-                        <ul>
-                            <li>
-                              <div class="container bg-light">
-                                <div   *ngFor="let comment of allcomments"  >
-                                  <div *ngIf="comment.class_id == AllClasses?.id">
-
-
-
-                                      <div  class="card m-2 p-2" >
-                                      <p> User Name :{{comment.user_name}} </p>
-
-
-                                      <h5 >{{comment.comment}}</h5>
-                                   </div>
-
-
-                                  </div>
-
-                                </div>
-                              </div>
-                            </li>
-
-                        </ul>
-                    </div>
-                <!-- </div -->
                   <div class="widget widget-gallery">
                       <div class="widget-header">
                           <h5 class="title">Gallery Photos</h5>
                       </div>
                       <div class="widget-body">
                       </div>
-                    </div>
                   </div>
 
               </aside>

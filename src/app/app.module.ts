@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -95,6 +95,8 @@ import { ContentIndexComponent } from './Components/class-content/content-index/
 import { ContentSingleComponent } from './Components/class-content/content-single/content-single.component';
 import { AdminClassControlingComponent } from './Components/Class/admin-class-controling/admin-class-controling.component';
 import { AdminPostControlComponent } from './Components/posts/admin-post-control/admin-post-control.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { PayClassComponent } from './Components/Class/pay-class/pay-class.component';
 
 @NgModule({
   declarations: [
@@ -195,7 +197,8 @@ import { AdminPostControlComponent } from './Components/posts/admin-post-control
     ContentIndexComponent,
     ContentSingleComponent,
     AdminClassControlingComponent,
-    AdminPostControlComponent
+    AdminPostControlComponent,
+    PayClassComponent
   ],
   imports: [
     BrowserModule,
@@ -207,9 +210,14 @@ import { AdminPostControlComponent } from './Components/posts/admin-post-control
     FormsModule,
     NgxDropzoneModule,
     BrowserModule,
+    NgbModule,
 
 
 
+  ],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA,
+    NO_ERRORS_SCHEMA
   ],
   // providers: [ { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },],
   bootstrap: [AppComponent]
