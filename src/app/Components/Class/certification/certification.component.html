@@ -29,26 +29,18 @@
           <p class="date">{{myDate | date: 'medium' }}</p>
          
         </div>
-
-        <!-- <div class="signature-wrapper">
-          <div class="signature-box">
-            <div class="signature relative">
-              <img src="https://res.cloudinary.com/dawdpkt4f/image/upload/v1657125838/kelasbersama/tanda-tangan_srhxa7.png" alt="" style="
-                    max-height: 120px;
-                    max-width: 120px;
-                    object-fit: contain;
-                  " />
-            </div>
-          </div>
-
-        </div> -->
       </div>
       <div class="left-block"></div>
       <div class="right-block"></div>
     </div>
     
   </div>
-  
+
 </body>
-<button class="btn btn-primary m-3 p-10" (click)="downloadAsPDF()">Download Certification</button>
+<div class="row justify-content-center   ">
+  <div class="col-lg-4 p-3">
+<button class="btn  w-50 m-3 "  style="background-color:#92278f;" (click)="downloadAsPDF()">Download Certification</button>
+  </div>
+</div>
+
 </html>
