@@ -43,7 +43,10 @@ export class SignInComponent implements OnInit {
         })
       }).subscribe( data =>{
         this.userData = data ;
+        
+        
         if(this.userData.role != 3){
+      
           window.localStorage.setItem("token" ,this.token.token );
           window.localStorage.setItem("role",`${this.userData.role}`)
           this.route.navigate(['/slachpage'])
