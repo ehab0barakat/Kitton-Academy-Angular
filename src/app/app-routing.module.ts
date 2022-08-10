@@ -130,6 +130,7 @@ const routes: Routes = [
   {path : "classescat-delete/:id" , component: DeleteCatClassComponent},
   {path: 'checkout/:id',component:CheckoutComponent},
   {path: 'myclasses/:id',component:MyclassesComponent},
+  {path: 'rate/:id',component:PayClassComponent},
   {path:'Products',component:ProductsComponent},
   {path:'ProductList',component:ProductListComponent},
   {path:'AddNewProduct',component:AddProductComponent},
@@ -164,7 +165,7 @@ const routes: Routes = [
   {path : "event-control/event/:id" , component: EventsSingleComponent},
   {path : "event/:id" , component: EventsSingleComponent},
   {path : "events-archive" , component: EventsArchiveComponent},
-  {path: 'rate/:id',component:PayClassComponent},
+ 
   {path:'eventcats-index',component:EventCatsIndexComponent},
   {path:'eventcats-add',component:EventCatsAddComponent},
   {path:'eventcats-update/:id',component:EventCatsUpdateComponent},
