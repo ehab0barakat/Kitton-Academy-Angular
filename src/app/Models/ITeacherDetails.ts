@@ -5,7 +5,9 @@ export interface ITeacherDetails {
   image: string;
   email: string;
   phone:string;
+  name:string;
   address:string;
+  balance:string;
   faceurl:string;
   googleurl:string;
   dribbleurl:string;

@@ -1,6 +1,7 @@
 export interface ITeacher {
     id: number;
     title:string;
+    name:string;
     specialization:string;
     description:string;
     image:string;
