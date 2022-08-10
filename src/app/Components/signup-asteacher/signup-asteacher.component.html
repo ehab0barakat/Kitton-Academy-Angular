@@ -25,101 +25,107 @@
                 <h3 class="title">Register Now</h3>
                 <form class="account-form" #myform="ngForm" (ngSubmit)="mysubmit(myform)" >
                     <div class="form-group">
-                        <input type="text" placeholder="Name" name="name" required ngModel #Name="ngModel">
-                        <div *ngIf="Name.invalid && (Name.dirty || Name.touched) ">
-                            <div style="color:red;" *ngIf="Name.errors?.['required']">
-                                Name is required
-                            </div>
-                            <div style="color:red;" *ngIf="Name.errors?.['minlength']">
-                                Name must be at least 1 characters long.
-                            </div>
-                            <div style="color:red;" *ngIf="Name.errors?.['maxlength']">
-                                Name must be least then 20 characters
-                            </div>
+                  <label class="form-label d-flex justify-content-start" for="ParentName">Name  </label>
+                    <input type="text" id="Name" name="name" required  pattern="[A-Za-z]{5,20}" ngModel #Name="ngModel">
+                    <div class="alert alert-danger mt-3" [hidden]="Name.valid || Name.untouched">
+                        <small *ngIf="Name.errors?.['required']">
+                           Name is required 
+                        </small>
+                        <small *ngIf="Name.errors?.['pattern']">
+                         Name must be 5 letters at least 
+                        </small>
+                        
                         </div>
                     </div>
                     <div class="form-group">
-                        <input type="text" placeholder="Email" name="email" required ngModel #email="ngModel">
-                        <div *ngIf="email.invalid && (email.dirty || email.touched) ">
-                            <div style="color:red;" *ngIf="email.errors?.['required']">
-                                email is required
+                  <label class="form-label d-flex justify-content-start" for="Email">Email  </label>
+                        <input type="text" id="Email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" ngModel #email="ngModel">
+                        <div class="alert alert-danger mt-3" [hidden]="email.valid || email.untouched">
+                            <small *ngIf="email.errors?.['required']">
+                                Email is required 
+                            </small>
+                            <small [hidden]="!email.errors?.['pattern']">
+                                Please input a valid email.
+                            </small>
+                            
                             </div>
-                        </div>
                     </div>
                     <div class="form-group">
-                        <input type="text" placeholder="enter your phone" name="phone" required minlength="11" ngModel
+                  <label class="form-label d-flex justify-content-start" for="phoneNumber">Phone Number  </label>
+                        <input type="text" id="phoneNumber" name="phone" required minlength="11" ngModel
                             #phone="ngModel">
-                        <div *ngIf="phone.invalid && (phone.dirty || phone.touched) ">
-                            <div style="color:red;" *ngIf="phone.errors?.['required']">
+                        <div class="alert alert-danger mt-3" [hidden]="phone.valid || phone.untouched">
+                            <div *ngIf="phone.errors?.['required']">
                                 phone is required
                             </div>
-                            <div style="color:red;" *ngIf="phone.errors?.['minlength']">
-                                Name must be at least 11 characters long.
+                            <div  *ngIf="phone.errors?.['minlength']">
+                                phone must be at least 11 characters long.
                             </div>
                         </div>
                     </div>
                     <div class="form-group">
-                        <input type="text" placeholder="enter your SSID" name="ssid" (keyup)="onKeymax($event)" required maxlength="14" ngModel
+                    <label class="form-label d-flex justify-content-start" for="SSID">SSID </label>
+                        <input type="text" id="SSID" name="ssid" (keyup)="onKeymax($event)" required pattern="[0-9]{14}" ngModel
                         #SSID="ngModel">
-                        <div *ngIf="SSID.invalid && (SSID.dirty || SSID.touched) ">
-                            <div style="color:red;" *ngIf="SSID.errors?.['required']">
+                        <div class="alert alert-danger mt-3" [hidden]="SSID.valid || SSID.untouched">
+                            <div  *ngIf="SSID.errors?.['required']">
                                 SSID is required
                             </div>
+                        
+                        <small *ngIf="SSID.errors?.['pattern']">
+                            Please input a valid SSID.
+                        </small>
                         </div>
-                        <div style="color:red;" *ngIf="(max.length>14) &&  (SSID.touched)">
-                            Name must be at least 14 characters long.
-                        </div>
+                        
                     </div>
                     <div class="form-group">
-                        <input type="text" placeholder="Address" name="address"  required ngModel #Address="ngModel">
-                        <div *ngIf="Address.invalid && (Address.dirty || Address.touched) ">
-                            <div style="color:red;" *ngIf="Address.errors?.['required']">
-                                Address is required
-                            </div>
-                            <div style="color:red;" *ngIf="Address.errors?.['minlength']">
-                                Address must be at least 1 characters long.
-                            </div>
-                            <div style="color:red;" *ngIf="Address.errors?.['maxlength']">
-                                Address must be least then 20 characters
-                            </div>
-                        </div>
-                    </div>
+                        <label class="form-label d-flex justify-content-start" for="Address">Address </label>
+                          <input type="text" id="Address"  name="Address"  required pattern="[A-Za-z]{5,20}" ngModel #Address="ngModel"  [class.is-valid]="Address.valid" [class.is-invalid]="Address.invalid"/>
+                          <div class="alert alert-danger mt-3" [hidden]="Address.valid || Address.untouched">
+                              <small *ngIf="Address.errors?.['required']">
+                                  Address is required 
+                              </small>
+                              <small *ngIf="Address.errors?.['pattern']">
+                                  Address must be 5 letters at least 
+                              </small>
+                              
+                              </div>
+                      </div>
                     <div class="form-group">
-                        <input type="password" (keyup)="onKeypassword($event)" placeholder="Password" name="password" minlength="6" maxlength="15" required
+                        <label class="form-label d-flex justify-content-start" for="Password">Password </label>
+                        <input type="password" (keyup)="onKeypassword($event)"id="Password" name="password" minlength="6" maxlength="15" required
                             ngModel #password="ngModel">
-                        <div *ngIf="password.invalid && (password.dirty || password.touched) ">
-                            <div style="color:red;" *ngIf="password.errors?.['required']">
+                        <div class="alert alert-danger mt-3" [hidden]="password.valid || password.untouched">
+                            <div  *ngIf="password.errors?.['required']">
                                 password is required
                             </div>
-                            <div style="color:red;" *ngIf="password.errors?.['minlength']">
+                            <div  *ngIf="password.errors?.['minlength']">
                                 Name must be at least 6 characters long.
                             </div>
-                            <div style="color:red;" *ngIf="password.errors?.['maxlength']">
+                            <div *ngIf="password.errors?.['maxlength']">
                                 Name must be least then 15 characters
                             </div>
                         </div>
                     </div>
                     <div class="form-group">
-                        <input type="password" (keyup)="onKey($event)"  placeholder="Confirm Password"  required ngModel #confirmpassword="ngModel">
-                        <div *ngIf="confirmpassword.invalid && (confirmpassword.dirty || confirmpassword.touched) ">
-                            <div style="color:red;" *ngIf="confirmpassword.errors?.['required']">
-                                confirm password is required
+                        <label class="form-label d-flex justify-content-start" for="Confirm Password"> Confirm Password </label>
+                        <input type="password" (keyup)="onKey($event)"  id="Confirm Password"  required ngModel #confirmpassword="ngModel">
+                        <div  class="alert alert-danger mt-3" *ngIf="conpass!=pass" >
+                     
+                                confirm password is invalid
                             </div>
 
-
-                        </div>
-                        <div style="color:red;" *ngIf="conpass!=pass">
-                            confirm password is invalid
-                        </div>
-
+                        
                     </div>
 
 
 
                     <!-- Terminal -->
                     <div class="terminal">
+                        <label class="form-label d-flex justify-content-start">Image</label>
                       <ngx-dropzone (change)="onSelect($event)" style="margin: 20px;">
-                        <ngx-dropzone-label>Drop it, baby!</ngx-dropzone-label>
+                        
+                        <ngx-dropzone-label>Drop Your Image</ngx-dropzone-label>
                         <ngx-dropzone-image-preview
                           ngProjectAs="ngx-dropzone-preview"
                           *ngFor="let f of files"
@@ -144,26 +150,8 @@
             </div>
             </form>
             <div class="account-bottom">
-                <span class="d-block cate pt-10">Are you a member? <a href="login.html">Login</a></span>
-                <span class="or"><span>or</span></span>
-                <h5 class="subtitle">Register With Social Media</h5>
-                <ul class="social-icons justify-content-center">
-                    <li>
-                        <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
-                    </li>
-                    <li>
-                        <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
-                    </li>
-                    <li>
-                        <a href="#" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
-                    </li>
-                    <li>
-                        <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
-                    </li>
-                    <li>
-                        <a href="#" class="pinterest"><i class="fab fa-pinterest"></i></a>
-                    </li>
-                </ul>
+                <span class="d-block cate pt-10">Are you a member? <a class="btn " style="text-decoration: underline; color: rgb(234, 85, 85);" routerLink="/sign-in">Login</a></span>
+                
             </div>
         </div>
     </div>

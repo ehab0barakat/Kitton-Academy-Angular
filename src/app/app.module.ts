@@ -38,7 +38,6 @@ import { DeleteClassComponent } from './Components/Class/crud-class/delete-class
 import { CatClassComponent } from './Components/Class/cat-class/cat-class.component';
 import { FilteredClassComponent } from './Components/Class/filtered-class/filtered-class.component';
 import { UpdatePostComponent } from './Components/posts/Posts_Crud/update-post/update-post.component';
-import { AddPostComponent } from './Components/posts/Posts_Crud/add-post/add-post.component';
 import { DeletePostComponent } from './Components/posts/Posts_Crud/delete-post/delete-post.component';
 import { ShowPostComponent } from './Components/posts/Posts_Crud/show-post/show-post.component';
 // import { ClassDetailsComponent } from './Components/class-details/class-details.component';
@@ -97,6 +96,9 @@ import { AdminClassControlingComponent } from './Components/Class/admin-class-co
 import { AdminPostControlComponent } from './Components/posts/admin-post-control/admin-post-control.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PayClassComponent } from './Components/Class/pay-class/pay-class.component';
+import { DeleteProfileComponent } from './Components/Profile/delete-profile/delete-profile.component';
+import { CardsComponent } from './Components/Games/memory game/cards/cards.component';
+import { SingleCardComponent } from './Components/Games/memory game/single-card/single-card.component';
 
 @NgModule({
   declarations: [
@@ -135,7 +137,6 @@ import { PayClassComponent } from './Components/Class/pay-class/pay-class.compon
     DetailsClassComponent,
     EventDeleteComponent,
     UpdatePostComponent,
-    AddPostComponent,
     DeletePostComponent,
     ShowPostComponent,
     // ProductComponent,
@@ -198,7 +199,10 @@ import { PayClassComponent } from './Components/Class/pay-class/pay-class.compon
     ContentSingleComponent,
     AdminClassControlingComponent,
     AdminPostControlComponent,
-    PayClassComponent
+    PayClassComponent,
+    DeleteProfileComponent,
+    CardsComponent,
+    SingleCardComponent
   ],
   imports: [
     BrowserModule,

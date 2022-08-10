@@ -4,14 +4,21 @@
 <div class="container mt-3 mb-5 d-flex justify-content-evenly" *ngIf="data?.role==1">
 
    <div >
-   <form #postForm="ngForm"  (ngSubmit)="update()" >
+   <form #profileForm="ngForm"  (ngSubmit)="update()" >
     <div class="row">
         <div class="col">
           <!--  first Name input -->
           <div class="form-outline">
             <label class="form-label" for="form8Example1">Your Name </label>
-            <input  type="text" id="form8Example1"  class="form-control" [ngModelOptions]="{standalone:true}"  [(ngModel)]="data.parentName"  />
-
+            <input #parentNameInput="ngModel"  type="text" id="form8Example1" name="parentName" class="form-control" [ngModelOptions]="{standalone:true}"  [(ngModel)]="data.parentName" required pattern="[A-Za-z]{5,11}" [class.is-valid]="parentNameInput.valid" [class.is-invalid]="parentNameInput.invalid" />
+            <div class="alert alert-danger mt-3" [hidden]="parentNameInput.valid || parentNameInput.untouched">
+              <small *ngIf="parentNameInput.errors?.['required']">
+                 Name is required 
+              </small>
+              <small *ngIf="parentNameInput.errors?.['pattern']">
+                 Name must be 5 letters at least
+              </small>
+              </div>
           </div>
         </div>
         <div class="col">
@@ -72,7 +79,7 @@
               </div>
            </div>
            
-           <button type="submit" class="btn btn-primary mt-3">Submit</button>
+           <button type="submit"  [disabled]="profileForm.invalid" class="btn btn-primary mt-3">Submit</button>
 
    </form>
    </div>

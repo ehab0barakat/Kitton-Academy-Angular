@@ -1,0 +1,21 @@
+
+<h5 class="mt-5 text-center text-danger "> Delete Profile </h5>
+<!-- update user profile  -->
+<div class="container mt-3 mb-5 d-flex justify-content-evenly" *ngIf="data?.role==1">
+
+   <div >
+   <form #postForm="ngForm"  (ngSubmit)="deleteProfile(data.password,userPassword.value)" >
+    <div class="row">
+        <div class="col">
+          <!--  first Name input -->
+          <div class="form-outline">
+            <label class="form-label" for="form8Example1">password </label>
+            <input  type="password" id="form8Example1"  class="form-control" placeholder="enter your password"  #userPassword/>
+
+          </div>
+        
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Submit</button>
+
+    
+   </div>

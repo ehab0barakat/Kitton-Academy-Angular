@@ -12,6 +12,8 @@ import { UploadService } from 'src/app/Services/upload.service';
 })
 export class UpdatePostComponent implements OnInit {
  editPost:Posts={} as Posts;
+ showpost: Posts= {} as Posts;
+
  auth:any = localStorage.getItem("role");
   image: any;
   constructor(private postApiService:ApiPostsService,
@@ -29,6 +31,10 @@ export class UpdatePostComponent implements OnInit {
         if(this.auth != 2){
           this.router.navigate(['/not-auth']);
         }
+
+        this.postApiService.getPostById(this.targetPostId).subscribe(response=>{
+          this.showpost = response ;
+        })
   }
 
 
@@ -71,6 +77,8 @@ export class UpdatePostComponent implements OnInit {
 EditPost(){
   this.editPost.image=this.image.secure_url
 this.postApiService.editPost(this.editPost,this.targetPostId).subscribe(Response=>{
+  
+  
   console.log(Response);
   
  if(Response){
