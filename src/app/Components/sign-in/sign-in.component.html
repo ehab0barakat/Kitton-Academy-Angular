@@ -26,9 +26,9 @@
         <div class="account-wrapper">
             <h3 class="title">Login</h3>
             <form class="account-form" #myform="ngForm" (ngSubmit)="mysubmit(myform)">
-<div class="form-group">
+                     <div class="form-group">
                   <label class="form-label d-flex justify-content-start" for="Email">Email  </label>
-                        <input type="text" id="Email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" ngModel #email="ngModel">
+                        <input type="text" id="Email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" ngModel #email="ngModel" >
                         <div class="alert alert-danger mt-3" [hidden]="email.valid || email.untouched">
                             <small *ngIf="email.errors?.['required']">
                                 Email is required 
@@ -43,7 +43,7 @@
                     <div class="form-group">
                         <label class="form-label d-flex justify-content-start" for="Password">Password </label>
                         <input type="password" id="Password" name="password" required
-                            ngModel #password="ngModel">
+                            ngModel #password="ngModel" >
                         <div class="alert alert-danger mt-3" [hidden]="password.valid || password.untouched">
                             <div  *ngIf="password.errors?.['required']">
                                 password is required
@@ -66,7 +66,7 @@
 
                 <div class="fs-2  text-danger">{{message}}</div>
 
-
+                
 
                 <div class="form-group">
                     <button type="submit" [disabled]="myform.invalid" class="btn btn-primary d-block customs-button mt-5 "
@@ -78,9 +78,18 @@
             <div class="account-bottom">
                 <span class="d-block cate pt-10">Do Not Have any Account? <a routerLink="/Welcome">Sign
                         Up</a></span>
-                
+
+                        <!-- <div   class="alert alert-danger mt-3" *ngIf="email.value==userData.email|| password.value==userData.password">
+                    <small>
+                        invalid Email or password"
+                    </small>
+                 </div>
+                 -->
             </div>
         </div>
+    
+       
     </div>
+
 </div>
 <!-- ==========Login Section Section Ends Here========== -->
