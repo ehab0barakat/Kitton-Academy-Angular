@@ -72,6 +72,7 @@ import { ContentUpdataComponent } from './Components/class-content/content-updat
 import { AdminClassControlingComponent } from './Components/Class/admin-class-controling/admin-class-controling.component';
 import { AdminPostControlComponent } from './Components/posts/admin-post-control/admin-post-control.component';
 import { PaymentComponent } from './Components/payment/payment.component';
+import { PayClassComponent } from './Components/Class/pay-class/pay-class.component';
 
 
 
@@ -163,7 +164,7 @@ const routes: Routes = [
   {path : "event-control/event/:id" , component: EventsSingleComponent},
   {path : "event/:id" , component: EventsSingleComponent},
   {path : "events-archive" , component: EventsArchiveComponent},
-
+  {path: 'rate/:id',component:PayClassComponent},
   {path:'eventcats-index',component:EventCatsIndexComponent},
   {path:'eventcats-add',component:EventCatsAddComponent},
   {path:'eventcats-update/:id',component:EventCatsUpdateComponent},
