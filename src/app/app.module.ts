@@ -97,6 +97,7 @@ import { AdminClassControlingComponent } from './Components/Class/admin-class-co
 import { AdminPostControlComponent } from './Components/posts/admin-post-control/admin-post-control.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PayClassComponent } from './Components/Class/pay-class/pay-class.component';
+import { CertificationComponent } from './Components/Class/certification/certification.component';
 
 @NgModule({
   declarations: [
@@ -198,7 +199,8 @@ import { PayClassComponent } from './Components/Class/pay-class/pay-class.compon
     ContentSingleComponent,
     AdminClassControlingComponent,
     AdminPostControlComponent,
-    PayClassComponent
+    PayClassComponent,
+    CertificationComponent
   ],
   imports: [
     BrowserModule,

@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { count } from 'rxjs';
 import { classComment } from 'src/app/Models/classcomment';
 import { classes } from 'src/app/Models/classes';
+import { AuthService } from 'src/app/Services/auth.service';
 import { ClassCatsService } from 'src/app/Services/class-cats.service';
 import { ClassContentService } from 'src/app/Services/class-content.service';
 import { ClassesService } from 'src/app/Services/classes.service';
@@ -15,8 +16,9 @@ import { MyclassesService } from 'src/app/Services/myclasses.service';
 })
 export class DetailsClassComponent implements OnInit {
   numberOfComments: number =2;
+  data: any;
 
-  constructor(private activatedRoute : ActivatedRoute,public router: Router ,
+  constructor(private authService:AuthService,private activatedRoute : ActivatedRoute,public router: Router ,
     private classService:ClassesService,
     private MyclassesService:MyclassesService,
     private ClassContent: ClassContentService,
@@ -65,8 +67,11 @@ export class DetailsClassComponent implements OnInit {
           this.allcomments=response;
           console.log(this.allcomments);
           console.log(this.allcomments[0].class_id);
-
-
+        })
+          this.authService.Auth().subscribe(response=>{
+            this.data=response;
+            console.log(this.data); 
+            
         })
         this.MyclassesService.getCountComments(this.selected).subscribe(response=>{
           this.numberOfComments=response

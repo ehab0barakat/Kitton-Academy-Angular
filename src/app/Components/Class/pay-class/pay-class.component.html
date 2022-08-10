@@ -33,15 +33,18 @@
                           <div class="widget-body">
                               <form class="comment-form" (ngSubmit)="classSend_comment(AllClasses?.id,data?.id)">
                                   <div class="form-group">
-                                      <input type="text" placeholder="Your Name" name="name"  [ ngModelOptions]="{standalone:true}"   [( ngModel )]="classComment.user_name">
+                                      <input type="text" placeholder="Your Name" name="name"  [ngModelOptions]="{standalone:true}"   [(ngModel)]="classComment.user_name">
                                   </div>
                                   <div class="form-group w-100">
-                                      <textarea  name="message" placeholder="Your Comments" [ ngModelOptions]="{standalone:true}"   [( ngModel )]="classComment.comment"></textarea>
+                                      <textarea  name="message" placeholder="Your Comments" [ngModelOptions]="{standalone:true}"   [(ngModel)]="classComment.comment"></textarea>
                                   </div>
                                   <div class="form-group">
                                       <button type="submit" class="custom-button" routerLink = "/classes/{{ AllClasses?.id }}" ><span>Send Comment</span></button>
                                   </div>
                               </form>
+                              <div class="form-group">
+                                <button type="submit" class="custom-button" routerLink = "/certificate/{{ AllClasses?.id }}" ><span>Get Your Certification</span></button>
+                            </div>
                           </div>
                       </div>
           </div>

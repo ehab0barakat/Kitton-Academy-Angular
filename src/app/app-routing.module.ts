@@ -73,6 +73,7 @@ import { AdminClassControlingComponent } from './Components/Class/admin-class-co
 import { AdminPostControlComponent } from './Components/posts/admin-post-control/admin-post-control.component';
 import { PaymentComponent } from './Components/payment/payment.component';
 import { PayClassComponent } from './Components/Class/pay-class/pay-class.component';
+import { CertificationComponent } from './Components/Class/certification/certification.component';
 
 
 
@@ -131,6 +132,7 @@ const routes: Routes = [
   {path: 'checkout/:id',component:CheckoutComponent},
   {path: 'myclasses/:id',component:MyclassesComponent},
   {path: 'rate/:id',component:PayClassComponent},
+  {path: 'certificate/:id',component:CertificationComponent},
   {path:'Products',component:ProductsComponent},
   {path:'ProductList',component:ProductListComponent},
   {path:'AddNewProduct',component:AddProductComponent},
