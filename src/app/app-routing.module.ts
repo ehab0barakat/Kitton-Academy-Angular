@@ -177,7 +177,7 @@ const routes: Routes = [
   {path:'eventcats-update/:id',component:EventCatsUpdateComponent},
   {path:'eventcats-delete/:id',component:EventCatsDeleteComponent},
   {path:'classescat-index',component:CrudCatClassComponent},
-  {path:'classes-index',component:CrudClassComponent},
+  {path:'classes-index',component:AdminClassControlingComponent},
   {path:'classes',component:CatClassComponent},
   {path :"teachers" , component:TeachersComponent},
   {path:'post-index',component:PostsComponent},
@@ -185,7 +185,6 @@ const routes: Routes = [
   {path:'single-post/:id',component:SinglePostComponent},
   {path:'edit-profile',component:EditProfileComponent},
   {path: 'classes/:id',component:DetailsClassComponent},
-  {path: 'classes-index',component:AdminClassControlingComponent},
   {path : "post-control" , component: AdminPostControlComponent},
 
 ]},
