@@ -75,8 +75,12 @@ export class UpdatePostComponent implements OnInit {
 
 
 EditPost(){
-  this.editPost.image=this.image.secure_url
-this.postApiService.editPost(this.editPost,this.targetPostId).subscribe(Response=>{
+  if(this.image?.secure_url){
+    this.showpost.image=this.image.secure_url
+  }
+
+  
+this.postApiService.editPost(this.showpost,this.targetPostId).subscribe(Response=>{
   
   
   console.log(Response);
