@@ -108,13 +108,13 @@
                 </div>
                 <div class="form-group">
                     <label class="form-label d-flex justify-content-start" for="Child Name"> Child Name </label>
-                    <input type="text" id="Child Name" name="ChildName" minlength="5" maxlength="20" required ngModel #ChildName="ngModel">
+                    <input type="text" id="Child Name" name="ChildName" minlength="3" maxlength="20" required ngModel #ChildName="ngModel">
                     <div  class="alert alert-danger mt-3" *ngIf="ChildName.invalid && (ChildName.dirty || ChildName.touched) ">
                         <div *ngIf="ChildName.errors?.['required']">
                             ChildName is required
                         </div>
                         <div  *ngIf="ChildName.errors?.['minlength']">
-                            ChildName must be at least 5 characters long.
+                            ChildName must be at least 3 characters long.
                         </div>
                         <div  *ngIf="ChildName.errors?.['maxlength']">
                             ChildName must be least then 20 characters
