@@ -18,8 +18,9 @@
            <div>
 
             <div class="d-flex justify-content-start">
-            <i [class.text-danger]="likestatus?.liked == true" (click)="addlike(singlePost?.id,data?.id)" style="font-size: 30px;" class="fa-solid fa-heart btn fontfam"></i>
-            <h6 class="mt-2">{{numberOfLikes}}</h6>
+
+            <i [class.text-danger]="likestatus?.liked == true" (click)="addlike(singlePost?.id,data?.id)" style="font-size: 30px; cursor: pointer;" class="fa-solid fa-heart "></i>
+            <h6 class=" p-2">{{numberOfLikes}}</h6>
             </div>
 
            </div>

@@ -62,12 +62,20 @@ this.authService.Auth().subscribe(response=>{
 
    }
 
+
+
+
+
+   
   //  user update profile
   update(){
-if(this.data.role==1)
-{
 
-  this.data.image=this.image.secure_url
+
+  if(this.image?.secure_url){
+    this.data.image=this.image.secure_url
+  }
+
+ 
     this.normalUserApi.editProfile(this.data,this.data.id).subscribe(res=>{
       
 
@@ -80,16 +88,20 @@ if(this.data.role==1)
     }
 
       )
-}
+
     
 
 
   }
 
 
+
+
   // teacher  update
   teacherUpdate(){
-    this.data.image=this.image.secure_url
+    if(this.image?.secure_url){
+      this.data.image=this.image.secure_url
+    }
 
     this.teacherService.editProfile(this.data,this.data.id).subscribe(res=>{
 

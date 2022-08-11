@@ -79,7 +79,9 @@ EditPost(){
     this.showpost.image=this.image.secure_url
   }
 
+
 this.postApiService.editPost(this.showpost,this.targetPostId).subscribe(Response=>{
+
 
 
   console.log(Response);
