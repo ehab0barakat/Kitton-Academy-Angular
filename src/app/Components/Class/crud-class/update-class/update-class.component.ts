@@ -6,6 +6,7 @@ import { AuthService } from 'src/app/Services/auth.service';
 import { ClassCatsService } from 'src/app/Services/class-cats.service';
 import { ClassContentService } from 'src/app/Services/class-content.service';
 import { ClassesService } from 'src/app/Services/classes.service';
+import { UploadService } from 'src/app/Services/upload.service';
 
 @Component({
   selector: 'app-update-class',
@@ -14,13 +15,15 @@ import { ClassesService } from 'src/app/Services/classes.service';
 })
 export class UpdateClassComponent implements OnInit {
   valid: any;
+  image: any;
 
   constructor( private activatedRoute : ActivatedRoute,
     private classService:ClassesService,
     private router:Router,
     private classcatsService:ClassCatsService,
     private ClassContent:ClassContentService,
-    private authService:AuthService) { }
+    private authService:AuthService,
+    private _uploadService : UploadService) { }
     editClass :classes ={} as classes ;
 
     AllClassCats:classCats[] = []
@@ -56,7 +59,50 @@ export class UpdateClassComponent implements OnInit {
       console.log(response);
     });
 }
+
+
+
+files: File[] = [];
+
+onSelect(event:any) {
+  console.log(event);
+  this.files.push(...event.addedFiles);
+  this.onUpload();
+}
+
+onRemove(event:any) {
+  console.log(event);
+  this.files.splice(this.files.indexOf(event), 1);
+}
+
+onUpload() {
+  //Scape empty array
+  if (!this.files[0]) {
+    alert('Please upload an image first.');
+  }
+
+  //Upload my image to cloudinary
+  const file_data = this.files[0];
+  const data = new FormData();
+  data.append('file', file_data);
+  data.append('upload_preset', 'ml_default');
+  data.append('cloud_name', 'el-safwa');
+
+  this._uploadService.uploadImage(data).subscribe((response) => {
+    if (response) {
+      this.image = response
+      console.log(response.secure_url);
+    }
+  });
+}
+
+
+
 update(){
+
+  if(this.image?.secure_url){
+    this.editClass.image=this.image.secure_url
+  }
 
    this.classService.update(this.editClass, this.currentPrdID).subscribe(response =>{
     console.log(response);

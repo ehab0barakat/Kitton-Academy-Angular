@@ -64,30 +64,55 @@ posts:any ;
     });
 
 
-    this.eventService.geteventByIDforGuest(this.prod).subscribe(response=>{
-      this.SingleEvents = response ;
-      console.log(response)
+if(this.auth){
+  this.eventService.geteventByID(this.prod).subscribe(response=>{
+    this.SingleEvents = response ;
+    console.log(response)
+    if(response?.valid == false){this.router.navigate(['/not-auth'])}
 
-      // if(response?.valid == false){this.router.navigate(['/not-auth'])}
-
-      this.eventService.getTeacherName(this.SingleEvents.teacher_id).subscribe(response=>{
-      console.log(response)
-      this.teacher = response;
-    })
-
-    var x = setInterval(()=>{
-      this.date = new Date(this.SingleEvents.date)
-      this.timeLeft = this.date.getTime()  -   new Date().getTime()   ;
-        if(this.timeLeft > 0 ){
-          this.days = Math.floor(this.timeLeft  / (1000 * 60 * 60 * 24));
-          this.hours = Math.floor((this.timeLeft  % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-          this.minutes = Math.floor((this.timeLeft  % (1000 * 60 * 60)) / (1000 * 60));
-          this.seconds = Math.floor((this.timeLeft  % (1000 * 60)) / 1000);
-        }else{
-          clearInterval(x)
-        }
-    }, 1000);
+    this.eventService.getTeacherName(this.SingleEvents.teacher_id).subscribe(response=>{
+    console.log(response)
+    this.teacher = response;
   })
+
+  var x = setInterval(()=>{
+    this.date = new Date(this.SingleEvents.date)
+    this.timeLeft = this.date.getTime()  -   new Date().getTime()   ;
+      if(this.timeLeft > 0 ){
+        this.days = Math.floor(this.timeLeft  / (1000 * 60 * 60 * 24));
+        this.hours = Math.floor((this.timeLeft  % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        this.minutes = Math.floor((this.timeLeft  % (1000 * 60 * 60)) / (1000 * 60));
+        this.seconds = Math.floor((this.timeLeft  % (1000 * 60)) / 1000);
+      }else{
+        clearInterval(x)
+      }
+  }, 1000);
+})
+}else{
+  this.eventService.geteventByIDforGuest(this.prod).subscribe(response=>{
+    this.SingleEvents = response ;
+    console.log(response)
+    if(response?.valid == false){this.router.navigate(['/not-auth'])}
+
+    this.eventService.getTeacherName(this.SingleEvents.teacher_id).subscribe(response=>{
+    console.log(response)
+    this.teacher = response;
+  })
+
+  var x = setInterval(()=>{
+    this.date = new Date(this.SingleEvents.date)
+    this.timeLeft = this.date.getTime()  -   new Date().getTime()   ;
+      if(this.timeLeft > 0 ){
+        this.days = Math.floor(this.timeLeft  / (1000 * 60 * 60 * 24));
+        this.hours = Math.floor((this.timeLeft  % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        this.minutes = Math.floor((this.timeLeft  % (1000 * 60 * 60)) / (1000 * 60));
+        this.seconds = Math.floor((this.timeLeft  % (1000 * 60)) / 1000);
+      }else{
+        clearInterval(x)
+      }
+  }, 1000);
+})
+}
 
   setTimeout(()=>{
     if(this.SingleEvents.id == 0){

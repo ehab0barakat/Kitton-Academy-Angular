@@ -68,8 +68,13 @@ import { ContentArchiveComponent } from './Components/class-content/content-arch
 import { ContentDeleteComponent } from './Components/class-content/content-delete/content-delete.component';
 import { ContentSingleComponent } from './Components/class-content/content-single/content-single.component';
 import { ContentUpdataComponent } from './Components/class-content/content-updata/content-updata.component';
+import { AdminClassControlingComponent } from './Components/Class/admin-class-controling/admin-class-controling.component';
+import { AdminPostControlComponent } from './Components/posts/admin-post-control/admin-post-control.component';
+import { PaymentComponent } from './Components/payment/payment.component';
+import { PayClassComponent } from './Components/Class/pay-class/pay-class.component';
 import { DeleteProfileComponent } from './Components/Profile/delete-profile/delete-profile.component';
 import { CardsComponent } from './Components/Games/memory game/cards/cards.component';
+import { CertificationComponent } from './Components/Class/certification/certification.component';
 
 
 
@@ -95,7 +100,7 @@ const routes: Routes = [
   {path:'show-post',component:ShowPostComponent},
   {path:'single-post/:id',component:SinglePostComponent},
   {path:'update-post/:id',component:UpdatePostComponent},
-  
+
   {path:'posting',component:PostingComponent},
   {path:'delete-post/:id',component:DeletePostComponent},
   {path:'cards',component:CardsComponent},
@@ -128,6 +133,8 @@ const routes: Routes = [
   {path : "classescat-delete/:id" , component: DeleteCatClassComponent},
   {path: 'checkout/:id',component:CheckoutComponent},
   {path: 'myclasses/:id',component:MyclassesComponent},
+  {path: 'rate/:id',component:PayClassComponent},
+  {path: 'certificate/:id',component:CertificationComponent},
   {path:'Products',component:ProductsComponent},
   {path:'ProductList',component:ProductListComponent},
   {path:'AddNewProduct',component:AddProductComponent},
@@ -136,13 +143,14 @@ const routes: Routes = [
   {path:'productDetails/:id',component:ProductDetailsComponent},
   {path:'productDetails',component:ProductDetailsComponent},
   {path:'slachAdmin',component:SlachAdminComponent},
+  {path:'payment/:id',component:PaymentComponent},
 
   {path: 'classes-index',component:CrudClassComponent},
+  {path: 'rate/:id',component:PayClassComponent},
 
   {path:'content-add/:id',component:AddComponent}, //id of class itself
   {path:'content-index/:id',component:ContentIndexComponent}, //id of class itself
   {path:'content-archive/:id',component:ContentArchiveComponent}, //id of class itself
-
   {path:'content-update/:id',component:ContentUpdataComponent}, //id of video
   {path:'content-delete/:id',component:ContentDeleteComponent}, //id of video
   {path:'content-single/:id',component:ContentSingleComponent}, //id of video
@@ -161,13 +169,15 @@ const routes: Routes = [
   {path : "event-control/event/:id" , component: EventsSingleComponent},
   {path : "event/:id" , component: EventsSingleComponent},
   {path : "events-archive" , component: EventsArchiveComponent},
+  {path: 'rate/:id',component:PayClassComponent},
 
   {path:'eventcats-index',component:EventCatsIndexComponent},
+  {path:'classescat-index',component:CrudCatClassComponent},
   {path:'eventcats-add',component:EventCatsAddComponent},
   {path:'eventcats-update/:id',component:EventCatsUpdateComponent},
   {path:'eventcats-delete/:id',component:EventCatsDeleteComponent},
   {path:'classescat-index',component:CrudCatClassComponent},
-  {path:'classes-index',component:CrudClassComponent},
+  {path:'classes-index',component:AdminClassControlingComponent},
   {path:'classes',component:CatClassComponent},
   {path :"teachers" , component:TeachersComponent},
   {path:'post-index',component:PostsComponent},
@@ -175,20 +185,9 @@ const routes: Routes = [
   {path:'single-post/:id',component:SinglePostComponent},
   {path:'edit-profile',component:EditProfileComponent},
   {path: 'classes/:id',component:DetailsClassComponent},
-
+  {path : "post-control" , component: AdminPostControlComponent},
 
 ]},
-
-
-
-
-
-
-
-
-
-
-
 
 
 {path:'admin-sign',component:SigninAsadminComponent},

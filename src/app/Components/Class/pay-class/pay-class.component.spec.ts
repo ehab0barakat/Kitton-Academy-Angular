@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AdminControlComponent } from './admin-control.component';
+import { PayClassComponent } from './pay-class.component';
 
-describe('AdminControlComponent', () => {
-  let component: AdminControlComponent;
-  let fixture: ComponentFixture<AdminControlComponent>;
+describe('PayClassComponent', () => {
+  let component: PayClassComponent;
+  let fixture: ComponentFixture<PayClassComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AdminControlComponent ]
+      declarations: [ PayClassComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(AdminControlComponent);
+    fixture = TestBed.createComponent(PayClassComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

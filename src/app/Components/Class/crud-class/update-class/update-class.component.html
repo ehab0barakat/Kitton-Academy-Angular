@@ -34,10 +34,27 @@
       <label for="exampleInputPassword1" class="form-label">time</label>
       <input type="time" class="form-control" id="exampleInputPassword1" [ngModelOptions]="{standalone:true}" [(ngModel)]="editClass.time" >
     </div>
-    <div class="mb-3">
-      <label for="exampleInputPassword1" class="form-label">Image</label>
-      <input type="file"  class="form-control" value="1" id="exampleInputPassword1" [ngModelOptions]="{standalone:true}" [(ngModel)]="editClass.image" >
-    </div>
+
+  <!-- Terminal -->
+  <div class="terminal">
+    <ngx-dropzone (change)="onSelect($event)" style="margin: 20px;">
+      <ngx-dropzone-label>Drop it, baby!</ngx-dropzone-label>
+      <ngx-dropzone-image-preview
+        ngProjectAs="ngx-dropzone-preview"
+        *ngFor="let f of files"
+        [file]="f"
+        [removable]="true"
+        (removed)="onRemove(f)"
+      >
+        <ngx-dropzone-label> ({{ f.type }})</ngx-dropzone-label>
+      </ngx-dropzone-image-preview>
+    </ngx-dropzone>
+    <!-- <div>
+      <button (click)="onUpload()">Upload</button>
+    </div> -->
+  </div>
+
+  
     <div class="mb-3">
       <label for="exampleInputPassword1" class="form-label">Description</label>
       <input type="text" class="form-control" id="exampleInputPassword1" [ngModelOptions]="{standalone:true}" [(ngModel)]="editClass.description" >

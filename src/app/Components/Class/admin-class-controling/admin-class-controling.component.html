@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="row justify-content-end">
+    <div class="col-sm-6 d-flex flex-column gap-2">
+      <!-- <form class="d-flex"> -->
+        <!-- <input class="form-control me-2" [ngModelOptions]="{standalone:true}" type="search" [(ngModel)]="teacherEmail"  placeholder="Search" aria-label="Search"> -->
+        <!-- <button class="btn btn-outline-success" (click)="search(teacherEmail)" type="submit">Search</button> -->
+      <!-- </form> -->
+      <!-- <span class="text-danger fs-3 bg-warning">{{message}}</span> -->
+    <!-- </div> -->
+    <!-- <div class="col-sm-4 d-flex gap-2">
+      <button class="btn btn-primary" (click)="all()" > ALL </button>
+      <button class="btn btn-primary" (click)="nonactive()"> NON ACTIVE </button>
+    </div> -->
+
+  </div>
+</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col"></th>
+      <th scope="col">name</th>
+      <th scope="col">price</th>
+      <th scope="col">duration</th>
+      <th scope="col">is active</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr *ngFor="let item of AllEvents;  let i =index" >
+      <th scope="row">{{i+1}}</th>
+      <td><a routerLink="/classes/{{item.id}}"> View Classes</a></td>
+      <td>{{item.name}}</td>
+
+      <!-- <td *ngIf="item.isActive== 0"><i class="fa-solid fa-x fs-2 text-danger "></i></td>
+      <td *ngIf="item.isActive== 1"><i class="fa-solid fa-check fs-2 text-success "></i></td> -->
+
+      <td >{{ item.price }}</td>
+      <td>{{item.duration}}</td>
+
+                    <td>
+                      <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox"  *ngIf="item.isActive ==0"  (click)="toggle(item.id , item.isActive , item.teacher_id)" >
+                        <input class="form-check-input" type="checkbox"  *ngIf="item.isActive ==1" checked (click)="toggle(item.id , item.isActive ,item.teacher_id)" >
+                      </div>
+                    </td>
+      <td ><button routerLink="/classes-delete/{{item.id}}" class="btn btn-danger"> DELETE  </button></td>
+    </tr>
+
+  </tbody>
+</table>
+

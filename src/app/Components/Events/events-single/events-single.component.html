@@ -42,7 +42,10 @@
                       <div class="tags-area">
                           <ul class="tags">
 
-                              <li>
+                              <li *ngIf="!auth">
+                                  <a routerLink="/sign-up" >Enroll me </a>
+                              </li>
+                              <li *ngIf="auth">
                                   <a (click)="inroll()"  *ngIf="alreadyEnroller == false " >Enroll me </a>
                               </li>
                               <div class="btn text-center fs-2 text-white bg-danger" *ngIf="message !='' " >{{message}}</div>

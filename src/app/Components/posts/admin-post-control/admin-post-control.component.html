@@ -1,0 +1,44 @@
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col"></th>
+      <th scope="col">title</th>
+      <th scope="col">is active</th>
+      <!-- <th scope="col">description</th> -->
+      <!-- <th scope="col">image</th> -->
+      <!-- <th scope="col"> teacher id </th> -->
+      <th scope="col"> Delete </th>
+
+
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr *ngFor="let post of posts   ;  let i =index" >
+      <th scope="row">{{i+1}}</th>
+      <!-- go to single page -->
+      <td><a routerLink="/post/{{post.id}}"> View Post</a></td>
+      <td>{{post.title}}</td>
+
+<!--
+      <td *ngIf="post.isActive== 0"><i class="fa-solid fa-x fs-2 text-danger "></i></td>
+      <td *ngIf="post.isActive== 1"><i class="fa-solid fa-check fs-2 text-success "></i></td> -->
+
+      <td>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox"  *ngIf="post.isActive ==0"  (click)="toggle(post.id , post.isActive , post.teacher_id)" >
+          <input class="form-check-input" type="checkbox"  *ngIf="post.isActive ==1" checked (click)="toggle(post.id , post.isActive ,post.teacher_id)" >
+        </div>
+      </td>
+
+
+
+      <td><button routerLink="/delete-post/{{post.id}}" class="btn btn-danger"> DELETE  </button></td>
+
+    </tr>
+
+
+  </tbody>
+</table>

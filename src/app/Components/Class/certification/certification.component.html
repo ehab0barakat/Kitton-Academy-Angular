@@ -1,0 +1,54 @@
+<html lang="en">
+
+<head>
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Dancing+Script:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+
+<body id="body">
+  <div class="container relative " id="pdf" #pdf>
+    <div class="background relative">
+      <div class="content-wrapper">
+        <div class="header relative">
+
+        </div>
+
+        <p class="title-top">Certificate</p>
+        <p class="title-bottom">Of Achievement</p>
+        <p class="present">THIS CERTIFICATE IS PROUDLY PRESENTED TO:</p>
+        <p class="name">{{ data?.childName }}</p>
+        <hr class="divider" />
+        <p class="completing">FOR SUCCESSFULLY COMPLETING THE COURSE</p>
+        <p class="course-title">{{AllClasses?.name}}</p>
+
+        <div class="date-wrapper m-5">
+          <p class="date">Date:</p>
+          <p class="date">{{myDate | date: 'medium' }}</p>
+         
+        </div>
+
+        <!-- <div class="signature-wrapper">
+          <div class="signature-box">
+            <div class="signature relative">
+              <img src="https://res.cloudinary.com/dawdpkt4f/image/upload/v1657125838/kelasbersama/tanda-tangan_srhxa7.png" alt="" style="
+                    max-height: 120px;
+                    max-width: 120px;
+                    object-fit: contain;
+                  " />
+            </div>
+          </div>
+
+        </div> -->
+      </div>
+      <div class="left-block"></div>
+      <div class="right-block"></div>
+    </div>
+    
+  </div>
+  
+</body>
+<button class="btn btn-primary m-3 p-10" (click)="downloadAsPDF()">Download Certification</button>
+</html>

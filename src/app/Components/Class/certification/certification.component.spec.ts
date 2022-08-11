@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PayedClassComponent } from './payed-class.component';
+import { CertificationComponent } from './certification.component';
 
-describe('PayedClassComponent', () => {
-  let component: PayedClassComponent;
-  let fixture: ComponentFixture<PayedClassComponent>;
+describe('CertificationComponent', () => {
+  let component: CertificationComponent;
+  let fixture: ComponentFixture<CertificationComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PayedClassComponent ]
+      declarations: [ CertificationComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(PayedClassComponent);
+    fixture = TestBed.createComponent(CertificationComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

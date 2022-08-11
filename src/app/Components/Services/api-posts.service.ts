@@ -17,7 +17,7 @@ export class ApiPostsService {
     this.httpOptions={
       headers:new HttpHeaders({
         'Content-Type': 'application/json' ,
-
+        "Authorization": `Bearer ${localStorage.getItem('token')}`,
       })
     }
    }
@@ -25,12 +25,12 @@ export class ApiPostsService {
 
   // to get all posts
   getAllPosts():Observable<Posts[]>{
-    return  this.httpclient.get<Posts[]>(`${environment.APIBaseURL}/api/post`)
- 
+    return  this.httpclient.get<Posts[]>(`${environment.APIBaseURL}/api/post`, this.httpOptions)
+
   }
-  // get post by id 
+  // get post by id
   getPostById(id:number):Observable<Posts>{
-    return  this.httpclient.get<Posts>(`${environment.APIBaseURL}/api/post/${id}`)
+    return  this.httpclient.get<Posts>(`${environment.APIBaseURL}/api/post/${id}`, this.httpOptions)
 
 
   }
@@ -58,4 +58,49 @@ export class ApiPostsService {
                                                 this.httpOptions)
                                               }
 
+
+
+
+teacherNotify(newPrd:any):Observable<any>{
+  return this.httpclient.post<any>(`${environment.APIBaseURL}/api/post-notification/create`,
+                                            JSON.stringify(newPrd),
+                                            this.httpOptions)
+                                          }
+
+
+showNotifyToTeacher():Observable<any>{
+  return this.httpclient.get<any>(`${environment.APIBaseURL}/api/post-notification/show`,this.httpOptions);
+
+}
+
+
+teacherCheckNotify( id:number ):Observable<any>{
+  return this.httpclient.get<any>(`${environment.APIBaseURL}/api/post-notification/update/${id}`,
+                                            this.httpOptions)
+                                          }
+
+
+
+
+
+ActivationeditPost(param: any , id: any ): Observable<any> {
+  return this.httpclient.put<any>(`${environment.APIBaseURL}/api/post/activate/${id}`, JSON.stringify(param), this.httpOptions)
+
+}
+
+
+  // to get all posts
+  getactiveposts():Observable<Posts[]>{
+    return  this.httpclient.get<Posts[]>(`${environment.APIBaseURL}/api/active-posts`, this.httpOptions)
+
+  }
+
+
+
+
+    // to get all posts
+    AllteacherPosts():Observable<Posts[]>{
+      return  this.httpclient.get<Posts[]>(`${environment.APIBaseURL}/api/teacher-posts`, this.httpOptions)
+
+    }
 }

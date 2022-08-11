@@ -3,8 +3,8 @@
       <div class="box1 col-lg-8 col-md-8 col-sm-11">
 
           <div class="iframe-cont">
-            <div class="about-video" style="height:500px ;" >
-              <img src="{{TargetVideo?.image}}" style="height:500px ;" alt="about">
+            <div class="about-video" style="height:700px ;" >
+              <img src="{{TargetVideo?.image}}" style="height:700px ;" alt="about">
               <a href="{{TargetVideo?.link}}" class="video-button popup" (click)="watch()"  ><i class="flaticon-play"></i></a>
           </div>
           <div class="d-flex` fs-1 py-2"> VIEWS : <strong class="text-danger" >{{HowManyViews}}</strong></div>
@@ -14,7 +14,7 @@
       <div class="box2 col-lg-4 col-md-4 col-sm-1">
           <ul class="video-table">
               <li class="video-lessons"><h5>Course Content</h5></li>
-              <li class="video-lessons"   id="video1" *ngFor="let video of AllEvents ;  let i =index" routerLinkActive="bg-primary" [class.haha]="SeenForAll[i] == true" (click)="change(video.id)">
+              <li class="video-lessons"   id="video1" *ngFor="let video of AllEvents ;  let i =index" routerLinkActive="bg-primary" routerLink="/content-single/{{video.id}}" [class.haha]="newSeenForAll[i] == true" (click)="change(video.id)">
 
               <a routerLink="/content-single/{{video?.id}}"  routerLinkActive="active">
                 <div class="row">
@@ -32,5 +32,14 @@
       </div>
 
 
-  </div>
+      <div class="row justify-content-center   ">
+        <div class="col-lg-4 p-3">
+          <button *ngIf="canRate==true" class="btn btn-success w-50 m-3 " routerLink="/rate/{{classid}}" [disabled] >Kindly Rate & Comment Class</button>
+        </div>
+      </div>
+
+
+
+
+    </div>
 </div>

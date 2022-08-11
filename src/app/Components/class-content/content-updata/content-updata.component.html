@@ -5,7 +5,7 @@
 
     <div class="mb-3">
       <label for="exampleInputname" class="form-label">title</label>
-      <input type="text" class="form-control" id="exampleInputname" aria-describedby="name"  [ngModelOptions]="{standalone:true}" [(ngModel)]="editVideo.title">
+      <input type="text" class="form-control" id="exampleInputname" aria-describedby="name"  [ngModelOptions]="{standalone:true}" [(ngModel)]="editVideo.data.title">
     </div>
 
 
@@ -37,7 +37,7 @@
 
       <div class="mb-3">
         <label for="exampleInputPassword1" class="form-label">Description</label>
-        <input type="text" class="form-control" id="exampleInputPassword1" [ngModelOptions]="{standalone:true}" [(ngModel)]="editVideo.description" >
+        <input type="text" class="form-control" id="exampleInputPassword1" [ngModelOptions]="{standalone:true}" [(ngModel)]="editVideo.data.description" >
       </div>
 
 
@@ -68,7 +68,7 @@
 
       <div class="mb-3" *ngIf="link">
         <label for="exampleInputPassword1" class="form-label">Video</label>
-        <input type="text" class="form-control" id="exampleInputPassword1" [ngModelOptions]="{standalone:true}" [(ngModel)]="editVideo.link" >
+        <input type="text" class="form-control" id="exampleInputPassword1" [ngModelOptions]="{standalone:true}" [(ngModel)]="editVideo.data.link" >
       </div>
 
 
@@ -104,5 +104,5 @@
 
 <!--
   <div>
-      {{editVideo | json }}
+      {{editVideo.data | json }}
   </div> -->

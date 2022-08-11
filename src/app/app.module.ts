@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -92,9 +92,14 @@ import { ContentUpdataComponent } from './Components/class-content/content-updat
 import { ContentDeleteComponent } from './Components/class-content/content-delete/content-delete.component';
 import { ContentIndexComponent } from './Components/class-content/content-index/content-index.component';
 import { ContentSingleComponent } from './Components/class-content/content-single/content-single.component';
+import { AdminClassControlingComponent } from './Components/Class/admin-class-controling/admin-class-controling.component';
+import { AdminPostControlComponent } from './Components/posts/admin-post-control/admin-post-control.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { PayClassComponent } from './Components/Class/pay-class/pay-class.component';
 import { DeleteProfileComponent } from './Components/Profile/delete-profile/delete-profile.component';
 import { CardsComponent } from './Components/Games/memory game/cards/cards.component';
 import { SingleCardComponent } from './Components/Games/memory game/single-card/single-card.component';
+import { CertificationComponent } from './Components/Class/certification/certification.component';
 
 @NgModule({
   declarations: [
@@ -193,9 +198,13 @@ import { SingleCardComponent } from './Components/Games/memory game/single-card/
     ContentDeleteComponent,
     ContentIndexComponent,
     ContentSingleComponent,
+    AdminClassControlingComponent,
+    AdminPostControlComponent,
+    PayClassComponent,
     DeleteProfileComponent,
     CardsComponent,
-    SingleCardComponent
+    SingleCardComponent,
+    CertificationComponent
   ],
   imports: [
     BrowserModule,
@@ -205,9 +214,13 @@ import { SingleCardComponent } from './Components/Games/memory game/single-card/
     HttpClientModule,
     CommonModule,
     FormsModule,
-    NgxDropzoneModule
-
-
+    NgxDropzoneModule,
+    BrowserModule,
+    NgbModule,
+  ],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA,
+    NO_ERRORS_SCHEMA
   ],
   // providers: [ { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },],
   bootstrap: [AppComponent]

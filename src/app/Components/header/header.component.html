@@ -149,15 +149,27 @@
 
         <div class="c-button">
             <a class="dropdown-togle" id="dropdownMenuButton1" data-bs-toggle="dropdown">
-              <span class="cart-amount">{{notification?.count}}</span>
+              <span class="cart-amount">{{notification?.count + notificationClass?.count + notificationPost?.count}}</span>
               <i class="fas fa-bell"></i>
             </a>
 
             <ul class="dropdown-menu meu"  aria-labelledby="dropdownMenuButton1" >
               <li class="position-relative" *ngFor="let not of notification?.data ; let i=index " (click)="check(notification?.check[i].id)" ><a class="dropdown-item " routerLink="/event/{{not.id}}" class="lala" class="d-flex" >
                 <img src="{{not.image}}" width="100px" >
-                <p>admins has approved for this event <strong>{{not.title}}</strong></p>
+                <p>admins has approved for this Event <strong>{{not.title}}</strong></p>
                 <span *ngIf="notification?.check[i].check == 0" class="overlay--a"></span>
+              </a>
+            </li>
+              <li class="position-relative" *ngFor="let not of notificationClass?.data ; let i=index " (click)="checkClass(notificationClass?.check[i].id)" ><a class="dropdown-item " routerLink="/classes/{{not.id}}" class="lala" class="d-flex" >
+                <img src="{{not.image}}" width="100px" >
+                <p>admins has approved for this Class <strong>{{not.name}}</strong></p>
+                <span *ngIf="notificationClass?.check[i].check == 0" class="overlay--a"></span>
+              </a>
+            </li>
+              <li class="position-relative" *ngFor="let not of notificationPost?.data ; let i=index " (click)="checkPost(notificationPost?.check[i].id)" ><a class="dropdown-item " routerLink="/single-post/{{not.id}}" class="lala" class="d-flex" >
+                <img src="{{not.image}}" width="100px" >
+                <p>admins has approved for this Post <strong>{{not.title}}</strong></p>
+                <span *ngIf="notificationPost?.check[i].check == 0" class="overlay--a"></span>
               </a>
             </li>
             </ul>

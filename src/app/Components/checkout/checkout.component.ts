@@ -40,4 +40,12 @@ export class CheckoutComponent implements OnInit {
 //   this.router.navigate(['/not-auth']);
 // }
 //     }
+
+goToPayment(){
+  console.log("test");
+  this.router.navigate([`/payment/${this.prod}`]);
+
+}
+
+
   }

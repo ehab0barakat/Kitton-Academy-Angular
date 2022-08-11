@@ -18,6 +18,10 @@ export class ClassesService {
     };
   }
 
+  admingetall(): Observable<classes[]> {
+    return this.httpclient.get<classes[]>(`${environment.APIBaseURL}/api/classes/allclasses`, this.httpOptions);
+  }
+
   getAllclass(): Observable<classes[]> {
     return this.httpclient.get<classes[]>(`${environment.APIBaseURL}/classes`, this.httpOptions);
   }
@@ -65,14 +69,43 @@ create(newPrd:classes):Observable<classes>{
 
   }
 
+  ActivationeditClass(param: any , id: any ): Observable<any> {
+    return this.httpclient.put<any>(`${environment.APIBaseURL}/api/classes/activate/${id}`, JSON.stringify(param), this.httpOptions)
+
+  }
+
   delete(id: number){
     return this.httpclient.delete<classes>(`${environment.APIBaseURL}/api/classes/${id}`, this.httpOptions)
+
+  }
+  checkdelete(id: number){
+    return this.httpclient.delete<classes>(`${environment.APIBaseURL}/api/classes/check-destroy/${id}`, this.httpOptions)
 
   }
   getMyClasses(id:number):Observable<classes[]>{
     return this.httpclient.get<classes[]>(`${environment.APIBaseURL}/api/myclasses/${id}`,this.httpOptions);
 
   }
+
+  teacherNotify(newPrd:any):Observable<any>{
+    return this.httpclient.post<any>(`${environment.APIBaseURL}/api/class-notification/create`,
+                                              JSON.stringify(newPrd),
+                                              this.httpOptions)
+                                            }
+
+
+  showNotifyToTeacher():Observable<any>{
+    return this.httpclient.get<any>(`${environment.APIBaseURL}/api/class-notification/show`,this.httpOptions);
+
+  }
+
+
+  teacherCheckNotify( id:number ):Observable<any>{
+    return this.httpclient.get<any>(`${environment.APIBaseURL}/api/class-notification/update/${id}`,
+                                              this.httpOptions)
+                                            }
+
+
 
 
   // insertToMyclasses(id: number, classItemId: number, cartQuantity: number): Observable<classes> {
