@@ -12,14 +12,13 @@
 
                   </div>
               </div>
-
           </div>
 
 
            <div>
 
             <div class="d-flex justify-content-start">
-            <i [class.text-danger]="likestatus?.liked == true" (click)="addlike(singlePost?.id,data?.id)" style="font-size: 30px;" class="fa-solid fa-heart btn "></i>
+            <i [class.text-danger]="likestatus?.liked == true" (click)="addlike(singlePost?.id,data?.id)" style="font-size: 30px;" class="fa-solid fa-heart btn fontfam"></i>
             <h6 class="mt-2">{{numberOfLikes}}</h6>
             </div>
 
@@ -39,7 +38,7 @@
 
 
             <div  class="card m-2 p-2"  *ngIf="data?.role==1">
-            
+
                 <p>{{comment.name}}</p>
 
 

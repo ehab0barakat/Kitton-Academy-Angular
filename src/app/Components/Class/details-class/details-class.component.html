@@ -37,7 +37,7 @@
                           <blockquote class="single-quote">
                               <div class="quotes">
                                  {{AllClasses?.description}}
-                                  
+
                               </div>
                           </blockquote>
 
@@ -51,21 +51,21 @@
                                       <p class="fw-light mb-4 pb-2">Latest Comments section by users</p>
 <!-- ////////////////comment///////// -->
                                       <div class="d-flex flex-start p-3" *ngFor="let comment of allcomments" >
-                                        <ng-container  *ngIf="comment.class_id == AllClasses?.id">
+                                        <ng-container  *ngIf="comment?.class_id == AllClasses?.id">
                                         <img class="rounded-circle shadow-1-strong me-3"
                                           src="{{ data?.childImage }}" alt="avatar" width="60"
                                           height="60" />
                                         <div>
-                                          <h6 class="fw-bold mb-1">{{comment.user_name}}</h6>
+                                          <h6 class="fw-bold mb-1">{{comment?.user_name}}</h6>
                                           <div class="d-flex align-items-center mb-3">
                                             <p class="mb-0">
-                                              {{ comment.created_at | date:'medium' }}
+                                              {{ comment?.created_at | date:'medium' }}
 
                                             </p>
                                             <a href="#!" class="link-muted" routerLink="/rate/{{AllClasses?.id}}" ><i class="fas fa-pencil-alt ms-2"></i></a>
                                           </div>
                                           <p class="mb-3" style="color: #ad655f;" >
-                                            {{comment.comment}}
+                                            {{comment?.comment}}
                                           </p>
                                         </div>
                                         </ng-container>
