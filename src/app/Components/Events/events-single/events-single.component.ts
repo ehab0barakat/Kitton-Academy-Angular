@@ -67,11 +67,9 @@ posts:any ;
 if(this.auth){
   this.eventService.geteventByID(this.prod).subscribe(response=>{
     this.SingleEvents = response ;
-    console.log(response)
     if(response?.valid == false){this.router.navigate(['/not-auth'])}
 
     this.eventService.getTeacherName(this.SingleEvents.teacher_id).subscribe(response=>{
-    console.log(response)
     this.teacher = response;
   })
 
@@ -91,11 +89,9 @@ if(this.auth){
 }else{
   this.eventService.geteventByIDforGuest(this.prod).subscribe(response=>{
     this.SingleEvents = response ;
-    console.log(response)
     if(response?.valid == false){this.router.navigate(['/not-auth'])}
 
     this.eventService.getTeacherName(this.SingleEvents.teacher_id).subscribe(response=>{
-    console.log(response)
     this.teacher = response;
   })
 

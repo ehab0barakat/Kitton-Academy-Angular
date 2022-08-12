@@ -5038,7 +5038,7 @@ div[class*=col]:nth-of-type(5n + 5) .event-item .event-thumb .date-tag::before {
   left: -8px;
   bottom: -8px;
   right: 8px;
-  background: url(./img/shadow.png) no-repeat center center;
+  @REM background: url(./img/shadow.png) no-repeat center center;
   background-size: contain;
 }
 .countdown li * {
@@ -6906,7 +6906,7 @@ div[class*=col]:nth-of-type(6n + 6) .product-list-item .product-thumb {
   display: block;
   width: 84px;
   height: 60px;
-  background: url(./img/quote2.png) no-repeat center center;
+  @REM background: url(./img/quote2.png) no-repeat center center;
   background-size: contain;
   margin: 0 auto 30px;
 }

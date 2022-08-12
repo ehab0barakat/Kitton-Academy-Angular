@@ -33,8 +33,6 @@ export class SubEventComponent implements OnInit , OnChanges{
 
   ngOnInit(): void {
 
-    console.log(this.auth)
-
 
   }
 
@@ -42,14 +40,9 @@ export class SubEventComponent implements OnInit , OnChanges{
 
 
   ngOnChanges(changes: SimpleChanges): void {
-
-    console.log(this.selectedCat)
-
     if(this.selectedCat != 0 ){
-
       this.eventcatsService.geteventByCatID(this.selectedCat).subscribe(response=>{
         this.AllEvents = response
-        console.log(this.AllEvents)
       })
     }else{
       this.eventService.getAllActiveEvents().subscribe(response=>{
