@@ -83,7 +83,7 @@ export class PostingComponent implements OnInit {
     console.log(post);
    
      if(post){
-      this.router.navigate(['/post-index']);
+      this.router.navigate(['/show-post']);
  
      }
      

@@ -29,7 +29,7 @@ export class DeletePostComponent implements OnInit {
           console.log(response);
           
           if(response){
-            this.router.navigate(['/post-index']);
+            this.router.navigate(['/show-post']);
           }
         }
       )
