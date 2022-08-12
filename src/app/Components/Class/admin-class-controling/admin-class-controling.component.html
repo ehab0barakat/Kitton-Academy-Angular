@@ -46,7 +46,7 @@
                         <input class="form-check-input" type="checkbox"  *ngIf="item.isActive ==1" checked (click)="toggle(item.id , item.isActive ,item.teacher_id)" >
                       </div>
                     </td>
-      <td ><button routerLink="/classes-delete/{{item.id}}" class="btn btn-danger"> DELETE  </button></td>
+      <td ><button routerLink="/admin/classes-delete/{{item.id}}" class="btn btn-danger"> DELETE  </button></td>
     </tr>
 
   </tbody>

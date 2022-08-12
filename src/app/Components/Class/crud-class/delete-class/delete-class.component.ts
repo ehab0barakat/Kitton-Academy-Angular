@@ -18,9 +18,6 @@ export class DeleteClassComponent implements OnInit {
     private authService : AuthService,
     private ClassContent: ClassContentService) { }
 
-
-
-
     auth:any = localStorage.getItem("role");
     targetId = Number(this.activatedRoute.snapshot.paramMap.get("id")) ;
   ngOnInit(): void {
@@ -31,22 +28,35 @@ export class DeleteClassComponent implements OnInit {
         this.router.navigate(['/not-auth']);
       }else{
         this.classService.delete(this.targetId).subscribe(response =>{
-          if(response){
+// <<<<<<< HEAD
+//           if(response){
+//             this.router.navigate(['/admin/classes-index']);
+//           }
+//     });
+//     this.authService.Auth().subscribe(response=>{
+//       this.auth = response ;
+//       if(this.auth.role != 3 ){
+//         this.router.navigate(['/not-auth']);
+//       }
+//     }
+//   )
+//   }
+
+// });
+// if(this.auth != 3){
+//   this.router.navigate(['/not-auth']);
+// }
+// =======
+          if(this.auth == 2 ){
+            this.router.navigate(['/classes-index']);
+          }else{
             this.router.navigate(['/admin/classes-index']);
           }
     });
-    this.authService.Auth().subscribe(response=>{
-      this.auth = response ;
-      if(this.auth.role != 3 ){
-        this.router.navigate(['/not-auth']);
-      }
-    }
-  )
   }
 
 });
-if(this.auth != 3){
-  this.router.navigate(['/not-auth']);
-}
+
+// >>>>>>> 5851da9de06768ba382c997290dcfc1b15dd166f
 }
 }

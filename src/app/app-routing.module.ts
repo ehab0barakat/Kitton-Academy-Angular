@@ -182,7 +182,8 @@ const routes: Routes = [
   {path:'show-post',component:ShowPostComponent},
   {path:'single-post/:id',component:SinglePostComponent},
   {path:'edit-profile',component:EditProfileComponent},
-  {path: 'classes/:id',component:DetailsClassComponent},
+  // {path: 'classes/:id',component:DetailsClassComponent},
+  {path: 'classes-delete/:id',component:DeleteClassComponent},
   {path : "post-control" , component: AdminPostControlComponent},
 
 ]},

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MindGameService } from 'src/app/Services/mind-game.service';
 
 @Component({
   selector: 'app-cards',
@@ -19,11 +20,24 @@ export class CardsComponent implements OnInit {
     { src: '../../../assets/teamimages/5.jpg', matched: false },
     { src: '../../../assets/teamimages/6.png', matched: false },
   ];
-  constructor() { }
+  players: any;
+  constructor(private MindsGameService : MindGameService) { }
 
   ngOnInit(): void {
     this.completed = false;
     this.shuffleCards();
+
+
+
+    this.MindsGameService.AllScores().subscribe((response) => {
+      this.players = response
+    });
+
+
+
+
+
+
   }
 
   ngDoCheck() {
@@ -38,24 +52,30 @@ export class CardsComponent implements OnInit {
         });
         console.log('MATCHED');
         this.resetTurn();
-        console.log(this.turns);
       } else {
         console.log('NO MATCH');
         setTimeout(() => {
           this.resetTurn();
         }, 500);
-        console.log(this.turns);
       }
     }
+
     if (this.shuffledCards.every((card) => card.matched === true)) {
       this.completed = true;
 
-      setTimeout(() => {
-        this.shuffleCards();
-        this.completed = false;
-      }, 4000);
+    setTimeout(() => {
+
+      this.MindsGameService.CreateNewScore({"score": this.turns}).subscribe((response) => {
+          this.MindsGameService.AllScores().subscribe((response) => {
+            this.players = response
+          });
+      });
+
+      this.shuffleCards();
+      this.completed = false;
+    }, 4000);
+
     }
-    console.log(this.shuffledCards);
   }
 
   resetTurn() {
@@ -70,14 +90,9 @@ export class CardsComponent implements OnInit {
       .map((card) => ({ ...card, id: Math.random() }));
     this.shuffledCards = newCardsArray;
     this.turns = 0;
-
-    console.log(this.shuffledCards, this.turns);
   }
   handleClickCard(card: any) {
-    console.log(card);
     this.choiceOne != null ? (this.choiceTwo = card) : (this.choiceOne = card);
-    console.log('choiceOne: ', this.choiceOne);
-    console.log('choiceTwo: ', this.choiceTwo);
   }
 
 }

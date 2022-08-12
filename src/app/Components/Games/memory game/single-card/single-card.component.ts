@@ -15,7 +15,6 @@ export class SingleCardComponent implements OnInit {
   }
 
   handleClick(card: any) {
-    console.log(card);
     this.clickCard.emit(card);
   }
 }

@@ -60,21 +60,21 @@
 
 <div class="header-bottom">
   <div class="container">
-    <div class="header-wrapper">
+    <div class="header-wrapper ">
       <div class="logo">
         <a href="index.html">
           <img src="./assets/images/logo/logo.png" alt="logo">
         </a>
       </div>
       <div class="menu-area">
-        <ul class="menu">
-          <li class="menu-item-has-hildren">
+        <ul class="menu ">
+          <li class="menu-item-has-hildren ">
             <a routerLinkActive="active" routerLink="/home"><i class="fas fa-home"></i>Home</a>
           </li>
           <li>
             <a routerLinkActive="active" routerLink="/about_us"><i class="fas fa-user"></i>About</a>
           </li>
-          <li class="menu-item-has-children">
+          <li class="menu-item-has-children ">
             <a routerLink="/classes"><i class="fas fa-book"></i>Classes</a>
 
             <ul class="submenu" *ngIf="userData?.role==2" >
@@ -89,7 +89,7 @@
           </li>
 
 
-          <li class="menu-item-has-children">
+          <li class="menu-item-has-children col">
             <a routerLink="/post-index">Posts</a>
 
             <ul class="submenu" *ngIf="userData?.role==2" >
@@ -122,7 +122,7 @@
                 </ul>
               </li>
               <li class="">
-                <a routerLinkActive="active" routerLink="/cards">Games</a>
+                <a *ngIf="userData.role==1 ||  userData.role==2 ||  userData.role==3" routerLinkActive="active" routerLink="/cards">Games</a>
               </li>
             </ul>
           </li>

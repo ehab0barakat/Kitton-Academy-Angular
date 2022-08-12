@@ -21,7 +21,7 @@ data:any;
     // / get data of  login user
 this.authService.Auth().subscribe(response=>{
   this.data=response;
-  console.log(this.data.role);
+  // console.log(this.data.role);
 })
 
 
@@ -30,13 +30,13 @@ this.authService.Auth().subscribe(response=>{
   files: File[] = [];
 
   onSelect(event:any) {
-    console.log(event);
+    // console.log(event);
     this.files.push(...event.addedFiles);
     this.onUpload();
   }
 
   onRemove(event:any) {
-    console.log(event);
+    // console.log(event);
     this.files.splice(this.files.indexOf(event), 1);
   }
 
@@ -56,7 +56,7 @@ this.authService.Auth().subscribe(response=>{
     this._uploadService.uploadImage(data).subscribe((response) => {
       if (response) {
         this.image = response
-        console.log(response.secure_url);
+        // console.log(response.secure_url);
       }
     });
 
