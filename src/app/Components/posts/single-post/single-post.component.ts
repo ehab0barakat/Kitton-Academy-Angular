@@ -55,17 +55,17 @@ export class SinglePostComponent implements OnInit {
   // to get post by id
     this.postApiService.getPostById(this.post).subscribe(response=>{
       this.singlePost = response ;
-      console.log(this.singlePost.id);
+      // console.log(this.singlePost.id);
       
       this.userLikeService.getuserId(this.singlePost.id).subscribe(res=>{
-        console.log(res);
+        // console.log(res);
         this.likestatus=res;
         })
 
       // get all comments of users
     this.commentApiService.getComments().subscribe(response=>{
       this.allcoments=response;
-      console.log(this.allcoments[0].post_id);
+      // console.log(this.allcoments[0].post_id);
 
 
     })
@@ -82,7 +82,7 @@ this.commentApiService.getTeacherComments().subscribe(res=>{
 // get data of  login user
 this.authService.Auth().subscribe(response=>{
   this.data=response;
-  console.log(this.data.role);
+  // console.log(this.data.role);
 })
 
 //
@@ -98,8 +98,8 @@ send_comment(postId:any,userId:any,userName:any){
   this.userComment.post_id=postId;
   this.userComment.name=userName;
 this.commentApiService.sendComments(this.userComment).subscribe(response=>{
-  console.log(this.userComment.name);
-  console.log(this.userComment.comment);
+  // console.log(this.userComment.name);
+  // console.log(this.userComment.comment);
 
   if(response){
     this.userComment.name=" ";
@@ -107,7 +107,7 @@ this.commentApiService.sendComments(this.userComment).subscribe(response=>{
 
     this.commentApiService.getComments().subscribe(response=>{
       this.allcoments=response;
-      console.log(this.allcoments[0].post_id);
+      // console.log(this.allcoments[0].post_id);
 
 
     })
@@ -131,7 +131,7 @@ teacherSend_comment(postId:any,teacherId:any,teacherName:any){
     // teacher send comments
   
    this.commentApiService.teacherSendComments(this.teaherComment).subscribe(response=>{
-    console.log(this.teaherComment);
+    // console.log(this.teaherComment);
     if(response){
 
       this.teaherComment.name=" ";
@@ -170,7 +170,7 @@ this.userLikeService.deletelike(this.userLikes.post_id).subscribe(res=>{
      //  console.log(this.numberOfLikes);
    })
 
-  console.log(res);
+  // console.log(res);
 
 })
 }
@@ -179,7 +179,7 @@ else{
   this.likestatus.liked=!this.likestatus.liked;
   this.userLikeService.addlike(this.userLikes).subscribe(res=>{
 
-    console.log(res);
+    // console.log(res);
     this.userLikeService.getAllLikes(this.post).subscribe(res=>{
       this.numberOfLikes=res
        //  console.log(this.numberOfLikes);

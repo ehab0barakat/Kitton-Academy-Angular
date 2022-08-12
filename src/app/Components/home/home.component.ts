@@ -40,7 +40,7 @@ export class HomeComponent implements OnInit {
 
     this.classService.getAll().subscribe(response=>{
       this.AllClasses = response.slice(0 , 3);
-      console.log(this.AllClasses);
+      // console.log(this.AllClasses);
     })
 
   }
@@ -48,7 +48,7 @@ export class HomeComponent implements OnInit {
   draw(data: ITeacher[]): void {
     this.teachers = data.slice(0 , 4);
 
-    console.log(data);
+    // console.log(data);
 
   }
   error(err: any): void {
