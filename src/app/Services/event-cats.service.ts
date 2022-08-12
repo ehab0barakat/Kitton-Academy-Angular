@@ -26,18 +26,21 @@ import { Event } from '../Models/event';
 
   getAlleventCats():Observable<Eventcats[]>{
 
-  return this.httpclient.get<Eventcats[]>(`${environment.APIBaseURL}/api/eventcats`);
+  return this.httpclient.get<Eventcats[]>(`${environment.APIBaseURL}/api/eventcats`,
+  this.httpOptions);
   }
 
 
   geteventByCatID(claID:number):Observable<Event[]>{
-    return this.httpclient.get<Event[]>(`${environment.APIBaseURL}/api/eventcats/${claID}`);
+    return this.httpclient.get<Event[]>(`${environment.APIBaseURL}/api/eventcats/${claID}`,
+    this.httpOptions);
   }
 
 
 
   geteventcatByID(claID:number):Observable<Eventcats>{
-    return this.httpclient.get<Eventcats>(`${environment.APIBaseURL}/api/eventcat/${claID}`);
+    return this.httpclient.get<Eventcats>(`${environment.APIBaseURL}/api/eventcat/${claID}`,
+    this.httpOptions);
   }
 
 
@@ -45,7 +48,7 @@ import { Event } from '../Models/event';
 
 
   addEventCat(newPrd:Eventcats):Observable<Eventcats>{
-    return this.httpclient.post<Eventcats>(`${environment.APIBaseURL}/api/eventcats/`,
+    return this.httpclient.post<Eventcats>(`${environment.APIBaseURL}/api/eventcats`,
                                               JSON.stringify(newPrd),
                                               this.httpOptions)
                                             }
