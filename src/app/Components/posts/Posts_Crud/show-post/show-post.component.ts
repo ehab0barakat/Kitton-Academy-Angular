@@ -21,7 +21,7 @@ export class ShowPostComponent implements OnInit {
 
     this.authService.Auth().subscribe(response=>{
       this.auth = response ;
-      console.log(this.auth.id);
+      // console.log(this.auth.id);
       
       if(this.auth.role != 2 ){
           this.router.navigate(['/not-auth']);
@@ -29,7 +29,7 @@ export class ShowPostComponent implements OnInit {
         else{
           this.postApiService.AllteacherPosts().subscribe(response=>{
             this.posts=response;
-            console.log(this.posts[0].teacher_id);
+            // console.log(this.posts[0].teacher_id);
           });
         }
       });

@@ -41,13 +41,14 @@ export class UpdatePostComponent implements OnInit {
   files: File[] = [];
 
   onSelect(event:any) {
-    console.log(event);
+    // console.log(event);
     this.files.push(...event.addedFiles);
     this.onUpload();
   }
 
   onRemove(event:any) {
-    console.log(event);
+    // console.log(event);
+    
     this.files.splice(this.files.indexOf(event), 1);
   }
 
@@ -67,7 +68,7 @@ export class UpdatePostComponent implements OnInit {
     this._uploadService.uploadImage(data).subscribe((response) => {
       if (response) {
         this.image = response
-        console.log(response.secure_url);
+        // console.log(response.secure_url);
       }
     });
 
@@ -84,7 +85,7 @@ this.postApiService.editPost(this.showpost,this.targetPostId).subscribe(Response
 
 
 
-  console.log(Response);
+  // console.log(Response);
 
  if(Response){
 

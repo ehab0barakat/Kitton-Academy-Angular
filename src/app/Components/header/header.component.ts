@@ -41,11 +41,11 @@ export class HeaderComponent implements OnInit {
                         this.userData = data;
                         window.localStorage.setItem("role",`${this.userData.role}`)
       },
-      error: err =>  console.log(err)
+      // error: err =>  console.log(err)
 
       // console.log(data)
     })
-    console.log(this.userData)
+    // console.log(this.userData)
 
     this.eventservice.showNotifyToTeacher().subscribe({
         next: data => this.notification =data,
@@ -76,18 +76,18 @@ export class HeaderComponent implements OnInit {
 
   check(id:number){
     this.eventservice.teacherCheckNotify(id).subscribe(response=>{
-      console.log(response)
+      // console.log(response)
     });
   }
   checkClass(id:number){
     this.classService.teacherCheckNotify(id).subscribe(response=>{
-      console.log(response)
+      // console.log(response)
     });
 
   }
   checkPost(id:number){
     this.PostService.teacherCheckNotify(id).subscribe(response=>{
-      console.log(response)
+      // console.log(response)
     });
 
   }

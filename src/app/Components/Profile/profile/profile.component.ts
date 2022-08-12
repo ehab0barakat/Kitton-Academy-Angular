@@ -19,7 +19,7 @@ export class ProfileComponent implements OnInit {
     // / get data of  login user
 this.authService.Auth().subscribe(response=>{
   this.data=response;
-  console.log(this.data);
+  // console.log(this.data);
 })
 
 

@@ -27,7 +27,7 @@ export class AuthService  {
   userData:any  = "0" ;
 
     Auth():Observable<any> {
-      console.log(localStorage.getItem('token'))
+      // console.log(localStorage.getItem('token'))
       return this.httpclient.get<any>(
         `${environment.APIBaseURL}/api/auth/me`,this.httpOptions);}
 }

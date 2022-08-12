@@ -26,7 +26,7 @@ export class DeletePostComponent implements OnInit {
       }
       else{
         this.postApiService.deletePost(this.targetPostId).subscribe(response =>{
-          console.log(response);
+          // console.log(response);
           
           if(response){
             this.router.navigate(['/show-post']);
