@@ -92,7 +92,6 @@ export class CardsComponent implements OnInit {
     this.turns = 0;
   }
   handleClickCard(card: any) {
-    console.log(card);
     this.choiceOne != null ? (this.choiceTwo = card) : (this.choiceOne = card);
   }
 
