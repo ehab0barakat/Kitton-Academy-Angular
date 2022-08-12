@@ -5,9 +5,9 @@
 export const environment = {
   production: false,
 
-  APIBaseURL:'https://new-iti.herokuapp.com',
+  // APIBaseURL:'https://new-iti.herokuapp.com',
 
-  // APIBaseURL:'http://localhost:8000'
+  APIBaseURL:'http://localhost:8000'
 };
 
 /*

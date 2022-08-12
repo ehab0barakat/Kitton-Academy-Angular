@@ -18,9 +18,6 @@ export class DeleteClassComponent implements OnInit {
     private authService : AuthService,
     private ClassContent: ClassContentService) { }
 
-
-
-
     auth:any = localStorage.getItem("role");
     targetId = Number(this.activatedRoute.snapshot.paramMap.get("id")) ;
   ngOnInit(): void {
@@ -31,22 +28,15 @@ export class DeleteClassComponent implements OnInit {
         this.router.navigate(['/not-auth']);
       }else{
         this.classService.delete(this.targetId).subscribe(response =>{
-          if(response){
+          if(this.auth == 2 ){
             this.router.navigate(['/classes-index']);
+          }else{
+            this.router.navigate(['/admin/classes-index']);
           }
     });
-    this.authService.Auth().subscribe(response=>{
-      this.auth = response ;
-      if(this.auth.role != 2 ){
-        this.router.navigate(['/not-auth']);
-      }
-    }
-  )
   }
 
 });
-if(this.auth != 2){
-  this.router.navigate(['/not-auth']);
-}
+
 }
 }

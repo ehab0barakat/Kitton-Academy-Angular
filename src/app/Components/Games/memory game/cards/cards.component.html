@@ -1,26 +1,56 @@
-<h5 class="mt-5 text-black "> Matching Cards Game  </h5>
-<div class="ui centered vertically divided grid">
-    <div class="row">
-      <button class=" btn btn-primary mt-3 mb-3" style="width:200px ; margin: auto;" (click)="shuffleCards()">NEW GAME</button>
-    </div>
-    <div class="ui centered row">
-      <div class="ui grid four column row justify-content-center">
-        <div class="row d-flex w-75 ">
-          <div class="col-3 mt-3 " *ngFor="let card of shuffledCards">
-            <app-single-card
-              (clickCard)="handleClickCard($event)"
-              [card]="card"
-              [flipped]="card === choiceOne || card === choiceTwo || card.matched"
-            ></app-single-card>
+<div class="row">
+  <section class="col-sm-8">
+    <h5 class="mt-5 text-black "> Matching Cards Game  </h5>
+    <div class="ui centered vertically divided grid">
+      <div class="row">
+        <button class=" btn btn-primary mt-3 mb-3" style="width:200px ; margin: auto;" (click)="shuffleCards()">NEW GAME</button>
+      </div>
+      <div class="ui centered row">
+        <div class="ui grid four column row justify-content-center">
+          <div class="row d-flex w-75 ">
+            <div class="col-3 mt-3 " *ngFor="let card of shuffledCards">
+              <app-single-card
+                (clickCard)="handleClickCard($event)"
+                [card]="card"
+                [flipped]="card === choiceOne || card === choiceTwo || card.matched"
+              ></app-single-card>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="row" *ngIf="!completed">
-      <a class=" btn btn-danger mt-3 mb-3 " style="width:200px ; margin: auto;"> TURNS TAKEN: {{ turns }} </a>
-    </div>
+      <div class="row" *ngIf="!completed">
+        <a class=" btn btn-danger mt-3 mb-3 " style="width:200px ; margin: auto;"> TURNS TAKEN: {{ turns }} </a>
+      </div>
 
-    <div class="row" *ngIf="completed">
-      <a class=" btn btn-danger mt-3 mb-3 " style="width:200px ; margin: auto;"> YOU TOOK {{ turns }} TURNS</a>
+      <div class="row" *ngIf="completed">
+        <a class=" btn btn-danger mt-3 mb-3 " style="width:200px ; margin: auto;"> YOU TOOK {{ turns }} TURNS</a>
+      </div>
     </div>
-  </div>
+  </section>
+
+
+  <section class="col-sm-4  pe-5">
+    <h1>LEADER BOARD</h1>
+    <h4>Top 10</h4>
+    <table class="table mt-5">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Score</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr *ngFor="let player of players ; let i = index">
+          <th scope="row">{{i + 1}}</th>
+          <th scope="row">{{player?.name}}</th>
+          <th scope="row">{{player?.score}}</th>
+        </tr>
+
+      </tbody>
+    </table>
+  </section>
+
+
+</div>
