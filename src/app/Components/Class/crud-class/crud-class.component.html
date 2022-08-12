@@ -16,7 +16,7 @@
     <tr *ngFor="let item of classListOfCat   ;  let i =index" >
       <th scope="row">{{i+1}}</th>
       <th scope="row"><a routerLink="/content-index/{{item.id}}"> ADD Content </a></th>
-      <td><a routerLink="/classes"> View Classes</a></td>
+      <td><a routerLink="/classes"> View Class</a></td>
       <td>{{item.name}}</td>
 
       <td *ngIf="item.isActive== 0"><i class="fa-solid fa-x fs-2 text-danger "></i></td>
@@ -30,7 +30,7 @@
     </tr>
 
     <tr>
-      <td><button routerLink="/classes-add" class="btn btn-secondary ms-5"> ADD Class  </button></td>
+      <!-- <td><button routerLink="/classes-add" *ngIf="auth == 2" class="btn btn-secondary ms-5"> ADD Class  </button></td> -->
     </tr>
 
 

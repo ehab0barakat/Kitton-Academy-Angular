@@ -6,6 +6,7 @@ import { ClassContentService } from 'src/app/Services/class-content.service';
 import { ClassesService } from 'src/app/Services/classes.service';
 import { MyclassesService } from 'src/app/Services/myclasses.service';
 
+
 @Component({
   selector: 'app-content-single',
   templateUrl: './content-single.component.html',
@@ -20,7 +21,6 @@ export class ContentSingleComponent implements OnInit {
     private ClassContent: ClassContentService,
     private ClassService : ClassesService,
     private myClassServices : MyclassesService,
-
   ) { }
 
 

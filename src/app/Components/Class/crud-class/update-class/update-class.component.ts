@@ -31,16 +31,16 @@ export class UpdateClassComponent implements OnInit {
     auth:any = localStorage.getItem("role");
 
   ngOnInit(): void {
-    this.authService.Auth().subscribe(response=>{
-      this.auth = response ;
-      if(this.auth.role != 2 ){
-        this.router.navigate(['/not-auth']);
-      }
-    });
+    // this.authService.Auth().subscribe(response=>{
+    //   this.auth = response ;
+    //   if(this.auth.role != 2 ){
+    //     this.router.navigate(['/not-auth']);
+    //   }
+    // });
 
-    if(this.auth != 2){
-      this.router.navigate(['/not-auth']);
-    }
+    // if(this.auth != 2){
+    //   this.router.navigate(['/not-auth']);
+    // }
 
     this.ClassContent.ValidationForClass(this.currentPrdID).subscribe(response=>{
       this.valid = response
@@ -100,7 +100,9 @@ onUpload() {
 
 update(){
 
-  this.editClass.image=this.image.secure_url
+  if(this.image?.secure_url){
+    this.editClass.image=this.image.secure_url
+  }
 
    this.classService.update(this.editClass, this.currentPrdID).subscribe(response =>{
     console.log(response);

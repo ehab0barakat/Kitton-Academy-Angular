@@ -32,12 +32,12 @@ export class DeleteClassComponent implements OnInit {
       }else{
         this.classService.delete(this.targetId).subscribe(response =>{
           if(response){
-            this.router.navigate(['/classes-index']);
+            this.router.navigate(['/admin/classes-index']);
           }
     });
     this.authService.Auth().subscribe(response=>{
       this.auth = response ;
-      if(this.auth.role != 2 ){
+      if(this.auth.role != 3 ){
         this.router.navigate(['/not-auth']);
       }
     }
@@ -45,7 +45,7 @@ export class DeleteClassComponent implements OnInit {
   }
 
 });
-if(this.auth != 2){
+if(this.auth != 3){
   this.router.navigate(['/not-auth']);
 }
 }

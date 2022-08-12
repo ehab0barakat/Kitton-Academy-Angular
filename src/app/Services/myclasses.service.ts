@@ -55,7 +55,8 @@ export class MyclassesService {
 }
  getComments():Observable<classComment[]>{
 
-  return  this.httpClient.get<classComment[]>(`${environment.APIBaseURL}/api/classComment`)
+  return  this.httpClient.get<classComment[]>(`${environment.APIBaseURL}/api/classComment`,
+  this.httpOptions)
 
 }// get count of likes
 getCountComments(id:number):Observable<any>{

@@ -5,7 +5,6 @@ import { AboutUsComponent } from './Components/about-us/about-us.component';
 import { ContactUsComponent } from './Components/contact-us/contact-us.component';
 import { PostsComponent } from './Components/posts/posts/posts.component';
 import { ProfileComponent } from './Components/Profile/profile/profile.component';
-import { AppComponent } from './app.component';
 import { GamesComponent } from './Components/Games/games/games.component';
 import { SingleGameComponent } from './Components/Games/single-game/single-game.component';
 import { HomeComponent } from './Components/home/home.component';
@@ -32,7 +31,6 @@ import { WelcomeComponent } from './Components/welcome/welcome.component';
 import { SigninAsadminComponent } from './Components/signin-asadmin/signin-asadmin.component';
 import { SignupAsteacherComponent } from './Components/signup-asteacher/signup-asteacher.component';
 import { FormTeacherComponent } from './Components/form-teacher/form-teacher.component';
-import { AddPostComponent } from './Components/posts/Posts_Crud/add-post/add-post.component';
 import { UpdatePostComponent } from './Components/posts/Posts_Crud/update-post/update-post.component';
 import { DeletePostComponent } from './Components/posts/Posts_Crud/delete-post/delete-post.component';
 import { ShowPostComponent } from './Components/posts/Posts_Crud/show-post/show-post.component';
@@ -73,6 +71,8 @@ import { AdminClassControlingComponent } from './Components/Class/admin-class-co
 import { AdminPostControlComponent } from './Components/posts/admin-post-control/admin-post-control.component';
 import { PaymentComponent } from './Components/payment/payment.component';
 import { PayClassComponent } from './Components/Class/pay-class/pay-class.component';
+import { DeleteProfileComponent } from './Components/Profile/delete-profile/delete-profile.component';
+import { CardsComponent } from './Components/Games/memory game/cards/cards.component';
 import { CertificationComponent } from './Components/Class/certification/certification.component';
 
 
@@ -97,12 +97,12 @@ const routes: Routes = [
 
   {path:'post-index',component:PostsComponent},
   {path:'show-post',component:ShowPostComponent},
-  {path:'add-post',component:AddPostComponent},
   {path:'single-post/:id',component:SinglePostComponent},
   {path:'update-post/:id',component:UpdatePostComponent},
 
   {path:'posting',component:PostingComponent},
   {path:'delete-post/:id',component:DeletePostComponent},
+  {path:'cards',component:CardsComponent},
   {path:'contact_us',component:ContactUsComponent},
   {path:'about_us',component:AboutUsComponent},
   {path:'cart',component:CartComponent},
@@ -112,6 +112,7 @@ const routes: Routes = [
   {path:'product',component:ProductsComponent},
   {path:'profile',component:ProfileComponent},
   {path:'edit-profile',component:EditProfileComponent},
+  {path:'delete-profile',component:DeleteProfileComponent },
   {path : "teachers" , component:TeachersComponent},
   {path : "single-teacher/:id" , component:SingleTeacherComponent},
   {path : "sign-in" , component:SignInComponent},
@@ -144,11 +145,11 @@ const routes: Routes = [
   {path:'payment/:id',component:PaymentComponent},
 
   {path: 'classes-index',component:CrudClassComponent},
+  {path: 'rate/:id',component:PayClassComponent},
 
   {path:'content-add/:id',component:AddComponent}, //id of class itself
   {path:'content-index/:id',component:ContentIndexComponent}, //id of class itself
   {path:'content-archive/:id',component:ContentArchiveComponent}, //id of class itself
-
   {path:'content-update/:id',component:ContentUpdataComponent}, //id of video
   {path:'content-delete/:id',component:ContentDeleteComponent}, //id of video
   {path:'content-single/:id',component:ContentSingleComponent}, //id of video
@@ -167,12 +168,14 @@ const routes: Routes = [
   {path : "event-control/event/:id" , component: EventsSingleComponent},
   {path : "event/:id" , component: EventsSingleComponent},
   {path : "events-archive" , component: EventsArchiveComponent},
- 
+  {path: 'rate/:id',component:PayClassComponent},
+
   {path:'eventcats-index',component:EventCatsIndexComponent},
   {path:'eventcats-add',component:EventCatsAddComponent},
   {path:'eventcats-update/:id',component:EventCatsUpdateComponent},
   {path:'eventcats-delete/:id',component:EventCatsDeleteComponent},
   {path:'classescat-index',component:CrudCatClassComponent},
+  {path:'classes-index',component:AdminClassControlingComponent},
   {path:'classes',component:CatClassComponent},
   {path :"teachers" , component:TeachersComponent},
   {path:'post-index',component:PostsComponent},
@@ -180,7 +183,6 @@ const routes: Routes = [
   {path:'single-post/:id',component:SinglePostComponent},
   {path:'edit-profile',component:EditProfileComponent},
   {path: 'classes/:id',component:DetailsClassComponent},
-  {path: 'classes-index',component:AdminClassControlingComponent},
   {path : "post-control" , component: AdminPostControlComponent},
 
 ]},

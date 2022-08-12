@@ -43,7 +43,13 @@ export class SignInComponent implements OnInit {
         })
       }).subscribe( data =>{
         this.userData = data ;
+        
+        
         if(this.userData.role != 3){
+            // console.log(this.userData.password );
+            // console.log(this.userData.email);
+
+            
           window.localStorage.setItem("token" ,this.token.token );
           window.localStorage.setItem("role",`${this.userData.role}`)
           this.route.navigate(['/slachpage'])
@@ -51,7 +57,11 @@ export class SignInComponent implements OnInit {
           this.message = "Email or Password is Not Valid";
         }
       })
+    
+   
     })
+
+
   }
 
 

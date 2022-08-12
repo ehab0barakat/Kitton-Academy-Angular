@@ -27,17 +27,17 @@ export class TeacherService {
    }
 
   getAllTeacher(): Observable<ITeacher[]> {
-    return this.httpClient.get<ITeacher[]>(`http://localhost:8000/api/teacher`).pipe(
+    return this.httpClient.get<ITeacher[]>(`${environment.APIBaseURL}/api/teacher`).pipe(
       map(m => m as ITeacher[])
     );
   }
-  getTeacherDetails(id: number): Observable<ITeacherDetails>{ 
-    return this.httpClient.get<ITeacherDetails>(`http://localhost:8000/api/teacher/${id}`).pipe(
+  getTeacherDetails(id: number): Observable<ITeacherDetails>{
+    return this.httpClient.get<ITeacherDetails>(`${environment.APIBaseURL}/api/teacher/${id}`).pipe(
       map(m => m as ITeacherDetails)
     );
 }
 
-// edit teacher profile 
+// edit teacher profile
 
 editProfile( data:any, id:number ):Observable<any>{
   return this.httpClient.put<any>(`${environment.APIBaseURL}/api/teacher/${id}`,

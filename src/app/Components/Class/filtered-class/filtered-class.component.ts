@@ -18,6 +18,7 @@ export class FilteredClassComponent implements OnInit, OnChanges {
     @Input() selected:number = 0 ;
     AllClasses:classes[] = [];
   ngOnInit(): void {
+
   }
   ngOnChanges(changes: SimpleChanges): void {
 

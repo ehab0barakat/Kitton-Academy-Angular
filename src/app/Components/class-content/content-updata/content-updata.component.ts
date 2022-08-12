@@ -16,9 +16,7 @@ import { UploadService } from 'src/app/Services/upload.service';
 
 export class ContentUpdataComponent implements OnInit {
   editVideo:any = {
-    title : "" ,
-    description : "" ,
-    link : ""
+    data: ""
   }
 
   link:any = true;
@@ -48,8 +46,9 @@ export class ContentUpdataComponent implements OnInit {
           this.router.navigate(['/not-auth']);
         }
 
-    this.ClassContent.ValidationForClass(this.VideotId).subscribe(response=>{
+    this.ClassContent.ValidationForVideo(this.VideotId).subscribe(response=>{
       this.valid = response
+      console.log(response);
       if(!this.valid.valid){
         this.router.navigate(['/not-auth']);
       }
@@ -156,15 +155,16 @@ onUploadd() {
 
 
   create(){
+    if(this.image?.secure_url){
+      this.editVideo.data.image=this.image.secure_url
+    }
 
-     this.editVideo.image=this.image.secure_url
-
-  if(!this.editVideo.link){
-    this.editVideo.link=this.Video.secure_url
+  if(!this.editVideo.data.link && this.Video?.secure_url ){
+    this.editVideo.data.link=this.Video.secure_url
   }
-    this.ClassContent.updateVideoToClass(this.editVideo , this.VideotId).subscribe(response=> {
+    this.ClassContent.updateVideoToClass(this.editVideo.data , this.VideotId).subscribe(response=> {
       if (response){
-        this.router.navigate([`/content-index/${this.VideotId}`]);
+        this.router.navigate([`/content-index/${this.editVideo.data.class_id}`]);
       }
     })
   }

@@ -14,7 +14,8 @@ export class PayClassComponent implements OnInit {
   allcomments:classComment[]=[];
   constructor(private authService:AuthService,private activatedRoute : ActivatedRoute,public router: Router ,
     private classService:ClassesService,
-    private MyclassesService:MyclassesService) { }
+    private MyclassesService:MyclassesService
+    ) { }
 
     auth:any = localStorage.getItem("role");
     selected= Number(this.activatedRoute.snapshot.paramMap.get("id")) ;
@@ -57,8 +58,10 @@ export class PayClassComponent implements OnInit {
         this.classComment.user_id=userId;
          this.MyclassesService.classSendComments(this.classComment).subscribe(response=>{
           console.log(this.classComment);
-          if (response){
+          this.router.navigate([`/classes/${this.AllClasses?.id}`]);
 
+
+          if (response){
             this.classComment.comment=" ";
             this.classComment.user_name=" ";
             this.MyclassesService.getComments().subscribe(response=>{

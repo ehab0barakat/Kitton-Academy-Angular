@@ -11,14 +11,12 @@
                       <div class="class-single-content">
                           <ul class="meta-post">
                               <li>
-                                  <a href="#"><i class="far fa-cla"></i> Class Name : {{AllClasses?.name}}</a>
+                                  <a href="/classes/{{ AllClasses?.id }}"><h4 class="mb-0">Class Name : {{AllClasses?.name}}</h4>  </a>
                               </li>
-                              <li>
-                                  <a href="#"><i class="far fa-comments"></i>{{ numberOfComments }} Comments</a>
-                              </li>
+
                           </ul>
                           <button type="submit"  *ngIf="!auth" routerLink="/sign-up" click="add()" class="custom-button m-3"><span>Buy Now</span></button>
-                          <button type="submit"  *ngIf="auth" routerLink="/checkout/{{AllClasses?.id}}" click="add()" class="custom-button m-3"><span>Buy Now</span></button>
+                          <button type="submit"  *ngIf="auth && valid?.own == false" routerLink="/checkout/{{AllClasses?.id}}" click="add()" class="custom-button m-3"><span>Buy Now</span></button>
                           <p>
                               Serenity hassr taken posseson of my entire soung like these sweet mornngs sprng whch
                               enjoy with
@@ -37,7 +35,7 @@
                           <blockquote class="single-quote">
                               <div class="quotes">
                                  {{AllClasses?.description}}
-                                  
+
                               </div>
                           </blockquote>
 
@@ -51,21 +49,22 @@
                                       <p class="fw-light mb-4 pb-2">Latest Comments section by users</p>
 <!-- ////////////////comment///////// -->
                                       <div class="d-flex flex-start p-3" *ngFor="let comment of allcomments" >
-                                        <ng-container  *ngIf="comment.class_id == AllClasses?.id">
+                                        <ng-container  *ngIf="comment?.class_id == AllClasses?.id">
                                         <img class="rounded-circle shadow-1-strong me-3"
                                           src="{{ data?.childImage }}" alt="avatar" width="60"
                                           height="60" />
                                         <div>
-                                          <h6 class="fw-bold mb-1">{{comment.user_name}}</h6>
+                                          <h6 class="fw-bold mb-1">{{comment?.user_name}}</h6>
                                           <div class="d-flex align-items-center mb-3">
                                             <p class="mb-0">
-                                              {{ comment.created_at | date:'medium' }} 
+                                              {{ comment?.created_at | date:'medium' }}
 
                                             </p>
                                             <a href="#!" class="link-muted" routerLink="/rate/{{AllClasses?.id}}" ><i class="fas fa-pencil-alt ms-2"></i></a>
                                           </div>
                                           <p class="mb-3" style="color: #92278f;" >
-                                            {{comment.comment}}
+                                            {{comment?.comment}}
+
                                           </p>
                                         </div>
                                         </ng-container>
@@ -204,6 +203,16 @@
                                   <div class="ques cl-i-six"><i class="fas fa-clock"></i>Class time</div>
                                   <div class="ans">{{ AllClasses?.time }}</div>
                               </li>
+
+                              <!-- <li> -->
+                                <!-- <div class="ques cl-i-seven"><i class="fas fa-star"></i>Total Rating</div> -->
+                                <!-- <div class="ans cl-i-seven"> -->
+                                  <!-- <div style="font-size:x-large ;color:orange"> -->
+                                  <!-- <ngb-rating [max]="5" [(rate)]="totalRate" [readonly]="true" ></ngb-rating></div> -->
+                                  <!-- </div> -->
+                            <!-- </li> -->
+
+
                               <li>
                                 <div class="ques cl-i-seven"><i class="fas fa-star"></i>Total Rating</div>
                                 <div class="ans cl-i-seven">

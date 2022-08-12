@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { classCats } from 'src/app/Models/classcats';
 import { classes } from 'src/app/Models/classes';
+import { AuthService } from 'src/app/Services/auth.service';
 import { ClassCatsService } from 'src/app/Services/class-cats.service';
 import { ClassesService } from 'src/app/Services/classes.service';
 
@@ -11,16 +12,24 @@ import { ClassesService } from 'src/app/Services/classes.service';
   styleUrls: ['./add-cat-class.component.css']
 })
 export class AddCatClassComponent implements OnInit {
-
+  auth:any = localStorage.getItem("role");
   class:classes[]=[];
   NewCatClass :classCats ={} as classCats ;
   AllClassCats:classCats[] = []
-  constructor(private classService:ClassesService,private router:Router,private classcatsService:ClassCatsService ) { }
+  constructor(private classService:ClassesService,private router:Router,private classcatsService:ClassCatsService,private authService : AuthService ) { }
 
   ngOnInit(): void {
-    // this.classcatsService.getAllClassCats().subscribe(response=>{
-    //   this.AllClassCats=response ;
-    // })
+
+    this.authService.Auth().subscribe(response=>{
+      this.auth = response ;
+      console.log(response)
+      if(this.auth.role != 3 ){
+          this.router.navigate(['/not-auth']);
+        }
+      });
+        if(this.auth != 3){
+          this.router.navigate(['/not-auth']);
+        }
 
   }
   create(){

@@ -25,117 +25,123 @@
         <div class="account-wrapper">
             <h3 class="title">Register Now</h3>
             <form class="account-form" #myform="ngForm" (ngSubmit)="mysubmit(myform)">
-                <div class="form-group">
-                    <input type="text" placeholder="Parent Name" name="ParentName" required ngModel #ParentName="ngModel">
-                    <div *ngIf="ParentName.invalid && (ParentName.dirty || ParentName.touched) ">
-                        <div style="color:red;" *ngIf="ParentName.errors?.['required']">
-                            ParentName is required
+                <div class="form-group ">
+                  <label class="form-label d-flex justify-content-start" for="ParentName">ParentName  </label>
+                    <input #ParentName="ngModel" type="text" id="ParentName"  name="ParentName" required pattern="[A-Za-z]{5,20}" ngModel
+                    [class.is-valid]="ParentName.valid" [class.is-invalid]="ParentName.invalid"/>
+                    
+                    <div class="alert alert-danger mt-3" [hidden]="ParentName.valid || ParentName.untouched">
+                        <small *ngIf="ParentName.errors?.['required']">
+                           ParentName is required 
+                        </small>
+                        <small *ngIf="ParentName.errors?.['pattern']">
+                           ParentName must be 5 letters at least 
+                        </small>
+                        
                         </div>
-                        <div style="color:red;" *ngIf="ParentName.errors?.['minlength']">
-                            ParentName must be at least 1 characters long.
-                        </div>
-                        <div style="color:red;" *ngIf="ParentName.errors?.['maxlength']">
-                            ParentName must be least then 20 characters
-                        </div>
-                    </div>
+    
                 </div>
                 <div class="form-group">
-                    <input type="text" placeholder="Address" name="Address"  required ngModel #Address="ngModel">
-                    <div *ngIf="Address.invalid && (Address.dirty || Address.touched) ">
-                        <div style="color:red;" *ngIf="Address.errors?.['required']">
-                            Address is required
+                  <label class="form-label d-flex justify-content-start" for="Address">Address </label>
+                    <input type="text" id="Address"  name="Address"  required pattern="[A-Za-z]{5,20}" ngModel #Address="ngModel"  [class.is-valid]="Address.valid" [class.is-invalid]="Address.invalid"/>
+                    <div class="alert alert-danger mt-3" [hidden]="Address.valid || Address.untouched">
+                        <small *ngIf="Address.errors?.['required']">
+                            Address is required 
+                        </small>
+                        <small *ngIf="Address.errors?.['pattern']">
+                            Address must be 5 letters at least 
+                        </small>
+                        
                         </div>
-                        <div style="color:red;" *ngIf="Address.errors?.['minlength']">
-                            Address must be at least 1 characters long.
-                        </div>
-                        <div style="color:red;" *ngIf="Address.errors?.['maxlength']">
-                            Address must be least then 20 characters
-                        </div>
-                    </div>
                 </div>
                 <div class="form-group">
-                    <input type="text" placeholder="Email" name="email" required ngModel #email="ngModel">
-                    <div *ngIf="email.invalid && (email.dirty || email.touched) ">
-                        <div style="color:red;" *ngIf="email.errors?.['required']">
-                            email is required
+                  <label class="form-label d-flex justify-content-start" for="email">Email </label>
+                    <input type="text" id="email"  name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" ngModel  #email="ngModel">
+                    <div class="alert alert-danger mt-3" [hidden]="email.valid || email.untouched">
+                        <small *ngIf="email.errors?.['required']">
+                            Email is required 
+                        </small>
+                        <small [hidden]="!email.errors?.['pattern']">
+                            Please input a valid email.
+                        </small>
+                        
                         </div>
-                    </div>
                 </div>
                 <div class="form-group">
-                    <input type="text" placeholder="enter your phone" name="phone" required minlength="11" ngModel
+                    <label class="form-label d-flex justify-content-start" for="phoneNumber">Phone Number </label>
+                 
+                    <input type="text" id="phoneNumber" name="phone" required minlength="11" ngModel
                         #phone="ngModel">
-                    <div *ngIf="phone.invalid && (phone.dirty || phone.touched) ">
-                        <div style="color:red;" *ngIf="phone.errors?.['required']">
+                    <div class="alert alert-danger mt-3" *ngIf="phone.invalid && (phone.dirty || phone.touched) ">
+                        <div  *ngIf="phone.errors?.['required']">
                             phone is required
                         </div>
-                        <div style="color:red;" *ngIf="phone.errors?.['minlength']">
-                            Name must be at least 11 characters long.
+                        <div  *ngIf="phone.errors?.['minlength']">
+                            Phone must be at least 11 characters long.
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
-                    <input type="password" (keyup)="onKeypassword($event)" placeholder="Password" name="password" minlength="6" maxlength="15" required
+                    <label class="form-label d-flex justify-content-start" for="pass">Password </label>
+
+                    <input type="password" (keyup)="onKeypassword($event)"  id="pass" name="password" minlength="6" maxlength="15" required
                         ngModel #password="ngModel">
-                    <div *ngIf="password.invalid && (password.dirty || password.touched) ">
-                        <div style="color:red;" *ngIf="password.errors?.['required']">
+                    <div class="alert alert-danger mt-3" *ngIf="password.invalid && (password.dirty || password.touched) ">
+                        <div *ngIf="password.errors?.['required']">
                             password is required
                         </div>
-                        <div style="color:red;" *ngIf="password.errors?.['minlength']">
-                            Name must be at least 6 characters long.
+                        <div  *ngIf="password.errors?.['minlength']">
+                            password must be at least 6 characters long.
                         </div>
-                        <div style="color:red;" *ngIf="password.errors?.['maxlength']">
-                            Name must be least then 15 characters
+                        <div  *ngIf="password.errors?.['maxlength']">
+                            Password must be least then 15 characters
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
-                    <input type="password" (keyup)="onKey($event)"  placeholder="Confirm Password"  required ngModel #confirmpassword="ngModel">
-                    <div *ngIf="confirmpassword.invalid && (confirmpassword.dirty || confirmpassword.touched) ">
-                        <div style="color:red;" *ngIf="confirmpassword.errors?.['required']">
-                            confirm password is required
-                        </div>
-
-
-                    </div>
-                    <div style="color:red;" *ngIf="conpass!=pass">
+                    <label class="form-label d-flex justify-content-start" for="Confirm Password"> Confirm Password </label>
+                     <input type="password" (keyup)="onKey($event)"  id="Confirm Password"  required ngModel #confirmpassword="ngModel">
+                    <div class="alert alert-danger mt-3" *ngIf="conpass!=pass">
                         confirm password is invalid
                     </div>
 
                 </div>
                 <div class="form-group">
-                    <input type="text" placeholder="Child Name" name="ChildName" minlength="1" maxlength="20" required ngModel #ChildName="ngModel">
-                    <div *ngIf="ChildName.invalid && (ChildName.dirty || ChildName.touched) ">
-                        <div style="color:red;" *ngIf="ChildName.errors?.['required']">
+                    <label class="form-label d-flex justify-content-start" for="Child Name"> Child Name </label>
+                    <input type="text" id="Child Name" name="ChildName" minlength="3" maxlength="20" required ngModel #ChildName="ngModel">
+                    <div  class="alert alert-danger mt-3" *ngIf="ChildName.invalid && (ChildName.dirty || ChildName.touched) ">
+                        <div *ngIf="ChildName.errors?.['required']">
                             ChildName is required
                         </div>
-                        <div style="color:red;" *ngIf="ChildName.errors?.['minlength']">
-                            Name must be at least 1 characters long.
+                        <div  *ngIf="ChildName.errors?.['minlength']">
+                            ChildName must be at least 3 characters long.
                         </div>
-                        <div style="color:red;" *ngIf="ChildName.errors?.['maxlength']">
-                            Name must be least then 20 characters
+                        <div  *ngIf="ChildName.errors?.['maxlength']">
+                            ChildName must be least then 20 characters
                         </div>
                     </div>
                 </div>
                 <div class="form-group">
-                    <input type="number" (keyup)="onKeyage($event)" placeholder="Child Age" name="ChildAge" required ngModel #ChildAge="ngModel">
-                    <div *ngIf="ChildAge.invalid && (ChildAge.dirty || ChildAge.touched) ">
-                        <div style="color:red;" *ngIf="ChildAge.errors?.['required']">
-                            ChildName is required
+                    <label class="form-label d-flex justify-content-start" for="Child Age"> Child Age </label>
+                    <input type="number" (keyup)="onKeyage($event)" id="Child Age" name="ChildAge" required ngModel #ChildAge="ngModel">
+                    <div  *ngIf="ChildAge.invalid && (ChildAge.dirty || ChildAge.touched) ">
+                        <div class="alert alert-danger mt-3" [hidden]="!ChildAge.errors?.['required']">
+                            Child Age is required
                         </div>
 
                     </div>
-                    <div style="color:red;" *ngIf="(age > 5  || age <1)&& ChildAge.touched">
+                    <div  class="alert alert-danger mt-3" *ngIf="(age > 5  || age <1) && ChildAge.touched">
                         age is invalid.
                     </div>
                 </div>
-                <label for="gender"></label>
-                <select name="childGender" required ngModel #childGender="ngModel">
+                <label  class="form-label d-flex justify-content-start" for="gender">Gender</label>
+                <select name="childGender"  id="gender" required ngModel #childGender="ngModel">
                     <option value="none" selected>childGender</option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
                 </select>
                 <div *ngIf="childGender.invalid && (childGender.dirty || childGender.touched) ">
-                    <div style="color:red;" *ngIf="childGender.errors?.['required']">
+                    <div class="alert alert-danger mt-3" *ngIf="childGender.errors?.['required']">
                         childGender is required
                     </div>
                   </div>
@@ -144,7 +150,7 @@
                     <!-- Terminal -->
                     <div class="terminal">
                       <ngx-dropzone (change)="onSelect($event)" style="margin: 20px;">
-                        <ngx-dropzone-label>Drop it, baby!</ngx-dropzone-label>
+                        <ngx-dropzone-label>Drop ,child image</ngx-dropzone-label>
                         <ngx-dropzone-image-preview
                           ngProjectAs="ngx-dropzone-preview"
                           *ngFor="let f of files"
@@ -173,28 +179,11 @@
                 </div>
             </form>
             <div class="account-bottom">
-                <span class="d-block cate pt-10">Are you a member? <a href="login.html">Login</a></span>
-                <span class="or"><span>or</span></span>
-                <h5 class="subtitle">Register With Social Media</h5>
-                <ul class="social-icons justify-content-center">
-                    <li>
-                        <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
-                    </li>
-                    <li>
-                        <a href="#" class="twitter"><i class="fab fa-twitter"></i></a>
-                    </li>
-                    <li>
-                        <a href="#" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
-                    </li>
-                    <li>
-                        <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
-                    </li>
-                    <li>
-                        <a href="#" class="pinterest"><i class="fab fa-pinterest"></i></a>
-                    </li>
-                </ul>
+                <span class="d-block cate pt-10">Are you a member?  <a class="btn " style="text-decoration: underline; color: rgb(234, 85, 85);" routerLink="/sign-in">Login</a></span>
+               
             </div>
         </div>
+        
     </div>
 </div>
 
