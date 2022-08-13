@@ -79,20 +79,28 @@ export class HeaderComponent implements OnInit {
 
   check(id:number){
     this.eventservice.teacherCheckNotify(id).subscribe(response=>{
-      // console.log(response)
+      this.eventservice.showNotifyToTeacher().subscribe({
+        next: data => this.notification =data,
+        error: err =>  console.log(err)
+      });
     });
   }
+
   checkClass(id:number){
     this.classService.teacherCheckNotify(id).subscribe(response=>{
-      // console.log(response)
+      this.classService.showNotifyToTeacher().subscribe({
+        next: data => this.notificationClass =data,
+        error: err =>  console.log(err)
+      });
     });
-
   }
+  
   checkPost(id:number){
     this.PostService.teacherCheckNotify(id).subscribe(response=>{
-      // console.log(response)
+      this.PostService.showNotifyToTeacher().subscribe({
+        next: data => this.notificationPost =data,
+        error: err =>  console.log(err)
+      });
     });
-
   }
-
 }

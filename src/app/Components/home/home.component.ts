@@ -15,7 +15,7 @@ import { ApiPostsService } from '../Services/api-posts.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  teachers: ITeacher[]| undefined;
+  teachers: any;
   teacherSubscription:Subscription = new Subscription();
   TargetResponse: any;
   AllTeachersData: any;
@@ -48,8 +48,9 @@ export class HomeComponent implements OnInit {
 
   }
 
-  draw(data: ITeacher[]): void {
+  draw(data:any): void {
     this.teachers = data.slice(0 , 4);
+    console.log(data);
 
 
   }
