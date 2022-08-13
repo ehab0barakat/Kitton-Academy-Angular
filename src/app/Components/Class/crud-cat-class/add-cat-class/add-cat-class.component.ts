@@ -22,7 +22,7 @@ export class AddCatClassComponent implements OnInit {
 
     this.authService.Auth().subscribe(response=>{
       this.auth = response ;
-      console.log(response)
+      // console.log(response)
       if(this.auth.role != 3 ){
           this.router.navigate(['/not-auth']);
         }
@@ -34,7 +34,7 @@ export class AddCatClassComponent implements OnInit {
   }
   create(){
     this.classcatsService.create(this.NewCatClass).subscribe(response=> {
-      console.log(response);
+      // console.log(response);
       if (response){
         this.router.navigate(['/admin/classescat-index']);
       }

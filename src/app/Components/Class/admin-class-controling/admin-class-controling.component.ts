@@ -31,7 +31,7 @@ export class AdminClassControlingComponent implements OnInit {
 
           this.classService.admingetall().subscribe(res =>{
             this.AllEvents = res;
-            console.log(  this.AllEvents)
+            // console.log(  this.AllEvents)
           });
 
         }
@@ -47,12 +47,12 @@ export class AdminClassControlingComponent implements OnInit {
 
     this.classService.ActivationeditClass({"isActive":isActive},id).subscribe(data =>{
       this.router.navigate(["admin/classes-index"])
-      console.log(data);
+      // console.log(data);
     });
 
     this.classService.teacherNotify({"class_id" : id  , "teacher_id" : teacher_id}).subscribe(data =>{
       this.router.navigate(["admin/classes-index"])
-      console.log(data);
+      // console.log(data);
     });
 
 

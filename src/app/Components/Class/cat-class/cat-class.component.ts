@@ -26,7 +26,7 @@ export class CatClassComponent implements OnInit{
 
     this.classcatsService.getAllClassCats().subscribe(response=>{
       this.AllClassCats= response ;
-      console.log(this.AllClassCats);
+      // console.log(this.AllClassCats);
     });
   }
 

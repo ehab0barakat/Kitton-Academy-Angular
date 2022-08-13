@@ -68,7 +68,7 @@ export class DetailsClassComponent implements OnInit {
         })
           this.authService.Auth().subscribe(response=>{
             this.data=response;
-            console.log(this.data);
+            // console.log(this.data);
 
           });
         this.MyclassesService.getCountComments(this.selected).subscribe(response=>{

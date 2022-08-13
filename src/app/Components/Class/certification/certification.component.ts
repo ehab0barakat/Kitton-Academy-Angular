@@ -36,7 +36,7 @@ export class CertificationComponent implements OnInit {
 
     this.authService.Auth().subscribe(response=>{
       this.data=response;
-      console.log(this.data); 
+      // console.log(this.data); 
 
     });
     this.classService.getById(this.selected).subscribe(response=>{

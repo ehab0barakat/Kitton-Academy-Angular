@@ -127,9 +127,6 @@ const routes: Routes = [
   {path : "classes-add" , component: AddClassComponent},
   {path : "classes-delete/:id" , component: DeleteClassComponent},
   {path : "classes-update/:id" , component: UpdateClassComponent},
-  {path : "classescat-add" , component: AddCatClassComponent},
-  {path : "classescat-update/:id" , component: UpdateCatClassComponent},
-  {path : "classescat-delete/:id" , component: DeleteCatClassComponent},
   {path: 'checkout/:id',component:CheckoutComponent},
   {path: 'myclasses/:id',component:MyclassesComponent},
   {path: 'rate/:id',component:PayClassComponent},
@@ -186,6 +183,9 @@ const routes: Routes = [
   {path: 'classes-delete/:id',component:DeleteClassComponent},
   {path : "post-control" , component: AdminPostControlComponent},
 
+  {path : "classescat-add" , component: AddCatClassComponent},
+  {path : "classescat-update/:id" , component: UpdateCatClassComponent},
+  {path : "classescat-delete/:id" , component: DeleteCatClassComponent},
 ]},
 
 

@@ -11,9 +11,11 @@ import { MyclassesService } from 'src/app/Services/myclasses.service';
 })
 export class PayClassComponent implements OnInit {
   data: any;
+  TargetResponse: any;
   allcomments:classComment[]=[];
   AllTeachersData: any;
   TargetRespone: any;
+  valid: any;
   constructor(private authService:AuthService,private activatedRoute : ActivatedRoute,public router: Router ,
     private classService:ClassesService,
     private MyclassesService:MyclassesService
@@ -27,19 +29,21 @@ export class PayClassComponent implements OnInit {
     ngOnInit(): void {
       this.authService.Auth().subscribe(response=>{
         this.data=response;
-        console.log(this.data);
       })
+      this.MyclassesService.user_own_class_check(this.selected).subscribe(response=>{
+        this.valid = response ;
+        if(this.valid.own == false ){
+          this.router.navigate(['/not-auth'])}
+        else{
+        this.classService.getById(this.selected).subscribe(response=>{
+          this.TargetResponse = response
+          this.AllClasses = this.TargetResponse.classes
+        })}
+       });
 
-      this.classService.getById(this.selected).subscribe(response=>{
-        this.TargetRespone = response
-        this.AllClasses = this.TargetRespone.classes
-        this.AllTeachersData = this.TargetRespone.teachers
-        })
          // get all comments of users
     this.MyclassesService.getComments().subscribe(response=>{
       this.allcomments=response;
-
-
 
     })
 
@@ -47,10 +51,6 @@ export class PayClassComponent implements OnInit {
       currentRate:number=0;
       onRateChange(event: number){
         this.MyclassesService.rateChange({'class_id':`${this.selected}`,'rate':`${event}`}).subscribe(response=>{
-          // this.AllmyClasses =response;
-          // console.log(this.selected);
-          // console.log(`${event}`);
-          // console.log(response);
 
       })
         // alert(`rate is ${event}`);
@@ -60,8 +60,7 @@ export class PayClassComponent implements OnInit {
 
         this.classComment.user_id=userId;
          this.MyclassesService.classSendComments(this.classComment).subscribe(response=>{
-          console.log(this.classComment);
-          this.router.navigate([`/classes/${this.AllClasses?.id}`]);
+          // this.router.navigate([`/classes/${this.AllClasses?.id}`]);
 
 
           if (response){
@@ -69,7 +68,7 @@ export class PayClassComponent implements OnInit {
             this.classComment.user_name=" ";
             this.MyclassesService.getComments().subscribe(response=>{
               this.allcomments=response;
-              // console.log(this.allcomments[0].class_id);
+
           })
          }})
       }}
