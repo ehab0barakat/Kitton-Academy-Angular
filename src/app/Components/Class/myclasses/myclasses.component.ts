@@ -11,6 +11,8 @@ import { MyclassesService } from 'src/app/Services/myclasses.service';
   styleUrls: ['./myclasses.component.css']
 })
 export class MyclassesComponent implements OnInit {
+  TargetRespone: any;
+  AllTeachersData: any;
 
   constructor(private myclassService:MyclassesService,private router: Router,private activatedRoute : ActivatedRoute,
     private classService:ClassesService) { }
@@ -23,8 +25,9 @@ export class MyclassesComponent implements OnInit {
 
 
       this.classService.getMyClasses(this.ID ).subscribe(response=>{
-        this.myClass = response
-        console.log(this.myClass)
+        this.TargetRespone = response
+        this.myClass = this.TargetRespone.classes
+        this.AllTeachersData = this.TargetRespone.teachers
       })
 };
 
@@ -32,6 +35,6 @@ export class MyclassesComponent implements OnInit {
 // addtoMyclasses(event:any){
 // console.log(event);
 // }
-  
+
 
 

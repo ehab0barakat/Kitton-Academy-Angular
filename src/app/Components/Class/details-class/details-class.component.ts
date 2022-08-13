@@ -17,6 +17,8 @@ import { MyclassesService } from 'src/app/Services/myclasses.service';
 export class DetailsClassComponent implements OnInit {
   numberOfComments: number =2;
   data: any;
+  AllTeachersData: any;
+  TargetRespone: any;
 
   constructor(private authService:AuthService,private activatedRoute : ActivatedRoute,public router: Router ,
     private classService:ClassesService,
@@ -43,10 +45,7 @@ export class DetailsClassComponent implements OnInit {
 
     this.myClassServices.user_own_class_check(this.selected).subscribe(response=>{
       this.valid = response ;
-      console.log(response) ;
       if(this.valid.valid == false ){this.router.navigate(['/not-auth'])}
-
-
     });
 
     this.ClassContent.GetAllVideosForThisClass(this.selected).subscribe(response=>{
@@ -55,26 +54,25 @@ export class DetailsClassComponent implements OnInit {
     })
 
         this.classService.getById(this.selected).subscribe(response=>{
-          this.AllClasses = response
-          // console.log(this.AllClasses)
+          this.TargetRespone = response
+          this.AllClasses = this.TargetRespone.classes
+          this.AllTeachersData = this.TargetRespone.teachers
         })
 
         this.MyclassesService.totalRate(this.selected).subscribe(response=>{
-          console.log(response);
        this.totalRate=response;
         })
         this.MyclassesService.getComments().subscribe(response=>{
           this.allcomments=response;
-          console.log(this.allcomments);
+
         })
           this.authService.Auth().subscribe(response=>{
             this.data=response;
             console.log(this.data);
 
-        })
+          });
         this.MyclassesService.getCountComments(this.selected).subscribe(response=>{
           this.numberOfComments=response
-           //  console.log(this.numberOfLikes);
          });
 
       }

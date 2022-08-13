@@ -10,6 +10,8 @@ import { ClassesService } from 'src/app/Services/classes.service';
   styleUrls: ['./filtered-class.component.css']
 })
 export class FilteredClassComponent implements OnInit, OnChanges {
+  TargetRespone: any;
+  AllTeachersData: any;
 
   constructor( private classService:ClassesService,
     public router: Router,
@@ -25,13 +27,16 @@ export class FilteredClassComponent implements OnInit, OnChanges {
     if(this.selected!= 0 ){
 
       this.classcatsService.getClassByCatID(this.selected).subscribe(response=>{
-        this.AllClasses = response
-        console.log(this.AllClasses)
+        console.log(response)
+        this.TargetRespone = response
+        this.AllClasses = this.TargetRespone.classes
+        this.AllTeachersData = this.TargetRespone.teachers
       })
     }else{
       this.classService.getAll().subscribe(response=>{
-      this.AllClasses = response
-      console.log(this.AllClasses)
+        this.TargetRespone = response
+        this.AllClasses = this.TargetRespone.classes
+        this.AllTeachersData = this.TargetRespone.teachers
     })
 
     }

@@ -11,17 +11,32 @@ import { TeacherService } from 'src/app/Services/teacher.service';
 })
 export class SingleTeacherComponent implements OnInit,OnDestroy {
    teacherId: number | undefined;
-   teacherDetails!: ITeacherDetails;
+   teacherDetails: ITeacherDetails = {
+     id: 0,
+     title: '',
+     description: '',
+     image: '',
+     email: '',
+     phone: '',
+     name: '',
+     address: '',
+     balance: '',
+     faceurl: '',
+     googleurl: '',
+     dribbleurl: '',
+     vimeourl: '',
+     pinteresturl: ''
+   };
    singleTeacherSubsciption:Subscription = new Subscription();
   constructor(
     private route: ActivatedRoute,
     private teacherService: TeacherService
   ) {}
- 
+
 
 
   ngOnInit(): void {
-    this.teacherId = this.route.snapshot.params['id'];     
+    this.teacherId = this.route.snapshot.params['id'];
     if (this.teacherId) {
       this.getTeacherDetials(this.teacherId);
     }

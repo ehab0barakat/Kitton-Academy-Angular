@@ -11,7 +11,15 @@
                       <div class="class-single-content">
                           <ul class="meta-post">
                               <li>
-                                  <a href="/classes/{{ AllClasses?.id }}"><h4 class="mb-0">Class Name : {{AllClasses?.name}}</h4>  </a>
+
+                                  <a href="/classes/{{ AllClasses?.id }}"><i class="far fa-cla"></i> Class Name : {{AllClasses?.name}}</a>
+                              </li>
+                              <li>
+                                  <a routerLink="/single-teacher/{{AllTeachersData?.id}}"><i class="far fa-cla"></i> Teacher Name : {{AllTeachersData?.name}}</a>
+                              </li>
+                              <li>
+                                  <a href="#"><i class="far fa-comments"></i>{{ numberOfComments }} Comments</a>
+
                               </li>
 
                           </ul>
