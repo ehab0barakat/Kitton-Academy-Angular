@@ -153,8 +153,9 @@
       <div class="row justify-content-center mb-30-none">
 
 
-        <div class="row row-cols-4  " style="width: 1400px;">
-          <div class="class-item m-3 " *ngFor="let cla of AllClasses ; let i = index" >
+        <div class="row  "  >
+
+          <div class="container col-lg-3 col-md-5 col-sm-8 class-item m-3 " style="width: 300px;" *ngFor="let cla of AllClasses ; let i = index" >
             <div class="class-thumb">
         <!-- <li> -->
               <a  routerLink="/classes/{{ cla.id }}"
