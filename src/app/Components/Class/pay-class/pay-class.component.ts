@@ -12,6 +12,8 @@ import { MyclassesService } from 'src/app/Services/myclasses.service';
 export class PayClassComponent implements OnInit {
   data: any;
   allcomments:classComment[]=[];
+  AllTeachersData: any;
+  TargetRespone: any;
   constructor(private authService:AuthService,private activatedRoute : ActivatedRoute,public router: Router ,
     private classService:ClassesService,
     private MyclassesService:MyclassesService
@@ -28,14 +30,15 @@ export class PayClassComponent implements OnInit {
         console.log(this.data);
       })
 
-        this.classService.getById(this.selected).subscribe(response=>{
-          this.AllClasses = response
-          console.log(this.AllClasses)
+      this.classService.getById(this.selected).subscribe(response=>{
+        this.TargetRespone = response
+        this.AllClasses = this.TargetRespone.classes
+        this.AllTeachersData = this.TargetRespone.teachers
         })
          // get all comments of users
     this.MyclassesService.getComments().subscribe(response=>{
       this.allcomments=response;
-      console.log(this.allcomments[0].class_id);
+
 
 
     })
