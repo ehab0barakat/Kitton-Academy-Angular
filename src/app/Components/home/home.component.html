@@ -152,7 +152,7 @@
 
 
         <div class="row row-cols-4  " style="width: 1400px;">
-          <div class="class-item m-3 " *ngFor="let cla of AllClasses" >
+          <div class="class-item m-3 " *ngFor="let cla of AllClasses ; let i = index" >
             <div class="class-thumb">
         <!-- <li> -->
               <a  routerLink="/classes/{{ cla.id }}"
@@ -167,12 +167,12 @@
                 <div class="class-author">
                   <div class="thumb">
                     <a href="teacher-single.html"
-                      ><img src="./assets/images/class/teacher02.jpg" alt="class"
+                      ><img src="{{AllTeachersData[i].image}}" alt="class"
                     /></a>
                   </div>
                   <div class="content">
                     <h6 class="subtitle">
-                      <a routerLink ="/single-teacher/{{cla.teacher_id}}">Joly Smith</a>
+                      <a routerLink ="/single-teacher/{{cla.teacher_id}}">{{AllTeachersData[i].name}}</a>
                     </h6>
                     <a routerLink ="/single-teacher/{{cla.teacher_id}}" class="info">View Profile</a>
                   </div>
@@ -300,7 +300,7 @@
                           </div>
                           <div class="teacher-content">
                               <h6 class="title"><a (click)="viewTeacherDetails(teacher.id)"></a></h6>
-                              <span class="info">{{teacher.specialization}}</span>
+                              <span class="info">{{teacher.name}}</span>
                               <p>{{teacher.description}}</p>
                               <ul class="teacher-social">
 
