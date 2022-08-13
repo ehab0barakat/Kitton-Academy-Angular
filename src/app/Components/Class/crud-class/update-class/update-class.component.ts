@@ -16,6 +16,7 @@ import { UploadService } from 'src/app/Services/upload.service';
 export class UpdateClassComponent implements OnInit {
   valid: any;
   image: any;
+  TargetResponse: any;
 
   constructor( private activatedRoute : ActivatedRoute,
     private classService:ClassesService,
@@ -55,7 +56,8 @@ export class UpdateClassComponent implements OnInit {
     })
 
     this.classService.getById(this.currentPrdID).subscribe(response=>{
-      this.editClass = response ;
+      this.TargetResponse = response ;
+      this.editClass = this.TargetResponse.classes ;
       console.log(response);
     });
 }

@@ -17,6 +17,8 @@ import { ApiPostsService } from '../Services/api-posts.service';
 export class HomeComponent implements OnInit {
   teachers: ITeacher[]| undefined;
   teacherSubscription:Subscription = new Subscription();
+  TargetResponse: any;
+  AllTeachersData: any;
 
 
   constructor(private classService:ClassesService,
@@ -39,8 +41,9 @@ export class HomeComponent implements OnInit {
   });
 
     this.classService.getAll().subscribe(response=>{
-      this.AllClasses = response.slice(0 , 3);
-      // console.log(this.AllClasses);
+      this.TargetResponse = response;
+      this.AllClasses = this.TargetResponse.classes.slice(0 , 3);
+      this.AllTeachersData = this.TargetResponse.teachers.slice(0 , 3);
     })
 
   }
@@ -48,7 +51,6 @@ export class HomeComponent implements OnInit {
   draw(data: ITeacher[]): void {
     this.teachers = data.slice(0 , 4);
 
-    // console.log(data);
 
   }
   error(err: any): void {
