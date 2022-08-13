@@ -13,22 +13,24 @@ export class ClassCatsService {
     this.httpOptions={
       headers:new HttpHeaders({
         'Content-Type': 'application/json' ,
-
-
+        "Authorization": `Bearer ${localStorage.getItem('token')}`,
     })
 
   }}
   getAllClassCats(): Observable<classCats[]> {
-    return this.httpClient.get<classCats[]>(`${environment.APIBaseURL}/api/classescats`)
+    return this.httpClient.get<classCats[]>(`${environment.APIBaseURL}/api/classescats`,
+    this.httpOptions)
 
   }
 
 
     getClassByCatID(id: number): Observable<classes[]> {
-      return this.httpClient.get<classes[]>(`${environment.APIBaseURL}/api/classescats/${id}`)
+      return this.httpClient.get<classes[]>(`${environment.APIBaseURL}/api/classescats/${id}`,
+      this.httpOptions)
     }
     getClassCatID(id: number): Observable<classCats> {
-      return this.httpClient.get<classCats>(`${environment.APIBaseURL}/api/classcats/${id}`)
+      return this.httpClient.get<classCats>(`${environment.APIBaseURL}/api/classcats/${id}`,
+      this.httpOptions)
     }
 
 create(newPrd:classCats):Observable<classCats>{

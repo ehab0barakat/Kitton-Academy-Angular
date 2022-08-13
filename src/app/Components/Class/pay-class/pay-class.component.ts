@@ -11,6 +11,7 @@ import { MyclassesService } from 'src/app/Services/myclasses.service';
 })
 export class PayClassComponent implements OnInit {
   data: any;
+  TargetResponse: any;
   allcomments:classComment[]=[];
   constructor(private authService:AuthService,private activatedRoute : ActivatedRoute,public router: Router ,
     private classService:ClassesService,
@@ -25,19 +26,15 @@ export class PayClassComponent implements OnInit {
     ngOnInit(): void {
       this.authService.Auth().subscribe(response=>{
         this.data=response;
-        console.log(this.data);
       })
 
         this.classService.getById(this.selected).subscribe(response=>{
-          this.AllClasses = response
-          console.log(this.AllClasses)
+          this.TargetResponse = response
+          this.AllClasses = this.TargetResponse.classes
         })
          // get all comments of users
     this.MyclassesService.getComments().subscribe(response=>{
       this.allcomments=response;
-      console.log(this.allcomments[0].class_id);
-
-
     })
 
       }
@@ -57,7 +54,6 @@ export class PayClassComponent implements OnInit {
 
         this.classComment.user_id=userId;
          this.MyclassesService.classSendComments(this.classComment).subscribe(response=>{
-          console.log(this.classComment);
           this.router.navigate([`/classes/${this.AllClasses?.id}`]);
 
 
