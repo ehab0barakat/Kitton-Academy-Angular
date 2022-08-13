@@ -180,7 +180,7 @@ cardnumber_mask.on("accept", function () {
             swapColor('lightblue');
 
             break;
-        case 'unionpay':  
+        case 'unionpay':
             ccicon.innerHTML = unionpay;
             ccsingle.innerHTML = unionpay_single;
             swapColor('cyan');

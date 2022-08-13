@@ -54,7 +54,7 @@ posts:any ;
     }
 
 
-    this.postApiService.getAllPosts().subscribe(response=>{
+    this.postApiService.getactiveposts().subscribe(response=>{
       this.posts=response.slice(0,3);
     });
 

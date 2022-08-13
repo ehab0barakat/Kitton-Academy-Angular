@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { catchError, throwError } from 'rxjs';
 import { ClassesService } from 'src/app/Services/classes.service';
 import { EventsService } from 'src/app/Services/events.service';
@@ -21,7 +21,10 @@ export class HeaderComponent implements OnInit {
     private httpclient: HttpClient,
     private eventservice : EventsService,
     private classService : ClassesService,
-    private PostService : ApiPostsService
+    private PostService : ApiPostsService,
+    private ActiveRoute : ActivatedRoute,
+    private router : Router,
+
       ) {
 
       this.httpOptions={
