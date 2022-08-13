@@ -66,12 +66,11 @@ export class DetailsClassComponent implements OnInit {
         this.MyclassesService.getComments().subscribe(response=>{
           this.allcomments=response;
           console.log(this.allcomments);
-          console.log(this.allcomments[0].class_id);
         })
           this.authService.Auth().subscribe(response=>{
             this.data=response;
-            console.log(this.data); 
-            
+            console.log(this.data);
+
         })
         this.MyclassesService.getCountComments(this.selected).subscribe(response=>{
           this.numberOfComments=response

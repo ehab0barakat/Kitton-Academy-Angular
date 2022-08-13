@@ -22,11 +22,13 @@
         </div>
         <div *ngIf="userData !='0'">
           <div *ngIf=" userData.role!='3' ;">
+          <div *ngIf=" userData.role!='2' ;">
           <li>
             <a class="px-3"  routerLinkActive="active" routerLink="/myclasses/{{ userData.id }}">My Classes</a>
             <!-- <a class="px-3"  routerLinkActive="active" routerLink="/myclasses">My Classes</a> -->
           </li>
     </div>
+          </div>
   </div>
         <div *ngIf="userData !='0'">
               <li>

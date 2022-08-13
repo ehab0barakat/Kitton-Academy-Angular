@@ -3591,7 +3591,7 @@ div[class*=col]:nth-of-type(6n + 4) .counter-item.round-style::before {
   content: "";
   width: 50px;
   height: 50px;
-  background: url(./img/quote.png) no-repeat center center;
+  /* background: url(./img/quote.png) no-repeat center center; */
   background-size: contain;
   margin-bottom: 15px;
 }
@@ -6906,7 +6906,7 @@ div[class*=col]:nth-of-type(6n + 6) .product-list-item .product-thumb {
   display: block;
   width: 84px;
   height: 60px;
-  @REM background: url(./img/quote2.png) no-repeat center center;
+  /* @REM background: url(./img/quote2.png) no-repeat center center; */
   background-size: contain;
   margin: 0 auto 30px;
 }
