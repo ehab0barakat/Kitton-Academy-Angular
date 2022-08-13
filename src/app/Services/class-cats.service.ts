@@ -23,7 +23,6 @@ export class ClassCatsService {
 
   }
 
-
     getClassByCatID(id: number): Observable<classes[]> {
       return this.httpClient.get<classes[]>(`${environment.APIBaseURL}/api/classescats/${id}`,
       this.httpOptions)
