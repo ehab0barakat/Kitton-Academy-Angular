@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { classes } from 'src/app/Models/classes';
 import { ITeacher } from 'src/app/Models/ITeacher';
+import { ITeacherDetails } from 'src/app/Models/ITeacherDetails';
 import { Posts } from 'src/app/Models/posts';
 import { ClassCatsService } from 'src/app/Services/class-cats.service';
 import { ClassesService } from 'src/app/Services/classes.service';
@@ -15,7 +16,7 @@ import { ApiPostsService } from '../Services/api-posts.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  teachers: ITeacher[]| undefined;
+  teachers: ITeacherDetails []| undefined;
   teacherSubscription:Subscription = new Subscription();
   TargetResponse: any;
   AllTeachersData: any;
@@ -48,13 +49,13 @@ export class HomeComponent implements OnInit {
 
   }
 
-  draw(data: ITeacher[]): void {
+  draw(data: any[]): void {
     this.teachers = data.slice(0 , 4);
 
 
   }
   error(err: any): void {
-    console.log(err);
+    // console.log(err);
 
   }
 

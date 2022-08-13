@@ -12,7 +12,7 @@ export class SignOutComponent implements OnInit {
 
   ngOnInit(): void {
 
-    console.log("haha")
+    // console.log("haha")
     localStorage.clear();
 
     this.router.navigate(['/slachpage']);
