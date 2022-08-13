@@ -87,7 +87,9 @@
 </section>
 
 
+
 <div class="counter-section padding-top padding-bottom bg_img">
+
   <div class="container">
       <div class="row justify-content-center mb-30-none">
           <div class="col-lg-4 col-md-6 col-sm-10">
@@ -300,7 +302,9 @@
                           </div>
                           <div class="teacher-content">
                               <h6 class="title"><a (click)="viewTeacherDetails(teacher.id)"></a></h6>
-                              <span class="info">{{teacher.name}}</span>
+                              <h3 class="info fs-4">Name: {{teacher.name}}</h3>
+                              <h4 class="info fs-4">Email : {{teacher.email}}</h4>
+
                               <p>{{teacher.description}}</p>
                               <ul class="teacher-social">
 

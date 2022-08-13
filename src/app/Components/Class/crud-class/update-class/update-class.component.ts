@@ -32,16 +32,16 @@ export class UpdateClassComponent implements OnInit {
     auth:any = localStorage.getItem("role");
 
   ngOnInit(): void {
-    this.authService.Auth().subscribe(response=>{
-      this.auth = response ;
-      if(this.auth.role != 2 ){
-        this.router.navigate(['/not-auth']);
-      }
-    });
+    // this.authService.Auth().subscribe(response=>{
+    //   this.auth = response ;
+    //   if(this.auth.role != 2 ){
+    //     this.router.navigate(['/not-auth']);
+    //   }
+    // });
 
-    if(this.auth != 2){
-      this.router.navigate(['/not-auth']);
-    }
+    // if(this.auth != 2){
+    //   this.router.navigate(['/not-auth']);
+    // }
 
     this.ClassContent.ValidationForClass(this.currentPrdID).subscribe(response=>{
       this.valid = response
@@ -58,7 +58,7 @@ export class UpdateClassComponent implements OnInit {
     this.classService.getById(this.currentPrdID).subscribe(response=>{
       this.TargetResponse = response ;
       this.editClass = this.TargetResponse.classes ;
-      console.log(response);
+      // console.log(response);
     });
 }
 
@@ -67,13 +67,13 @@ export class UpdateClassComponent implements OnInit {
 files: File[] = [];
 
 onSelect(event:any) {
-  console.log(event);
+  // console.log(event);
   this.files.push(...event.addedFiles);
   this.onUpload();
 }
 
 onRemove(event:any) {
-  console.log(event);
+  // console.log(event);
   this.files.splice(this.files.indexOf(event), 1);
 }
 
@@ -93,7 +93,7 @@ onUpload() {
   this._uploadService.uploadImage(data).subscribe((response) => {
     if (response) {
       this.image = response
-      console.log(response.secure_url);
+      // console.log(response.secure_url);
     }
   });
 }
@@ -107,7 +107,7 @@ update(){
   }
 
    this.classService.update(this.editClass, this.currentPrdID).subscribe(response =>{
-    console.log(response);
+    // console.log(response);
 
   if(response){
     this.router.navigate(['/classes-index']);

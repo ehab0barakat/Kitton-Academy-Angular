@@ -20,13 +20,14 @@ export class FilteredClassComponent implements OnInit, OnChanges {
     @Input() selected:number = 0 ;
     AllClasses:classes[] = [];
   ngOnInit(): void {
+
   }
   ngOnChanges(changes: SimpleChanges): void {
 
     if(this.selected!= 0 ){
 
       this.classcatsService.getClassByCatID(this.selected).subscribe(response=>{
-        console.log(response)
+        // console.log(response)
         this.TargetRespone = response
         this.AllClasses = this.TargetRespone.classes
         this.AllTeachersData = this.TargetRespone.teachers

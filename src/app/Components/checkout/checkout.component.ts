@@ -29,7 +29,7 @@ export class CheckoutComponent implements OnInit {
 
       this.classService.getById(this.prod).subscribe(response=>{
         this.cla = response ;
-        console.log(this.cla);
+        // console.log(this.cla);
       }
 
   )
@@ -42,7 +42,7 @@ export class CheckoutComponent implements OnInit {
 //     }
 
 goToPayment(){
-  console.log("test");
+  // console.log("test");
   this.router.navigate([`/payment/${this.prod}`]);
 
 }

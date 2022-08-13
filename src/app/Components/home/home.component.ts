@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { classes } from 'src/app/Models/classes';
 import { ITeacher } from 'src/app/Models/ITeacher';
+import { ITeacherDetails } from 'src/app/Models/ITeacherDetails';
 import { Posts } from 'src/app/Models/posts';
 import { ClassCatsService } from 'src/app/Services/class-cats.service';
 import { ClassesService } from 'src/app/Services/classes.service';
@@ -55,7 +56,7 @@ export class HomeComponent implements OnInit {
 
   }
   error(err: any): void {
-    console.log(err);
+    // console.log(err);
 
   }
 

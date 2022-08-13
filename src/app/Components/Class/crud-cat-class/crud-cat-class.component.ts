@@ -15,7 +15,7 @@ export class CrudCatClassComponent implements OnInit {
     ngOnInit(): void {
       this.classCatService. getAllClassCats().subscribe(response=>{
         this.classListOfCat=response;
-        console.log(this.classListOfCat);
+        // console.log(this.classListOfCat);
       });
 
     }

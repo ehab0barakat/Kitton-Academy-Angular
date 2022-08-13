@@ -5,13 +5,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/Services/auth.service';
 import { ClassesService } from 'src/app/Services/classes.service';
 import { ElementRef, ViewChild } from '@angular/core';
-declare var require: any;
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
-import * as pdfMake from "pdfmake/build/pdfmake";
-import * as pdfFonts from "pdfmake/build/vfs_fonts";
-const htmlToPdfmake = require("html-to-pdfmake");
-(pdfMake as any).vfs = pdfFonts.pdfMake.vfs;
 @Component({
   selector: 'app-certification',
   templateUrl: './certification.component.html',
@@ -41,7 +36,7 @@ export class CertificationComponent implements OnInit {
 
     this.authService.Auth().subscribe(response=>{
       this.data=response;
-      console.log(this.data); 
+      // console.log(this.data); 
 
     });
     this.classService.getById(this.selected).subscribe(response=>{

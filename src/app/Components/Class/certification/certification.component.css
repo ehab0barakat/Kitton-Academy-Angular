@@ -71,7 +71,7 @@ body {
   font-weight: 700;
   line-height: 108px;
   letter-spacing: 0.1px;
-  color: #0e47c0;
+  color: #92278f;
 }
 
 .title-bottom {
@@ -124,7 +124,7 @@ body {
   font-weight: 600;
   line-height: 34px;
   letter-spacing: 0.1px;
-  color: #0e47c0;
+  color: #92278f;
   max-width: 678px;
   text-align: center;
 }
@@ -200,7 +200,7 @@ body {
 
 .right-block {
   position: absolute;
-  background-color: #0066ff;
+  background-color: #92278f;
   top: 192px;
   right: 0px;
   width: 64px;

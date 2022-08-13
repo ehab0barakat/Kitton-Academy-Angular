@@ -13,12 +13,7 @@
                               <li>
                                   <a href="#"><i class="far fa-cla"></i> Class Name : {{AllClasses?.name}}</a>
                               </li>
-                              <li>
-                                  <a href="#"><i class="far fa-heart"></i>124 Likes</a>
-                              </li>
-                              <li>
-                                  <a href="#"><i class="far fa-comments"></i>09 Comments</a>
-                              </li>
+
                           </ul>
 
 
@@ -44,7 +39,8 @@
                                   </div>
                               </form>
                               <div class="form-group">
-                                <button type="submit" class="custom-button" routerLink = "/certificate/{{ AllClasses?.id }}" ><span>Get Your Certification</span></button>
+                                <button type="submit" class="custom-button" routerLink = "/certificate/{{ AllClasses?.id }}" ><a>
+                                  <span>Get Your Certification</span></a></button>
                             </div>
                           </div>
                       </div>

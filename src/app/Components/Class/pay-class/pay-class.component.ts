@@ -13,6 +13,9 @@ export class PayClassComponent implements OnInit {
   data: any;
   TargetResponse: any;
   allcomments:classComment[]=[];
+  AllTeachersData: any;
+  TargetRespone: any;
+  valid: any;
   constructor(private authService:AuthService,private activatedRoute : ActivatedRoute,public router: Router ,
     private classService:ClassesService,
     private MyclassesService:MyclassesService
@@ -27,24 +30,27 @@ export class PayClassComponent implements OnInit {
       this.authService.Auth().subscribe(response=>{
         this.data=response;
       })
-
+      this.MyclassesService.user_own_class_check(this.selected).subscribe(response=>{
+        this.valid = response ;
+        if(this.valid.own == false ){
+          this.router.navigate(['/not-auth'])}
+        else{
         this.classService.getById(this.selected).subscribe(response=>{
           this.TargetResponse = response
           this.AllClasses = this.TargetResponse.classes
-        })
+        })}
+       });
+
          // get all comments of users
     this.MyclassesService.getComments().subscribe(response=>{
       this.allcomments=response;
+
     })
 
       }
       currentRate:number=0;
       onRateChange(event: number){
         this.MyclassesService.rateChange({'class_id':`${this.selected}`,'rate':`${event}`}).subscribe(response=>{
-          // this.AllmyClasses =response;
-          // console.log(this.selected);
-          // console.log(`${event}`);
-          // console.log(response);
 
       })
         // alert(`rate is ${event}`);
@@ -54,7 +60,7 @@ export class PayClassComponent implements OnInit {
 
         this.classComment.user_id=userId;
          this.MyclassesService.classSendComments(this.classComment).subscribe(response=>{
-          this.router.navigate([`/classes/${this.AllClasses?.id}`]);
+          // this.router.navigate([`/classes/${this.AllClasses?.id}`]);
 
 
           if (response){
@@ -62,7 +68,7 @@ export class PayClassComponent implements OnInit {
             this.classComment.user_name=" ";
             this.MyclassesService.getComments().subscribe(response=>{
               this.allcomments=response;
-              // console.log(this.allcomments[0].class_id);
+
           })
          }})
       }}

@@ -19,16 +19,16 @@ export class UpdateCatClassComponent implements OnInit {
 
     this.classcatsService.getClassCatID(this.currentPrdID).subscribe(response=>{
       this.editCatClass = response ;
-      console.log(this.editCatClass);
-      console.log(response);
+      // console.log(this.editCatClass);
+      // console.log(response);
     });
 }
 update(){
-  console.log(this.editCatClass);
-  console.log(this.currentPrdID);
+  // console.log(this.editCatClass);
+  // console.log(this.currentPrdID);
 
    this.classcatsService.update(this.editCatClass, this.currentPrdID).subscribe(response =>{
-    console.log(response);
+    // console.log(response);
 
   if(response){
     this.router.navigate(['/admin/classescat-index']);

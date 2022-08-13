@@ -5,7 +5,6 @@ import { AboutUsComponent } from './Components/about-us/about-us.component';
 import { ContactUsComponent } from './Components/contact-us/contact-us.component';
 import { PostsComponent } from './Components/posts/posts/posts.component';
 import { ProfileComponent } from './Components/Profile/profile/profile.component';
-import { AppComponent } from './app.component';
 import { GamesComponent } from './Components/Games/games/games.component';
 import { SingleGameComponent } from './Components/Games/single-game/single-game.component';
 import { HomeComponent } from './Components/home/home.component';
@@ -169,7 +168,6 @@ const routes: Routes = [
   {path: 'rate/:id',component:PayClassComponent},
 
   {path:'eventcats-index',component:EventCatsIndexComponent},
-  {path:'classescat-index',component:CrudCatClassComponent},
   {path:'eventcats-add',component:EventCatsAddComponent},
   {path:'eventcats-update/:id',component:EventCatsUpdateComponent},
   {path:'eventcats-delete/:id',component:EventCatsDeleteComponent},

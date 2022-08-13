@@ -11,14 +11,13 @@
                       <div class="class-single-content">
                           <ul class="meta-post">
                               <li>
-                                  <a href="#"><i class="far fa-cla"></i> Class Name : {{AllClasses?.name}}</a>
+
+                                  <a href="/classes/{{ AllClasses?.id }}"><i class="far fa-cla"></i> Class Name : {{AllClasses?.name}}</a>
                               </li>
                               <li>
                                   <a routerLink="/single-teacher/{{AllTeachersData?.id}}"><i class="far fa-cla"></i> Teacher Name : {{AllTeachersData?.name}}</a>
                               </li>
-                              <li>
-                                  <a href="#"><i class="far fa-comments"></i>{{ numberOfComments }} Comments</a>
-                              </li>
+
                           </ul>
                           <button type="submit"  *ngIf="!auth" routerLink="/sign-up" click="add()" class="custom-button m-3"><span>Buy Now</span></button>
                           <button type="submit"  *ngIf="auth && valid?.own == false" routerLink="/checkout/{{AllClasses?.id}}" click="add()" class="custom-button m-3"><span>Buy Now</span></button>
@@ -67,8 +66,9 @@
                                             </p>
                                             <a href="#!" class="link-muted" routerLink="/rate/{{AllClasses?.id}}" ><i class="fas fa-pencil-alt ms-2"></i></a>
                                           </div>
-                                          <p class="mb-3" style="color: #ad655f;" >
+                                          <p class="mb-3" style="color: #92278f;" >
                                             {{comment?.comment}}
+
                                           </p>
                                         </div>
                                         </ng-container>
@@ -97,7 +97,7 @@
                             </div>
                           </div>
                           </div>
-                          <div class="box2 ">
+                          <div class="box2 m-5">
                             <ul class="video-table">
                                 <li class="video-lessons"><h5>Course Content</h5></li>
                                 <li class="video-lessons" id="video1" *ngFor="let video of AllEvents" routerLinkActive="bg-primary">
@@ -115,7 +115,7 @@
                           </div>
                         </div>
 
-                        <div class="father" *ngIf="valid?.own == true" >
+                        <div class="father " *ngIf="valid?.own == true" >
                           <div class="container-fluid m-3">
                             <div class="iframe-cont">
                               <div class="about-video" >
@@ -124,7 +124,7 @@
                             </div>
                           </div>
                           </div>
-                          <div class="box2 ">
+                          <div class="box2 " style=" border-radius: 9px;">
                             <ul class="video-table">
                                 <li class="video-lessons"><h5>Course Content</h5></li>
                                 <li class="video-lessons" id="video1" *ngFor="let video of AllEvents" routerLinkActive="bg-primary">
