@@ -135,7 +135,7 @@
                                       </div>
                                       <div class="col-sm-8">
                                           <div class="p-2"routerLinkActive="text-white">{{video?.title}}</div>
-                                          <div class="p-2"routerLinkActive="text-white">{{video?.description}}</div>
+                                          <div class="p-2"routerLinkActive="text-white">{{video?.description | slice:0:50 }} ... see more</div>
                                       </div>
                                     </div>
                                   </a>
