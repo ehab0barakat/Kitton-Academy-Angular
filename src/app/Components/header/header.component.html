@@ -1,12 +1,21 @@
-<div class="header-top">
+<!-- ==========Preloader Overlay Starts Here========== -->
+<div class="overlayer" style="display: none;">
+  <div class="loader">
+      <div class="loader-inner"></div>
+  </div>
+</div>
+<div class="scrollToTop"><i class="fas fa-angle-up"></i></div>
+<div class="overlay"></div>
+<div class="overlayTwo"></div>
+<div class="header-top p-2">
   <div class="container">
     <div class="header-top-area">
 
-        <div *ngIf="userData =='0'" class="d-flex" >
+        <div  *ngIf="userData =='0'" class="d-flex" >
               <li style="list-style: none;">
                 <a routerLinkActive="active" routerLink="/sign-in">Sign In</a>
               </li>
-              <li style="list-style: none;">
+              <li class="ps-5"  style="list-style: none;">
                 <a routerLinkActive="active" routerLink="/Welcome">Sign Up</a>
               </li>
         </div>
