@@ -18,21 +18,40 @@
     <div class="container">
         <div class="contact-form-area">
             <h4 class="title">Leave A Message</h4>
-            <form class="contact-form" id="contact_form_submit">
+            <form class="contact-form" id="contact_form_submit" (ngSubmit)="onSubmit(Name.value,email.value,Message.value)">
                 <div class="form-group">
-                    <input type="text" placeholder="Your Name" id="name" name="name">
-                </div>
+                    <label class="form-label d-flex justify-content-start" for="ParentName">Name  </label>
+                      <input type="text" id="Name" name="name" required  pattern="[A-Za-z]{5,20}" ngModel #Name="ngModel">
+                      <div class="alert alert-danger mt-3" [hidden]="Name.valid || Name.untouched">
+                          <small *ngIf="Name.errors?.['required']">
+                             Name is required 
+                          </small>
+                          <small *ngIf="Name.errors?.['pattern']">
+                           Name must be 5 letters at least 
+                          </small>
+                          
+                          </div>
+                      </div>
                 <div class="form-group">
-                    <input type="text" placeholder="Your Email" id="email" name="email">
-                </div>
-                <div class="form-group">
-                    <input type="text" placeholder="Phone" id="phone" name="phone">
-                </div>
-                <div class="form-group">
-                    <input type="text" placeholder="Subject" id="subject" name="subject">
-                </div>
+                    <label class="form-label d-flex justify-content-start" for="email">Email </label>
+                      <input type="text" id="email"  name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" ngModel  #email="ngModel">
+                      <div class="alert alert-danger mt-3" [hidden]="email.valid || email.untouched">
+                          <small *ngIf="email.errors?.['required']">
+                              Email is required 
+                          </small>
+                          <small [hidden]="!email.errors?.['pattern']">
+                              Please input a valid email.
+                          </small>
+                          
+                          </div>
+                  </div>
                 <div class="form-group w-100">
-                    <textarea name="message" id="message" placeholder="Your Message"></textarea>
+                    <textarea name="message" id="message" required placeholder="Your Message" ngModel #Message="ngModel"></textarea>
+                    <div class="alert alert-danger mt-3" [hidden]="Message.valid || Message.untouched">
+                        <small *ngIf="Message.errors?.['required']">
+                           message is required 
+                        </small>
+                        </div>
                 </div>
                 <div class="form-group w-100 text-center">
                     <button class="custom-button"><span>Send Message</span></button>

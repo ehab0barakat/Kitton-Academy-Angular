@@ -3,10 +3,12 @@
 
 <h5 class="mt-5 text-center text-danger ">Profile Details</h5>
 <!-- user profile -->
-<div class="container mt-3 mb-5 d-flex justify-content-evenly" *ngIf="data?.role==1">
 
+<div class="container mt-3 mb-5 d-flex justify-content-evenly" *ngIf="data?.role==1">
+ <div class="row">
+ <div class=" col-lg-8 col-sm-12">
   <form #postForm="ngForm"  >
-    <div class="row">
+    <div class="row ">
         <div class="col">
           <!--  first Name input -->
           <div class="form-outline">
@@ -77,16 +79,19 @@
            
           
    </form>
+ </div>
 
    
-   <div class=" mt-3 ">
+   <div class=" mt-3 col-lg-3 col-sm-12" >
     <div class="card " style="width: 15rem; height: 20rem;">
       <img [src]="data.childImage"  alt="...">
         <label for="childImg" class="form-label"> Child Image</label>
 
       </div>
+ </div>
 
 </div>
+
 
 
 
@@ -148,6 +153,8 @@
 
 <div class="container mt-3 mb-5 d-flex justify-content-evenly" *ngIf="data?.role==2">
 
+ <div class="row">
+ <div class="mt-3 col-lg-8 col-sm-12">
   <form #postForm="ngForm"   >
     <div class="row">
         <div class="col">
@@ -202,12 +209,14 @@
  
             </div>
    </form>
-   <div class=" mt-3">
+ </div>
+   <div class=" mt-3 mt-3 col-lg-3 col-sm-12 ">
     <div class="card" style="width: 15rem; height: 20rem;">
          <img [src]="data.image"  alt="...">
         <label for="childImg" class="form-label text-center"> Teacher Image</label>
 
       </div>
+ </div>
 
 </div>
 
