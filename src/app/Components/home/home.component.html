@@ -308,7 +308,6 @@
 
                               <p>{{teacher.description}}</p>
                               <ul class="teacher-social">
-
                                   <li>
                                       <a [href]="teacher.faceurl" class="facebook"><i class="fab fa-facebook-f"></i></a>
                                   </li>
@@ -333,28 +332,25 @@
       </div>
   </section>
 
-
-  <div class="d-flex" >
-
-    <ng-container *ngFor="let post of posts " >
-      <div class="class-inner col-sm-4"  >
-        <div class="event-item">
-              <div class="event-humb">
-                  <a routerLink="/single-post/{{post.id}}"><img src="{{post.image}}" class="w-100" alt="post"></a>
+  <div class="section-header">
+    <h3 class="title">Our Popular Posts</h3>
+</div>
+  <div class="d-flex row" >
+      <div class="class-inner col-sm-12 col-md-6 col-lg-4" *ngFor="let post of posts "   >
+        <div class="event-item justify-content-center d-flex flex-column align-items-center">
+              <div class="event-humb ">
+                  <a routerLink="/single-post/{{post.id}}"><img src="{{post.image}}" width="300px" height="300px" alt="post"></a>
                   <div class="date-tag">
-                      <h3 class="title">{{post.title}}</h3>
-
+                      <h3 class="title text-center">{{post.title}}</h3>
                   </div>
               </div>
               <div class="event-content">
                   <h5 class="title">
-                      <a routerLink="/single-post/{{post.id}}">{{post.description}}</a>
+                      <a routerLink="/single-post/{{post.id}}">{{post.description | slice:0:70 }}</a>
                   </h5>
-
               </div>
           </div>
       </div>
-    </ng-container>
 
   </div>
 
