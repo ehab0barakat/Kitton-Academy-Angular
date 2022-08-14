@@ -2086,6 +2086,7 @@ header.header-fixed {
     -ms-transform: scaleY(0);
     transform: scaleY(0);
     transform-origin: top;
+    z-index: 99999 ;
   }
   .menu li {
     width: 100%;
