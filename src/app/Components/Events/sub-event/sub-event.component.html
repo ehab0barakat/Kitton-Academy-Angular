@@ -4,7 +4,7 @@
       <div class="event-item">
         <div class="expired" *ngIf="All[i]" >EXPIRED</div>
             <div class="event-humb">
-                <a routerLink="/event/{{event.id}}"><img src="{{event.image}}" width="100%" alt="events"></a>
+                <a routerLink="/event/{{event.id}}"><img src="{{event.image}}" width="100%" height="300px" alt="events"></a>
                 <div class="date-tag">
                     <h3 class="title">{{event.title}}</h3>
                     <span class="mon">{{event.date}}</span>
@@ -12,7 +12,7 @@
             </div>
             <div class="event-content">
                 <h5 class="title">
-                    <a routerLink="/event/{{event.id}}">{{event.description}}</a>
+                    <a routerLink="/event/{{event.id}}">{{event.description | slice :0:70 }} ... see more</a>
                 </h5>
                 <ul class="events-info">
                     <li><i class="fas fa-clock"></i>{{event.time}}</li>
