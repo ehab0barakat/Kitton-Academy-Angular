@@ -29,6 +29,7 @@
                                              "core-js/modules/es.array.iterator.js",
                                              "raf",
                                              "rgbcolor",
+                                             "sweetalert2",
                                              "html2canvas"
                                              ] ,
             "outputPath": "dist/asd",

@@ -189,7 +189,7 @@ const routes: Routes = [
 ]},
 
 
-{path:'asigndmin-',component:SigninAsadminComponent},
+{path:'admin-sign',component:SigninAsadminComponent},
 {path:'slachpage',component:SlachpageComponent},
 {path:'**',component:NotFoundComponent}
 
