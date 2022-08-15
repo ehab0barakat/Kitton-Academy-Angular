@@ -45,23 +45,19 @@ export class AdminControlComponent implements OnInit {
   toggle(id:any ,isActive:any , teacher_id:any){
     isActive == 0 ? isActive = 1 : isActive = 0 ;
     this.eventService.ActivationeditEvent({"isActive":isActive},id).subscribe(data =>{
-      // this.router.navigate(["admin/event-control"])
+      this.all()
+
     });
 
     this.eventService.teacherNotify({"event_id" : id  , "teacher_id" : teacher_id}).subscribe(data =>{
-      // this.router.navigate(["admin/event-control"])
     });
 
 
-
-
-    this.all()
   }
 
 
   delete(id:any){
     this.eventService.deleteEvent(id).subscribe(data =>{
-      // this.router.navigate(["/admin/event-control"])
       this.all()
     });
 

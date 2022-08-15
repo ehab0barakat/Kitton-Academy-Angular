@@ -18,3 +18,50 @@ a {
     cursor: pointer;
 
 }
+
+@media (max-width: 768px){
+
+  .small {
+    position: fixed;
+    z-index:99;
+    width:fit-content;
+    padding-right: 15px;
+    padding-left: 15px;
+    height: 100%;
+    margin-top: 60px;
+    transform:  translateX(-100%);
+    transition: 1s;
+  }
+  .setting{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 0px;
+    right: -30px;
+   }
+
+  .setting::after{
+    content: "";
+    width: 30px;
+    height: 30px;
+    background: url(../../../../assets/images/admin/gear-solid.svg) no-repeat center center;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    animation: rotate 3s linear infinite;
+  }
+  .activate{
+    transform:  translateX(0);
+  }
+
+  @keyframes rotate {
+    100% {
+        transform: rotateZ(360deg);
+    }
+  }
+
+}
+
+.collapse:not(.show) {
+    display:block ;
+}

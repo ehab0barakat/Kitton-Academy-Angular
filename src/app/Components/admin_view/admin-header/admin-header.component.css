@@ -1,0 +1,10 @@
+
+@media (max-width: 768px){
+
+  .fix {
+    position: fixed;
+    z-index: 9999 ;
+    width: 100%;
+  }
+
+}

@@ -166,7 +166,9 @@ const routes: Routes = [
   {path : "event/:id" , component: EventsSingleComponent},
   {path : "events-archive" , component: EventsArchiveComponent},
   {path: 'rate/:id',component:PayClassComponent},
+  {path: 'classes/:id',component:DetailsClassComponent},
 
+  {path:'content-single/:id',component:ContentSingleComponent}, //id of video
   {path:'eventcats-index',component:EventCatsIndexComponent},
   {path:'eventcats-add',component:EventCatsAddComponent},
   {path:'eventcats-update/:id',component:EventCatsUpdateComponent},
@@ -179,10 +181,11 @@ const routes: Routes = [
   {path:'show-post',component:ShowPostComponent},
   {path:'single-post/:id',component:SinglePostComponent},
   {path:'edit-profile',component:EditProfileComponent},
-  // {path: 'classes/:id',component:DetailsClassComponent},
+  {path: 'classes/:id',component:DetailsClassComponent},
   {path: 'classes-delete/:id',component:DeleteClassComponent},
   {path : "post-control" , component: AdminPostControlComponent},
-
+  {path:'single-post/:id',component:SinglePostComponent},
+  {path:'delete-post/:id',component:DeletePostComponent},
   {path : "classescat-add" , component: AddCatClassComponent},
   {path : "classescat-update/:id" , component: UpdateCatClassComponent},
   {path : "classescat-delete/:id" , component: DeleteCatClassComponent},

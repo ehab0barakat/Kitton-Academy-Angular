@@ -36,6 +36,12 @@ export class ContentSingleComponent implements OnInit {
   newSeenForAll: any = [];
 
   ngOnInit(): void {
+
+    if(this.auth == 3){
+      this.router.navigate([`/admin/content-single/${this.VideoId}`])
+    }
+
+
       this.myClassServices.user_own_video_check(this.VideoId).subscribe(response=>{
       this.valid = response ;
       if(this.valid.valid == false || this.valid.own == false ){

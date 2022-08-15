@@ -15,33 +15,34 @@ export class DeletePostComponent implements OnInit {
 
 
   targetPostId=Number(this.activatedRoute.snapshot.paramMap.get("id")) ;
- 
- 
+
+
   ngOnInit(): void {
-   
+
   this.authService.Auth().subscribe(response=>{
     this.auth = response ;
-    if(this.auth.role != 2 ){
+    if(this.auth.role != 2 && this.auth.role != 3 ){
         this.router.navigate(['/not-auth']);
       }
       else{
         this.postApiService.deletePost(this.targetPostId).subscribe(response =>{
-          // console.log(response);
-          
-          if(response){
+          if( this.auth.role == 3){
+            this.router.navigate(['/admin/post-control']);
+          }
+          if( this.auth.role == 2){
             this.router.navigate(['/show-post']);
           }
         }
       )
       }
     });
-      if(this.auth != 2){
+      if(this.auth != 2 && this.auth != 3){
         this.router.navigate(['/not-auth']);
       }
 
-      
+
   }
-  
+
 
 
 }
