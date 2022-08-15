@@ -1,5 +1,5 @@
 <div class="fix">
-  <div class="header-top">
+  <!-- <div class="header-top">
     <div class="container">
       <div class="header-top-area">
         <ul class="">
@@ -20,7 +20,40 @@
         </ul>
       </div>
     </div>
+  </div> -->
+
+  <div class="overlayer" style="display: none;">
+    <div class="loader">
+        <div class="loader-inner"></div>
+    </div>
   </div>
+  <div class="scrollToTop"><i class="fas fa-angle-up"></i></div>
+  <div class="overlay"></div>
+  <div class="header-top p-2">
+    <div class="container">
+      <div class="header-top-area">
+        <div  *ngIf="userData =='0'" class="d-flex" >
+              <li style="list-style: none;">
+                <a routerLinkActive="active" routerLink="/sign-in">Sign In</a>
+              </li>
+              <li class="ps-5"  style="list-style: none;">
+                <a routerLinkActive="active" routerLink="/Welcome">Sign Up</a>
+              </li>
+        </div>
+        <div *ngIf="userData !='0'">
+              <li style="list-style: none;">
+                <a class="px-3" routerLinkActive="active" routerLink="/sign-out">Sign Out</a>
+                <a class="px-3" routerLinkActive="active" >{{userData.email}}</a>
+              </li>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
   <div class="header-bottom">
     <div class="container">
       <div class="header-wrapper">
